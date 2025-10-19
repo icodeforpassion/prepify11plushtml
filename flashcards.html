@@ -914,6 +914,7 @@
   <script src="/assets/counter.js" defer></script>
   <script>
     let words = [];
+    let customVocabularyLoaded = false;
     let activePool = [];
     let mastered = new Set(JSON.parse(localStorage.getItem('masteredWords') || '[]'));
     let current = null;
@@ -1406,11 +1407,13 @@
       const reader = new FileReader();
       reader.onload = (event) => {
         const text = event.target.result;
-        words = parseLines(text);
-        if (!words.length) {
+        const parsedWords = parseLines(text);
+        if (!parsedWords.length) {
           alert('No valid lines found.');
           return;
         }
+        words = parsedWords;
+        customVocabularyLoaded = true;
         rebuildActivePool();
         chooseNext();
         renderCurrent();
@@ -1421,17 +1424,20 @@
     }
 
     function loadDefaultVocabulary() {
+      if (customVocabularyLoaded) return;
       fetch('/data/sample_vocabulary.txt')
         .then((response) => {
           if (!response.ok) throw new Error('Network response was not ok');
           return response.text();
         })
         .then((data) => {
-          words = parseLines(data);
-          if (!words.length) {
+          if (customVocabularyLoaded) return;
+          const parsedWords = parseLines(data);
+          if (!parsedWords.length) {
             alert('No valid lines found in the sample vocabulary.');
             return;
           }
+          words = parsedWords;
           rebuildActivePool();
           chooseNext();
           renderCurrent();
