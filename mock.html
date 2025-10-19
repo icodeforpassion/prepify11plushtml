@@ -17,13 +17,30 @@
         <div class="brand-logo">P</div>
         <h1>Prepify11Plus</h1>
       </div>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="/index.html">Home</a>
-        <a href="/flashcards.html">Flashcards</a>
-        <a href="/maths.html">Maths Practice</a>
-        <a href="/mock.html" aria-current="page">Mock Tests</a>
-        <a href="/about.html">About</a>
-      </nav>
+      <div class="nav-group">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/flashcards.html">Flashcards</a>
+          <a href="/maths.html">Maths Practice</a>
+          <a href="/mock.html" aria-current="page">Mock Tests</a>
+          <a href="/about.html">About</a>
+        </nav>
+        <label class="theme-picker">
+          <span>Theme</span>
+          <select data-theme-select aria-label="Choose a superhero theme">
+            <option value="superman">Superman</option>
+            <option value="spiderman">Spiderman</option>
+            <option value="captain">Captain America</option>
+            <option value="batman">Batman</option>
+            <option value="ironman">Iron Man</option>
+            <option value="hulk">Hulk</option>
+            <option value="thor">Thor</option>
+            <option value="blackpanther">Black Panther</option>
+            <option value="wonderwoman">Wonder Woman</option>
+            <option value="flash">Flash</option>
+          </select>
+        </label>
+      </div>
     </div>
   </header>
 
@@ -244,6 +261,10 @@
       timedOut: false
     };
 
+    const timedToggle = document.getElementById('timedToggle');
+    const timerDisplay = document.getElementById('timerDisplay');
+    const nextQuestionButton = document.getElementById('nextMockQuestion');
+
     function startMock(subjectId) {
       const subject = mockData[subjectId];
       if (!subject) return;
@@ -253,18 +274,19 @@
       mockState.score = 0;
       mockState.responses = [];
       mockState.timedOut = false;
-      mockState.remaining = document.getElementById('timedToggle').checked ? subject.duration : 0;
+      mockState.remaining = timedToggle?.checked ? subject.duration : 0;
       document.getElementById('resultsPanel').hidden = true;
       document.getElementById('mockFeedback').textContent = '';
       document.getElementById('mockOptions').innerHTML = '';
       document.getElementById('mockQuestion').textContent = 'Loading…';
       updateProgressBar();
       stopTimer();
+      nextQuestionButton.disabled = true;
       if (mockState.remaining > 0) {
-        document.getElementById('timerDisplay').textContent = formatTime(mockState.remaining);
+        timerDisplay.textContent = formatTime(mockState.remaining);
         mockState.timer = setInterval(tick, 1000);
       } else {
-        document.getElementById('timerDisplay').textContent = 'Timer: —';
+        timerDisplay.textContent = 'Timer: —';
       }
       setTimeout(() => displayMockQuestion(), 200);
     }
@@ -284,7 +306,7 @@
         btn.addEventListener('click', () => gradeResponse(option));
         optionList.appendChild(btn);
       });
-      document.getElementById('nextMockQuestion').disabled = true;
+      nextQuestionButton.disabled = true;
       document.getElementById('mockFeedback').textContent = '';
       updateProgressBar();
     }
@@ -315,7 +337,7 @@
         selected,
         explanation: question.explanation || ''
       });
-      document.getElementById('nextMockQuestion').disabled = false;
+      nextQuestionButton.disabled = false;
       updateProgressBar();
       if (mockState.responses.length === mockState.questions.length) {
         finishMock();
@@ -333,7 +355,7 @@
 
     function finishMock() {
       stopTimer();
-      document.getElementById('nextMockQuestion').disabled = true;
+      nextQuestionButton.disabled = true;
       const baseMessage = `Score: ${mockState.score}/${mockState.questions.length}.`;
       document.getElementById('mockFeedback').textContent = mockState.timedOut && mockState.responses.length < mockState.questions.length
         ? `Time's up! ${baseMessage}`
@@ -375,13 +397,13 @@
     function tick() {
       if (mockState.remaining <= 0) {
         stopTimer();
-        document.getElementById('timerDisplay').textContent = 'Time\'s up!';
+        timerDisplay.textContent = 'Time\'s up!';
         mockState.timedOut = true;
         finishMock();
         return;
       }
       mockState.remaining -= 1;
-      document.getElementById('timerDisplay').textContent = formatTime(mockState.remaining);
+      timerDisplay.textContent = formatTime(mockState.remaining);
     }
 
     function stopTimer() {
@@ -397,8 +419,38 @@
       return `Timer: ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
     }
 
+    function handleTimedToggleChange() {
+      if (!timedToggle) return;
+      stopTimer();
+      if (!mockState.subject) {
+        if (timedToggle.checked) {
+          mockState.remaining = 15 * 60;
+          timerDisplay.textContent = formatTime(mockState.remaining);
+        } else {
+          mockState.remaining = 0;
+          timerDisplay.textContent = 'Timer: —';
+        }
+        return;
+      }
+
+      const subject = mockData[mockState.subject];
+      if (!subject) return;
+
+      if (timedToggle.checked) {
+        mockState.remaining = subject.duration;
+        mockState.timedOut = false;
+        timerDisplay.textContent = formatTime(mockState.remaining);
+        mockState.timer = setInterval(tick, 1000);
+      } else {
+        mockState.remaining = 0;
+        mockState.timedOut = false;
+        timerDisplay.textContent = 'Timer: —';
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('currentYear').textContent = new Date().getFullYear();
+      nextQuestionButton.disabled = true;
       document.querySelectorAll('button[data-subject]').forEach(button => {
         button.addEventListener('click', () => {
           document.querySelectorAll('button[data-subject]').forEach(btn => btn.classList.toggle('btn-primary', btn === button));
@@ -406,7 +458,8 @@
           startMock(button.dataset.subject);
         });
       });
-      document.getElementById('nextMockQuestion').addEventListener('click', nextMockQuestion);
+      nextQuestionButton.addEventListener('click', nextMockQuestion);
+      timedToggle?.addEventListener('change', handleTimedToggleChange);
     });
   </script>
 </body>

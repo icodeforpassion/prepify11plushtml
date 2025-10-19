@@ -17,13 +17,30 @@
         <div class="brand-logo">P</div>
         <h1>Prepify11Plus</h1>
       </div>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="/index.html">Home</a>
-        <a href="/flashcards.html">Flashcards</a>
-        <a href="/maths.html">Maths Practice</a>
-        <a href="/mock.html">Mock Tests</a>
-        <a href="/about.html" aria-current="page">About</a>
-      </nav>
+      <div class="nav-group">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/flashcards.html">Flashcards</a>
+          <a href="/maths.html">Maths Practice</a>
+          <a href="/mock.html">Mock Tests</a>
+          <a href="/about.html" aria-current="page">About</a>
+        </nav>
+        <label class="theme-picker">
+          <span>Theme</span>
+          <select data-theme-select aria-label="Choose a superhero theme">
+            <option value="superman">Superman</option>
+            <option value="spiderman">Spiderman</option>
+            <option value="captain">Captain America</option>
+            <option value="batman">Batman</option>
+            <option value="ironman">Iron Man</option>
+            <option value="hulk">Hulk</option>
+            <option value="thor">Thor</option>
+            <option value="blackpanther">Black Panther</option>
+            <option value="wonderwoman">Wonder Woman</option>
+            <option value="flash">Flash</option>
+          </select>
+        </label>
+      </div>
     </div>
   </header>
 
@@ -40,49 +57,10 @@
     </section>
 
     <section class="section">
-      <div class="hero-grid">
-        <button class="hero-card" data-theme-name="superman">
-          <span class="hero-icon hero-superman" aria-hidden="true">S</span>
-          <span>Superman</span>
-        </button>
-        <button class="hero-card" data-theme-name="spiderman">
-          <span class="hero-icon hero-spiderman" aria-hidden="true">SP</span>
-          <span>Spiderman</span>
-        </button>
-        <button class="hero-card" data-theme-name="captain">
-          <span class="hero-icon hero-captain" aria-hidden="true">CA</span>
-          <span>Captain America</span>
-        </button>
-        <button class="hero-card" data-theme-name="batman">
-          <span class="hero-icon hero-batman" aria-hidden="true">B</span>
-          <span>Batman</span>
-        </button>
-        <button class="hero-card" data-theme-name="ironman">
-          <span class="hero-icon hero-ironman" aria-hidden="true">IM</span>
-          <span>Iron Man</span>
-        </button>
-        <button class="hero-card" data-theme-name="hulk">
-          <span class="hero-icon hero-hulk" aria-hidden="true">H</span>
-          <span>Hulk</span>
-        </button>
-        <button class="hero-card" data-theme-name="thor">
-          <span class="hero-icon hero-thor" aria-hidden="true">T</span>
-          <span>Thor</span>
-        </button>
-        <button class="hero-card" data-theme-name="blackpanther">
-          <span class="hero-icon hero-blackpanther" aria-hidden="true">BP</span>
-          <span>Black Panther</span>
-        </button>
-        <button class="hero-card" data-theme-name="wonderwoman">
-          <span class="hero-icon hero-wonderwoman" aria-hidden="true">WW</span>
-          <span>Wonder Woman</span>
-        </button>
-        <button class="hero-card" data-theme-name="flash">
-          <span class="hero-icon hero-flash" aria-hidden="true">F</span>
-          <span>Flash</span>
-        </button>
+      <div class="section-intro">
+        <h2>Choose the hero that motivates your learner</h2>
+        <p>The theme dropdown in the header lets you pick the colour palette that feels just right. We remember your choice for next time.</p>
       </div>
-
       <div class="card-grid">
         <article class="info-card">
           <h3>Why superheroes?</h3>
