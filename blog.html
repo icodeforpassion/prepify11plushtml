@@ -1,41 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Blog | ElevenSpark</title>
-  <meta name="description" content="Insights, tips, and resources for calmer 11+ preparation from the ElevenSpark team." />
+  <title>Blog | ElevenSpark Insights</title>
+  <meta name="description" content="Explore ElevenSpark articles on joyful 11+ preparation, maths strategies, and vocabulary growth." />
   <link rel="canonical" href="https://elevenspark.example/blog.html" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="icon" href="favicon.svg" />
   <meta property="og:title" content="Blog | ElevenSpark" />
-  <meta property="og:description" content="Read expert guidance on 11+ maths, vocabulary, and wellbeing." />
+  <meta property="og:description" content="Curated ideas for confident 11+ preparation." />
   <meta property="og:url" content="https://elevenspark.example/blog.html" />
   <meta property="og:image" content="https://elevenspark.example/assets/img/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elevenspark.example/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://elevenspark.example/blog.html"}
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <header>
+  <header class="site-shell">
     <div class="container site-header" role="navigation" aria-label="Primary">
-      <a class="logo" href="index.html" aria-label="ElevenSpark home">
+      <a class="logo" href="index.html">
         <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <circle cx="32" cy="32" r="30" fill="#3B82F6" opacity="0.12"></circle>
-          <path d="M20 42l8-20 6 12 10-16" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-          <circle cx="44" cy="18" r="4" fill="#F59E0B"></circle>
+          <defs>
+            <linearGradient id="logo-glow-blog" x1="0%" x2="100%" y1="0%" y2="100%">
+              <stop offset="0%" stop-color="#4dd2ff" />
+              <stop offset="100%" stop-color="#ff7ab8" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="30" fill="url(#logo-glow-blog)" opacity="0.18"></circle>
+          <path d="M20 42l8-20 6 12 10-16" stroke="#4dd2ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+          <circle cx="44" cy="18" r="4" fill="#ff7ab8"></circle>
         </svg>
-        ElevenSpark
+        <span class="logo-wordmark">ElevenSpark</span>
       </a>
-      <button class="mobile-nav-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">☰</button>
+      <button class="mobile-nav-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="pricing.html">Pricing</a>
         <a href="faq.html">FAQ</a>
         <a href="blog.html" aria-current="page">Blog</a>
         <a href="demo.html">Interactive Demo</a>
-        <a class="btn btn-secondary" href="demo.html">Try the Demo</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" data-mode="dark">
+          <span class="theme-icon icon-moon" aria-hidden="true">🌙</span>
+          <span class="theme-icon icon-sun" aria-hidden="true">☀️</span>
+          <span class="sr-only">Toggle colour theme</span>
+        </button>
+        <a class="btn btn-glow" href="demo.html">Try the Demo</a>
       </nav>
     </div>
     <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
@@ -46,78 +69,125 @@
         <a href="blog.html" aria-current="page">Blog</a>
         <a href="demo.html">Interactive Demo</a>
       </nav>
-      <button class="btn" data-mobile-toggle aria-label="Close menu">Close</button>
+      <div class="mobile-menu-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" data-mode="dark">
+          <span class="theme-icon icon-moon" aria-hidden="true">🌙</span>
+          <span class="theme-icon icon-sun" aria-hidden="true">☀️</span>
+          <span class="sr-only">Toggle colour theme</span>
+        </button>
+        <a class="btn btn-glow" href="demo.html">Try the Demo</a>
+        <button class="btn btn-outline" data-mobile-toggle aria-label="Close menu">Close</button>
+      </div>
     </div>
   </header>
+
   <main id="main">
-    <section class="blog-hero">
-      <div class="container">
-        <h1>ElevenSpark journal</h1>
-        <p class="section-subtitle">Warm, practical ideas to spark curiosity, strengthen fundamentals, and protect wellbeing on the road to the 11+.</p>
+    <section class="hero hero-compact">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1>ElevenSpark insights</h1>
+          <p class="section-subtitle">Short reads to fuel curiosity, compassion, and confident 11+ preparation.</p>
+        </div>
+        <aside class="hero-panel" aria-label="Newsletter">
+          <h2>Never miss an article</h2>
+          <p>Join the launch list for monthly highlights, vocab challenges, and new generator templates.</p>
+          <a class="btn btn-panel" href="index.html#email-capture">Subscribe for updates</a>
+        </aside>
       </div>
     </section>
-    <section class="section">
+
+    <section class="section" aria-labelledby="articles-heading">
       <div class="container">
-        <div class="blog-list">
-          <article class="card">
-            <h2><a href="blog/11-plus-maths-fractions-made-easy.html">11+ Maths: Fractions Made Easy</a></h2>
-            <p class="article-meta">Published 5 March 2024 · 6 minute read</p>
-            <p>Break fraction anxiety with concrete models, variation, and quick-win questions from the ElevenSpark demo.</p>
-            <a class="btn btn-outline" href="blog/11-plus-maths-fractions-made-easy.html">Read article</a>
+        <header class="section-header">
+          <h2 class="section-title" id="articles-heading">Latest stories</h2>
+          <p class="section-subtitle">Each article includes practical takeaways and links to the interactive demo.</p>
+        </header>
+        <div class="grid grid-2 blog-teasers">
+          <article class="card blog-card">
+            <header>
+              <h3><a href="blog/11-plus-maths-fractions-made-easy.html">11+ Maths: Fractions made easy</a></h3>
+              <p class="privacy-note">By ElevenSpark Team • 5 min read</p>
+            </header>
+            <p>Turn fraction walls into friendly building blocks with visual mnemonics, number lines, and mini challenges.</p>
+            <a class="link-button" href="blog/11-plus-maths-fractions-made-easy.html">Read article</a>
           </article>
-          <article class="card">
-            <h2><a href="blog/11-plus-vocabulary-150-words.html">11+ Vocabulary: 150 Spark Words</a></h2>
-            <p class="article-meta">Published 10 March 2024 · 7 minute read</p>
-            <p>Upgrade word choice with our curated word bank, flashcard tips, and family-friendly activities.</p>
-            <a class="btn btn-outline" href="blog/11-plus-vocabulary-150-words.html">Explore words</a>
+          <article class="card blog-card">
+            <header>
+              <h3><a href="blog/11-plus-vocabulary-150-words.html">11+ Vocabulary: 150 words to know</a></h3>
+              <p class="privacy-note">By ElevenSpark Team • 6 min read</p>
+            </header>
+            <p>Boost verbal reasoning with colourful synonyms, story sparks, and quick recall prompts.</p>
+            <a class="link-button" href="blog/11-plus-vocabulary-150-words.html">Read article</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="topics-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="topics-heading">Explore by topic</h2>
+        </header>
+        <div class="grid grid-3">
+          <article class="card feature-card">
+            <h3>Maths mastery</h3>
+            <p>Learn strategies for fractions, algebra, and data questions with worked examples.</p>
+            <a class="link-button" href="demo.html#maths">Open maths tab</a>
+          </article>
+          <article class="card feature-card">
+            <h3>Vocabulary sparks</h3>
+            <p>Discover high-impact words, spaced repetition routines, and storytelling prompts.</p>
+            <a class="link-button" href="demo.html#vocabulary">Flip flashcards</a>
+          </article>
+          <article class="card feature-card">
+            <h3>Family routines</h3>
+            <p>Co-create calm study rituals, celebrate small wins, and keep expectations honest.</p>
+            <a class="link-button" href="pricing.html">See parent plans</a>
           </article>
         </div>
       </div>
     </section>
   </main>
-  <footer>
-    <div class="container">
-      <div class="footer-columns">
-        <div>
-          <h4>ElevenSpark</h4>
-          <p>Joyful 11+ practice for curious learners. Build habits that last beyond the exam.</p>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="demo.html">Interactive Demo</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Support</h4>
-          <ul>
-            <li><a href="index.html#privacy">Privacy</a></li>
-            <li><a href="index.html#terms">Terms</a></li>
-            <li><a href="index.html#accessibility">Accessibility</a></li>
-            <li><a href="mailto:hello@elevenspark.example">Contact us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Connect</h4>
-          <ul>
-            <li><a href="https://twitter.com/">Twitter</a></li>
-            <li><a href="https://www.instagram.com/">Instagram</a></li>
-            <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
-          </ul>
-        </div>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="index.html">
+          <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="logo-glow-blog-footer" x1="0%" x2="100%" y1="0%" y2="100%">
+                <stop offset="0%" stop-color="#4dd2ff" />
+                <stop offset="100%" stop-color="#ff7ab8" />
+              </linearGradient>
+            </defs>
+            <circle cx="32" cy="32" r="30" fill="url(#logo-glow-blog-footer)" opacity="0.18"></circle>
+            <path d="M20 42l8-20 6 12 10-16" stroke="#4dd2ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <circle cx="44" cy="18" r="4" fill="#ff7ab8"></circle>
+          </svg>
+          <span class="logo-wordmark">ElevenSpark</span>
+        </a>
+        <p class="footer-copy">© <span data-year></span> ElevenSpark.</p>
+        <p class="footer-copy">We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</p>
       </div>
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> ElevenSpark.</span>
-        <span>We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</span>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="demo.html">Interactive Demo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="mailto:hello@elevenspark.example">Email</a></li>
+          <li><a href="https://twitter.com">Twitter</a></li>
+          <li><a href="index.html#privacy">Privacy</a></li>
+        </ul>
       </div>
     </div>
   </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
