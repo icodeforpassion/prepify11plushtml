@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,7 +8,7 @@
   <link rel="canonical" href="https://elevenspark.example/faq.html" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="icon" href="favicon.svg" />
   <meta property="og:title" content="FAQ | ElevenSpark" />
@@ -16,16 +16,6 @@
   <meta property="og:url" content="https://elevenspark.example/faq.html" />
   <meta property="og:image" content="https://elevenspark.example/assets/img/og-image.svg" />
   <meta name="twitter:card" content="summary_large_image" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://elevenspark.example/"},
-      {"@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://elevenspark.example/faq.html"}
-    ]
-  }
-  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -52,7 +42,7 @@
         "name": "How is data handled?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The static demo stores no personal data beyond an optional colour-theme preference saved in the browser. Paid plans will be GDPR compliant with parental consent and encrypted storage."
+          "text": "The static demo stores no personal data. Paid plans will be GDPR compliant with parental consent and encrypted storage."
         }
       },
       {
@@ -69,36 +59,23 @@
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to content</a>
-  <header class="site-shell">
+  <header>
     <div class="container site-header" role="navigation" aria-label="Primary">
       <a class="logo" href="index.html" aria-label="ElevenSpark home">
         <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <defs>
-            <linearGradient id="logo-glow-faq" x1="0%" x2="100%" y1="0%" y2="100%">
-              <stop offset="0%" stop-color="#4dd2ff" />
-              <stop offset="100%" stop-color="#ff7ab8" />
-            </linearGradient>
-          </defs>
-          <circle cx="32" cy="32" r="30" fill="url(#logo-glow-faq)" opacity="0.18"></circle>
-          <path d="M20 42l8-20 6 12 10-16" stroke="#4dd2ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-          <circle cx="44" cy="18" r="4" fill="#ff7ab8"></circle>
+          <circle cx="32" cy="32" r="30" fill="#3B82F6" opacity="0.12"></circle>
+          <path d="M20 42l8-20 6 12 10-16" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+          <circle cx="44" cy="18" r="4" fill="#F59E0B"></circle>
         </svg>
-        <span class="logo-wordmark">ElevenSpark</span>
+        ElevenSpark
       </a>
-      <button class="mobile-nav-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="mobile-nav-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">☰</button>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="pricing.html">Pricing</a>
         <a href="faq.html" aria-current="page">FAQ</a>
         <a href="blog.html">Blog</a>
         <a href="demo.html">Interactive Demo</a>
-        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" data-mode="dark">
-          <span class="theme-icon icon-moon" aria-hidden="true">🌙</span>
-          <span class="theme-icon icon-sun" aria-hidden="true">☀️</span>
-          <span class="sr-only">Toggle colour theme</span>
-        </button>
-        <a class="btn btn-glow" href="demo.html">Try the Demo</a>
+        <a class="btn btn-secondary" href="demo.html">Try the Demo</a>
       </nav>
     </div>
     <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
@@ -109,171 +86,149 @@
         <a href="blog.html">Blog</a>
         <a href="demo.html">Interactive Demo</a>
       </nav>
-      <div class="mobile-menu-actions">
-        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" data-mode="dark">
-          <span class="theme-icon icon-moon" aria-hidden="true">🌙</span>
-          <span class="theme-icon icon-sun" aria-hidden="true">☀️</span>
-          <span class="sr-only">Toggle colour theme</span>
-        </button>
-        <a class="btn btn-glow" href="demo.html">Try the Demo</a>
-        <button class="btn btn-outline" data-mobile-toggle aria-label="Close menu">Close</button>
-      </div>
+      <button class="btn" data-mobile-toggle aria-label="Close menu">Close</button>
     </div>
   </header>
-
   <main id="main">
-    <section class="hero hero-compact">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <h1>Frequently asked questions</h1>
-          <p class="section-subtitle">We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>. If you cannot find what you need, email <a href="mailto:hello@elevenspark.example">hello@elevenspark.example</a>.</p>
-        </div>
-        <aside class="hero-panel" aria-label="Support routes">
-          <h2>Need a human?</h2>
-          <p>We answer within two UK school days. For accessibility adjustments, email <a href="mailto:access@elevenspark.example">access@elevenspark.example</a>.</p>
-          <a class="btn btn-panel" href="mailto:hello@elevenspark.example">Contact support</a>
-        </aside>
+    <section class="hero">
+      <div class="container">
+        <h1>Frequently asked questions</h1>
+        <p class="section-subtitle">Clarity for parents, tutors, and learners exploring ElevenSpark. We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</p>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="faq-topics">
-      <div class="container">
-        <header class="section-header">
-          <h2 class="section-title" id="faq-topics">Topics at a glance</h2>
-          <p class="section-subtitle">Jump to the section you need by using the quick index below.</p>
-        </header>
-        <nav class="card" aria-label="FAQ quick index">
-          <ul class="feature-list">
-            <li><a href="#about">About the demo</a></li>
-            <li><a href="#privacy">Privacy &amp; data</a></li>
-            <li><a href="#access">Accessibility</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
-          </ul>
-        </nav>
-      </div>
-    </section>
+    <nav aria-label="FAQ sections" class="container">
+      <ul class="flex flex-wrap">
+        <li><a href="#using-demo">Using the demo</a></li>
+        <li><a href="#content">Content coverage</a></li>
+        <li><a href="#privacy-data">Privacy &amp; data</a></li>
+        <li><a href="#accessibility-support">Accessibility &amp; support</a></li>
+      </ul>
+    </nav>
 
-    <section class="section section-alt" id="about" aria-labelledby="about-heading">
+    <section class="section" id="using-demo" aria-labelledby="using-demo-title">
       <div class="container">
-        <header class="section-header">
-          <h2 class="section-title" id="about-heading">About the ElevenSpark demo</h2>
-        </header>
-        <div class="accordion">
+        <h2 class="section-title" id="using-demo-title">Using the demo</h2>
+        <div class="faq">
           <article class="faq-item" aria-expanded="false">
-            <button class="faq-question">What is included in the demo?</button>
-            <div class="faq-answer">
-              <p>The demo covers 11+ maths topics including arithmetic, fractions, decimals, ratios, algebra, measures, area, and data handling. Vocabulary tabs offer synonyms, antonyms, cloze questions, homophones, prefixes, spelling, analogies, and odd-one-out activities.</p>
+            <button class="faq-question">How do I start a practice set?</button>
+            <div class="faq-answer" id="faq-using-1">
+              <p>Open <a href="demo.html">demo.html</a>, choose maths, vocabulary, or mini-mock, select a topic, and press “Start practice.” Each set contains 5 questions with instant feedback.</p>
             </div>
           </article>
           <article class="faq-item" aria-expanded="false">
-            <button class="faq-question">How does deterministic randomisation work?</button>
-            <div class="faq-answer">
-              <p>Each quiz set uses a seeded Mulberry32 generator. This ensures families receive fresh variations every time while tutors can replay the same seed for review.</p>
-            </div>
-          </article>
-          <article class="faq-item" aria-expanded="false">
-            <button class="faq-question">Can I save progress?</button>
-            <div class="faq-answer">
-              <p>The static demo keeps state only during your browser session. The upcoming Parent Plan will add secure login, dashboards, and printable packs.</p>
+            <button class="faq-question">Can I adjust difficulty?</button>
+            <div class="faq-answer" id="faq-using-2">
+              <p>Yes. Use the difficulty slider (1–5). Higher levels widen number ranges, add multi-step reasoning, and introduce trickier vocabulary distractors.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="privacy" aria-labelledby="privacy-heading">
+    <section class="section" id="content" aria-labelledby="content-title">
       <div class="container">
-        <header class="section-header">
-          <h2 class="section-title" id="privacy-heading">Privacy &amp; data</h2>
-        </header>
-        <div class="accordion">
+        <h2 class="section-title" id="content-title">Content coverage</h2>
+        <div class="faq">
           <article class="faq-item" aria-expanded="false">
-            <button class="faq-question">Does ElevenSpark guarantee an exam pass?</button>
-            <div class="faq-answer">
-              <p>No. We focus on joyful practice, not guarantees. Families should combine ElevenSpark with school insight and wellbeing routines.</p>
+            <button class="faq-question">Which maths areas are included?</button>
+            <div class="faq-answer" id="faq-content-1">
+              <p>Number &amp; arithmetic, fractions, decimals &amp; percentages, ratio &amp; proportion, factors &amp; multiples, algebra, sequences, measures, area &amp; perimeter, and data handling.</p>
             </div>
           </article>
           <article class="faq-item" aria-expanded="false">
-            <button class="faq-question">What data do you store?</button>
-            <div class="faq-answer">
-              <p>The static site stores no personal data. Theme preference may be remembered locally if you opt-in by toggling the theme. Optional analytics only load after you consent.</p>
-            </div>
-          </article>
-          <article class="faq-item" aria-expanded="false">
-            <button class="faq-question">Will paid plans be GDPR compliant?</button>
-            <div class="faq-answer">
-              <p>Yes. Paid plans will use encrypted storage, parental consent workflows, and UK/EU data residency.</p>
+            <button class="faq-question">What about English vocabulary?</button>
+            <div class="faq-answer" id="faq-content-2">
+              <p>Synonyms, antonyms, cloze sentences, homophones, prefixes/suffixes, spelling checks, analogies, and odd-one-out drills powered by a curated 120-word bank.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="access" aria-labelledby="access-heading">
+    <section class="section" id="privacy-data" aria-labelledby="privacy-title">
       <div class="container">
-        <header class="section-header">
-          <h2 class="section-title" id="access-heading">Accessibility</h2>
-        </header>
-        <div class="accordion">
+        <h2 class="section-title" id="privacy-title">Privacy &amp; data</h2>
+        <div class="faq">
           <article class="faq-item" aria-expanded="false">
-            <button class="faq-question">Is the demo accessible?</button>
-            <div class="faq-answer">
-              <p>Yes. We design for WCAG 2.2 AA with semantic HTML5, ARIA-labelled components, keyboard support, visible focus, and reduced-motion preferences.</p>
+            <button class="faq-question">Does the demo store my child’s responses?</button>
+            <div class="faq-answer" id="faq-privacy-1">
+              <p>No. All data lives in memory and resets when you reload. Optional analytics only load after consent and anonymise IP addresses.</p>
             </div>
           </article>
           <article class="faq-item" aria-expanded="false">
-            <button class="faq-question">How do I request adjustments?</button>
-            <div class="faq-answer">
-              <p>Email <a href="mailto:access@elevenspark.example">access@elevenspark.example</a> with your requirements. We will prioritise compatibility updates.</p>
+            <button class="faq-question">How will paid plans handle data?</button>
+            <div class="faq-answer" id="faq-privacy-2">
+              <p>We’ll use encrypted, UK/EU-hosted storage, role-based access, and parent-controlled sharing. You’ll be able to export or delete data any time.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="roadmap" aria-labelledby="roadmap-heading">
+    <section class="section" id="accessibility-support" aria-labelledby="accessibility-title">
       <div class="container">
-        <header class="section-header">
-          <h2 class="section-title" id="roadmap-heading">Roadmap &amp; next steps</h2>
-          <p class="section-subtitle">A transparent look at what we are building next.</p>
-        </header>
-        <div class="card">
-          <ul class="feature-list">
-            <li><strong>Autumn</strong> – Parent dashboards with weekly summaries.</li>
-            <li><strong>Winter</strong> – Printable mini-mocks with worked solutions.</li>
-            <li><strong>Spring</strong> – Tutor collaboration tools and gentle streak celebrations.</li>
-          </ul>
-          <p class="privacy-note">Plans may shift. We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</p>
+        <h2 class="section-title" id="accessibility-title">Accessibility &amp; support</h2>
+        <div class="faq">
+          <article class="faq-item" aria-expanded="false">
+            <button class="faq-question">Is everything keyboard accessible?</button>
+            <div class="faq-answer" id="faq-access-1">
+              <p>Yes. Navigation, accordions, tabs, flashcards, and modals include focus states, ARIA attributes, and logical tab order.</p>
+            </div>
+          </article>
+          <article class="faq-item" aria-expanded="false">
+            <button class="faq-question">Who can I contact for support?</button>
+            <div class="faq-answer" id="faq-access-2">
+              <p>Email <a href="mailto:hello@elevenspark.example">hello@elevenspark.example</a> for help or to request adjustments.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a class="logo" href="index.html">ElevenSpark</a>
-        <p class="footer-copy">© <span data-year></span> ElevenSpark. We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</p>
+  <footer>
+    <div class="container">
+      <div class="footer-columns">
+        <div>
+          <h4>ElevenSpark</h4>
+          <p>Joyful 11+ practice for curious learners. Build habits that last beyond the exam.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="demo.html">Interactive Demo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="index.html#privacy">Privacy</a></li>
+            <li><a href="index.html#terms">Terms</a></li>
+            <li><a href="index.html#accessibility">Accessibility</a></li>
+            <li><a href="mailto:hello@elevenspark.example">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="demo.html">Interactive Demo</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Support</h3>
-        <ul>
-          <li><a href="mailto:hello@elevenspark.example">Email support</a></li>
-          <li><a href="index.html#privacy">Privacy</a></li>
-          <li><a href="index.html#accessibility">Accessibility</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> ElevenSpark.</span>
+        <span>We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</span>
       </div>
     </div>
   </footer>
-
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

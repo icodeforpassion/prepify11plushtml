@@ -3,8 +3,8 @@
   "short_name": "ElevenSpark",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#050611",
-  "theme_color": "#60E7FF",
+  "background_color": "#F9FAFB",
+  "theme_color": "#3B82F6",
   "icons": [
     {
       "src": "favicon.svg",
