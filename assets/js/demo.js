@@ -987,7 +987,6 @@
       flipped: false,
       streak: 0,
     };
-    renderWordBankQueue();
     renderFlashcards();
   };
 
@@ -1063,7 +1062,6 @@
   const flashcardContainer = doc.querySelector('[data-flashcards]');
   const flashcardWord = doc.querySelector('[data-flashcard-word]');
   const flashcardMeaning = doc.querySelector('[data-flashcard-meaning]');
-  const wordBankList = doc.querySelector('[data-word-bank]');
   const flashcardButtons = doc.querySelectorAll('[data-flashcard-action]');
   const quickPracticeContainer = doc.querySelector('[data-quick-practice-container]');
 
@@ -1187,28 +1185,10 @@
     counter.textContent = `${state.flashcards.queue.length} cards left`;
     const streak = doc.querySelector('[data-flashcard-streak]');
     streak.textContent = `Streak: ${state.flashcards.streak}`;
-    renderWordBankQueue();
     if (state.flashcards.completed) {
       flashcardContainer.querySelector('.flashcard-inner').textContent = 'Great job! Deck complete.';
     }
   };
-
-  function renderWordBankQueue() {
-    if (!wordBankList || !state.flashcards) return;
-    wordBankList.innerHTML = '';
-    const preview = state.flashcards.queue.slice(0, 12);
-    preview.forEach((entry, index) => {
-      const item = doc.createElement('div');
-      item.className = 'word-bank-item';
-      item.innerHTML = `<strong>${index + 1}. ${entry.word}</strong><span>${entry.meaning}</span>`;
-      wordBankList.appendChild(item);
-    });
-    if (!preview.length) {
-      const emptyState = doc.createElement('div');
-      emptyState.textContent = 'All words reviewed – refresh to restart the deck.';
-      wordBankList.appendChild(emptyState);
-    }
-  }
 
   quizStartForm?.addEventListener('submit', (event) => {
     event.preventDefault();
@@ -1271,121 +1251,6 @@
       quickPracticeContainer?.scrollIntoView({ behavior: 'smooth' });
     });
   });
-
-  const tabs = Array.from(doc.querySelectorAll('[role="tab"]'));
-  const panels = Array.from(doc.querySelectorAll('[role="tabpanel"]'));
-
-  const activateTab = (tab) => {
-    tabs.forEach((button) => {
-      const isSelected = button === tab;
-      button.setAttribute('aria-selected', String(isSelected));
-      button.tabIndex = isSelected ? 0 : -1;
-    });
-    panels.forEach((panel) => {
-      const controls = tab.getAttribute('aria-controls');
-      panel.hidden = panel.id !== controls;
-    });
-    if (tab.id === 'tab-vocab' && !state.flashcards) {
-      startFlashcards();
-    }
-  };
-
-  const focusTab = (index) => {
-    const clamped = (index + tabs.length) % tabs.length;
-    tabs[clamped].focus();
-    activateTab(tabs[clamped]);
-  };
-
-  tabs.forEach((tab, index) => {
-    tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
-    tab.addEventListener('click', () => activateTab(tab));
-    tab.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-        event.preventDefault();
-        focusTab(index + 1);
-      }
-      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-        event.preventDefault();
-        focusTab(index - 1);
-      }
-      if (event.key === 'Home') {
-        event.preventDefault();
-        focusTab(0);
-      }
-      if (event.key === 'End') {
-        event.preventDefault();
-        focusTab(tabs.length - 1);
-      }
-    });
-  });
-
-  const topicSelect = quizStartForm?.querySelector('[name="demo-topic"]');
-  const modeInputs = quizStartForm?.querySelectorAll('input[name="demo-type"]');
-
-  const setTopicForMode = (mode) => {
-    if (!topicSelect) return;
-    const isVocab = mode === 'vocab';
-    const desired = isVocab ? 'synonyms' : 'fractions';
-    if (Array.from(topicSelect.options).some((option) => option.value === desired)) {
-      topicSelect.value = desired;
-    }
-  };
-
-  modeInputs?.forEach((input) => {
-    input.addEventListener('change', (event) => {
-      const { value } = event.target;
-      setTopicForMode(value);
-    });
-  });
-
-  const hashToTab = {
-    '#math': 'tab-maths',
-    '#maths': 'tab-maths',
-    '#vocab': 'tab-vocab',
-    '#vocabulary': 'tab-vocab',
-    '#mini': 'tab-mini',
-    '#mini-mock': 'tab-mini',
-  };
-
-  const tabToMode = {
-    'tab-maths': 'maths',
-    'tab-vocab': 'vocab',
-    'tab-mini': 'mini-mock',
-  };
-
-  const activateFromHash = () => {
-    const rawHash = (location.hash || '').toLowerCase();
-    const targetTabId = hashToTab[rawHash];
-    if (!targetTabId) return;
-    const targetTab = doc.getElementById(targetTabId);
-    if (!targetTab) return;
-    activateTab(targetTab);
-    if (typeof targetTab.focus === 'function') {
-      try {
-        targetTab.focus({ preventScroll: true });
-      } catch (error) {
-        targetTab.focus();
-      }
-    }
-    const mode = tabToMode[targetTabId];
-    if (mode && quizStartForm) {
-      const modeInput = quizStartForm.querySelector(`input[name="demo-type"][value="${mode}"]`);
-      if (modeInput && !modeInput.checked) {
-        modeInput.checked = true;
-        setTopicForMode(mode);
-      }
-    }
-  };
-
-  if (tabs.length) {
-    activateFromHash();
-    window.addEventListener('hashchange', activateFromHash);
-  }
-
-  if (quizStartForm) {
-    const initialMode = quizStartForm.querySelector('input[name="demo-type"]:checked')?.value;
-    if (initialMode) setTopicForMode(initialMode);
-  }
 
   if (quizStartForm && quizStartForm.dataset.autoStart === 'true') {
     const formData = new FormData(quizStartForm);

@@ -1,9 +1,7 @@
-/* Main site interactions: theming, navigation, accordions, modals, analytics consent */
+/* Main site interactions: navigation, accordions, modals, analytics consent */
 (function () {
   const doc = document;
   const body = doc.body;
-  const root = doc.documentElement;
-  const themeToggles = Array.from(doc.querySelectorAll('[data-theme-toggle]'));
   const mobileToggle = doc.querySelector('[data-mobile-toggle]');
   const mobileMenu = doc.querySelector('[data-mobile-menu]');
   const quickPracticeModal = doc.querySelector('#quick-practice-modal');
@@ -15,46 +13,6 @@
   const consentDecline = doc.querySelector('[data-consent-decline]');
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Theming
-  const themeStorageKey = 'elevenspark-theme';
-  const safeStorage = {
-    get() {
-      try {
-        return window.localStorage.getItem(themeStorageKey);
-      } catch (error) {
-        return null;
-      }
-    },
-    set(value) {
-      try {
-        window.localStorage.setItem(themeStorageKey, value);
-      } catch (error) {
-        /* ignore storage errors */
-      }
-    },
-  };
-
-  const applyTheme = (theme) => {
-    const resolvedTheme = theme === 'light' ? 'light' : 'dark';
-    root.setAttribute('data-theme', resolvedTheme);
-    themeToggles.forEach((toggle) => {
-      toggle.dataset.mode = resolvedTheme;
-      toggle.setAttribute('aria-pressed', String(resolvedTheme === 'dark'));
-    });
-  };
-
-  const storedTheme = safeStorage.get();
-  const initialTheme = storedTheme || root.getAttribute('data-theme') || 'dark';
-  applyTheme(initialTheme);
-
-  themeToggles.forEach((toggle) => {
-    toggle.addEventListener('click', () => {
-      const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(nextTheme);
-      safeStorage.set(nextTheme);
-    });
-  });
 
   const trapFocus = (container) => {
     const focusable = container.querySelectorAll(
@@ -184,10 +142,6 @@
   consentDecline?.addEventListener('click', () => {
     sessionStorage.setItem(storageKey, 'declined');
     consentBanner?.setAttribute('aria-hidden', 'true');
-  });
-
-  doc.querySelectorAll('[data-year]').forEach((node) => {
-    node.textContent = String(new Date().getFullYear());
   });
 
   // Smooth scroll for anchor links

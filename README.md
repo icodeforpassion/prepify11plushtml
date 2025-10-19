@@ -1,47 +1,45 @@
 # ElevenSpark Static Demo
 
-ElevenSpark is a fully static HTML/CSS/JavaScript experience that mirrors a neon, glassmorphism aesthetic inspired by modern airline retailing. It highlights a seeded 11+ practice demo with maths and vocabulary generators, responsive marketing pages, and accessible interactions.
+ElevenSpark is a fully static HTML/CSS/JS site designed for GitHub Pages. It showcases our approach to calm, confidence-building 11+ preparation with a seeded maths & vocabulary demo.
 
 ## Getting started locally
 
-1. Clone or download this repository.
-2. Open `index.html` in your browser. No build tools are required.
-3. For best results, serve the project with a lightweight HTTP server (for example `python -m http.server`) so fonts and the manifest load without cross-origin warnings.
+1. Clone or download the repository.
+2. Open `index.html` in your browser. No build step is required.
+3. For best results, serve the folder with a simple HTTP server (e.g. `python -m http.server`) to avoid CORS restrictions when loading fonts.
 
-## Publishing on GitHub Pages
+## Publishing to GitHub Pages
 
 1. Push the repository to GitHub.
-2. In the repository settings, open **Pages** and choose the `main` branch (root) as the source.
-3. Save. GitHub Pages will publish your site at `https://<username>.github.io/<repo>/`.
+2. In your repo settings, go to **Pages** and choose the `main` branch (root) as the source.
+3. Save. GitHub Pages will publish the site at `https://<username>.github.io/<repo>/`.
 
-## Customising the experience
+## Customising the demo
 
-- **Colour themes:** Global tokens live in `assets/css/styles.css`. The default experience ships in dark mode with glass panels; `[data-theme='light']` contains light-mode overrides. The header toggle stores the last chosen mode in `localStorage`.
-- **Logo & imagery:** Replace `favicon.svg` and `assets/img/og-image.svg` with your own artwork. Update Open Graph URLs in each HTML file if hosting under a custom domain.
-- **Maths & vocab logic:** Open `assets/js/demo.js` to extend question templates or adjust the 120-word bank. Each template returns a `{ stem, choices, answer, explanation, difficulty }` object and uses a Mulberry32 seeded generator.
-- **Quick practice modal:** `index.html` includes an inline trigger wired through `assets/js/main.js`. Duplicate the `data-quick-practice` attributes to surface the mini-quiz anywhere else.
+- **Word bank & templates:** Edit `assets/js/demo.js`. Maths question templates live near the top, vocabulary templates and the word bank below. Each generator returns an object with `stem`, `choices`, `answer`, and `explanation`.
+- **Colours & fonts:** Update CSS variables in `assets/css/styles.css`. Headings use Google Font Poppins; body text uses system fonts.
+- **Logo & images:** Replace `favicon.svg` and `assets/img/og-image.svg` with your own assets.
 
 ## Privacy & accessibility notes
 
-- Quiz and flashcard state lives entirely in memory. Only the theme preference uses `localStorage`; optional Google Analytics loads **only after** the visitor grants consent.
-- The interface follows WCAG 2.2 AA guidance: semantic landmarks, skip link, keyboard-accessible tabs and accordions, visible focus, reduced motion support, and aria attributes for modals and menus.
+- The demo stores everything in memory; no cookies or localStorage are used. Optional analytics only load after explicit consent.
+- Components follow WCAG 2.2 AA guidelines: semantic HTML, focus states, ARIA attributes, and reduced motion support.
 
-## Repository structure
+## File overview
 
 ```
-index.html                 # Marketing home with quick-practice modal
-pricing.html               # Plans, comparison table, billing FAQs
-faq.html                   # Structured FAQ with jump list
-blog.html                  # Article index
-blog/*.html                # Long-form articles with schema.org metadata
-demo.html                  # Interactive maths/vocab/mini-mock demo
-assets/css/styles.css      # Global styling & theming tokens
-assets/js/main.js          # Navigation, theming, modal, consent banner
+index.html                 # Home
+pricing.html               # Plans & comparison
+faq.html                   # Structured FAQ page
+blog.html                  # Blog index
+blog/*.html                # Article pages
+demo.html                  # Interactive demo (maths, vocab, mini-mock)
+assets/css/styles.css      # Global styles & utilities
+assets/js/main.js          # Navigation, modals, consent banner
 assets/js/demo.js          # Seeded quiz & flashcard logic
-assets/img/og-image.svg    # Social preview artwork
-favicon.svg                # App icon
-manifest.webmanifest       # Metadata for install prompts
-robots.txt, sitemap.xml    # SEO helpers
+sitemap.xml, robots.txt    # SEO helpers
+manifest.webmanifest       # PWA metadata
+favicon.svg, assets/img/*  # Icons & social image
 ```
 
-Questions? Reach out via `hello@elevenspark.example` – and remember: we build confidence & fundamentals — **no pass guarantees**.
+Enjoy exploring the ElevenSpark experience!
