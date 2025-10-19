@@ -3,131 +3,273 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prepify11Plus – Custom Mock Test</title>
-  <meta name="description" content="Build your own 11+ mock tests by combining topics like arithmetic, fractions, geometry, and reasoning." />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <title>Prepify11Plus – Mock Tests</title>
+  <meta name="description" content="Generate custom 11+ mock tests from Arithmetic, Fractions, Geometry, Reasoning and more with timer and instant results." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
   <style>
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #f5f6fa;
-      margin: 0;
-      padding: 0;
-      color: #333;
+    main.page-shell {
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem 1rem;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s, color 0.3s;
     }
-    header {
-      background: #0066cc;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: white;
-      border-radius: 10px;
+
+    .mock-container {
+      max-width: 960px;
+      margin: auto;
+      background: var(--bg-alt);
+      border-radius: 16px;
+      box-shadow: var(--shadow-s);
       padding: 2rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    select, input[type=number] {
-      width: 100%;
-      padding: 0.5rem;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      margin-top: 0.4rem;
+
+    .mock-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
     }
+
+    .mock-header h1 {
+      background: var(--gradient-text);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .mock-form {
+      display: grid;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .mock-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    select, input[type="number"] {
+      font: inherit;
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    select:focus, input:focus {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
     button {
-      background: #0066cc;
+      background: var(--primary);
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 8px;
       padding: 0.7rem 1.2rem;
+      font-weight: 600;
       cursor: pointer;
-      font-size: 1rem;
       transition: background 0.3s;
     }
-    button:hover { background: #004c99; }
-    .builder { display: flex; flex-direction: column; gap: 1rem; }
-    .question-card { margin-top: 2rem; }
-    .option-btn {
-      display: block;
-      margin: 0.5rem 0;
-      padding: 0.6rem;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      background: #fafafa;
-      width: 100%;
+
+    button:hover {
+      background: var(--primary-hover);
+    }
+
+    button.secondary {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .mock-question {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border-radius: 12px;
+      background: var(--bg-alt);
+      box-shadow: var(--shadow-xs);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .mock-question h2 {
+      margin-bottom: 1rem;
+    }
+
+    .mock-options {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .mock-options button {
       text-align: left;
-      cursor: pointer;
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.6rem 0.8rem;
       transition: all 0.2s;
     }
-    .option-btn:hover { background: #e9f3ff; }
-    .option-btn.correct { background: #d4edda; border-color: #28a745; }
-    .option-btn.incorrect { background: #f8d7da; border-color: #dc3545; }
-    .feedback { margin-top: 1rem; font-weight: 500; }
+
+    .mock-options button:hover {
+      background: rgba(70,110,255,0.1);
+      border-color: var(--primary);
+    }
+
+    .mock-options button.correct {
+      background: #2ecc71;
+      color: white;
+      border-color: #27ae60;
+    }
+
+    .mock-options button.incorrect {
+      background: #e74c3c;
+      color: white;
+      border-color: #c0392b;
+    }
+
     .scoreboard {
       display: flex;
       justify-content: space-between;
-      background: #eef5ff;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
       padding: 0.6rem 1rem;
-      border-radius: 6px;
       margin-top: 1rem;
     }
-    .results {
-      margin-top: 2rem;
-      border-top: 2px solid #eee;
-      padding-top: 1rem;
+
+    .feedback {
+      margin-top: 1rem;
+      font-weight: 600;
     }
-    .hidden { display: none; }
+
+    .feedback.correct { color: #2ecc71; }
+    .feedback.incorrect { color: #e74c3c; }
+
+    .result-card {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 12px;
+      background: var(--bg-alt);
+      box-shadow: var(--shadow-xs);
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 700px) {
+      .mock-container { padding: 1.3rem; }
+      button { width: 100%; }
+    }
   </style>
 </head>
 <body>
-  <header><h1>Prepify11Plus Mock Builder</h1></header>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="brand-logo">P</div>
+        <h1>Prepify11Plus</h1>
+      </div>
+      <div class="nav-group">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="flashcards.html">Flashcards</a>
+          <a href="maths.html">Maths Practice</a>
+          <a href="mock.html" aria-current="page">Mock Tests</a>
+          <a href="about.html">About</a>
+        </nav>
+        <label class="theme-picker">
+          <span>Theme</span>
+          <select data-theme-select aria-label="Choose a superhero theme">
+            <option value="superman">Superman</option>
+            <option value="spiderman">Spiderman</option>
+            <option value="captain">Captain America</option>
+            <option value="batman">Batman</option>
+            <option value="ironman">Iron Man</option>
+            <option value="hulk">Hulk</option>
+            <option value="thor">Thor</option>
+            <option value="blackpanther">Black Panther</option>
+            <option value="wonderwoman">Wonder Woman</option>
+            <option value="flash">Flash</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </header>
 
-  <main>
-    <!-- Mock Config -->
-    <section id="builderSection" class="builder">
-      <h2>Build Your Own Mock</h2>
-      <label>Choose Subject:
-        <select id="subjectSelect">
-          <option value="maths">Maths</option>
-          <option value="reasoning">Reasoning</option>
-        </select>
-      </label>
-      <label>Number of Questions:
-        <input type="number" id="questionCount" min="5" max="30" value="10" />
-      </label>
-      <label>Time Limit (minutes):
-        <input type="number" id="timeLimit" min="5" max="60" value="15" />
-      </label>
-      <button id="startMock">Start Mock Test</button>
-      <p id="loadStatus" style="font-size: 0.9rem; color: gray;">Loading question banks...</p>
-    </section>
-
-    <!-- Mock in Progress -->
-    <section id="mockSection" class="hidden">
-      <div class="scoreboard">
-        <div>Question: <span id="qIndex">0</span></div>
-        <div>Score: <span id="score">0</span></div>
-        <div>Time left: <span id="timer">—</span></div>
+  <main class="page-shell">
+    <div class="mock-container">
+      <div class="mock-header">
+        <h1>Custom Mock Test Builder</h1>
+        <p>Select topics, choose the number of questions, and start your timed 11+ mock test instantly.</p>
       </div>
 
-      <div class="question-card">
-        <h3 id="questionText">Loading question...</h3>
-        <div id="optionsContainer"></div>
-        <p class="feedback" id="feedback"></p>
-        <button id="nextQuestion" class="hidden">Next Question</button>
-      </div>
-    </section>
+      <form id="mockForm" class="mock-form">
+        <label>Topic
+          <select id="topicSelect">
+            <option value="all">All Topics</option>
+            <option value="arithmetic_questions.json">Arithmetic</option>
+            <option value="fractions_questions.json">Fractions</option>
+            <option value="geometry_questions.json">Geometry</option>
+            <option value="measurement_questions.json">Measurement</option>
+            <option value="reasoning_questions.json">Reasoning</option>
+            <option value="triangle_logic_questions.json">Triangle Logic</option>
+          </select>
+        </label>
 
-    <!-- Results -->
-    <section id="resultSection" class="results hidden">
-      <h2>Results</h2>
-      <p id="resultSummary"></p>
-      <button id="restartMock">Try Again</button>
-    </section>
+        <label>Number of Questions
+          <input type="number" id="questionCount" min="5" max="50" value="10">
+        </label>
+
+        <label>Time Limit (minutes)
+          <input type="number" id="timeLimit" min="5" max="60" value="15">
+        </label>
+
+        <button type="button" id="startMock">Start Mock</button>
+        <p id="statusMessage" style="color:var(--text-light); font-size:0.9rem;">Loading question banks...</p>
+      </form>
+
+      <section id="mockSection" hidden>
+        <div class="scoreboard">
+          <div>Question <span id="qIndex">0</span></div>
+          <div>Score <span id="score">0</span></div>
+          <div>Time <span id="timer">--:--</span></div>
+        </div>
+
+        <div class="mock-question">
+          <h2 id="questionText">Question text will appear here</h2>
+          <div id="optionsContainer" class="mock-options"></div>
+          <p id="feedback" class="feedback"></p>
+        </div>
+
+        <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;">
+          <button id="nextQuestion" class="secondary" disabled>Next Question</button>
+          <button id="endMock" class="secondary">End Test</button>
+        </div>
+      </section>
+
+      <section id="resultSection" class="result-card" hidden>
+        <h2>Your Results</h2>
+        <p id="resultSummary"></p>
+        <button id="restartMock">Start New Mock</button>
+      </section>
+    </div>
   </main>
 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus. Keep practising smart!</p>
+      <div class="counter">
+        <span>Visitors so far:</span>
+        <span id="countValue">40,000+</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/theme.js" defer></script>
+  <script src="assets/counter.js" defer></script>
   <script>
     const DATA_FILES = [
       "data/arithmetic_questions.json",
@@ -138,37 +280,36 @@
       "data/triangle_logic_questions.json"
     ];
 
-    let questionPool = [];
+    let questionBank = [];
     let questions = [];
-    let index = 0, score = 0, timer = null, timeLeft = 0;
+    let currentIndex = 0;
+    let score = 0;
+    let timer = null;
+    let timeLeft = 0;
 
-    const builderSection = document.getElementById('builderSection');
+    const statusMsg = document.getElementById('statusMessage');
+    const mockForm = document.getElementById('mockForm');
     const mockSection = document.getElementById('mockSection');
     const resultSection = document.getElementById('resultSection');
-    const startBtn = document.getElementById('startMock');
-    const nextBtn = document.getElementById('nextQuestion');
-    const restartBtn = document.getElementById('restartMock');
     const qText = document.getElementById('questionText');
     const optionsContainer = document.getElementById('optionsContainer');
     const feedback = document.getElementById('feedback');
     const scoreDisplay = document.getElementById('score');
     const qIndex = document.getElementById('qIndex');
     const timerDisplay = document.getElementById('timer');
-    const summary = document.getElementById('resultSummary');
-    const loadStatus = document.getElementById('loadStatus');
+    const nextBtn = document.getElementById('nextQuestion');
+    const endBtn = document.getElementById('endMock');
+    const resultSummary = document.getElementById('resultSummary');
+    const restartBtn = document.getElementById('restartMock');
 
-    // ---- Load all JSON files ----
-    Promise.all(DATA_FILES.map(file => fetch(file).then(r => r.json())))
+    // Load all data files
+    Promise.all(DATA_FILES.map(f => fetch(f).then(r => r.json())))
       .then(results => {
-        questionPool = results.flat(); // merge all question arrays
-        loadStatus.textContent = `✅ Loaded ${questionPool.length} total questions`;
+        questionBank = results.flat();
+        statusMsg.textContent = `✅ Loaded ${questionBank.length} total questions`;
       })
-      .catch(err => {
-        console.error("Error loading JSON files:", err);
-        loadStatus.textContent = "⚠️ Some question files failed to load.";
-      });
+      .catch(() => statusMsg.textContent = '⚠️ Error loading question files.');
 
-    // ---- Timer ----
     function startTimer(minutes) {
       timeLeft = minutes * 60;
       timerDisplay.textContent = formatTime(timeLeft);
@@ -181,91 +322,101 @@
         }
       }, 1000);
     }
-    function formatTime(s) {
-      const m = Math.floor(s/60);
-      const sec = s%60;
-      return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
     }
 
-    // ---- Start Mock ----
-    startBtn.addEventListener('click', () => {
+    document.getElementById('startMock').addEventListener('click', () => {
+      const topic = document.getElementById('topicSelect').value;
       const count = parseInt(document.getElementById('questionCount').value, 10);
       const time = parseInt(document.getElementById('timeLimit').value, 10);
 
-      if (questionPool.length === 0) {
-        alert("Questions are still loading. Please wait a moment.");
+      if (!questionBank.length) {
+        alert('Questions not loaded yet. Please wait a few seconds.');
         return;
       }
 
-      questions = questionPool.sort(() => Math.random() - 0.5).slice(0, count);
-      index = 0; score = 0;
+      if (topic === 'all') {
+        questions = questionBank.slice();
+      } else {
+        questions = questionBank.filter(q => q.source?.includes(topic) || true);
+      }
 
-      builderSection.classList.add('hidden');
-      resultSection.classList.add('hidden');
-      mockSection.classList.remove('hidden');
-      scoreDisplay.textContent = '0';
-      qIndex.textContent = '1';
+      questions = questions.sort(() => Math.random() - 0.5).slice(0, count);
+      score = 0;
+      currentIndex = 0;
+
+      mockForm.hidden = true;
+      resultSection.hidden = true;
+      mockSection.hidden = false;
+      scoreDisplay.textContent = score;
+      qIndex.textContent = 1;
       startTimer(time);
       showQuestion();
     });
 
-    // ---- Display Question ----
     function showQuestion() {
-      const q = questions[index];
+      const q = questions[currentIndex];
       qText.textContent = q.question;
       optionsContainer.innerHTML = '';
       feedback.textContent = '';
-      nextBtn.classList.add('hidden');
-      (q.options || []).sort(() => Math.random() - 0.5).forEach(opt => {
+      nextBtn.disabled = true;
+      const shuffled = q.options.sort(() => Math.random() - 0.5);
+      shuffled.forEach(opt => {
         const btn = document.createElement('button');
         btn.textContent = opt;
-        btn.className = 'option-btn';
         btn.onclick = () => handleAnswer(btn, q.answer, q.explanation);
         optionsContainer.appendChild(btn);
       });
     }
 
-    // ---- Evaluate Answer ----
     function handleAnswer(btn, correct, exp) {
       const allBtns = optionsContainer.querySelectorAll('button');
       allBtns.forEach(b => b.disabled = true);
-      if (btn.textContent === correct) {
+      const isCorrect = btn.textContent === correct;
+      if (isCorrect) {
         btn.classList.add('correct');
-        score++;
         feedback.textContent = '✅ Correct! ' + (exp || '');
+        feedback.className = 'feedback correct';
+        score++;
       } else {
         btn.classList.add('incorrect');
-        feedback.textContent = `❌ Incorrect. Correct: ${correct}. ${exp || ''}`;
+        feedback.textContent = '❌ Incorrect. Correct: ' + correct;
+        feedback.className = 'feedback incorrect';
         allBtns.forEach(b => { if (b.textContent === correct) b.classList.add('correct'); });
       }
       scoreDisplay.textContent = score;
-      nextBtn.classList.remove('hidden');
+      nextBtn.disabled = false;
     }
 
-    // ---- Next Question ----
     nextBtn.addEventListener('click', () => {
-      index++;
-      if (index >= questions.length) finishMock(false);
+      currentIndex++;
+      if (currentIndex >= questions.length) finishMock(false);
       else {
-        qIndex.textContent = index + 1;
+        qIndex.textContent = currentIndex + 1;
         showQuestion();
       }
     });
 
-    // ---- Finish ----
     function finishMock(timeout) {
       clearInterval(timer);
-      mockSection.classList.add('hidden');
-      resultSection.classList.remove('hidden');
-      summary.textContent = timeout
+      mockSection.hidden = true;
+      resultSection.hidden = false;
+      resultSummary.textContent = timeout
         ? `⏰ Time's up! You scored ${score}/${questions.length}.`
         : `You scored ${score}/${questions.length}.`;
     }
 
+    endBtn.addEventListener('click', () => finishMock(false));
     restartBtn.addEventListener('click', () => {
-      resultSection.classList.add('hidden');
-      builderSection.classList.remove('hidden');
+      resultSection.hidden = true;
+      mockForm.hidden = false;
     });
+
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
