@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Demo | ElevenSpark</title>
+  <meta name="description" content="Try the ElevenSpark 11+ demo for maths, vocabulary, and mini-mock questions with instant feedback." />
+  <link rel="canonical" href="https://elevenspark.example/demo.html" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="favicon.svg" />
+  <meta property="og:title" content="Interactive Demo | ElevenSpark" />
+  <meta property="og:description" content="Experience dynamic 11+ maths and vocabulary questions with our free ElevenSpark demo." />
+  <meta property="og:url" content="https://elevenspark.example/demo.html" />
+  <meta property="og:image" content="https://elevenspark.example/assets/img/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header class="site-shell">
+    <div class="container site-header" role="navigation" aria-label="Primary">
+      <a class="logo" href="index.html">ElevenSpark</a>
+      <button class="mobile-nav-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="demo.html" aria-current="page">Interactive Demo</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" data-mode="dark">
+          <span class="theme-icon icon-moon" aria-hidden="true">🌙</span>
+          <span class="theme-icon icon-sun" aria-hidden="true">☀️</span>
+          <span class="sr-only">Toggle colour theme</span>
+        </button>
+        <a class="btn btn-glow" href="#practice">Start practising</a>
+      </nav>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="demo.html" aria-current="page">Interactive Demo</a>
+      </nav>
+      <div class="mobile-menu-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="true" data-mode="dark">
+          <span class="theme-icon icon-moon" aria-hidden="true">🌙</span>
+          <span class="theme-icon icon-sun" aria-hidden="true">☀️</span>
+          <span class="sr-only">Toggle colour theme</span>
+        </button>
+        <a class="btn btn-glow" href="#practice">Start practising</a>
+        <button class="btn btn-outline" data-mobile-toggle aria-label="Close menu">Close</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero hero-compact">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="badge">Client-side preview</div>
+          <h1>Interactive 11+ demo</h1>
+          <p class="section-subtitle">Explore dynamic maths, vocabulary, and mini-mock questions. Nothing is saved — refresh to reset. We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</p>
+        </div>
+        <aside class="hero-panel" aria-label="Demo highlights">
+          <ul class="hero-benefits">
+            <li>Seeded Mulberry32 randomness</li>
+            <li>Instant worked solutions</li>
+            <li>Flashcards with SRS-style flips</li>
+          </ul>
+          <a class="btn btn-panel" href="#practice">Begin the practice flow</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="practice" aria-labelledby="practice-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="practice-heading">Choose your practice mode</h2>
+          <p class="section-subtitle">All interactions run locally in your browser. Switch tabs to try maths, vocabulary, or a 10-question mini-mock.</p>
+        </header>
+        <form class="card" data-quiz-form data-auto-start="true">
+          <fieldset>
+            <legend>Mode</legend>
+            <div class="feature-list">
+              <label><input type="radio" name="demo-type" value="maths" checked /> Maths</label>
+              <label><input type="radio" name="demo-type" value="vocab" /> Vocabulary</label>
+              <label><input type="radio" name="demo-type" value="mini-mock" /> Mini-mock</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Topic</legend>
+            <div class="feature-list">
+              <label for="topic">Choose topic</label>
+              <select id="topic" name="demo-topic" data-topic-select>
+                <optgroup label="Maths">
+                  <option value="number-arithmetic">Number &amp; Arithmetic</option>
+                  <option value="fractions" selected>Fractions</option>
+                  <option value="decimals-percentages">Decimals &amp; Percentages</option>
+                  <option value="ratio-proportion">Ratio &amp; Proportion</option>
+                  <option value="factors-multiples">Factors &amp; Multiples</option>
+                  <option value="algebra">Intro Algebra</option>
+                  <option value="sequences">Sequences</option>
+                  <option value="measures">Measures</option>
+                  <option value="area-perimeter">Area &amp; Perimeter</option>
+                  <option value="data-handling">Data Handling</option>
+                </optgroup>
+                <optgroup label="Vocabulary">
+                  <option value="synonyms">Synonyms</option>
+                  <option value="antonyms">Antonyms</option>
+                  <option value="cloze">Cloze sentences</option>
+                  <option value="homophones">Homophones</option>
+                  <option value="prefix-suffix">Prefixes &amp; suffixes</option>
+                  <option value="spelling">Spelling checks</option>
+                  <option value="analogies">Analogies</option>
+                  <option value="odd-one-out">Odd one out</option>
+                </optgroup>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Difficulty</legend>
+            <input type="range" id="difficulty" name="demo-difficulty" min="1" max="5" value="2" data-difficulty />
+            <label for="difficulty" class="privacy-note">Adjust difficulty level (1 = gentle, 5 = challenging).</label>
+          </fieldset>
+          <div class="cta-actions">
+            <button class="btn btn-glow" type="submit">Generate practice set</button>
+            <button class="btn btn-outline" type="button" data-reset-quiz>Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="tabs-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="tabs-heading">Maths, vocabulary, and mini-mock tabs</h2>
+          <p class="section-subtitle">Use the tabs to switch topics. Keyboard navigation: arrow keys to switch, Tab to move within the panel.</p>
+        </header>
+        <div class="card" role="tablist" aria-label="Demo modes">
+          <div class="tabs" data-tabs>
+            <button type="button" role="tab" aria-selected="true" id="tab-maths" aria-controls="panel-maths">Maths</button>
+            <button type="button" role="tab" aria-selected="false" id="tab-vocab" aria-controls="panel-vocab">Vocabulary</button>
+            <button type="button" role="tab" aria-selected="false" id="tab-mini" aria-controls="panel-mini">Mini-mock</button>
+          </div>
+          <div class="tab-panels">
+            <section id="panel-maths" role="tabpanel" aria-labelledby="tab-maths">
+              <span id="maths" class="sr-only" aria-hidden="true"></span>
+              <div data-maths-panel>
+                <p>Pick a topic and generate a 5-question set with instant feedback.</p>
+                <div data-quiz-container></div>
+                <div class="card visually-hidden" data-quiz-summary>
+                  <h3>Set summary</h3>
+                  <p><strong>Score:</strong> <span data-summary-score>0%</span></p>
+                  <p><strong>Topic:</strong> <span data-summary-topic>-</span></p>
+                  <p><strong>Difficulty:</strong> <span data-summary-difficulty>-</span></p>
+                  <p data-summary-message></p>
+                  <button class="btn btn-outline" type="button" data-summary-restart>Try another set</button>
+                </div>
+              </div>
+            </section>
+            <section id="panel-vocab" role="tabpanel" aria-labelledby="tab-vocab" hidden>
+              <span id="vocabulary" class="sr-only" aria-hidden="true"></span>
+              <div data-vocab-panel>
+                <p>Flip flashcards, review meanings, and reorder based on Again/Good/Easy buttons.</p>
+                <div class="flashcard" data-flashcards aria-live="polite">
+                  <div class="flashcard-inner">
+                    <div class="flashcard-face flashcard-front">
+                      <p data-flashcard-word>Press start to begin</p>
+                    </div>
+                    <div class="flashcard-face flashcard-back">
+                      <p data-flashcard-meaning>Meaning will appear here.</p>
+                    </div>
+                  </div>
+                </div>
+                <p class="privacy-note" data-flashcard-counter>0 cards left</p>
+                <p class="privacy-note" data-flashcard-streak>Streak: 0</p>
+                <div class="flashcard-actions">
+                  <button class="btn btn-outline" type="button" data-flashcard-action="again">Again</button>
+                  <button class="btn btn-outline" type="button" data-flashcard-action="flip">Flip</button>
+                  <button class="btn btn-glow" type="button" data-flashcard-action="good">Good</button>
+                  <button class="btn btn-outline" type="button" data-flashcard-action="easy">Easy</button>
+                </div>
+                <button class="btn btn-panel" type="button" data-start-flashcards>Start flashcards</button>
+                <p class="privacy-note">Preview of upcoming words:</p>
+                <div class="word-bank" data-word-bank></div>
+              </div>
+            </section>
+            <section id="panel-mini" role="tabpanel" aria-labelledby="tab-mini" hidden>
+              <span id="mini" class="sr-only" aria-hidden="true"></span>
+              <div data-mini-panel>
+                <p>Experience a timed mix of 10 questions (70% maths, 30% vocabulary). Finish to see areas to improve.</p>
+                <div class="mini-controls">
+                  <span class="badge" data-timer aria-live="polite">—</span>
+                  <button class="btn btn-glow" type="button" data-start-mini>Start mini-mock</button>
+                </div>
+                <div data-mini-container></div>
+                <div data-mini-summary hidden></div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" aria-labelledby="badges-heading">
+      <div class="container">
+        <header class="section-header">
+          <h2 class="section-title" id="badges-heading">Friendly demo badges</h2>
+          <p class="section-subtitle">Celebrate little wins. Badges reset when you refresh — we keep practice private.</p>
+        </header>
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Unlocked this session</h3>
+            <ul class="feature-list" data-badge-list>
+              <li>Complete a practice set to reveal your first badge!</li>
+            </ul>
+          </div>
+          <div class="grid grid-1 badge-catalogue">
+            <article class="card feature-card" data-badge="first-set">
+              <h3>Completed first set</h3>
+              <p>Earned after finishing any 5-question set.</p>
+            </article>
+            <article class="card feature-card" data-badge="perfect-score">
+              <h3>Perfect 5/5</h3>
+              <p>Celebrate when every answer is correct.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="index.html">ElevenSpark</a>
+        <p class="footer-copy">© <span data-year></span> ElevenSpark.</p>
+        <p class="footer-copy">We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="mailto:hello@elevenspark.example">Email</a></li>
+          <li><a href="index.html#privacy">Privacy</a></li>
+          <li><a href="index.html#accessibility">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/demo.js" defer></script>
+</body>
+</html>

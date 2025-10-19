@@ -1,0 +1,20 @@
+{
+  "name": "ElevenSpark",
+  "short_name": "ElevenSpark",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#050611",
+  "theme_color": "#60E7FF",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "assets/img/og-image.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
