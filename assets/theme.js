@@ -30,22 +30,37 @@ function applyTheme(themeName) {
     card.classList.toggle("active-theme", card.dataset.themeName === themeName);
   });
 
+  document.querySelectorAll("[data-theme-select]").forEach(select => {
+    if (select.value !== themeName) {
+      select.value = themeName;
+    }
+  });
+
   localStorage.setItem(THEME_KEY, themeName);
 }
 
 function setupThemeControls() {
   const storedTheme = localStorage.getItem(THEME_KEY);
-  if (storedTheme && themes[storedTheme]) {
-    applyTheme(storedTheme);
-  } else {
-    applyTheme("superman");
-  }
+  const initialTheme = storedTheme && themes[storedTheme] ? storedTheme : "superman";
+  applyTheme(initialTheme);
 
   document.querySelectorAll("[data-theme]").forEach(control => {
     control.addEventListener("click", () => {
       const themeName = control.dataset.theme;
       if (themes[themeName]) {
         applyTheme(themeName);
+      }
+    });
+  });
+
+  document.querySelectorAll("[data-theme-select]").forEach(select => {
+    if (select.value !== initialTheme) {
+      select.value = initialTheme;
+    }
+    select.addEventListener("change", (event) => {
+      const selectedTheme = event.target.value;
+      if (themes[selectedTheme]) {
+        applyTheme(selectedTheme);
       }
     });
   });
