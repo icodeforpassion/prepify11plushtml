@@ -1,183 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>11+ Vocabulary Flashcards | Prepify11+</title>
-  <meta name="description" content="Flip through joyful 11+ vocabulary flashcards for Year 5 students. Learn meanings, usage, and synonyms with smooth animations." />
-  <meta name="keywords" content="11+ flashcards, vocabulary practice, year 5 words, prepify11plus flashcards, english revision" />
-  <link rel="canonical" href="https://prepify11plus.example/flashcards.html" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="favicon.svg" />
-  <meta property="og:title" content="11+ Vocabulary Flashcards | Prepify11+" />
-  <meta property="og:description" content="Shuffle bright and friendly flashcards to grow English vocabulary for the 11+." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://prepify11plus.example/flashcards.html" />
-  <meta property="og:image" content="https://prepify11plus.example/assets/img/og-image.svg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta charset="UTF-8">
+  <title>Prepify 11+ Vocabulary Flashcards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --bg: #f5f8fc;
+      --bg-alt: #ffffff;
+      --text: #1f2933;
+      --text-light: #4b5b68;
+      --primary: #3b65ff;
+      --accent: #5c8dfd;
+      --card-front: linear-gradient(145deg, #3b65ff, #6b8dff);
+      --card-back: #ffffff;
+    }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background 0.4s, color 0.4s;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--bg-alt);
+      border-bottom: 1px solid #ccc;
+      padding: 0.8rem 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    h1 {
+      font-size: 1.4rem;
+      background: linear-gradient(90deg, #3558ff, #8f46ff 55%, #ff8a3d);
+      -webkit-background-clip: text;
+      color: transparent;
+      margin: 0;
+    }
+    .theme-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .theme-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .theme-btn:hover {
+      transform: scale(1.1);
+    }
+    .hero {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .hero.active {
+      border-color: #fff;
+      transform: scale(1.2);
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem 1rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+    .card {
+      width: 360px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      transition: transform 0.7s;
+      transform-style: preserve-3d;
+    }
+    .card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+    .face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      text-align: center;
+      padding: 1rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .front {
+      background: var(--card-front);
+      color: #fff;
+    }
+    .back {
+      background: var(--card-back);
+      color: var(--text);
+      transform: rotateY(180deg);
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 0.8rem;
+      background: var(--bg-alt);
+      border-top: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
   <header>
-    <div class="container site-header" role="navigation" aria-label="Primary">
-      <a class="logo" href="index.html" aria-label="Prepify11+ home">
-        <svg viewBox="0 0 64 64" role="img" aria-labelledby="logo-title-flashcards">
-          <title id="logo-title-flashcards">Prepify11+ shooting star</title>
-          <circle cx="32" cy="32" r="30" fill="#4f90ff" opacity="0.14"></circle>
-          <path d="M20 42l8-20 6 12 10-16" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-          <circle cx="44" cy="18" r="4" fill="#f59f58"></circle>
-        </svg>
-        Prepify11+
-      </a>
-      <button class="mobile-nav-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">☰</button>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html#mock-test">Free Mock Test</a>
-        <a href="flashcards.html" aria-current="page">Flashcards</a>
-        <a href="blog.html">Blog</a>
-        <a href="faq.html">FAQ</a>
-        <a class="btn btn-secondary" href="index.html#mock-test">Start Practice</a>
-      </nav>
-    </div>
-    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
-      <nav>
-        <a href="index.html#mock-test">Free Mock Test</a>
-        <a href="flashcards.html" aria-current="page">Flashcards</a>
-        <a href="blog.html">Blog</a>
-        <a href="faq.html">FAQ</a>
-      </nav>
-      <button class="btn" data-mobile-toggle aria-label="Close menu">Close</button>
+    <h1>Prepify 11+ Vocabulary Flashcards</h1>
+    <div class="theme-bar">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/35/Superman_shield.svg" class="hero" id="superman" title="Superman">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/02/Spiderman_logo.svg" class="hero" id="spiderman" title="Spiderman">
+      <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Captain_America_shield.svg" class="hero" id="captain" title="Captain America">
+      <img src="https://upload.wikimedia.org/wikipedia/en/0/0c/Batman_logo.svg" class="hero" id="batman" title="Batman">
     </div>
   </header>
-  <main id="main">
-    <section class="hero flashcard-hero">
-      <div class="container hero-content">
-        <div>
-          <div class="badge">Vocabulary playground</div>
-          <h1>Flip, learn, and celebrate new words.</h1>
-          <p>Prepify11+ flashcards feature lively synonyms, definitions, and example sentences written for Year 5 learners. Mix and randomise cards to boost understanding in minutes.</p>
-          <div class="flex flex-wrap hero-actions">
-            <a class="btn" href="#flashcard-lab">Start flipping</a>
-            <a class="btn btn-outline" href="index.html#mock-test">Try the mock test</a>
-          </div>
-          <p class="confidence-note">We build confidence and fundamentals.</p>
-        </div>
-        <div class="hero-illustration" aria-hidden="true">
-          <div class="orbit"></div>
-          <div class="hero-card">
-            <span>Flashcards</span>
-            <strong>Shuffle &amp; flip</strong>
-            <p>Words + example sentences</p>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section flashcard-lab" id="flashcard-lab" aria-labelledby="flashcard-lab-heading">
-      <div class="container flashcard-lab-inner">
-        <div>
-          <h2 class="section-title" id="flashcard-lab-heading">Interactive Flashcard Lab</h2>
-          <p class="section-subtitle">Use the buttons below to move through the deck, flip between word and meaning, or jump to a random card.</p>
-        </div>
-        <div class="flashcard-app">
-          <div class="flashcard-stack">
-            <div class="flashcard" data-flashcard aria-live="polite">
-              <div class="flashcard-inner">
-                <div class="flashcard-face flashcard-front" data-flashcard-front>Press shuffle to begin</div>
-                <div class="flashcard-face flashcard-back" data-flashcard-back>Meanings appear here with an example sentence.</div>
-              </div>
-            </div>
-            <div class="flashcard-meta">
-              <p data-flashcard-progress>Card 0 of 0</p>
-              <p data-flashcard-topic>Focus: vocabulary</p>
-            </div>
-          </div>
-          <div class="flashcard-controls">
-            <button class="btn btn-outline" type="button" data-prev-card>Previous</button>
-            <button class="btn" type="button" data-flip-card>Flip card</button>
-            <button class="btn btn-outline" type="button" data-next-card>Next</button>
-            <button class="btn btn-secondary" type="button" data-random-card>Randomise</button>
-          </div>
-          <div class="flashcard-actions-row">
-            <button class="btn" type="button" data-shuffle-cards>Shuffle deck</button>
-          </div>
-        </div>
+  <main>
+    <div class="card" id="flashcard">
+      <div class="card-inner">
+        <div class="face front" id="frontText">Courage</div>
+        <div class="face back" id="backText">The ability to do something that frightens one.</div>
       </div>
-    </section>
-
-    <section class="section" aria-labelledby="tips-heading">
-      <div class="container">
-        <h2 class="section-title" id="tips-heading">Tips to make flashcards stick</h2>
-        <div class="grid grid-3">
-          <article class="card">
-            <h3>Speak the word aloud</h3>
-            <p>Say the word, spell it, and use it in a sentence. Hearing yourself boosts memory and confidence.</p>
-          </article>
-          <article class="card">
-            <h3>Link to real life</h3>
-            <p>Connect each word to a personal story or favourite book character to lock in meaning.</p>
-          </article>
-          <article class="card">
-            <h3>Mix with the mock test</h3>
-            <p>Swap between flashcards and the mock test for a balanced routine across maths and vocabulary.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+    </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="footer-columns">
-        <div>
-          <h4>Prepify11+</h4>
-          <p>Beautiful, free 11+ preparation built for Year 5 confidence.</p>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="index.html#mock-test">Free Mock Test</a></li>
-            <li><a href="flashcards.html">Flashcards</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Support</h4>
-          <ul>
-            <li><a href="index.html#privacy">Privacy</a></li>
-            <li><a href="index.html#terms">Terms</a></li>
-            <li><a href="index.html#accessibility">Accessibility</a></li>
-            <li><a href="mailto:hello@prepify11plus.example">Contact us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Follow along</h4>
-          <ul>
-            <li><a href="https://www.instagram.com/prepify11plus" aria-label="Follow Prepify11+ on Instagram">Instagram</a></li>
-            <li><a href="https://www.youtube.com/@prepify11plus" aria-label="Watch Prepify11+ on YouTube">YouTube</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2025 Prepify11+. Built for bright young minds.</span>
-        <a href="index.html#mock-test">Free Mock Test</a>
-        <a href="flashcards.html">Flashcards</a>
-      </div>
-    </div>
-  </footer>
+  <footer>© 2025 Prepify 11+ • Keep learning with courage and fun!</footer>
 
-  <div class="consent-banner" data-consent-banner aria-hidden="true">
-    <p>We use optional, anonymised analytics to understand what resonates. Enable cookies?</p>
-    <div class="consent-banner-actions">
-      <button class="btn" data-consent-accept>Yes, enable analytics</button>
-      <button class="btn btn-outline" data-consent-decline>No thanks</button>
-    </div>
-  </div>
+  <script>
+    const flashcard = document.getElementById("flashcard");
+    flashcard.addEventListener("click", () => flashcard.classList.toggle("flipped"));
 
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/flashcards.js" defer></script>
+    const themes = {
+      superman: {
+        "--bg": "#e3f2fd",
+        "--bg-alt": "#ffffff",
+        "--text": "#0d47a1",
+        "--card-front": "linear-gradient(135deg,#1565c0,#42a5f5)",
+      },
+      spiderman: {
+        "--bg": "#ffe5e5",
+        "--bg-alt": "#fff0f0",
+        "--text": "#b71c1c",
+        "--card-front": "linear-gradient(135deg,#b71c1c,#000000)",
+      },
+      captain: {
+        "--bg": "#e0f7fa",
+        "--bg-alt": "#ffffff",
+        "--text": "#01579b",
+        "--card-front": "linear-gradient(135deg,#01579b,#81d4fa)",
+      },
+      batman: {
+        "--bg": "#1a1a1a",
+        "--bg-alt": "#212121",
+        "--text": "#fdd835",
+        "--card-front": "linear-gradient(135deg,#000000,#fdd835)",
+      }
+    };
+
+    function applyTheme(name) {
+      const vars = themes[name];
+      for (const key in vars) {
+        document.documentElement.style.setProperty(key, vars[key]);
+      }
+      localStorage.setItem("superheroTheme", name);
+      document.querySelectorAll(".hero").forEach(h => h.classList.remove("active"));
+      document.getElementById(name).classList.add("active");
+    }
+
+    document.querySelectorAll(".hero").forEach(btn => {
+      btn.addEventListener("click", () => applyTheme(btn.id));
+    });
+
+    const savedTheme = localStorage.getItem("superheroTheme") || "superman";
+    applyTheme(savedTheme);
+  </script>
 </body>
 </html>

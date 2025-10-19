@@ -1,331 +1,575 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>11+ Prep for Year 5 | Free Maths & English Practice | Prepify11+</title>
-  <meta name="description" content="Fun and interactive 11+ preparation for Year 5 students. Practice maths, vocabulary, and grammar with confidence — free to use for a few weeks." />
-  <meta name="keywords" content="11+ prep, year 5, 11 plus maths, english vocabulary, 11+ flashcards, grammar school preparation, mock tests, prepify11plus" />
-  <link rel="canonical" href="https://prepify11plus.example/" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="icon" href="favicon.svg" />
-  <link rel="manifest" href="manifest.webmanifest" />
-  <meta property="og:title" content="11+ Prep for Year 5 | Prepify11+" />
-  <meta property="og:description" content="Build confidence in 11+ maths and English vocabulary with free mock tests and flashcards." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://prepify11plus.example/" />
-  <meta property="og:image" content="https://prepify11plus.example/assets/img/og-image.svg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Prepify11+" />
-  <meta name="twitter:description" content="Start free 11+ mock tests and flashcards built for Year 5 confidence." />
+  <!-- Primary SEO -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Prepify 11+ — Free 11 Plus Mock Tests & Practice (Maths & Vocab Flashcards)</title>
+  <meta name="description" content="Free 11+ mock tests for Year 5 & Year 6. Fun Maths practice, triangle/angles questions, English vocabulary flashcards, and kid-friendly practice that builds confidence. Fresh questions every time.">
+  <link rel="canonical" href="https://www.prepify11plus.co.uk/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prepify 11+ — Free 11 Plus Mock Tests & Practice">
+  <meta property="og:description" content="Free 11+ mock tests for Year 5 & Year 6. Maths (angles/triangles), English vocab flashcards, and confidence-building practice.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.prepify11plus.co.uk/">
+  <meta property="og:image" content="https://www.prepify11plus.co.uk/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Prepify 11+ — Free 11 Plus Mock Tests & Practice">
+  <meta name="twitter:description" content="Free 11+ mock tests for Year 5 & Year 6. Maths (angles/triangles), English vocab flashcards, and confidence-building practice.">
+
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Prepify11+",
-    "url": "https://prepify11plus.example/",
-    "description": "Prepify11+ offers free 11+ mock tests and vocabulary flashcards for Year 5 students to build confidence.",
-    "foundingDate": "2024",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "GB",
-      "addressRegion": "England"
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"Prepify 11+",
+    "url":"https://www.prepify11plus.co.uk/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://www.prepify11plus.co.uk/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
     },
-    "sameAs": [
-      "https://www.instagram.com/prepify11plus",
-      "https://www.youtube.com/@prepify11plus"
-    ],
-    "educationalLevel": "Primary",
-    "knowsAbout": ["11+ maths", "English vocabulary", "mock exams", "flashcards"]
+    "about":[
+      {"@type":"Thing","name":"11+ mock tests"},
+      {"@type":"Thing","name":"Eleven Plus Maths"},
+      {"@type":"Thing","name":"Year 5 practice"},
+      {"@type":"Thing","name":"English vocabulary flashcards"}
+    ]
   }
   </script>
+
+  <style>
+    :root{
+      --bg:#0e1b2b;
+      --bg2:#102235;
+      --panel:#162a44;
+      --panel2:#17314f;
+      --ink:#eef7ff;
+      --muted:#a7bfd6;
+      --accent:#38bdf8;   /* sky */
+      --accent2:#f59e0b;  /* amber */
+      --ok:#22c55e;
+      --bad:#ef4444;
+      --radius:18px;
+      --shadow:0 8px 28px -10px rgba(0,0,0,.55);
+      --chip:#1d3857;
+      --chipbd:#2a4a6e;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1200px 600px at 15% 10%, #123153, #0d1828 60%);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif}
+    a{color:var(--accent)}
+    header{
+      position:sticky;top:0;z-index:40;
+      background:linear-gradient(180deg, rgba(10,20,32,.9), rgba(10,20,32,.65));
+      border-bottom:1px solid #1f3552;
+      backdrop-filter: blur(10px);
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;padding:14px 0;
+    }
+    .brand{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.3px}
+    .brand-badge{
+      width:36px;height:36px;border-radius:10px;
+      background: conic-gradient(from 180deg at 50% 50%, #34d399, #38bdf8, #f59e0b, #34d399);
+      display:grid;place-items:center;color:#062132;font-weight:900;
+      box-shadow:0 6px 24px -8px rgba(56,189,248,.6);
+    }
+    .navlinks{display:flex;gap:12px;flex-wrap:wrap}
+    .navlinks a{color:var(--ink);text-decoration:none;padding:.55rem .75rem;border-radius:12px;border:1px solid transparent}
+    .navlinks a:hover{background:#142a46;border-color:#24496e}
+    /* hero */
+    .hero{padding:54px 0 28px}
+    .hero h1{
+      margin:0 0 10px;font-size:clamp(1.5rem,3.6vw,2.2rem);
+      background:linear-gradient(90deg,#bef0ff,#7ad8ff 40%,#ffd58a 75%);-webkit-background-clip:text;color:transparent
+    }
+    .hero p{color:var(--muted);max-width:800px;font-size:1.02rem}
+    .cta-row{display:flex;gap:.7rem;flex-wrap:wrap;margin:18px 0 0}
+    .btn{
+      background:linear-gradient(135deg,var(--accent),#6ee7ff);
+      color:#052234;border:none;padding:.8rem 1.05rem;border-radius:999px;
+      font-weight:800;letter-spacing:.3px;cursor:pointer;box-shadow:var(--shadow)
+    }
+    .btn.alt{
+      background:#173552;color:#eaf6ff;border:1px solid #2b4f76;font-weight:700;
+    }
+    section{padding:38px 0}
+    h2{margin:0 0 14px;font-size:1.35rem}
+    .sub{color:var(--muted);margin:6px 0 20px}
+    .panel{
+      background:linear-gradient(180deg,#152a46,#14253c);
+      border:1px solid #244669;border-radius:var(--radius);padding:16px;box-shadow:var(--shadow)
+    }
+    .grid{display:grid;gap:16px}
+    @media (min-width:860px){.grid.cols-2{grid-template-columns:1fr 1fr}}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:.42rem .6rem;background:var(--chip);border:1px solid var(--chipbd);border-radius:999px;font-size:.72rem;color:#cde6ff}
+    .qbox{background:#102843;border:1px solid #244a70;border-radius:14px;padding:14px}
+    .options{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));margin-top:10px}
+    .opt{
+      background:#153554;border:1px solid #2b567d;border-radius:12px;padding:.75rem;
+      cursor:pointer;text-align:left
+    }
+    .opt:hover{background:#1a3d62}
+    .opt.correct{background:linear-gradient(145deg,var(--ok),#189150);border-color:#2ae08f;color:#062b1a}
+    .opt.wrong{background:linear-gradient(145deg,#b23d3b,#7f2525);border-color:#e86a68}
+    .feedback{min-height:1.1rem;font-size:.85rem;margin-top:10px}
+    .feedback .ok{color:var(--ok)} .feedback .bad{color:var(--bad)}
+    /* canvas card */
+    .canvas-card{display:grid;gap:12px}
+    canvas{width:100%;height:auto;max-width:620px;border-radius:14px;background:#0e2137;border:1px solid #214665}
+    /* flashcards */
+    .cards{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+    .card{
+      perspective:1000px;height:120px;cursor:pointer
+    }
+    .card-inner{
+      position:relative;height:100%;transform-style:preserve-3d;transition:transform .5s;
+    }
+    .card.flipped .card-inner{transform:rotateY(180deg)}
+    .face{
+      position:absolute;inset:0;display:grid;place-items:center;border-radius:14px;padding:10px;
+      backface-visibility:hidden;border:1px solid #2a4a6f;
+      background:linear-gradient(180deg,#123052,#0e2947)
+    }
+    .back{transform:rotateY(180deg);background:linear-gradient(180deg,#184a6f,#123d5f)}
+    footer{
+      padding:26px 0 60px;border-top:1px solid #203a5a;background:#0d1a2a;color:#a9c5df
+    }
+    .counter{display:inline-flex;align-items:center;gap:.55rem;padding:.5rem .8rem;border:1px solid #2a4a6f;border-radius:999px;background:#142b47}
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .tag-cloud a{font-size:.78rem;text-decoration:none}
+    .sr{position:absolute;left:-9999px}
+  </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
   <header>
-    <div class="container site-header" role="navigation" aria-label="Primary">
-      <a class="logo" href="index.html" aria-label="Prepify11+ home">
-        <svg viewBox="0 0 64 64" role="img" aria-labelledby="logo-title">
-          <title id="logo-title">Prepify11+ shooting star</title>
-          <circle cx="32" cy="32" r="30" fill="#4f90ff" opacity="0.14"></circle>
-          <path d="M20 42l8-20 6 12 10-16" stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
-          <circle cx="44" cy="18" r="4" fill="#f59f58"></circle>
-        </svg>
-        Prepify11+
-      </a>
-      <button class="mobile-nav-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">☰</button>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#mock-test">Free Mock Test</a>
-        <a href="flashcards.html">Flashcards</a>
-        <a href="blog.html">Blog</a>
-        <a href="faq.html">FAQ</a>
-        <a class="btn btn-secondary" href="#mock-test">Start Practice</a>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="brand-badge">P</div>
+        <div>Prepify 11+ <span style="color:#8facc9;font-weight:600">Confidence-first Practice</span></div>
+      </div>
+      <nav class="navlinks" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#mock">Free 11+ Mock</a>
+        <a href="#maths">Maths Practice</a>
+        <a href="#flashcards">Flashcards</a>
+        <a href="#about">About</a>
       </nav>
-    </div>
-    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
-      <nav>
-        <a href="#mock-test">Free Mock Test</a>
-        <a href="flashcards.html">Flashcards</a>
-        <a href="blog.html">Blog</a>
-        <a href="faq.html">FAQ</a>
-      </nav>
-      <button class="btn" data-mobile-toggle aria-label="Close menu">Close</button>
     </div>
   </header>
-  <main id="main">
-    <section class="hero">
-      <div class="container hero-content">
-        <div>
-          <div class="badge">Free for a few weeks</div>
-          <h1>Inspiring 11+ practice for bright Year 5 minds.</h1>
-          <p>Prepify11+ makes revision joyful with a full mock test experience and animated flashcards. Build confidence in maths and English vocabulary without logins or payments.</p>
-          <div class="flex flex-wrap hero-actions">
-            <a class="btn" href="#mock-test">Start the free mock test</a>
-            <a class="btn btn-outline" href="flashcards.html">Explore flashcards</a>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="wrap">
+      <h1>Free 11+ Mock & Practice for Year 5/6 — Fresh Questions, No Sign-up</h1>
+      <p>Build confidence for the Eleven Plus with colourful, bite-size practice. Maths (including stylish triangle/angle problems),
+         English vocabulary flashcards, and a friendly mock experience — all generated new each time.</p>
+      <div class="cta-row">
+        <button class="btn" onclick="scrollToId('mock')">Start Free Mock</button>
+        <button class="btn alt" onclick="scrollToId('maths')">Jump to Maths (Angles/Triangles)</button>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:8px;flex-wrap:wrap">
+        <span class="chip">No pass score claims</span>
+        <span class="chip">Confidence-building</span>
+        <span class="chip">Mobile & iPad friendly</span>
+        <span class="chip">New questions every visit</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FREE MOCK (focus first) -->
+  <section id="mock">
+    <div class="wrap">
+      <h2>Free 11+ Mock — Quick & Fun</h2>
+      <p class="sub">A short, rotating set mixing English & Maths. Instant feedback, no email required. Use it freely for the next few weeks.</p>
+      <div class="grid cols-2">
+        <div class="panel">
+          <div class="qbox" id="mockQuestionText">Press <strong>Start</strong> to begin.</div>
+          <div class="options" id="mockOptions"></div>
+          <div class="feedback" id="mockFeedback"></div>
+          <div style="display:flex;gap:.6rem;margin-top:10px">
+            <button class="btn" id="mockStartBtn">Start</button>
+            <button class="btn alt" id="mockNextBtn" disabled>Next</button>
           </div>
-          <p class="confidence-note">We build confidence and fundamentals.</p>
+          <div style="margin-top:10px;color:var(--muted)">
+            <span id="mockMeta">Q 0/0 • Score 0</span>
+          </div>
         </div>
-        <div class="hero-illustration" aria-hidden="true">
-          <div class="orbit"></div>
-          <div class="hero-card">
-            <span>Mock Test</span>
-            <strong>12 playful questions</strong>
-            <p>Maths + Vocabulary mix</p>
-          </div>
+        <div class="panel">
+          <h3 style="margin-top:0">What’s inside?</h3>
+          <ul style="margin:8px 0 0 18px;line-height:1.6;color:#cfe5fb">
+            <li>English: synonyms, antonyms, cloze.</li>
+            <li>Maths: mean, percentage, and angles.</li>
+            <li>Fresh set every time you start.</li>
+          </ul>
+          <p class="sub" style="margin-top:12px">Tip: Parents can sit with children and talk through the *why* — that’s where confidence grows.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="mock-test" id="mock-test" aria-labelledby="practice-heading">
-      <div class="mock-test-bg" aria-hidden="true"></div>
-      <div class="container mock-test-container">
-        <div class="mock-test-header">
-          <h2 class="section-title" id="practice-heading">Start Your 11+ Practice</h2>
-          <p class="section-subtitle">Tackle a full-page mock test with friendly animations. Questions refresh every time you start.</p>
-        </div>
-        <div class="mock-test-shell">
-          <div class="mock-test-progress" role="status" aria-live="polite">
-            <div class="mock-test-progress-bar" data-progress></div>
-            <span class="mock-test-progress-text" data-progress-text>0 / 0</span>
-          </div>
-          <div class="mock-test-stage" data-mock-stage>
-            <article class="mock-card" data-mock-intro>
-              <h3>Ready to build confidence?</h3>
-              <p>Each set includes 10 to 12 multiple-choice questions spanning mental maths, problem solving, and vibrant vocabulary.</p>
-              <ul>
-                <li>Full-screen cards with gentle motion</li>
-                <li>Instant progress updates</li>
-                <li>No account needed — just press start</li>
-              </ul>
-              <button class="btn" data-start-mock>Begin practice</button>
-            </article>
-            <article class="mock-card" data-mock-card hidden>
-              <header>
-                <p class="mock-card-label" data-question-topic>Maths</p>
-                <h3 data-question-text>Question text</h3>
-              </header>
-              <form class="mock-card-options" data-question-form>
-                <fieldset>
-                  <legend class="sr-only">Answer choices</legend>
-                  <div data-options></div>
-                </fieldset>
-                <div class="mock-card-actions">
-                  <button type="button" class="btn btn-outline" data-prev-question>Previous</button>
-                  <button type="submit" class="btn" data-next-question disabled>Next</button>
-                </div>
-              </form>
-            </article>
-            <article class="mock-card" data-mock-summary hidden>
-              <h3>Great job!</h3>
-              <p class="mock-score" data-summary-score>You scored 0/0.</p>
-              <p data-summary-message>Keep practicing to build confidence!</p>
-              <button class="btn" data-restart-mock>Try Another Set</button>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- MATHS PRACTICE (with triangle logic) -->
+  <section id="maths">
+    <div class="wrap">
+      <h2>Maths Practice — Angles, Triangles & More</h2>
+      <p class="sub">Showcasing triangle/angle logic with a pretty diagram, plus extra question generators (Mean Average & Percentage Discounts).</p>
 
-    <section class="section highlights" aria-labelledby="highlights-heading">
-      <div class="container">
-        <h2 class="section-title" id="highlights-heading">Why families choose Prepify11+</h2>
-        <div class="grid grid-3">
-          <article class="card">
-            <h3>Confidence-first maths</h3>
-            <p>Worked solutions and friendly hints reinforce number sense, fractions, problem solving, and reasoning.</p>
-          </article>
-          <article class="card">
-            <h3>Vivid vocabulary</h3>
-            <p>Word banks with parts of speech and example sentences make new vocabulary stick through context.</p>
-          </article>
-          <article class="card">
-            <h3>Ready for busy schedules</h3>
-            <p>10-minute sessions keep habits light and achievable, whether before school or after clubs.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section flashcard-promo" aria-labelledby="flashcard-heading">
-      <div class="container flashcard-promo-inner">
-        <div>
-          <h2 class="section-title" id="flashcard-heading">Flashcards for Vocabulary</h2>
-          <p class="section-subtitle">Flip, shuffle, and randomise curated 11+ words. Each card includes meanings and sample usage.</p>
-          <div class="flex flex-wrap">
-            <a class="btn" href="flashcards.html">Open the flashcards</a>
-            <a class="btn btn-outline" href="#mock-test">Return to mock test</a>
+      <div class="grid cols-2">
+        <!-- Triangle / Angle Canvas Card -->
+        <div class="panel canvas-card" id="trianglePanel" aria-live="polite">
+          <div class="chip">Angle Finder (Triangle)</div>
+          <canvas id="triCanvas" width="720" height="420" aria-label="Triangle diagram question"></canvas>
+          <div class="qbox" id="triQuestion">Loading a triangle…</div>
+          <div class="options" id="triOptions"></div>
+          <div class="feedback" id="triFeedback"></div>
+          <div style="display:flex;gap:.6rem">
+            <button class="btn" id="triNewBtn">New Triangle</button>
+            <button class="btn alt" id="triExplainBtn">Explain</button>
           </div>
+          <p class="sub" id="triExplainBox" style="display:none"></p>
         </div>
-        <div class="flashcard-promo-card" aria-hidden="true">
-          <span>Word of the day</span>
-          <strong>"Illuminate"</strong>
-          <p>Meaning: to light up or explain.</p>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" aria-labelledby="blog-heading">
-      <div class="container">
-        <h2 class="section-title" id="blog-heading">From the Prepify11+ blog</h2>
-        <div class="blog-teasers">
-          <article class="blog-card">
-            <h3><a href="blog/11-plus-maths-fractions-made-easy.html">11+ Maths: Fractions Made Friendly</a></h3>
-            <p>Step-by-step tips, teacher-approved strategies, and common pitfalls to avoid in fraction problems.</p>
-            <a href="blog/11-plus-maths-fractions-made-easy.html">Read more</a>
-          </article>
-          <article class="blog-card">
-            <h3><a href="blog/11-plus-vocabulary-150-words.html">150 Spark Words for 11+ Vocab</a></h3>
-            <p>Unlock confident comprehension with our curated word bank and mini activities for busy evenings.</p>
-            <a href="blog/11-plus-vocabulary-150-words.html">Explore the list</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="faq-inline-heading">
-      <div class="container">
-        <h2 class="section-title" id="faq-inline-heading">Quick questions answered</h2>
-        <div class="faq">
-          <div class="faq-item" aria-expanded="false">
-            <button class="faq-question">Is Prepify11+ really free?</button>
-            <div class="faq-answer" id="inline-faq-1">
-              <p>Yes! Enjoy the mock test and flashcards for free while we gather feedback from families. No card details required.</p>
-            </div>
-          </div>
-          <div class="faq-item" aria-expanded="false">
-            <button class="faq-question">What skills are covered?</button>
-            <div class="faq-answer" id="inline-faq-2">
-              <p>The mock combines arithmetic, reasoning, and rich vocabulary. Flashcards support synonyms, antonyms, and usage.</p>
-            </div>
-          </div>
-          <div class="faq-item" aria-expanded="false">
-            <button class="faq-question">Do we need to create an account?</button>
-            <div class="faq-answer" id="inline-faq-3">
-              <p>No account or login is required. Everything runs in the browser and resets whenever you refresh.</p>
-            </div>
+        <!-- Extra Maths Generators -->
+        <div class="panel">
+          <div class="chip">More Generators</div>
+          <div class="qbox" id="mathQ">Press a generator:</div>
+          <div class="options" id="mathOptions"></div>
+          <div class="feedback" id="mathFeedback"></div>
+          <div style="display:flex;gap:.6rem;margin-top:10px;flex-wrap:wrap">
+            <button class="btn" onclick="genMean()">Mean Average</button>
+            <button class="btn" onclick="genPercent()">% Discount</button>
+            <button class="btn" onclick="genTime()">Time Add/Subtract</button>
+            <button class="btn alt" onclick="clearMath()">Clear</button>
           </div>
         </div>
       </div>
-    </section>
 
-    <section class="section" id="email-capture" aria-labelledby="stay-in-touch">
-      <div class="container">
-        <h2 class="section-title" id="stay-in-touch">Stay in the loop</h2>
-        <p class="section-subtitle">Get fresh mock test sets, printable worksheets, and parent tips — straight to your inbox.</p>
-        <form class="contact-form" action="https://formspree.io/f/your-form-id" method="post">
-          <label for="email">Email address</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" required aria-required="true" />
-          <label for="role">I am a...</label>
-          <select id="role" name="role">
-            <option value="parent">Parent or carer</option>
-            <option value="tutor">Tutor</option>
-            <option value="teacher">Teacher</option>
-            <option value="student">Student</option>
-          </select>
-          <label class="input-group">
-            <input type="checkbox" name="consent" value="yes" />
-            <span>I agree to receive emails about Prepify11+ and understand I can unsubscribe at any time.</span>
-          </label>
-          <button type="submit" class="btn">Notify me</button>
-        </form>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section legal-section" id="privacy">
-      <div class="container">
-        <h2>Privacy</h2>
-        <p>The demo stores nothing server-side. Optional analytics run only after consent and keep data anonymous. We are committed to GDPR-compliant processing and clear parental controls.</p>
-      </div>
-    </section>
+  <!-- FLASHCARDS -->
+  <section id="flashcards">
+    <div class="wrap">
+      <h2>English Vocabulary Flashcards</h2>
+      <p class="sub">Tap a card to flip. Try to use the new word in a sentence!</p>
+      <div class="cards" id="cards"></div>
+    </div>
+  </section>
 
-    <section class="section legal-section" id="terms">
-      <div class="container">
-        <h2>Terms</h2>
-        <p>Prepify11+ provides educational practice to build confidence and fundamentals. Use materials responsibly and alongside school guidance.</p>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <h2>About Prepify 11+</h2>
+      <p class="sub">We don’t promise pass scores. We do promise confidence — through low-pressure practice and clear explanations.</p>
+      <div class="panel">
+        <p style="margin:0 0 10px">Parents often search for: 11+ mock test, eleven plus practice, Year 5 maths practice, free angles and triangle questions, vocabulary flashcards. We built Prepify 11+ to be the friendliest place to start.</p>
+        <div class="tag-cloud" aria-label="SEO helper tags">
+          <a class="chip" href="#mock">11+ mock test</a>
+          <a class="chip" href="#maths">Year 5 maths practice</a>
+          <a class="chip" href="#flashcards">11+ vocabulary flashcards</a>
+          <a class="chip" href="#maths">Angles & triangle questions</a>
+          <a class="chip" href="#mock">Free eleven plus practice</a>
+        </div>
       </div>
-    </section>
-
-    <section class="section legal-section" id="accessibility">
-      <div class="container">
-        <h2>Accessibility</h2>
-        <p>We design for WCAG 2.2 AA: semantic markup, keyboard support, colour contrast, and reduced motion modes. Spot an issue? Email <a href="mailto:hello@prepify11plus.example">hello@prepify11plus.example</a>.</p>
-      </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <div class="container">
-      <div class="footer-columns">
-        <div>
-          <h4>Prepify11+</h4>
-          <p>Beautiful, free 11+ preparation built for Year 5 confidence.</p>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="#mock-test">Free Mock Test</a></li>
-            <li><a href="flashcards.html">Flashcards</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Support</h4>
-          <ul>
-            <li><a href="#privacy">Privacy</a></li>
-            <li><a href="#terms">Terms</a></li>
-            <li><a href="#accessibility">Accessibility</a></li>
-            <li><a href="mailto:hello@prepify11plus.example">Contact us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Follow along</h4>
-          <ul>
-            <li><a href="https://www.instagram.com/prepify11plus" aria-label="Follow Prepify11+ on Instagram">Instagram</a></li>
-            <li><a href="https://www.youtube.com/@prepify11plus" aria-label="Watch Prepify11+ on YouTube">YouTube</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2025 Prepify11+. Built for bright young minds.</span>
-        <a href="#mock-test">Free Mock Test</a>
-        <a href="flashcards.html">Flashcards</a>
-      </div>
+    <div class="wrap" style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between">
+      <div>© <span id="yr"></span> Prepify 11+. All rights reserved.</div>
+      <div class="counter" id="visitorCounter" aria-live="polite">👋 Visitors so far: 40,000+</div>
     </div>
   </footer>
 
-  <div class="consent-banner" data-consent-banner aria-hidden="true">
-    <p>We use optional, anonymised analytics to understand what resonates. Enable cookies?</p>
-    <div class="consent-banner-actions">
-      <button class="btn" data-consent-accept>Yes, enable analytics</button>
-      <button class="btn btn-outline" data-consent-decline>No thanks</button>
-    </div>
-  </div>
+  <script>
+    /* Helpers */
+    function scrollToId(id){document.querySelector('#'+id)?.scrollIntoView({behavior:'smooth'})}
+    const $ = s => document.querySelector(s);
+    const $$ = s => document.querySelectorAll(s);
+    const shuffle = a => { for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]} return a; };
+    const pad2 = n => n.toString().padStart(2,'0');
 
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/mock-test.js" defer></script>
+    /* Footer year + Visitor counter starting at 40,000 (local only) */
+    (function(){
+      $('#yr').textContent = new Date().getFullYear();
+      try{
+        let v = localStorage.getItem('prepify_visits');
+        if(!v) v = 40000;    // initial baseline
+        v = parseInt(v,10) + 1;
+        localStorage.setItem('prepify_visits', String(v));
+        $('#visitorCounter').textContent = '👋 Visitors so far: ' + v.toLocaleString() + '+';
+      }catch(e){ /* ignore storage blocks */ }
+    })();
+
+    /* ----------------------- FREE MOCK (short, rotating) ----------------------- */
+    const MOCK_BANK = {
+      english: [
+        { q:'Choose the closest synonym of: "serene"', a:'calm', opts:['calm','quick','angry','broken'] },
+        { q:'Choose the antonym of: "opaque"', a:'transparent', opts:['transparent','clouded','milky','dense'] },
+        { q:'Cloze: "She gave a ____ explanation everyone understood."', a:'clear', opts:['clear','opaque','stern','hasty'] }
+      ],
+      maths: [
+        // Mean
+        (()=>{ const nums=[...Array(4)].map(_=>1+Math.floor(Math.random()*20));
+                const mean=(nums.reduce((a,b)=>a+b,0)/nums.length).toFixed(2);
+                const wrong = [ (mean*1.1).toFixed(2), (mean*0.9).toFixed(2), (parseFloat(mean)+1).toFixed(2) ];
+                return { q:`Find the mean of ${nums.join(', ')}`, a:mean, opts:shuffle([mean,...wrong]) }; })(),
+        // Percentage
+        (()=>{ const price=(10+Math.random()*90).toFixed(2);
+                const disc= [10,15,20,25,30][Math.floor(Math.random()*5)];
+                const sale=(price*(1-disc/100)).toFixed(2);
+                const wrong=[(sale*1.05).toFixed(2),(sale*0.95).toFixed(2),(sale*1.1).toFixed(2)];
+                return { q:`${disc}% off a £${price} book. Sale price?`, a:sale, opts:shuffle([sale,...wrong]) }; })()
+      ]
+    };
+
+    let mockIdx = -1, mockScore = 0, mockSet = [];
+    function buildMockSet(){
+      const e = shuffle([...MOCK_BANK.english]).slice(0,2);
+      const m = shuffle([...MOCK_BANK.maths]).slice(0,2);
+      mockSet = shuffle([...e,...m]);
+      mockIdx = -1; mockScore = 0;
+      $('#mockMeta').textContent = `Q 0/${mockSet.length} • Score 0`;
+      $('#mockFeedback').textContent = '';
+      $('#mockOptions').innerHTML = '';
+      $('#mockNextBtn').disabled = true;
+      $('#mockQuestionText').innerHTML = 'Ready? Click <strong>Start</strong>.';
+    }
+    function renderMockQ(){
+      mockIdx++;
+      if(mockIdx >= mockSet.length){
+        $('#mockQuestionText').innerHTML = `<strong>Finished!</strong><br>Your score: ${mockScore}/${mockSet.length}. Press Start to try a new set.`;
+        $('#mockOptions').innerHTML = '';
+        $('#mockNextBtn').disabled = true;
+        return;
+      }
+      const item = mockSet[mockIdx];
+      $('#mockQuestionText').textContent = item.q;
+      $('#mockFeedback').textContent = '';
+      const opts = $('#mockOptions'); opts.innerHTML = '';
+      item.opts.forEach(opt=>{
+        const b = document.createElement('button');
+        b.className='opt'; b.textContent = opt;
+        b.onclick = ()=>{
+          if(b.classList.contains('correct')||b.classList.contains('wrong')) return;
+          if(opt==item.a){ b.classList.add('correct'); $('#mockFeedback').innerHTML = '<span class="ok">Nice!</span>'; mockScore++; }
+          else { b.classList.add('wrong'); $('#mockFeedback').innerHTML = `<span class="bad">Answer: ${item.a}</span>`; }
+          $$('#mockOptions .opt').forEach(x=>x.disabled=true);
+          $('#mockNextBtn').disabled=false;
+          $('#mockMeta').textContent = `Q ${mockIdx+1}/${mockSet.length} • Score ${mockScore}`;
+        };
+        opts.appendChild(b);
+      });
+      $('#mockMeta').textContent = `Q ${mockIdx+1}/${mockSet.length} • Score ${mockScore}`;
+      $('#mockNextBtn').disabled = true;
+    }
+    $('#mockStartBtn').addEventListener('click',()=>{ buildMockSet(); renderMockQ(); });
+    $('#mockNextBtn').addEventListener('click',renderMockQ);
+    buildMockSet();
+
+    /* ----------------------- MATHS: Triangle / Angles ----------------------- */
+    const tri = {
+      canvas: $('#triCanvas'),
+      ctx: null,
+      data: null
+    };
+    function rand(min,max){ return Math.floor(Math.random()*(max-min+1))+min; }
+
+    function newTriangle(){
+      const cw = tri.canvas.width, ch = tri.canvas.height;
+      const ctx = tri.ctx;
+      ctx.clearRect(0,0,cw,ch);
+
+      // Random triangle points (keep inside padding)
+      const pad = 60;
+      const A = {x: rand(pad,cw-pad), y: rand(pad,ch-pad)};
+      const B = {x: rand(pad,cw-pad), y: rand(pad,ch-pad)};
+      const C = {x: rand(pad,cw-pad), y: rand(pad,ch-pad)};
+
+      // Avoid skinny / near-collinear triangles
+      const area = Math.abs((A.x*(B.y-C.y)+B.x*(C.y-A.y)+C.x*(A.y-B.y))/2);
+      if(area < 3000) return newTriangle();
+
+      // Compute internal angles
+      function dist(P,Q){ return Math.hypot(P.x-Q.x,P.y-Q.y); }
+      const a = dist(B,C), b = dist(A,C), c = dist(A,B);
+      // Law of Cosines: angle at A opposite a, etc.
+      const angA = Math.acos((b*b + c*c - a*a)/(2*b*c))*180/Math.PI;
+      const angB = Math.acos((a*a + b*b - c*c)/(2*a*b))*180/Math.PI;
+      const angC = 180 - angA - angB;
+
+      // Round to integers, keep them sensible
+      let Adeg = Math.round(angA), Bdeg = Math.round(angB), Cdeg = Math.round(angC);
+      if (Adeg<25 || Bdeg<25 || Cdeg<25) return newTriangle();
+
+      // Choose two to show, one to hide (ask)
+      const labels = ['A','B','C'];
+      const hidden = labels[rand(0,2)];
+      const show = labels.filter(x=>x!==hidden);
+
+      tri.data = {A,B,C,Adeg,Bdeg,Cdeg, hidden, show};
+
+      // Draw triangle
+      ctx.strokeStyle = '#3bb5ff';
+      ctx.lineWidth = 3;
+      ctx.beginPath(); ctx.moveTo(A.x,A.y); ctx.lineTo(B.x,B.y); ctx.lineTo(C.x,C.y); ctx.closePath(); ctx.stroke();
+
+      // Draw vertices
+      [A,B,C].forEach(p=>{ ctx.fillStyle='#82d8ff'; ctx.beginPath(); ctx.arc(p.x,p.y,5,0,Math.PI*2); ctx.fill(); });
+
+      // Angle arcs + labels for shown angles
+      ctx.font = '15px ui-sans-serif, system-ui, -apple-system';
+      ctx.textBaseline = 'middle'; ctx.textAlign = 'center';
+
+      function drawAngleArc(P, prev, next, deg, label){
+        const v1 = Math.atan2(prev.y-P.y, prev.x-P.x);
+        const v2 = Math.atan2(next.y-P.y, next.x-P.x);
+        // Normalize sweep
+        let start=v1, end=v2;
+        // ensure smaller sweep
+        let sweep = end - start;
+        if (sweep <= -Math.PI) sweep += Math.PI*2;
+        if (sweep > Math.PI) { let t = start; start = end; end = t; }
+
+        ctx.strokeStyle = '#f7c76a'; ctx.lineWidth=2;
+        ctx.beginPath(); ctx.arc(P.x,P.y,28,start,end,true); ctx.stroke();
+
+        // Place text slightly outward
+        const mid = (start+end)/2;
+        const tx = P.x + 46*Math.cos(mid);
+        const ty = P.y + 46*Math.sin(mid);
+        ctx.fillStyle = '#ffdca0';
+        ctx.fillText(`${deg}°`, tx, ty);
+
+        // Corner label
+        ctx.fillStyle = '#9dd8ff';
+        const cx = P.x + 20*Math.cos(mid);
+        const cy = P.y + 20*Math.sin(mid);
+        ctx.fillText(label, cx, cy);
+      }
+
+      // Decide which two are shown
+      show.forEach(s=>{
+        if(s==='A') drawAngleArc(A,B,C,Adeg,'A');
+        if(s==='B') drawAngleArc(B,C,A,Bdeg,'B');
+        if(s==='C') drawAngleArc(C,A,B,Cdeg,'C');
+      });
+
+      // Question and options
+      const qMap = {A:Adeg,B:Bdeg,C:Cdeg};
+      const correct = qMap[hidden];
+      $('#triQuestion').innerHTML = `In △ABC, angles at <strong>${show[0]}</strong> and <strong>${show[1]}</strong> are shown. <br>What is <strong>∠${hidden}</strong>?`;
+      const opts = new Set([correct]);
+      while (opts.size < 4){
+        let d = correct + [ -10,-6,-4,4,6,10,12,14 ][rand(0,7)];
+        if(d>10 && d<170) opts.add(d);
+      }
+      const optWrap = $('#triOptions'); optWrap.innerHTML = '';
+      shuffle([...opts]).forEach(val=>{
+        const b = document.createElement('button');
+        b.className = 'opt';
+        b.textContent = `${val}°`;
+        b.onclick = ()=>{
+          if (val===correct){ b.classList.add('correct'); $('#triFeedback').innerHTML = '<span class="ok">Great! Angles in a triangle add up to 180°.</span>'; }
+          else { b.classList.add('wrong'); $('#triFeedback').innerHTML = `<span class="bad">Answer: ${correct}°</span>`; }
+          $$('#triOptions .opt').forEach(x=>x.disabled=true);
+        };
+        optWrap.appendChild(b);
+      });
+
+      // Hide explanation box
+      $('#triExplainBox').style.display = 'none';
+    }
+
+    function explainTriangle(){
+      const d = tri.data; if(!d) return;
+      const map = {A:d.Adeg,B:d.Bdeg,C:d.Cdeg};
+      const shown = d.show.map(k=>`∠${k}=${map[k]}°`).join(' and ');
+      const hidden = `∠${d.hidden}=180°−(${d.show.map(k=>'∠'+k).join('+')}) = 180°−(${d.show.map(k=>map[k]).join('+')}) = ${map[d.hidden]}°`;
+      const txt = `In any triangle, the three interior angles add to 180°. Here, ${shown}. Therefore, ${hidden}.`;
+      const box = $('#triExplainBox');
+      box.textContent = txt; box.style.display = 'block';
+    }
+
+    tri.ctx = tri.canvas.getContext('2d');
+    $('#triNewBtn').addEventListener('click', newTriangle);
+    $('#triExplainBtn').addEventListener('click', explainTriangle);
+    newTriangle();
+
+    /* ----------------------- More Maths Generators ----------------------- */
+    function renderQA(qtext, correct, options){
+      $('#mathQ').textContent = qtext;
+      $('#mathFeedback').textContent = '';
+      const wrap = $('#mathOptions'); wrap.innerHTML = '';
+      options.forEach(o=>{
+        const b = document.createElement('button');
+        b.className = 'opt'; b.textContent = String(o);
+        b.onclick = ()=>{
+          if(String(o)===String(correct)){ b.classList.add('correct'); $('#mathFeedback').innerHTML='<span class="ok">Correct</span>'; }
+          else { b.classList.add('wrong'); $('#mathFeedback').innerHTML=`<span class="bad">Answer: ${correct}</span>`; }
+          $$('#mathOptions .opt').forEach(x=>x.disabled=true);
+        };
+        wrap.appendChild(b);
+      });
+    }
+    function genMean(){
+      const n = 3 + Math.floor(Math.random()*3);
+      const arr = [...Array(n)].map(_=>1+Math.floor(Math.random()*40));
+      const mean = (arr.reduce((a,b)=>a+b,0)/n).toFixed(2);
+      const opts = shuffle([mean,(mean*1.1).toFixed(2),(mean*0.9).toFixed(2),(parseFloat(mean)+1).toFixed(2)]);
+      renderQA(`Find the mean of ${arr.join(', ')}`, mean, opts);
+    }
+    function genPercent(){
+      const price=(10+Math.random()*90).toFixed(2);
+      const disc=[10,12,15,20,25,30][Math.floor(Math.random()*6)];
+      const sale=(price*(1-disc/100)).toFixed(2);
+      const opts = shuffle([sale,(sale*1.05).toFixed(2),(sale*0.95).toFixed(2),(sale*1.1).toFixed(2)]);
+      renderQA(`${disc}% off a £${price} item. What is the price now?`, sale, opts);
+    }
+    function genTime(){
+      const h = rand(1,11), m = rand(0,59);
+      const addH = rand(0,3), addM = [5,10,15,20,25,30,35,40,45,50,55][rand(0,10)];
+      let tot = h*60+m + (Math.random()>.5?1:-1)*(addH*60+addM);
+      while(tot<0) tot += 12*60;
+      tot %= (12*60);
+      const ans = `${((Math.floor(tot/60)+11)%12)+1}:${pad2(tot%60)}${Math.random()>.5?'am':'pm'}`;
+      const wrong = [`${h}:${pad2(m)}am`, `${((h+addH+11)%12)+1}:${pad2((m+addM)%60)}pm`, `${((h+1+11)%12)+1}:${pad2((m+20)%60)}am`];
+      renderQA(`What time is ${addH}h ${addM}m ${(Math.random()>.5?'after':'before')} ${h}:${pad2(m)}?`, ans, shuffle([ans,...wrong]));
+    }
+    function clearMath(){
+      $('#mathQ').textContent = 'Press a generator:';
+      $('#mathOptions').innerHTML = '';
+      $('#mathFeedback').textContent = '';
+    }
+
+    /* ----------------------- Flashcards ----------------------- */
+    const CARDS = [
+      {front:'serene', back:'calm, peaceful'},
+      {front:'diligent', back:'hard-working'},
+      {front:'vivid', back:'bright, clear'},
+      {front:'abrupt', back:'sudden'},
+      {front:'scarce', back:'rare, in short supply'},
+      {front:'robust', back:'strong, sturdy'},
+      {front:'opaque', back:'not transparent'},
+      {front:'resilient', back:'bounces back; recovers quickly'}
+    ];
+    function renderCards(){
+      const grid = $('#cards'); grid.innerHTML='';
+      CARDS.forEach(({front,back})=>{
+        const c = document.createElement('div'); c.className='card'; c.setAttribute('role','button'); c.setAttribute('aria-pressed','false');
+        const inner = document.createElement('div'); inner.className='card-inner';
+        const f = document.createElement('div'); f.className='face front'; f.textContent = front;
+        const b = document.createElement('div'); b.className='face back';  b.textContent = back;
+        inner.appendChild(f); inner.appendChild(b); c.appendChild(inner);
+        c.addEventListener('click',()=>{ c.classList.toggle('flipped'); c.setAttribute('aria-pressed', c.classList.contains('flipped')?'true':'false'); });
+        grid.appendChild(c);
+      });
+    }
+    renderCards();
+  </script>
 </body>
 </html>
