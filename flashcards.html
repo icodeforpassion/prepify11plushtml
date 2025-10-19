@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Prepify11Plus Vocabulary Flashcards</title>
+  <title>Prepify11Plus Vocabulary Lab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -807,121 +807,76 @@
           <button id="modeTyping" role="tab" aria-selected="true" class="active" data-mode="input">Typing</button>
           <button id="modeChoice" role="tab" aria-selected="false" data-mode="choice">Multiple Choice</button>
         </div>
-        <button class="toggle-theme" id="themeToggle" title="Toggle Light/Dark" aria-label="Toggle theme">🌓</button>
       </div>
-    </header>
+    </section>
 
-    <main class="study-layout">
-      <section class="panel" id="primaryPanel" aria-label="Flashcards Study Panel">
-        <div class="mode-utils">
-          <button class="secondary" id="btnShuffle" title="Shuffle all words">🔀 Shuffle</button>
-          <button class="secondary" id="btnResetStats" title="Reset statistics">♻️ Reset Stats</button>
-          <button class="secondary" id="btnRestoreMastered" title="Restore mastered words">🔁 Restore Mastered</button>
-          <button class="secondary" id="btnExportBookmarks" title="Export bookmarks as CSV">📤 Export Bookmarks</button>
-        </div>
-        <div class="progress-outer" aria-label="Progress">
-          <div class="progress-inner" id="progressFill"></div>
-        </div>
-        <div class="stats-bar" aria-live="polite">
-          <div class="stat-chip">
-            <strong>Answered</strong>
-            <span id="statAnswered">0</span>
+    <section class="section flashcards-section">
+      <div class="container flashcards-grid">
+        <article class="flashcard-stack" aria-live="polite">
+          <div class="flashcard-card" data-flashcard tabindex="0" aria-label="Vocabulary flashcard">
+            <div class="flashcard-face flashcard-front" data-flashcard-front>Loading…</div>
+            <div class="flashcard-face flashcard-back" data-flashcard-back hidden>Loading definition…</div>
+            <button class="flashcard-flip" type="button" data-flip-card aria-label="Flip card">↺</button>
+            <span class="sparkle" aria-hidden="true"></span>
           </div>
-          <div class="stat-chip">
-            <strong>Correct</strong>
-            <span id="statCorrect">0</span>
+          <p class="flashcard-meta">
+            <span data-flashcard-progress>Card 0 of 0</span>
+            <span>•</span>
+            <span data-flashcard-topic>Focus: —</span>
+          </p>
+          <div class="flashcard-actions">
+            <button class="btn" type="button" data-prev-card>Previous</button>
+            <button class="btn" type="button" data-next-card>Next</button>
+            <button class="btn btn-outline" type="button" data-random-card>Random</button>
+            <button class="btn btn-outline" type="button" data-shuffle-cards>Shuffle deck</button>
           </div>
-          <div class="stat-chip">
-            <strong>Accuracy</strong>
-            <span id="statAccuracy">0%</span>
-          </div>
-          <div class="stat-chip">
-            <strong>Streak</strong>
-            <span id="statStreak">0</span>
-          </div>
-          <div class="stat-chip">
-            <strong>Pool</strong>
-            <span id="statPool">0</span>
-          </div>
-        </div>
-        <div class="divider"></div>
-        <div class="card-wrapper">
-          <div class="flashcard" id="flashcard" tabindex="0" role="button" aria-pressed="false" aria-label="Flip card">
-            <div class="flashcard-inner" id="flashcardInner">
-              <div class="face front" id="frontFace">
-                <div id="questionWord">Load a file</div>
+        </article>
+
+        <aside class="flashcard-controls" aria-label="Flashcard controls and stats">
+          <div class="control-panel">
+            <div class="control-row">
+              <button class="btn btn-secondary" type="button" data-mark-mastered>Mark as mastered</button>
+              <button class="btn btn-secondary" type="button" data-toggle-bookmark>Bookmark word</button>
+            </div>
+            <dl class="stats">
+              <div>
+                <dt>Total words</dt>
+                <dd data-total-count>0</dd>
               </div>
-              <div class="face back" id="backFace">
-                <div class="answer-block">
-                  <h4>Meaning</h4>
-                  <div id="meaningText">---</div>
-                  <h4 style="margin-top:0.85rem;">Example</h4>
-                  <div id="exampleText">---</div>
-                  <div class="meta-line" id="metaInfo"></div>
-                </div>
+              <div>
+                <dt>Mastered</dt>
+                <dd data-mastered-count>0</dd>
               </div>
+              <div>
+                <dt>Bookmarked</dt>
+                <dd data-bookmarked-count>0</dd>
+              </div>
+            </dl>
+            <p class="status-message" role="status" data-status-message></p>
+            <div class="control-row">
+              <button class="btn btn-outline" type="button" data-reset-mastery>Reset stats</button>
+              <button class="btn btn-outline" type="button" data-restore-mastered>Restore mastered to deck</button>
+              <button class="btn btn-outline" type="button" data-export-bookmarks>Export bookmarks</button>
             </div>
           </div>
-        </div>
-        <div id="inputArea" class="fade-in">
-          <input type="text" id="userAnswer" placeholder="Type the meaning..." autocomplete="off" aria-label="Type your answer">
-        </div>
-        <div id="choiceArea" class="options hidden" aria-label="Options"></div>
-        <div id="feedback" aria-live="polite"></div>
-        <div class="actions-row">
-          <button id="btnCheck" title="Check your answer">✅ Check</button>
-          <button id="btnReveal" class="secondary" title="Reveal answer (flip)">🙈 Reveal</button>
-          <button id="btnNext" title="Next card">➡️ Next</button>
-          <button id="btnBookmark" class="secondary" title="Bookmark this card">🔖 Bookmark</button>
-          <button id="btnMastered" class="outline" title="Mark as mastered (temporarily remove)">🏆 Mastered</button>
-        </div>
-        <div class="pill-row" id="keywordPills"></div>
-        <div class="info-block">
-          Shortcuts: Enter = Check / Next, Space = Flip card, M = Toggle mode, D = Toggle theme.<br>
-          Add a sample list file named <code>sample_vocabulary.txt</code> in this folder. Format per line:<br>
-          <code>1. Word – definition – example usage sentence</code>
-        </div>
-        <div class="drag-zone" id="dragZone">
-          <strong>Drag &amp; Drop</strong> a .txt file here or
-          <label style="cursor:pointer;text-decoration:underline;color:var(--primary);">
-            browse
-            <input type="file" id="fileInput" accept=".txt" hidden>
-          </label>
-          <div class="muted" style="margin-top:0.4rem;">Your data stays in your browser only.</div>
-        </div>
-      </section>
+          <div class="flashcard-note">
+            <h2>How it works</h2>
+            <ul>
+              <li>Cards pull from <code>data/vocab/words500.json</code> and merge with any custom additions you drop in <code>data/</code>.</li>
+              <li>Mastered words pause from the shuffle until you restore them, keeping the focus on newer terms.</li>
+              <li>Bookmarks export as a tidy JSON file for sharing with tutors or printing.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
 
-      <aside class="panel" aria-label="Bookmarks and Management" id="rightPanel">
-        <h2 style="display:flex;align-items:center;justify-content:space-between;margin-top:0;">
-          <span>📚 Bookmarks</span>
-          <span class="inline-badge" id="bookmarkCount">0</span>
-        </h2>
-        <input type="text" id="bookmarkSearch" class="search-box" placeholder="Search bookmarks..." aria-label="Search bookmarks">
-        <div class="bookmark-toolbar">
-          <button class="outline" id="btnClearBookmarks" title="Clear all bookmarks">🧹 Clear All</button>
-          <button class="outline" id="btnCollapseBookmarks" title="Collapse/Expand list">🗂 Collapse</button>
-        </div>
-        <div class="divider" style="margin:0.8rem 0 0.7rem;"></div>
-        <div class="bookmarks">
-          <div id="bookmarkList" class="bookmark-list" role="list" aria-label="Bookmarked words"></div>
-          <div id="noBookmarks" class="empty">No bookmarks yet.</div>
-        </div>
-      </aside>
-    </main>
-
-    <div class="footer-mobile">
-      <button id="mobCheck">Check</button>
-      <button id="mobNext">Next</button>
-      <button id="mobFlip">Flip</button>
-      <button id="mobBookmark">🔖</button>
-    </div>
-  </div>
-
-  <footer>
-    <div class="footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus.</p>
-      <div class="counter">
-        <span>👀 Visitors so far:</span>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus. Keep building your word power.</p>
+      <div class="counter" aria-live="polite">
+        <span>Visitors so far:</span>
         <span id="countValue">40,000+</span>
       </div>
     </div>

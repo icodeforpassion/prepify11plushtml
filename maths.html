@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Prepify11Plus Maths Missions</title>
-  <meta name="description" content="Colourful 11+ maths practice covering arithmetic, fractions, geometry, triangle logic, reasoning, and measurement.">
+  <meta name="description" content="20 adaptive maths categories with infinite question generators, angle labs, and live scoring for 11+ practice.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -44,45 +44,70 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-heading">
-      <div>
-        <h2>Maths skill builders for fearless thinkers</h2>
-        <p class="tagline">Pick a category, tackle superhero missions, and level up with immediate feedback. All questions live in JSON files so new challenges can be added whenever you like.</p>
-      </div>
-      <div class="badge">
-        <span>📊</span>
-        <span>6 categories • 70+ starter questions</span>
+  <main id="main" class="page-shell">
+    <section class="section page-intro">
+      <div class="container narrow">
+        <span class="badge badge--glow">20 categories • virtually infinite AI-generated questions</span>
+        <h1>Maths missions that grow with every attempt</h1>
+        <p>Pick a category, set your pace, and let our generators craft fresh 11+ style questions on every load. Feedback arrives instantly and perfect streaks unlock confetti (with reduced-motion respect).</p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="card-grid" id="categoryGrid"></div>
+    <section class="section maths-categories">
+      <div class="container">
+        <header class="section-header">
+          <h2>Choose a mission</h2>
+          <p>Smaller cards mean faster scanning. Tap any category to launch a fresh run or dive deeper into the triangles studio for diagrams and SVG challenges.</p>
+        </header>
+        <div class="card-grid card-grid--compact" data-maths-grid></div>
+      </div>
+    </section>
 
-      <div class="question-area" id="questionArea" hidden>
-        <div class="timed-banner">
-          <strong id="activeCategoryLabel">Category</strong>
-          <span>Score: <span id="scoreDisplay">0</span></span>
-          <span>Questions answered: <span id="answeredDisplay">0</span></span>
-        </div>
-        <article class="question-card">
-          <h3 id="questionText">Choose a category to begin.</h3>
-          <div class="question-options" id="optionList"></div>
-          <button class="btn btn-primary" id="nextQuestion" disabled>Next question</button>
-          <p id="questionFeedback" role="alert"></p>
+    <section class="section maths-engine">
+      <div class="container maths-engine__layout">
+        <aside class="maths-engine__sidebar" aria-live="polite">
+          <h2>Mission dashboard</h2>
+          <p class="maths-engine__active" data-active-category>Pick a category to begin.</p>
+          <div class="maths-stats">
+            <div>
+              <span class="maths-stats__label">Answered</span>
+              <span class="maths-stats__value" data-answered-count>0</span>
+            </div>
+            <div>
+              <span class="maths-stats__label">Correct</span>
+              <span class="maths-stats__value" data-correct-count>0</span>
+            </div>
+            <div>
+              <span class="maths-stats__label">Accuracy</span>
+              <span class="maths-stats__value" data-accuracy>0%</span>
+            </div>
+          </div>
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <span class="progress-bar__fill" data-progress-fill></span>
+          </div>
+          <button class="btn btn-outline" type="button" data-reset-mission>Reset mission</button>
+          <a class="btn-link" href="maths-triangles.html">Visit the triangles studio →</a>
+        </aside>
+
+        <article class="maths-engine__question">
+          <div class="maths-question" data-question-container>
+            <p class="maths-question__text" data-question-text>Choose a mission to generate your first question.</p>
+            <ul class="maths-options" data-option-list></ul>
+          </div>
+          <div class="maths-engine__actions">
+            <button class="btn" type="button" data-next-question disabled>Next question</button>
+          </div>
+          <p class="maths-feedback" data-feedback role="status"></p>
         </article>
-        <div class="super-meter">
-          <span id="mathsProgress" style="width:0%"></span>
-        </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus.</p>
-      <div class="counter">
-        <span>👀 Visitors so far:</span>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus. Keep training your maths muscles.</p>
+      <div class="counter" aria-live="polite">
+        <span>Visitors so far:</span>
         <span id="countValue">40,000+</span>
       </div>
     </div>

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prepify11Plus | Superhero 11+ Preparation</title>
-  <meta name="description" content="Prepify11Plus makes 11+ preparation heroic with free mock tests, maths practice, and vocabulary flashcards wrapped in superhero themes.">
+  <title>Prepify11Plus | Train for the 11+</title>
+  <meta name="description" content="Prepify11Plus is the practice gym for 11+ learners: motivating flashcards, adaptive maths drills, and build-your-own mock tests with instant feedback.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -45,22 +45,13 @@
     </div>
   </header>
 
-  <main>
-    <section class="page-heading">
-      <div>
-        <h2>Heroic learning for every 11+ champion</h2>
-        <p class="tagline">Pick a superhero theme, tackle maths missions, master vocabulary, and take free mock tests. Everything is tuned for Year 5 learners aiming for the 11+.</p>
-      </div>
-      <div class="badge">
-        <span>💥</span>
-        <span>Confidence-building missions every week</span>
-      </div>
-    </section>
-
-    <section aria-label="Superhero theme selector" class="section">
-      <h2>Choose your superhero guide</h2>
-      <p>Use the theme dropdown in the header to choose your hero. Your favourite palette stays saved for your next mission.</p>
-    </section>
+  <div class="quote-strip" data-quote-strip>
+    <div class="container quote-strip__inner">
+      <span class="quote-label">Today’s boost</span>
+      <p class="quote-text" data-quote-text>Consistency beats intensity.</p>
+      <button class="quote-refresh" type="button" data-quote-refresh aria-label="Show another motivational quote">↻</button>
+    </div>
+  </div>
 
     <section class="section" id="mock">
       <h2>Free 11+ mock practice</h2>
@@ -76,21 +67,21 @@
             <h3>Timed missions</h3>
             <p>Countdown timers train focus and build exam stamina with gentle reminders when time is almost up.</p>
           </div>
-        </article>
-        <article class="feature-card" aria-label="Instant marking">
-          <div class="feature-icon">📊</div>
-          <div>
-            <h3>Instant marking</h3>
-            <p>Review every answer with clear explanations so learners understand the why behind each solution.</p>
+        </div>
+        <div class="hero-highlights" aria-hidden="true">
+          <div class="highlight-card">
+            <strong>500</strong>
+            <span>high-energy vocab cards</span>
           </div>
-        </article>
-        <article class="feature-card" aria-label="Downloadable reports">
-          <div class="feature-icon">📄</div>
-          <div>
-            <h3>Downloadable reports</h3>
-            <p>Parents receive printable summaries with category strengths and next-step recommendations.</p>
+          <div class="highlight-card">
+            <strong>20</strong>
+            <span>maths categories, including a new triangles lab</span>
           </div>
-        </article>
+          <div class="highlight-card">
+            <strong>∞</strong>
+            <span>seeded mocks tailored to your goals</span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -141,29 +132,23 @@
             <p>Randomised questions covering addition, subtraction, multiplication, and division keep learners engaged.</p>
           </div>
         </article>
-        <article class="feature-card" aria-label="Logic puzzles">
-          <div class="feature-icon">🔺</div>
-          <div>
-            <h3>Triangle logic</h3>
-            <p>Dive into classifying triangles, angle reasoning, and perimeter challenges designed for Year 5 level.</p>
-          </div>
+        <article class="feature">
+          <h3>Thoughtful accessibility</h3>
+          <p>ARIA labels, keyboard shortcuts, and screen-reader friendly status messages are built in so every learner can train confidently.</p>
         </article>
-        <article class="feature-card" aria-label="Fractions mastery">
-          <div class="feature-icon">🟰</div>
-          <div>
-            <h3>Fractions mastery</h3>
-            <p>Mix and match fractions, decimals, and percentages with visual prompts for deeper understanding.</p>
-          </div>
+        <article class="feature">
+          <h3>Local-first progress</h3>
+          <p>All mastery, bookmarks, and mock configurations live in your browser. Refresh without losing streaks.</p>
         </article>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus. Making 11+ prep heroic and free.</p>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus. Making practice purposeful.</p>
       <div class="counter" aria-live="polite">
-        <span>👀 Visitors so far:</span>
+        <span>Visitors so far:</span>
         <span id="countValue">40,000+</span>
       </div>
     </div>

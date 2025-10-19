@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triangles Studio | Prepify11Plus</title>
+  <meta name="description" content="Explore triangle types, angle rules, and area questions with interactive SVG diagrams and generators.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-shell">
+    <div class="container site-header">
+      <a class="logo brand" href="/index.html" aria-label="Go to Home">
+        <span class="logo-mark" aria-hidden="true">P</span>
+        <span class="logo-wordmark">Prepify11Plus</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="flashcards.html">Flashcards</a>
+        <a class="nav-link is-active" href="maths.html">Maths Practice</a>
+        <a class="nav-link" href="mock.html">Mock Tests</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+      <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">
+        <span class="sound-icon" aria-hidden="true">🔇</span>
+        <span class="sound-label">Sound FX off</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="page-shell">
+    <section class="section page-intro">
+      <div class="container narrow">
+        <span class="badge badge--glow">Triangles studio</span>
+        <h1>Visualise triangles, reason angles, celebrate accuracy</h1>
+        <p>Use the diagrams below to revisit triangle types and then tackle our interactive generators. Every question respects the 180° rule, offers worked explanations, and sparks a quick shimmer on reveal (unless you prefer reduced motion).</p>
+      </div>
+    </section>
+
+    <section class="section triangle-gallery">
+      <div class="container">
+        <header class="section-header">
+          <h2>Know your triangle heroes</h2>
+          <p>Tap each diagram to toggle side labels and spot the defining features.</p>
+        </header>
+        <div class="triangle-grid" data-triangle-gallery>
+          <figure class="triangle-card" data-diagram="equilateral">
+            <svg viewBox="0 0 200 180" role="img" aria-labelledby="equilateralTitle" class="triangle-svg">
+              <title id="equilateralTitle">Equilateral triangle with all sides equal</title>
+              <polygon points="100,20 20,160 180,160" class="triangle-shape triangle-shape--equilateral"></polygon>
+              <text x="100" y="18" text-anchor="middle">60°</text>
+              <text x="35" y="150" text-anchor="middle">60°</text>
+              <text x="165" y="150" text-anchor="middle">60°</text>
+              <text x="60" y="95" text-anchor="middle">a</text>
+              <text x="140" y="95" text-anchor="middle">a</text>
+              <text x="100" y="168" text-anchor="middle">a</text>
+            </svg>
+            <figcaption>Equilateral • all sides and angles equal</figcaption>
+          </figure>
+          <figure class="triangle-card" data-diagram="isosceles">
+            <svg viewBox="0 0 200 180" role="img" aria-labelledby="isoscelesTitle" class="triangle-svg">
+              <title id="isoscelesTitle">Isosceles triangle with two equal sides</title>
+              <polygon points="100,20 30,160 170,160" class="triangle-shape triangle-shape--isosceles"></polygon>
+              <text x="60" y="145" text-anchor="middle">x°</text>
+              <text x="140" y="145" text-anchor="middle">x°</text>
+              <text x="100" y="18" text-anchor="middle">(180 - 2x)°</text>
+              <text x="55" y="90" text-anchor="middle">b</text>
+              <text x="145" y="90" text-anchor="middle">b</text>
+              <text x="100" y="168" text-anchor="middle">c</text>
+            </svg>
+            <figcaption>Isosceles • two equal sides and base angles</figcaption>
+          </figure>
+          <figure class="triangle-card" data-diagram="scalene">
+            <svg viewBox="0 0 200 180" role="img" aria-labelledby="scaleneTitle" class="triangle-svg">
+              <title id="scaleneTitle">Scalene triangle with all sides different</title>
+              <polygon points="120,30 30,150 180,160" class="triangle-shape triangle-shape--scalene"></polygon>
+              <text x="120" y="25" text-anchor="middle">48°</text>
+              <text x="45" y="140" text-anchor="middle">72°</text>
+              <text x="160" y="145" text-anchor="middle">60°</text>
+              <text x="80" y="95" text-anchor="middle">8 cm</text>
+              <text x="160" y="98" text-anchor="middle">10 cm</text>
+              <text x="115" y="167" text-anchor="middle">9 cm</text>
+            </svg>
+            <figcaption>Scalene • every side length unique</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section triangle-engine">
+      <div class="container triangle-engine__layout">
+        <aside class="triangle-engine__info">
+          <h2>Angle & area challenges</h2>
+          <p data-triangle-status>Choose a question type below to begin.</p>
+          <div class="triangle-controls">
+            <button class="btn" type="button" data-question-mode="angles">Random angle question</button>
+            <button class="btn btn-outline" type="button" data-question-mode="classification">Classify by sides</button>
+            <button class="btn btn-outline" type="button" data-question-mode="area">Find area or perimeter</button>
+          </div>
+          <div class="triangle-stats">
+            <div>
+              <span class="triangle-stats__label">Attempts</span>
+              <span class="triangle-stats__value" data-triangle-attempts>0</span>
+            </div>
+            <div>
+              <span class="triangle-stats__label">Correct</span>
+              <span class="triangle-stats__value" data-triangle-correct>0</span>
+            </div>
+          </div>
+        </aside>
+        <article class="triangle-engine__question">
+          <p class="triangle-question" data-triangle-question>Select a mode to generate a triangle question.</p>
+          <div class="triangle-options" data-triangle-options></div>
+          <div class="triangle-actions">
+            <button class="btn" type="button" data-triangle-next disabled>Next challenge</button>
+          </div>
+          <p class="triangle-feedback" data-triangle-feedback role="status"></p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus. Keep your angles sharp.</p>
+      <div class="counter" aria-live="polite">
+        <span>Visitors so far:</span>
+        <span id="countValue">40,000+</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/triangles.js" defer></script>
+  <script src="assets/counter.js" defer></script>
+</body>
+</html>

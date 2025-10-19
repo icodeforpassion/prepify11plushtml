@@ -1,103 +1,169 @@
-/* Main site interactions: navigation, accordions, modals, analytics consent */
 (function () {
   const doc = document;
-  const body = doc.body;
-  const mobileToggle = doc.querySelector('[data-mobile-toggle]');
-  const mobileMenu = doc.querySelector('[data-mobile-menu]');
-  const faqItems = doc.querySelectorAll('.faq-item');
-  const consentBanner = doc.querySelector('[data-consent-banner]');
-  const consentAccept = doc.querySelector('[data-consent-accept]');
-  const consentDecline = doc.querySelector('[data-consent-decline]');
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.PrepifyFX = window.PrepifyFX || {
+    play: () => {},
+    celebrate: () => {},
+    sparkle: () => {},
+  };
 
-  const toggleMobileMenu = (open) => {
-    if (!mobileMenu || !mobileToggle) return;
-    const isOpen = open ?? mobileMenu.getAttribute('aria-hidden') === 'true';
-    mobileMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
-    mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    body.classList.toggle('no-scroll', isOpen);
-    if (isOpen) {
-      mobileMenu.querySelector('a, button')?.focus();
-    } else {
-      mobileToggle.focus();
+  const setCurrentYear = () => {
+    const target = doc.getElementById('currentYear');
+    if (target) {
+      target.textContent = new Date().getFullYear();
     }
   };
 
-  mobileToggle?.addEventListener('click', () => toggleMobileMenu());
-  mobileMenu?.addEventListener('click', (event) => {
-    if (event.target === mobileMenu) toggleMobileMenu(false);
-  });
-  doc.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && mobileMenu?.getAttribute('aria-hidden') === 'false') {
-      toggleMobileMenu(false);
+  const setupQuotes = () => {
+    const quoteText = doc.querySelector('[data-quote-text]');
+    const refreshButton = doc.querySelector('[data-quote-refresh]');
+    if (!quoteText) return;
+
+    let quotes = [];
+    let lastIndex = -1;
+
+    const pickQuote = () => {
+      if (!quotes.length) return;
+      let index;
+      do {
+        index = Math.floor(Math.random() * quotes.length);
+      } while (quotes.length > 1 && index === lastIndex);
+      lastIndex = index;
+      quoteText.textContent = quotes[index];
+    };
+
+    fetch('data/quotes.json')
+      .then((res) => res.json())
+      .then((data) => {
+        quotes = Array.isArray(data) ? data : [];
+        if (quotes.length) pickQuote();
+      })
+      .catch(() => {
+        quotes = ['Progress, not perfection.'];
+        pickQuote();
+      });
+
+    refreshButton?.addEventListener('click', pickQuote);
+  };
+
+  const setupSound = () => {
+    const toggle = doc.querySelector('[data-sound-toggle]');
+    const noop = {
+      play: () => {},
+      celebrate: () => {},
+      sparkle: () => {},
+    };
+
+    if (!window.PrepifyFX) {
+      window.PrepifyFX = { ...noop };
     }
-  });
 
-  // FAQ accordions
-  faqItems.forEach((item) => {
-    const button = item.querySelector('.faq-question');
-    const answer = item.querySelector('.faq-answer');
-    const answerId = answer?.id || `faq-${Math.random().toString(36).slice(2, 8)}`;
-    if (!button || !answer) return;
-    answer.id = answerId;
-    button.setAttribute('aria-controls', answerId);
-    button.setAttribute('aria-expanded', 'false');
-    item.setAttribute('aria-expanded', 'false');
-    answer.setAttribute('role', 'region');
+    if (!toggle) {
+      Object.assign(window.PrepifyFX, noop);
+      return;
+    }
 
-    button.addEventListener('click', () => {
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', String(!expanded));
-      item.setAttribute('aria-expanded', String(!expanded));
+    const icon = toggle.querySelector('.sound-icon');
+    const label = toggle.querySelector('.sound-label');
+    const storageKey = 'prepify11plus.sound';
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const stored = localStorage.getItem(storageKey);
+    let enabled = stored ? stored === 'on' : false;
+    let audioContext;
+
+    const ensureContext = () => {
+      if (!enabled) return null;
+      if (!audioContext) {
+        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioContext.state === 'suspended') audioContext.resume();
+      return audioContext;
+    };
+
+    const playTone = (frequency = 660, duration = 0.18) => {
+      const context = ensureContext();
+      if (!context) return;
+      const oscillator = context.createOscillator();
+      const gain = context.createGain();
+      oscillator.type = 'sine';
+      oscillator.frequency.value = frequency;
+      gain.gain.setValueAtTime(0.001, context.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.2, context.currentTime + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, context.currentTime + duration);
+      oscillator.connect(gain);
+      gain.connect(context.destination);
+      oscillator.start();
+      oscillator.stop(context.currentTime + duration);
+    };
+
+    const spawnConfetti = () => {
+      if (prefersReducedMotion) return;
+      const container = doc.createElement('div');
+      container.className = 'confetti';
+      for (let i = 0; i < 20; i += 1) {
+        const piece = doc.createElement('span');
+        piece.className = 'confetti-piece';
+        piece.style.setProperty('--x', `${Math.random() * 100}vw`);
+        piece.style.setProperty('--delay', `${Math.random()}s`);
+        piece.style.setProperty('--rotation', `${Math.random() * 360}deg`);
+        container.appendChild(piece);
+      }
+      doc.body.appendChild(container);
+      setTimeout(() => container.remove(), 1500);
+    };
+
+    const sparkle = () => {
+      if (prefersReducedMotion) return;
+      doc.body.classList.remove('sparkle-flash');
+      void doc.body.offsetWidth;
+      doc.body.classList.add('sparkle-flash');
+      setTimeout(() => doc.body.classList.remove('sparkle-flash'), 400);
+    };
+
+    Object.assign(window.PrepifyFX, {
+      play(type) {
+        if (!enabled) return;
+        const tones = {
+          success: 760,
+          error: 280,
+          start: 520,
+          bookmark: 620,
+          reveal: 680,
+        };
+        playTone(tones[type] || 520);
+      },
+      celebrate: spawnConfetti,
+      sparkle,
     });
-  });
 
-  // Consent banner & optional analytics
-  const analyticsId = doc.documentElement.dataset.gaId || '';
-  const shouldShowConsent = Boolean(analyticsId);
-  const loadAnalytics = () => {
-    if (!analyticsId) return;
-    const script = doc.createElement('script');
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`;
-    script.async = true;
-    doc.head.appendChild(script);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      window.dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', analyticsId, { anonymize_ip: true });
+    const updateToggle = () => {
+      toggle.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      if (icon) icon.textContent = enabled ? '🔊' : '🔇';
+      if (label) label.textContent = enabled ? 'Sound FX on' : 'Sound FX off';
+    };
+
+    toggle.addEventListener('click', () => {
+      enabled = !enabled;
+      localStorage.setItem(storageKey, enabled ? 'on' : 'off');
+      updateToggle();
+      if (enabled) {
+        playTone(540, 0.12);
+      }
+    });
+
+    if (enabled) ensureContext();
+    updateToggle();
   };
 
-  const storageKey = 'prepify11plus-consent';
-  const existingConsent = shouldShowConsent ? sessionStorage.getItem(storageKey) : 'declined';
-  if (shouldShowConsent && !existingConsent) {
-    consentBanner?.setAttribute('aria-hidden', 'false');
-  } else if (existingConsent === 'accepted') {
-    loadAnalytics();
+  const init = () => {
+    setCurrentYear();
+    setupQuotes();
+    setupSound();
+  };
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
-
-  consentAccept?.addEventListener('click', () => {
-    sessionStorage.setItem(storageKey, 'accepted');
-    consentBanner?.setAttribute('aria-hidden', 'true');
-    loadAnalytics();
-  });
-
-  consentDecline?.addEventListener('click', () => {
-    sessionStorage.setItem(storageKey, 'declined');
-    consentBanner?.setAttribute('aria-hidden', 'true');
-  });
-
-  // Smooth scroll for anchor links
-  doc.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (event) => {
-      const targetId = anchor.getAttribute('href').slice(1);
-      const target = doc.getElementById(targetId);
-      if (!target) return;
-      event.preventDefault();
-      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth' });
-      target.focus({ preventScroll: true });
-    });
-  });
 })();
