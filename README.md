@@ -1,45 +1,28 @@
-# ElevenSpark Static Demo
+# Prepify11Plus
 
-ElevenSpark is a fully static HTML/CSS/JS site designed for GitHub Pages. It showcases our approach to calm, confidence-building 11+ preparation with a seeded maths & vocabulary demo.
+Prepify11Plus is a superhero-themed practice hub for 11+ learners. The site ships with interactive maths drills, vocabulary flashcards that load from editable text files, and mock tests with timed modes. All pages share playful themes inspired by ten iconic heroes and a live visitor counter so young learners feel part of a bigger community.
 
-## Getting started locally
+## Features
 
-1. Clone or download the repository.
-2. Open `index.html` in your browser. No build step is required.
-3. For best results, serve the folder with a simple HTTP server (e.g. `python -m http.server`) to avoid CORS restrictions when loading fonts.
+- **Heroic themes**: Switch instantly between Superman, Spiderman, Captain America, Batman, Iron Man, Hulk, Thor, Black Panther, Wonder Woman, and Flash color palettes.
+- **Vocabulary flashcards**: Powered by `/data/sample_vocabulary.txt`, with flip, typing, and multiple-choice practice plus mastery tracking stored in the browser.
+- **Maths skill builders**: Category-based quizzes (arithmetic, fractions, geometry, triangle logic, reasoning, measurement) that pull from JSON files for easy editing.
+- **Mock exams**: Timed English and Maths mock tests with scoring dashboards and review screens.
+- **Visitor counter**: Connected to the public CountAPI service so the community total is always in sight.
+- **GitHub Pages ready**: Drop-in `CNAME` for `www.prepify11plus.co.uk` and static assets optimised for Pages hosting.
 
-## Publishing to GitHub Pages
+## Local development
 
-1. Push the repository to GitHub.
-2. In your repo settings, go to **Pages** and choose the `main` branch (root) as the source.
-3. Save. GitHub Pages will publish the site at `https://<username>.github.io/<repo>/`.
+1. Serve the project root with any static file server. For example:
 
-## Customising the demo
+   ```bash
+   npx serve .
+   ```
 
-- **Word bank & templates:** Edit `assets/js/demo.js`. Maths question templates live near the top, vocabulary templates and the word bank below. Each generator returns an object with `stem`, `choices`, `answer`, and `explanation`.
-- **Colours & fonts:** Update CSS variables in `assets/css/styles.css`. Headings use Google Font Poppins; body text uses system fonts.
-- **Logo & images:** Replace `favicon.svg` and `assets/img/og-image.svg` with your own assets.
+2. Open `http://localhost:3000` (or the port reported by your server).
 
-## Privacy & accessibility notes
+3. Edit the data files inside `/data` to add more vocabulary or maths questions. The site will pick them up automatically on refresh.
 
-- The demo stores everything in memory; no cookies or localStorage are used. Optional analytics only load after explicit consent.
-- Components follow WCAG 2.2 AA guidelines: semantic HTML, focus states, ARIA attributes, and reduced motion support.
+## Deployment
 
-## File overview
-
-```
-index.html                 # Home
-pricing.html               # Plans & comparison
-faq.html                   # Structured FAQ page
-blog.html                  # Blog index
-blog/*.html                # Article pages
-demo.html                  # Interactive demo (maths, vocab, mini-mock)
-assets/css/styles.css      # Global styles & utilities
-assets/js/main.js          # Navigation, modals, consent banner
-assets/js/demo.js          # Seeded quiz & flashcard logic
-sitemap.xml, robots.txt    # SEO helpers
-manifest.webmanifest       # PWA metadata
-favicon.svg, assets/img/*  # Icons & social image
-```
-
-Enjoy exploring the ElevenSpark experience!
+The project is designed for GitHub Pages. Push to the `main` branch and enable Pages for the repository root. GitHub will automatically provision HTTPS for the custom domain configured in `CNAME`.

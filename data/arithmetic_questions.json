@@ -1,0 +1,14 @@
+[
+  {"question": "12 × 8 = ?", "options": ["90", "96", "84", "88"], "answer": "96", "explanation": "Multiply 12 by 8 to get 96."},
+  {"question": "45 ÷ 5 = ?", "options": ["8", "10", "9", "11"], "answer": "9", "explanation": "45 divided by 5 equals 9."},
+  {"question": "300 - 175 = ?", "options": ["115", "120", "125", "135"], "answer": "125", "explanation": "Subtract 175 from 300."},
+  {"question": "What is 7²?", "options": ["14", "28", "49", "56"], "answer": "49", "explanation": "7 squared is 7 × 7 = 49."},
+  {"question": "Add: 345 + 287 = ?", "options": ["622", "632", "642", "652"], "answer": "632", "explanation": "Add hundreds, tens, and ones."},
+  {"question": "What is the value of 6 × 9?", "options": ["45", "52", "54", "58"], "answer": "54", "explanation": "6 groups of 9 equals 54."},
+  {"question": "Double 48", "options": ["84", "86", "88", "96"], "answer": "96", "explanation": "48 + 48 = 96."},
+  {"question": "Halve 146", "options": ["63", "73", "83", "93"], "answer": "73", "explanation": "146 ÷ 2 = 73."},
+  {"question": "Which is the largest?", "options": ["3.4", "3.04", "3.14", "3.40"], "answer": "3.4", "explanation": "3.4 is the same as 3.40 and greater than the others."},
+  {"question": "Solve: 18 + 27", "options": ["35", "37", "43", "45"], "answer": "45", "explanation": "Add 18 and 27."},
+  {"question": "Complete: 560 ÷ 10 = ?", "options": ["5.6", "56", "560", "6"], "answer": "56", "explanation": "Dividing by 10 moves digits one place right."},
+  {"question": "What is 8 more than 297?", "options": ["303", "305", "307", "309"], "answer": "305", "explanation": "Add 8 to 297."}
+]

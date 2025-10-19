@@ -1,0 +1,14 @@
+[
+  {"question": "What comes next: 2, 6, 10, 14, ?", "options": ["16", "18", "20", "22"], "answer": "18", "explanation": "Add 4 each time."},
+  {"question": "Find the missing term: 5, 10, 20, 40, ?", "options": ["45", "60", "70", "80"], "answer": "80", "explanation": "The sequence doubles each time."},
+  {"question": "If MONDAY = 123456, what number represents DAY?", "options": ["456", "356", "234", "654"], "answer": "456", "explanation": "D=4, A=5, Y=6."},
+  {"question": "Choose the odd one out: Square, Triangle, Hexagon, Cube", "options": ["Square", "Triangle", "Hexagon", "Cube"], "answer": "Cube", "explanation": "Cube is a 3D shape, the rest are 2D."},
+  {"question": "What is the next figure? ▲, ◼, ▲, ◼, ?", "options": ["▲", "◼", "●", "◆"], "answer": "▲", "explanation": "The pattern alternates triangle, square."},
+  {"question": "Which word is a synonym for swift?", "options": ["Slow", "Speedy", "Careful", "Silent"], "answer": "Speedy", "explanation": "Swift means fast."},
+  {"question": "If 8 + 2 = 10 and 8 × 2 = 16, what is 8 - 2?", "options": ["4", "5", "6", "7"], "answer": "6", "explanation": "Subtract the numbers."},
+  {"question": "Arrange in order of size: 1/2, 3/4, 2/3", "options": ["1/2 < 2/3 < 3/4", "1/2 < 3/4 < 2/3", "2/3 < 1/2 < 3/4", "3/4 < 2/3 < 1/2"], "answer": "1/2 < 2/3 < 3/4", "explanation": "Convert to decimals: 0.5, 0.66…, 0.75."},
+  {"question": "Choose the next letter pair: AB, CD, EF, ?", "options": ["GH", "HI", "IJ", "KL"], "answer": "GH", "explanation": "Letters move forward two at a time."},
+  {"question": "Spot the odd one out: 14, 21, 28, 33", "options": ["14", "21", "28", "33"], "answer": "33", "explanation": "33 is not a multiple of 7."},
+  {"question": "What number completes the pattern: 3, 9, 27, ?", "options": ["54", "81", "90", "108"], "answer": "81", "explanation": "Multiply by 3 each time."},
+  {"question": "If star = 5 and circle = 3, what is star + circle?", "options": ["6", "7", "8", "9"], "answer": "8", "explanation": "Add the values."}
+]
