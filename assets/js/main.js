@@ -4,34 +4,12 @@
   const body = doc.body;
   const mobileToggle = doc.querySelector('[data-mobile-toggle]');
   const mobileMenu = doc.querySelector('[data-mobile-menu]');
-  const quickPracticeModal = doc.querySelector('#quick-practice-modal');
-  const quickPracticeTrigger = doc.querySelector('[data-quick-practice]');
-  const quickPracticeClose = quickPracticeModal?.querySelector('[data-close-modal]');
   const faqItems = doc.querySelectorAll('.faq-item');
   const consentBanner = doc.querySelector('[data-consent-banner]');
   const consentAccept = doc.querySelector('[data-consent-accept]');
   const consentDecline = doc.querySelector('[data-consent-decline]');
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const trapFocus = (container) => {
-    const focusable = container.querySelectorAll(
-      'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
-    );
-    if (!focusable.length) return () => {};
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    return (event) => {
-      if (event.key !== 'Tab') return;
-      if (event.shiftKey && doc.activeElement === first) {
-        event.preventDefault();
-        last.focus();
-      } else if (!event.shiftKey && doc.activeElement === last) {
-        event.preventDefault();
-        first.focus();
-      }
-    };
-  };
 
   const toggleMobileMenu = (open) => {
     if (!mobileMenu || !mobileToggle) return;
@@ -75,39 +53,6 @@
     });
   });
 
-  // Quick practice modal
-  let releaseFocus = () => {};
-  const openModal = () => {
-    if (!quickPracticeModal) return;
-    quickPracticeModal.setAttribute('aria-hidden', 'false');
-    releaseFocus = trapFocus(quickPracticeModal);
-    doc.addEventListener('keydown', handleEscModal);
-    doc.addEventListener('keydown', releaseFocus);
-    quickPracticeModal.querySelector('button, a, input')?.focus();
-  };
-
-  const closeModal = () => {
-    if (!quickPracticeModal) return;
-    quickPracticeModal.setAttribute('aria-hidden', 'true');
-    doc.removeEventListener('keydown', handleEscModal);
-    doc.removeEventListener('keydown', releaseFocus);
-    quickPracticeTrigger?.focus();
-  };
-
-  const handleEscModal = (event) => {
-    if (event.key === 'Escape') closeModal();
-  };
-
-  quickPracticeTrigger?.addEventListener('click', (event) => {
-    event.preventDefault();
-    openModal();
-  });
-
-  quickPracticeClose?.addEventListener('click', () => closeModal());
-  quickPracticeModal?.addEventListener('click', (event) => {
-    if (event.target === quickPracticeModal) closeModal();
-  });
-
   // Consent banner & optional analytics
   const analyticsId = doc.documentElement.dataset.gaId || '';
   const shouldShowConsent = Boolean(analyticsId);
@@ -125,7 +70,7 @@
     gtag('config', analyticsId, { anonymize_ip: true });
   };
 
-  const storageKey = 'elevenspark-consent';
+  const storageKey = 'prepify11plus-consent';
   const existingConsent = shouldShowConsent ? sessionStorage.getItem(storageKey) : 'declined';
   if (shouldShowConsent && !existingConsent) {
     consentBanner?.setAttribute('aria-hidden', 'false');
