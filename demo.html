@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive Demo | ElevenSpark</title>
+  <meta name="description" content="Try the ElevenSpark 11+ demo for maths, vocabulary, and mini-mock questions with instant feedback." />
+  <link rel="canonical" href="https://elevenspark.example/demo.html" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="icon" href="favicon.svg" />
+  <meta property="og:title" content="Interactive Demo | ElevenSpark" />
+  <meta property="og:description" content="Experience dynamic 11+ maths and vocabulary questions with our free ElevenSpark demo." />
+  <meta property="og:url" content="https://elevenspark.example/demo.html" />
+  <meta property="og:image" content="https://elevenspark.example/assets/img/og-image.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <header>
+    <div class="container site-header" role="navigation" aria-label="Primary">
+      <a class="logo" href="index.html" aria-label="ElevenSpark home">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="30" fill="#3B82F6" opacity="0.12"></circle>
+          <path d="M20 42l8-20 6 12 10-16" stroke="#3B82F6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+          <circle cx="44" cy="18" r="4" fill="#F59E0B"></circle>
+        </svg>
+        ElevenSpark
+      </a>
+      <button class="mobile-nav-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation">☰</button>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="demo.html" aria-current="page">Interactive Demo</a>
+        <a class="btn btn-secondary" href="#practice">Start practising</a>
+      </nav>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="blog.html">Blog</a>
+        <a href="demo.html" aria-current="page">Interactive Demo</a>
+      </nav>
+      <button class="btn" data-mobile-toggle aria-label="Close menu">Close</button>
+    </div>
+  </header>
+  <main id="main">
+    <section class="hero">
+      <div class="container">
+        <h1>Interactive 11+ demo</h1>
+        <p class="section-subtitle">Explore dynamic maths, vocabulary, and mini-mock questions. Nothing is saved — refresh to reset. We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</p>
+      </div>
+    </section>
+
+    <section class="section" id="practice" aria-labelledby="practice-heading">
+      <div class="container">
+        <h2 class="section-title" id="practice-heading">Choose your practice mode</h2>
+        <form class="card" data-quiz-form data-auto-start="true">
+          <fieldset>
+            <legend>Mode</legend>
+            <div class="flex flex-wrap">
+              <label><input type="radio" name="demo-type" value="maths" checked /> Maths</label>
+              <label><input type="radio" name="demo-type" value="vocab" /> Vocabulary</label>
+              <label><input type="radio" name="demo-type" value="mini-mock" /> Mini-mock</label>
+            </div>
+          </fieldset>
+          <label for="demo-topic">Topic</label>
+          <select id="demo-topic" name="demo-topic">
+            <optgroup label="Maths">
+              <option value="number-arithmetic">Number &amp; Arithmetic</option>
+              <option value="fractions">Fractions</option>
+              <option value="decimals-percentages">Decimals &amp; Percentages</option>
+              <option value="ratio-proportion">Ratio &amp; Proportion</option>
+              <option value="factors-multiples">Factors &amp; Multiples</option>
+              <option value="algebra">Intro Algebra</option>
+              <option value="sequences">Sequences</option>
+              <option value="measures">Measures</option>
+              <option value="area-perimeter">Area &amp; Perimeter</option>
+              <option value="data-handling">Data Handling</option>
+            </optgroup>
+            <optgroup label="Vocabulary">
+              <option value="synonyms">Synonyms</option>
+              <option value="antonyms">Antonyms</option>
+              <option value="cloze">Cloze sentences</option>
+              <option value="homophones">Homophones</option>
+              <option value="prefix-suffix">Prefixes &amp; Suffixes</option>
+              <option value="spelling">Spelling checks</option>
+              <option value="analogies">Analogies</option>
+              <option value="odd-one-out">Odd one out</option>
+            </optgroup>
+          </select>
+          <label for="demo-difficulty">Difficulty (1 easy – 5 challenging)</label>
+          <input id="demo-difficulty" name="demo-difficulty" type="range" min="1" max="5" value="2" />
+          <p class="text-muted">Tip: Start at level 2 to warm up, then climb when accuracy reaches 80%.</p>
+          <button type="submit" class="btn">Start practice</button>
+          <button type="button" class="btn btn-outline" data-reset-quiz>Reset</button>
+        </form>
+
+        <div class="card" aria-live="polite">
+          <div class="flex space-between align-center">
+            <h3>Timer</h3>
+            <span class="timer" data-timer>—</span>
+          </div>
+          <div data-quiz-container></div>
+          <div data-quiz-summary class="card visually-hidden">
+            <h3>Set summary</h3>
+            <p><strong>Score:</strong> <span data-summary-score>0%</span></p>
+            <p><strong>Topic:</strong> <span data-summary-topic>-</span></p>
+            <p><strong>Difficulty:</strong> <span data-summary-difficulty>-</span></p>
+            <p data-summary-message></p>
+            <button class="btn" data-summary-restart>Try another set</button>
+          </div>
+          <div>
+            <h3>Badges</h3>
+            <ul data-badge-list></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="flashcards-heading">
+      <div class="container">
+        <h2 class="section-title" id="flashcards-heading">Vocabulary flashcards</h2>
+        <p class="section-subtitle">Flip the card, then rate how it felt. “Again” sends the word to the back of the queue; “Easy” boosts your streak.</p>
+        <div class="flashcard" data-flashcards>
+          <div class="flashcard-inner">
+            <div class="flashcard-face front">
+              <p data-flashcard-word>Press start to begin</p>
+            </div>
+            <div class="flashcard-face back">
+              <p data-flashcard-meaning>Meanings will appear here.</p>
+            </div>
+          </div>
+        </div>
+        <p data-flashcard-counter>0 cards left</p>
+        <p data-flashcard-streak>Streak: 0</p>
+        <div class="flashcard-actions">
+          <button type="button" data-flashcard-action="again">Again</button>
+          <button type="button" data-flashcard-action="flip">Flip</button>
+          <button type="button" data-flashcard-action="easy">Easy</button>
+        </div>
+        <button class="btn" data-start-flashcards>Start flashcards</button>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="faq-demo">
+      <div class="container">
+        <h2 class="section-title" id="faq-demo">Demo FAQ</h2>
+        <div class="faq">
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question">How long is each set?</button>
+            <div class="faq-answer" id="demo-faq-1">
+              <p>Each set includes 5 questions. Mini-mock blends 70% maths and 30% vocabulary with a 5-minute timer.</p>
+            </div>
+          </div>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question">Can I pause the timer?</button>
+            <div class="faq-answer" id="demo-faq-2">
+              <p>You can change mode mid-way or reset the set at any time. Mini-mock timers stop once you finish or press reset.</p>
+            </div>
+          </div>
+          <div class="faq-item" aria-expanded="false">
+            <button class="faq-question">Will my answers be saved?</button>
+            <div class="faq-answer" id="demo-faq-3">
+              <p>No. All activity stays in your browser memory. Refreshing the page clears everything, protecting learner privacy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="footer-columns">
+        <div>
+          <h4>ElevenSpark</h4>
+          <p>Joyful 11+ practice for curious learners. Build habits that last beyond the exam.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="demo.html">Interactive Demo</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="index.html#privacy">Privacy</a></li>
+            <li><a href="index.html#terms">Terms</a></li>
+            <li><a href="index.html#accessibility">Accessibility</a></li>
+            <li><a href="mailto:hello@elevenspark.example">Contact us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+            <li><a href="https://www.instagram.com/">Instagram</a></li>
+            <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> ElevenSpark.</span>
+        <span>We build confidence &amp; fundamentals — <strong>no pass guarantees</strong>.</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/demo.js" defer></script>
+</body>
+</html>
