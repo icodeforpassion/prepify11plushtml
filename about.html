@@ -7,28 +7,40 @@
   <meta name="description" content="Prepify11Plus is built by educators and parents who want every learner to feel confident walking into the 11+ exam hall.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-shell">
-    <div class="container site-header">
-      <a class="logo brand" href="/index.html" aria-label="Go to Home">
-        <span class="logo-mark" aria-hidden="true">P</span>
-        <span class="logo-wordmark">Prepify11Plus</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="flashcards.html">Flashcards</a>
-        <a class="nav-link" href="maths.html">Maths Practice</a>
-        <a class="nav-link" href="mock.html">Mock Tests</a>
-        <a class="nav-link is-active" href="about.html" aria-current="page">About</a>
-      </nav>
-      <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">
-        <span class="sound-icon" aria-hidden="true">🔇</span>
-        <span class="sound-label">Sound FX off</span>
-      </button>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="brand-logo">P</div>
+        <h1>Prepify11Plus</h1>
+      </div>
+      <div class="nav-group">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="flashcards.html">Flashcards</a>
+          <a href="maths.html">Maths Practice</a>
+          <a href="mock.html">Mock Tests</a>
+          <a href="about.html" aria-current="page">About</a>
+        </nav>
+        <label class="theme-picker">
+          <span>Theme</span>
+          <select data-theme-select aria-label="Choose a superhero theme">
+            <option value="superman">Superman</option>
+            <option value="spiderman">Spiderman</option>
+            <option value="captain">Captain America</option>
+            <option value="batman">Batman</option>
+            <option value="ironman">Iron Man</option>
+            <option value="hulk">Hulk</option>
+            <option value="thor">Thor</option>
+            <option value="blackpanther">Black Panther</option>
+            <option value="wonderwoman">Wonder Woman</option>
+            <option value="flash">Flash</option>
+          </select>
+        </label>
+      </div>
     </div>
   </header>
 
@@ -87,7 +99,12 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
+  <script src="assets/theme.js" defer></script>
   <script src="assets/counter.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
 </body>
 </html>
