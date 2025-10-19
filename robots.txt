@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://prepify11plus.example/sitemap.xml
