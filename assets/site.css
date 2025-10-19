@@ -36,9 +36,8 @@ main {
 header {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(15, 23, 42, 0.08));
   padding: 1.5rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  position: relative;
+  z-index: 1;
   backdrop-filter: blur(12px);
 }
 
@@ -141,6 +140,12 @@ header {
 
   .theme-picker select {
     width: 100%;
+  }
+}
+
+@media (max-width: 720px) {
+  header {
+    padding: 1rem 0;
   }
 }
 
