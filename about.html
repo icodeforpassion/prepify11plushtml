@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Prepify11Plus</title>
+  <meta name="description" content="Learn about Prepify11Plus, the superhero-themed 11+ preparation hub built by educators and parents.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="brand-logo">P</div>
+        <h1>Prepify11Plus</h1>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/flashcards.html">Flashcards</a>
+        <a href="/maths.html">Maths Practice</a>
+        <a href="/mock.html">Mock Tests</a>
+        <a href="/about.html" aria-current="page">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <div>
+        <h2>Learning made heroic</h2>
+        <p class="tagline">Prepify11Plus was built by educators and parents to make 11+ learning fun and effective. Our goal is to make high-quality mock tests, flashcards, and maths challenges free for every learner.</p>
+      </div>
+      <div class="badge">
+        <span>📬</span>
+        <span>Contact: info@prepify11plus.co.uk</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="hero-grid">
+        <button class="hero-card" data-theme-name="superman">
+          <span class="hero-icon hero-superman" aria-hidden="true">S</span>
+          <span>Superman</span>
+        </button>
+        <button class="hero-card" data-theme-name="spiderman">
+          <span class="hero-icon hero-spiderman" aria-hidden="true">SP</span>
+          <span>Spiderman</span>
+        </button>
+        <button class="hero-card" data-theme-name="captain">
+          <span class="hero-icon hero-captain" aria-hidden="true">CA</span>
+          <span>Captain America</span>
+        </button>
+        <button class="hero-card" data-theme-name="batman">
+          <span class="hero-icon hero-batman" aria-hidden="true">B</span>
+          <span>Batman</span>
+        </button>
+        <button class="hero-card" data-theme-name="ironman">
+          <span class="hero-icon hero-ironman" aria-hidden="true">IM</span>
+          <span>Iron Man</span>
+        </button>
+        <button class="hero-card" data-theme-name="hulk">
+          <span class="hero-icon hero-hulk" aria-hidden="true">H</span>
+          <span>Hulk</span>
+        </button>
+        <button class="hero-card" data-theme-name="thor">
+          <span class="hero-icon hero-thor" aria-hidden="true">T</span>
+          <span>Thor</span>
+        </button>
+        <button class="hero-card" data-theme-name="blackpanther">
+          <span class="hero-icon hero-blackpanther" aria-hidden="true">BP</span>
+          <span>Black Panther</span>
+        </button>
+        <button class="hero-card" data-theme-name="wonderwoman">
+          <span class="hero-icon hero-wonderwoman" aria-hidden="true">WW</span>
+          <span>Wonder Woman</span>
+        </button>
+        <button class="hero-card" data-theme-name="flash">
+          <span class="hero-icon hero-flash" aria-hidden="true">F</span>
+          <span>Flash</span>
+        </button>
+      </div>
+
+      <div class="card-grid">
+        <article class="info-card">
+          <h3>Why superheroes?</h3>
+          <p>Every learner is a hero-in-training. Colourful themes, dynamic progress meters, and positive language keep motivation high.</p>
+        </article>
+        <article class="info-card">
+          <h3>Editable resources</h3>
+          <p>Parents and tutors can update the vocabulary text file and JSON maths banks without touching the layouts.</p>
+        </article>
+        <article class="info-card">
+          <h3>Community goals</h3>
+          <p>We are on a mission to hit 100,000 learners. The live visitor counter shows the Prepify11Plus community growing every day.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus.</p>
+      <div class="counter">
+        <span>👀 Visitors so far:</span>
+        <span id="countValue">40,000+</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/theme.js" defer></script>
+  <script src="/assets/counter.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prepify11Plus Flashcards</title>
+  <meta name="description" content="Interactive 11+ vocabulary flashcards with flip, typing, and multiple-choice practice powered by Prepify11Plus.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <div class="brand-logo">P</div>
+        <h1>Prepify11Plus</h1>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/index.html">Home</a>
+        <a href="/flashcards.html" aria-current="page">Flashcards</a>
+        <a href="/maths.html">Maths Practice</a>
+        <a href="/mock.html">Mock Tests</a>
+        <a href="/about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-heading">
+      <div>
+        <h2>Vocabulary flashcards that grow with you</h2>
+        <p class="tagline">Every flashcard comes from an editable text file. Add new words, flip the cards, type in the spelling, and earn badges for your mastery streaks.</p>
+      </div>
+      <div class="badge">
+        <span>📁</span>
+        <span>Source: /data/sample_vocabulary.txt</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="stats-bar" role="status" aria-live="polite">
+        <span>Total words: <strong id="totalWords">0</strong></span>
+        <span>Studied: <strong id="studiedCount">0</strong></span>
+        <span>Accuracy: <strong id="accuracy">0%</strong></span>
+        <span>Mastered: <strong id="masteredCount">0</strong></span>
+      </div>
+
+      <div class="badge-grid" aria-label="Achievement badges">
+        <span id="badgeExplorer">🚀 Explorer</span>
+        <span id="badgeChampion">🏅 Champion</span>
+        <span id="badgeLegend">👑 Legend</span>
+      </div>
+
+      <div class="mode-toggle" role="tablist" aria-label="Flashcard modes">
+        <button type="button" class="active" data-mode="flip" role="tab" aria-selected="true">Flip mode</button>
+        <button type="button" data-mode="typing" role="tab">Typing mode</button>
+        <button type="button" data-mode="multiple" role="tab">Multiple choice</button>
+      </div>
+
+      <div class="flashcard-container">
+        <div class="flashcard" aria-live="polite">
+          <div class="flashcard-inner" id="flashcardInner">
+            <article class="flashcard-face front">
+              <h3 id="cardWord">Loading…</h3>
+              <p>Tap the card or use the buttons below to reveal the meaning.</p>
+            </article>
+            <article class="flashcard-face back">
+              <div>
+                <h3 id="cardMeaning"></h3>
+                <p id="cardExample"></p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div id="typingMode" hidden>
+          <label for="typingInput">Type the word:</label>
+          <input id="typingInput" type="text" aria-label="Type the vocabulary word" autocomplete="off" style="padding: 0.9rem 1.2rem; width: 100%; border-radius: 12px; border: 2px solid rgba(15,23,42,0.15); font-size: 1rem;">
+          <button class="btn btn-primary" id="checkTyping">Check answer</button>
+          <p id="typingFeedback" role="alert"></p>
+        </div>
+
+        <div id="multipleMode" hidden>
+          <p>Select the correct meaning:</p>
+          <div class="question-options" id="multipleOptions"></div>
+          <p id="multipleFeedback" role="alert"></p>
+        </div>
+
+        <div class="flashcard-actions">
+          <button class="btn btn-secondary" id="prevCard">Previous</button>
+          <button class="btn btn-primary" id="flipCard">Flip</button>
+          <button class="btn btn-secondary" id="nextCard">Next</button>
+          <button class="btn btn-primary" id="markMastered">Mark mastered</button>
+          <button class="btn btn-secondary" id="resetProgress">Reset progress</button>
+        </div>
+      </div>
+
+      <div class="super-meter" aria-label="Progress towards mastery">
+        <span id="progressBar" style="width:0%"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus.</p>
+      <div class="counter">
+        <span>👀 Visitors so far:</span>
+        <span id="countValue">40,000+</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/theme.js" defer></script>
+  <script src="/assets/counter.js" defer></script>
+  <script>
+    const FLASHCARD_KEY = 'prepify11plus-flash-progress-v1';
+    const flashcardState = {
+      cards: [],
+      currentIndex: 0,
+      mode: 'flip',
+      flipped: false,
+      progress: {
+        studied: 0,
+        correct: 0,
+        attempts: 0,
+        mastered: new Set()
+      }
+    };
+
+    function loadProgress() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(FLASHCARD_KEY));
+        if (!saved) return;
+        flashcardState.progress.studied = saved.studied || 0;
+        flashcardState.progress.correct = saved.correct || 0;
+        flashcardState.progress.attempts = saved.attempts || 0;
+        flashcardState.progress.mastered = new Set(saved.mastered || []);
+      } catch (error) {
+        console.error('Unable to load progress', error);
+      }
+    }
+
+    function persistProgress() {
+      localStorage.setItem(FLASHCARD_KEY, JSON.stringify({
+        studied: flashcardState.progress.studied,
+        correct: flashcardState.progress.correct,
+        attempts: flashcardState.progress.attempts,
+        mastered: Array.from(flashcardState.progress.mastered)
+      }));
+    }
+
+    function parseVocabulary(text) {
+      return text.split('\n')
+        .map(line => line.trim())
+        .filter(Boolean)
+        .map(entry => {
+          const [prefix, meaning, example] = entry.split(' – ');
+          const word = prefix.replace(/^[0-9]+\.\s*/, '').trim();
+          return { word, meaning: meaning?.trim() || '', example: example?.trim() || '' };
+        });
+    }
+
+    function updateStats() {
+      const total = flashcardState.cards.length;
+      const { studied, attempts, correct, mastered } = flashcardState.progress;
+      document.getElementById('totalWords').textContent = total;
+      document.getElementById('studiedCount').textContent = studied;
+      const accuracy = attempts ? Math.round((correct / attempts) * 100) : 0;
+      document.getElementById('accuracy').textContent = `${accuracy}%`;
+      document.getElementById('masteredCount').textContent = mastered.size;
+      const progress = total ? Math.min(100, Math.round((mastered.size / total) * 100)) : 0;
+      document.getElementById('progressBar').style.width = `${progress}%`;
+
+      document.getElementById('badgeExplorer').style.opacity = studied >= 10 ? 1 : 0.4;
+      document.getElementById('badgeChampion').style.opacity = accuracy >= 70 && mastered.size >= 5 ? 1 : 0.4;
+      document.getElementById('badgeLegend').style.opacity = progress === 100 ? 1 : 0.4;
+    }
+
+    function renderCard() {
+      const card = flashcardState.cards[flashcardState.currentIndex];
+      if (!card) return;
+      document.getElementById('cardWord').textContent = card.word;
+      document.getElementById('cardMeaning').textContent = card.meaning;
+      document.getElementById('cardExample').textContent = card.example;
+      flashcardState.progress.studied = Math.max(flashcardState.progress.studied, flashcardState.currentIndex + 1);
+      document.querySelector('#flashcardInner').classList.toggle('flipped', flashcardState.flipped);
+      document.getElementById('typingInput').value = '';
+      document.getElementById('typingFeedback').textContent = '';
+      document.getElementById('multipleFeedback').textContent = '';
+      populateMultipleChoice();
+    }
+
+    function populateMultipleChoice() {
+      const container = document.getElementById('multipleOptions');
+      container.innerHTML = '';
+      const card = flashcardState.cards[flashcardState.currentIndex];
+      if (!card) return;
+      const options = new Set([card.meaning]);
+      while (options.size < 4 && options.size < flashcardState.cards.length) {
+        const randomCard = flashcardState.cards[Math.floor(Math.random() * flashcardState.cards.length)];
+        if (randomCard && randomCard.meaning !== card.meaning) {
+          options.add(randomCard.meaning);
+        }
+      }
+      const shuffled = Array.from(options).sort(() => Math.random() - 0.5);
+      shuffled.forEach(option => {
+        const button = document.createElement('button');
+        button.className = 'option-btn';
+        button.type = 'button';
+        button.textContent = option;
+        button.addEventListener('click', () => {
+          container.querySelectorAll('button').forEach(btn => btn.disabled = true);
+          flashcardState.progress.attempts += 1;
+          if (option === card.meaning) {
+            flashcardState.progress.correct += 1;
+            document.getElementById('multipleFeedback').textContent = 'Correct!';
+            button.classList.add('correct');
+            flashcardState.progress.mastered.add(card.word);
+          } else {
+            document.getElementById('multipleFeedback').textContent = 'Keep trying! The correct meaning is shown on the card.';
+            button.classList.add('incorrect');
+            container.querySelectorAll('button').forEach(btn => {
+              if (btn.textContent === card.meaning) {
+                btn.classList.add('correct');
+              }
+            });
+          }
+          updateStats();
+          persistProgress();
+        }, { once: true });
+        container.appendChild(button);
+      });
+    }
+
+    function changeCard(step) {
+      if (!flashcardState.cards.length) return;
+      flashcardState.currentIndex = (flashcardState.currentIndex + step + flashcardState.cards.length) % flashcardState.cards.length;
+      flashcardState.flipped = false;
+      flashcardState.progress.studied = Math.max(flashcardState.progress.studied, flashcardState.currentIndex + 1);
+      renderCard();
+      updateStats();
+      persistProgress();
+    }
+
+    function markMastered() {
+      const card = flashcardState.cards[flashcardState.currentIndex];
+      if (!card) return;
+      flashcardState.progress.mastered.add(card.word);
+      flashcardState.progress.correct += 1;
+      flashcardState.progress.attempts += 1;
+      updateStats();
+      persistProgress();
+    }
+
+    document.getElementById('flashcardInner').addEventListener('click', () => {
+      flashcardState.flipped = !flashcardState.flipped;
+      document.getElementById('flashcardInner').classList.toggle('flipped', flashcardState.flipped);
+    });
+
+    document.getElementById('flipCard').addEventListener('click', () => {
+      flashcardState.flipped = !flashcardState.flipped;
+      document.getElementById('flashcardInner').classList.toggle('flipped', flashcardState.flipped);
+    });
+
+    document.getElementById('nextCard').addEventListener('click', () => changeCard(1));
+    document.getElementById('prevCard').addEventListener('click', () => changeCard(-1));
+    document.getElementById('markMastered').addEventListener('click', markMastered);
+    document.getElementById('resetProgress').addEventListener('click', () => {
+      localStorage.removeItem(FLASHCARD_KEY);
+      flashcardState.progress = { studied: 0, correct: 0, attempts: 0, mastered: new Set() };
+      updateStats();
+      persistProgress();
+    });
+
+    document.querySelectorAll('.mode-toggle button').forEach(button => {
+      button.addEventListener('click', () => {
+        flashcardState.mode = button.dataset.mode;
+        document.querySelectorAll('.mode-toggle button').forEach(btn => {
+          btn.classList.toggle('active', btn === button);
+          btn.setAttribute('aria-selected', btn === button ? 'true' : 'false');
+        });
+        document.getElementById('typingMode').hidden = flashcardState.mode !== 'typing';
+        document.getElementById('multipleMode').hidden = flashcardState.mode !== 'multiple';
+      });
+    });
+
+    document.getElementById('checkTyping').addEventListener('click', () => {
+      const card = flashcardState.cards[flashcardState.currentIndex];
+      if (!card) return;
+      const userInput = document.getElementById('typingInput').value.trim().toLowerCase();
+      flashcardState.progress.attempts += 1;
+      if (userInput === card.word.toLowerCase()) {
+        flashcardState.progress.correct += 1;
+        flashcardState.progress.mastered.add(card.word);
+        document.getElementById('typingFeedback').textContent = 'Heroic! You spelled it correctly.';
+      } else {
+        document.getElementById('typingFeedback').textContent = `Almost! The correct spelling is "${card.word}".`;
+      }
+      updateStats();
+      persistProgress();
+    });
+
+    fetch('/data/sample_vocabulary.txt')
+      .then(res => res.text())
+      .then(text => {
+        flashcardState.cards = parseVocabulary(text);
+        loadProgress();
+        flashcardState.progress.studied = Math.max(flashcardState.progress.studied, 1);
+        renderCard();
+        updateStats();
+      })
+      .catch(() => {
+        document.getElementById('cardWord').textContent = 'Unable to load vocabulary.';
+      });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
