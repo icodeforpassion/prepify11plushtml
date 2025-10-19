@@ -3,464 +3,151 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prepify11Plus Mock Exams</title>
-  <meta name="description" content="Free 11+ mock exams for English and Maths with timed practice mode and instant feedback.">
+  <title>Prepify11Plus Mock Builder</title>
+  <meta name="description" content="Build à-la-carte 11+ mock tests by choosing categories, difficulty, and timing. Enjoy instant scoring, review mode, and saved configurations.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="brand">
-        <div class="brand-logo">P</div>
-        <h1>Prepify11Plus</h1>
-      </div>
-      <div class="nav-group">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="/index.html">Home</a>
-          <a href="/flashcards.html">Flashcards</a>
-          <a href="/maths.html">Maths Practice</a>
-          <a href="/mock.html" aria-current="page">Mock Tests</a>
-          <a href="/about.html">About</a>
-        </nav>
-        <label class="theme-picker">
-          <span>Theme</span>
-          <select data-theme-select aria-label="Choose a superhero theme">
-            <option value="superman">Superman</option>
-            <option value="spiderman">Spiderman</option>
-            <option value="captain">Captain America</option>
-            <option value="batman">Batman</option>
-            <option value="ironman">Iron Man</option>
-            <option value="hulk">Hulk</option>
-            <option value="thor">Thor</option>
-            <option value="blackpanther">Black Panther</option>
-            <option value="wonderwoman">Wonder Woman</option>
-            <option value="flash">Flash</option>
-          </select>
-        </label>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-shell">
+    <div class="container site-header">
+      <a class="logo brand" href="/index.html" aria-label="Go to Home">
+        <span class="logo-mark" aria-hidden="true">P</span>
+        <span class="logo-wordmark">Prepify11Plus</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="flashcards.html">Flashcards</a>
+        <a class="nav-link" href="maths.html">Maths Practice</a>
+        <a class="nav-link is-active" href="mock.html" aria-current="page">Mock Tests</a>
+        <a class="nav-link" href="about.html">About</a>
+      </nav>
+      <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">
+        <span class="sound-icon" aria-hidden="true">🔇</span>
+        <span class="sound-label">Sound FX off</span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="page-heading" id="maths">
-      <div>
-        <h2>Free 11+ mock exams</h2>
-        <p class="tagline">Simulate the exam hall with timed English and Maths missions. Review answers instantly and revisit weaker areas. Currently free to try — all features open for now.</p>
-      </div>
-      <div class="badge">
-        <span>🎯</span>
-        <span>English & Maths • Timed or untimed</span>
+  <main id="main" class="page-shell">
+    <section class="section page-intro">
+      <div class="container narrow">
+        <span class="badge badge--glow">Build your own mock</span>
+        <h1>Mix categories, set the clock, and rerun any test with its seed</h1>
+        <p>Select the skills you want to sharpen, choose a difficulty, and we’ll spin up a deterministic mock so you can replay the same challenge later or explore an entirely new seed.</p>
       </div>
     </section>
 
-    <section class="section">
-      <div class="timed-banner">
-        <div>
-          <strong>Choose your mock:</strong>
-          <div class="badge-grid">
-            <button class="btn btn-primary" data-subject="english">English mock</button>
-            <button class="btn btn-secondary" data-subject="maths">Maths mock</button>
+    <section class="section mock-builder" aria-labelledby="mockBuilderTitle">
+      <div class="container mock-builder__layout">
+        <aside class="mock-builder__panel">
+          <h2 id="mockBuilderTitle">Configure your mock</h2>
+          <form class="builder-form" data-mock-form>
+            <fieldset>
+              <legend>Categories</legend>
+              <p class="builder-hint">Pick as many as you like. We’ll balance questions evenly.</p>
+              <div class="category-checkboxes" data-category-checkboxes></div>
+            </fieldset>
+            <fieldset>
+              <legend>Difficulty</legend>
+              <div class="difficulty-options">
+                <label><input type="radio" name="difficulty" value="easy" checked> Easy</label>
+                <label><input type="radio" name="difficulty" value="medium"> Medium</label>
+                <label><input type="radio" name="difficulty" value="hard"> Hard</label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Questions & time</legend>
+              <label for="questionCount">Number of questions</label>
+              <input type="range" id="questionCount" name="count" min="5" max="50" value="10" step="1" data-question-count>
+              <div class="builder-range-values">
+                <span data-count-display>10</span> questions
+              </div>
+              <p class="builder-hint">Suggested time: <span data-time-suggestion>15</span> minutes</p>
+              <label for="customTime">Custom time (minutes)</label>
+              <input type="number" id="customTime" name="time" min="5" max="120" value="15" data-custom-time>
+            </fieldset>
+            <fieldset>
+              <legend>Seed</legend>
+              <p class="builder-hint">Use this to replay an identical test later.</p>
+              <input type="text" name="seed" data-seed-input placeholder="Optional seed (leave blank for random)">
+            </fieldset>
+            <div class="builder-actions">
+              <button class="btn" type="submit">Generate mock</button>
+              <button class="btn btn-outline" type="button" data-save-config>Save configuration</button>
+            </div>
+            <p class="builder-status" data-builder-status role="status"></p>
+          </form>
+          <div class="saved-config" data-saved-config hidden>
+            <h3>Saved configuration</h3>
+            <p data-saved-summary></p>
+            <button class="btn btn-outline" type="button" data-load-config>Load saved settings</button>
+            <button class="btn btn-outline" type="button" data-clear-config>Clear saved settings</button>
           </div>
-        </div>
-        <div>
-          <label for="timedToggle"><strong>Timed practice</strong></label>
-          <input type="checkbox" id="timedToggle" aria-describedby="timedHint">
-          <div id="timedHint">Set to 15 minutes for a half-paper challenge.</div>
-        </div>
-        <div>
-          <span id="timerDisplay">Timer: —</span>
-        </div>
+        </aside>
+
+        <section class="mock-engine" aria-live="polite">
+          <header class="mock-engine__header">
+            <h2>Mock in progress</h2>
+            <div class="mock-scoreboard">
+              <div>
+                <span class="mock-scoreboard__label">Question</span>
+                <span class="mock-scoreboard__value" data-mock-question-index>0</span>
+              </div>
+              <div>
+                <span class="mock-scoreboard__label">Score</span>
+                <span class="mock-scoreboard__value" data-mock-score>0</span>
+              </div>
+              <div>
+                <span class="mock-scoreboard__label">Time remaining</span>
+                <span class="mock-scoreboard__value" data-mock-timer>—</span>
+              </div>
+            </div>
+          </header>
+          <article class="mock-question" data-mock-question-container>
+            <p class="mock-question__text" data-mock-question>Configure your mock to begin.</p>
+            <ul class="mock-options" data-mock-options></ul>
+          </article>
+          <div class="mock-actions">
+            <button class="btn" type="button" data-submit-answer disabled>Submit answer</button>
+            <button class="btn btn-outline" type="button" data-next-question disabled>Next</button>
+            <button class="btn btn-outline" type="button" data-end-mock disabled>End mock early</button>
+          </div>
+          <p class="mock-feedback" data-mock-feedback role="status"></p>
+        </section>
       </div>
+    </section>
 
-      <article class="question-card">
-        <h3 id="mockQuestion">Pick a mock to begin.</h3>
-        <div class="question-options" id="mockOptions"></div>
-        <button class="btn btn-primary" id="nextMockQuestion" disabled>Next question</button>
-        <p id="mockFeedback" role="alert"></p>
-      </article>
-
-      <div class="super-meter">
-        <span id="mockProgress" style="width:0%"></span>
+    <section class="section mock-results" id="results" aria-labelledby="mockResultsTitle">
+      <div class="container" data-results-panel hidden>
+        <header>
+          <h2 id="mockResultsTitle">Results</h2>
+          <p data-results-summary></p>
+        </header>
+        <div class="results-actions">
+          <button class="btn" type="button" data-review-toggle>Toggle review mode</button>
+          <button class="btn btn-outline" type="button" data-regenerate>Try a fresh seed</button>
+        </div>
+        <ol class="results-list" data-results-list></ol>
       </div>
-
-      <section class="mock-results" id="resultsPanel" hidden>
-        <h3>Mock results</h3>
-        <p id="summaryText"></p>
-        <table>
-          <thead>
-            <tr>
-              <th>Question</th>
-              <th>Your answer</th>
-              <th>Correct answer</th>
-              <th>Explanation</th>
-            </tr>
-          </thead>
-          <tbody id="resultsTable"></tbody>
-        </table>
-      </section>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus.</p>
-      <div class="counter">
-        <span>👀 Visitors so far:</span>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus. Test smart, train smarter.</p>
+      <div class="counter" aria-live="polite">
+        <span>Visitors so far:</span>
         <span id="countValue">40,000+</span>
       </div>
     </div>
   </footer>
 
-  <script src="/assets/theme.js" defer></script>
-  <script src="/assets/counter.js" defer></script>
-  <script>
-    const mockData = {
-      english: {
-        duration: 15 * 60,
-        questions: [
-          {
-            question: 'Read the sentence: "The luminous moon hung silently over the sleepy village." What does luminous mean?',
-            options: ['Dark', 'Glowing', 'Tiny', 'Noisy'],
-            answer: 'Glowing',
-            explanation: 'Luminous describes something that shines or gives off light.'
-          },
-          {
-            question: 'Choose the synonym for "diligent".',
-            options: ['Lazy', 'Careful', 'Sleepy', 'Tired'],
-            answer: 'Careful',
-            explanation: 'Diligent means showing care and conscientiousness in one\'s work.'
-          },
-          {
-            question: 'Which sentence uses the correct form of "their"?',
-            options: ['Their going to the park later.', 'The friends left their bags by the door.', 'That is there house.', 'Can we go their?'],
-            answer: 'The friends left their bags by the door.',
-            explanation: '"Their" shows possession. The friends own the bags.'
-          },
-          {
-            question: 'What is the main idea of a passage?',
-            options: ['A funny sentence', 'The most important point', 'A detailed example', 'A tricky word'],
-            answer: 'The most important point',
-            explanation: 'The main idea summarises what the passage is mostly about.'
-          },
-          {
-            question: 'Choose the best title for a story about a puppy learning to swim.',
-            options: ['The Puppy\'s First Splash', 'A Day at the Zoo', 'History of Boats', 'How to Cook Pasta'],
-            answer: 'The Puppy\'s First Splash',
-            explanation: 'The title should match the topic of the story.'
-          },
-          {
-            question: 'Select the pair of words that are antonyms.',
-            options: ['Giggle and laugh', 'Brave and courageous', 'Calm and frantic', 'Bright and shiny'],
-            answer: 'Calm and frantic',
-            explanation: 'Antonyms are opposite in meaning.'
-          },
-          {
-            question: 'In the phrase "a blanket of snow", which device is used?',
-            options: ['Simile', 'Metaphor', 'Alliteration', 'Hyperbole'],
-            answer: 'Metaphor',
-            explanation: 'It compares snow to a blanket without using like or as.'
-          },
-          {
-            question: 'What punctuation is needed to split items in a list?',
-            options: ['Question marks', 'Commas', 'Exclamation marks', 'Apostrophes'],
-            answer: 'Commas',
-            explanation: 'Commas separate items in a list.'
-          },
-          {
-            question: 'Choose the sentence with correct punctuation.',
-            options: ['"Can we visit the library" asked Amira.', '"Can we visit the library?" asked Amira.', 'Can we visit the library? asked Amira.', '"Can we visit the library"? asked Amira.'],
-            answer: '"Can we visit the library?" asked Amira.',
-            explanation: 'Question mark stays inside the quotation marks.'
-          },
-          {
-            question: 'Which word best completes the sentence: "The explorers were amazed by the ______ waterfall."',
-            options: ['ordinary', 'magnificent', 'tiring', 'careless'],
-            answer: 'magnificent',
-            explanation: 'Magnificent matches the sense of amazement.'
-          }
-        ]
-      },
-      maths: {
-        duration: 15 * 60,
-        questions: [
-          {
-            question: '36 ÷ 6 = ?',
-            options: ['6', '8', '12', '4'],
-            answer: '6',
-            explanation: 'Six times six equals thirty-six.'
-          },
-          {
-            question: 'A triangle has sides 5cm, 5cm, and 8cm. What type is it?',
-            options: ['Equilateral', 'Isosceles', 'Scalene', 'Right-angled'],
-            answer: 'Isosceles',
-            explanation: 'Two sides are equal, so it is isosceles.'
-          },
-          {
-            question: 'What is 3/4 as a percentage?',
-            options: ['45%', '60%', '75%', '90%'],
-            answer: '75%',
-            explanation: '3 divided by 4 equals 0.75 which is 75%.'
-          },
-          {
-            question: 'The pattern increases by 6 each time: 4, 10, 16, __. What comes next?',
-            options: ['20', '22', '24', '28'],
-            answer: '22',
-            explanation: 'Add 6 to 16 to get 22.'
-          },
-          {
-            question: 'How many degrees in a straight angle?',
-            options: ['45°', '90°', '180°', '360°'],
-            answer: '180°',
-            explanation: 'A straight angle measures 180 degrees.'
-          },
-          {
-            question: 'Convert 2500 grams to kilograms.',
-            options: ['0.25 kg', '2.5 kg', '25 kg', '250 kg'],
-            answer: '2.5 kg',
-            explanation: 'Divide grams by 1000 to change to kilograms.'
-          },
-          {
-            question: 'What is the mean of 8, 12, 14, and 6?',
-            options: ['9', '10', '11', '12'],
-            answer: '10',
-            explanation: 'Total is 40. Divide by 4 to get 10.'
-          },
-          {
-            question: 'A rectangle is 7cm long and 3cm wide. What is its area?',
-            options: ['10 cm²', '14 cm²', '18 cm²', '21 cm²'],
-            answer: '21 cm²',
-            explanation: 'Area = length × width = 7 × 3.'
-          },
-          {
-            question: 'Which fraction is equivalent to 2/3?',
-            options: ['3/6', '4/6', '6/8', '8/12'],
-            answer: '4/6',
-            explanation: 'Multiply numerator and denominator by 2.'
-          },
-          {
-            question: 'Solve: 180 - 47 = ?',
-            options: ['123', '133', '143', '153'],
-            answer: '133',
-            explanation: 'Subtract 47 from 180 to get 133.'
-          }
-        ]
-      }
-    };
-
-    const mockState = {
-      subject: null,
-      questions: [],
-      index: 0,
-      score: 0,
-      responses: [],
-      timer: null,
-      remaining: 0,
-      timedOut: false
-    };
-
-    const timedToggle = document.getElementById('timedToggle');
-    const timerDisplay = document.getElementById('timerDisplay');
-    const nextQuestionButton = document.getElementById('nextMockQuestion');
-
-    function startMock(subjectId) {
-      const subject = mockData[subjectId];
-      if (!subject) return;
-      mockState.subject = subjectId;
-      mockState.questions = subject.questions.slice().sort(() => Math.random() - 0.5);
-      mockState.index = 0;
-      mockState.score = 0;
-      mockState.responses = [];
-      mockState.timedOut = false;
-      mockState.remaining = timedToggle?.checked ? subject.duration : 0;
-      document.getElementById('resultsPanel').hidden = true;
-      document.getElementById('mockFeedback').textContent = '';
-      document.getElementById('mockOptions').innerHTML = '';
-      document.getElementById('mockQuestion').textContent = 'Loading…';
-      updateProgressBar();
-      stopTimer();
-      nextQuestionButton.disabled = true;
-      if (mockState.remaining > 0) {
-        timerDisplay.textContent = formatTime(mockState.remaining);
-        mockState.timer = setInterval(tick, 1000);
-      } else {
-        timerDisplay.textContent = 'Timer: —';
-      }
-      setTimeout(() => displayMockQuestion(), 200);
-    }
-
-    function displayMockQuestion() {
-      const question = mockState.questions[mockState.index];
-      if (!question) return;
-      document.getElementById('mockQuestion').textContent = `${mockState.index + 1}. ${question.question}`;
-      const optionList = document.getElementById('mockOptions');
-      optionList.innerHTML = '';
-      const shuffled = [...question.options].sort(() => Math.random() - 0.5);
-      shuffled.forEach(option => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'option-btn';
-        btn.textContent = option;
-        btn.addEventListener('click', () => gradeResponse(option));
-        optionList.appendChild(btn);
-      });
-      nextQuestionButton.disabled = true;
-      document.getElementById('mockFeedback').textContent = '';
-      updateProgressBar();
-    }
-
-    function gradeResponse(selected) {
-      const question = mockState.questions[mockState.index];
-      const optionButtons = document.querySelectorAll('#mockOptions .option-btn');
-      optionButtons.forEach(btn => btn.disabled = true);
-      const isCorrect = selected === question.answer;
-      if (isCorrect) {
-        mockState.score += 1;
-        document.getElementById('mockFeedback').textContent = question.explanation || 'Correct!';
-      } else {
-        document.getElementById('mockFeedback').textContent = `Not quite. Correct answer: ${question.answer}. ${question.explanation || ''}`.trim();
-      }
-      optionButtons.forEach(btn => {
-        if (btn.textContent === question.answer) {
-          btn.classList.add('correct');
-        }
-        if (btn.textContent === selected && !isCorrect) {
-          btn.classList.add('incorrect');
-        }
-      });
-      mockState.responses.push({
-        index: mockState.index,
-        question: question.question,
-        answer: question.answer,
-        selected,
-        explanation: question.explanation || ''
-      });
-      nextQuestionButton.disabled = false;
-      updateProgressBar();
-      if (mockState.responses.length === mockState.questions.length) {
-        finishMock();
-      }
-    }
-
-    function nextMockQuestion() {
-      if (mockState.responses.length >= mockState.questions.length) {
-        finishMock();
-        return;
-      }
-      mockState.index += 1;
-      displayMockQuestion();
-    }
-
-    function finishMock() {
-      stopTimer();
-      nextQuestionButton.disabled = true;
-      const baseMessage = `Score: ${mockState.score}/${mockState.questions.length}.`;
-      document.getElementById('mockFeedback').textContent = mockState.timedOut && mockState.responses.length < mockState.questions.length
-        ? `Time's up! ${baseMessage}`
-        : baseMessage;
-      document.querySelectorAll('#mockOptions .option-btn').forEach(btn => btn.disabled = true);
-      renderResults();
-      document.getElementById('mockProgress').style.width = '100%';
-    }
-
-    function renderResults() {
-      const tbody = document.getElementById('resultsTable');
-      tbody.innerHTML = '';
-      mockState.questions.forEach((question, index) => {
-        const row = mockState.responses.find(entry => entry.index === index) || {
-          selected: '—',
-          answer: question.answer,
-          explanation: question.explanation || ''
-        };
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${index + 1}</td>
-          <td>${row.selected || '—'}</td>
-          <td>${row.answer}</td>
-          <td>${row.explanation}</td>
-        `;
-        tbody.appendChild(tr);
-      });
-      const summary = `You answered ${mockState.score} out of ${mockState.questions.length} questions correctly.`;
-      document.getElementById('summaryText').textContent = summary;
-      document.getElementById('resultsPanel').hidden = false;
-    }
-
-    function updateProgressBar() {
-      const total = mockState.questions.length || 1;
-      const progress = Math.round((mockState.responses.length / total) * 100);
-      document.getElementById('mockProgress').style.width = `${progress}%`;
-    }
-
-    function tick() {
-      if (mockState.remaining <= 0) {
-        stopTimer();
-        timerDisplay.textContent = 'Time\'s up!';
-        mockState.timedOut = true;
-        finishMock();
-        return;
-      }
-      mockState.remaining -= 1;
-      timerDisplay.textContent = formatTime(mockState.remaining);
-    }
-
-    function stopTimer() {
-      if (mockState.timer) {
-        clearInterval(mockState.timer);
-        mockState.timer = null;
-      }
-    }
-
-    function formatTime(seconds) {
-      const mins = Math.floor(seconds / 60);
-      const secs = seconds % 60;
-      return `Timer: ${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-    }
-
-    function handleTimedToggleChange() {
-      if (!timedToggle) return;
-      stopTimer();
-      if (!mockState.subject) {
-        if (timedToggle.checked) {
-          mockState.remaining = 15 * 60;
-          timerDisplay.textContent = formatTime(mockState.remaining);
-        } else {
-          mockState.remaining = 0;
-          timerDisplay.textContent = 'Timer: —';
-        }
-        return;
-      }
-
-      const subject = mockData[mockState.subject];
-      if (!subject) return;
-
-      if (timedToggle.checked) {
-        mockState.remaining = subject.duration;
-        mockState.timedOut = false;
-        timerDisplay.textContent = formatTime(mockState.remaining);
-        mockState.timer = setInterval(tick, 1000);
-      } else {
-        mockState.remaining = 0;
-        mockState.timedOut = false;
-        timerDisplay.textContent = 'Timer: —';
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-      nextQuestionButton.disabled = true;
-      document.querySelectorAll('button[data-subject]').forEach(button => {
-        button.addEventListener('click', () => {
-          document.querySelectorAll('button[data-subject]').forEach(btn => btn.classList.toggle('btn-primary', btn === button));
-          document.querySelectorAll('button[data-subject]').forEach(btn => btn.classList.toggle('btn-secondary', btn !== button));
-          startMock(button.dataset.subject);
-        });
-      });
-      nextQuestionButton.addEventListener('click', nextMockQuestion);
-      timedToggle?.addEventListener('change', handleTimedToggleChange);
-    });
-  </script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/mockbuilder.js" defer></script>
+  <script src="assets/counter.js" defer></script>
 </body>
 </html>

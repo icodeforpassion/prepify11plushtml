@@ -4,96 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Prepify11Plus</title>
-  <meta name="description" content="Learn about Prepify11Plus, the superhero-themed 11+ preparation hub built by educators and parents.">
+  <meta name="description" content="Prepify11Plus is built by educators and parents who want every learner to feel confident walking into the 11+ exam hall.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/site.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="navbar">
-      <div class="brand">
-        <div class="brand-logo">P</div>
-        <h1>Prepify11Plus</h1>
-      </div>
-      <div class="nav-group">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="/index.html">Home</a>
-          <a href="/flashcards.html">Flashcards</a>
-          <a href="/maths.html">Maths Practice</a>
-          <a href="/mock.html">Mock Tests</a>
-          <a href="/about.html" aria-current="page">About</a>
-        </nav>
-        <label class="theme-picker">
-          <span>Theme</span>
-          <select data-theme-select aria-label="Choose a superhero theme">
-            <option value="superman">Superman</option>
-            <option value="spiderman">Spiderman</option>
-            <option value="captain">Captain America</option>
-            <option value="batman">Batman</option>
-            <option value="ironman">Iron Man</option>
-            <option value="hulk">Hulk</option>
-            <option value="thor">Thor</option>
-            <option value="blackpanther">Black Panther</option>
-            <option value="wonderwoman">Wonder Woman</option>
-            <option value="flash">Flash</option>
-          </select>
-        </label>
-      </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-shell">
+    <div class="container site-header">
+      <a class="logo brand" href="/index.html" aria-label="Go to Home">
+        <span class="logo-mark" aria-hidden="true">P</span>
+        <span class="logo-wordmark">Prepify11Plus</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="flashcards.html">Flashcards</a>
+        <a class="nav-link" href="maths.html">Maths Practice</a>
+        <a class="nav-link" href="mock.html">Mock Tests</a>
+        <a class="nav-link is-active" href="about.html" aria-current="page">About</a>
+      </nav>
+      <button class="sound-toggle" type="button" data-sound-toggle aria-pressed="false">
+        <span class="sound-icon" aria-hidden="true">🔇</span>
+        <span class="sound-label">Sound FX off</span>
+      </button>
     </div>
   </header>
 
-  <main>
-    <section class="page-heading">
-      <div>
-        <h2>Learning made heroic</h2>
-        <p class="tagline">Prepify11Plus was built by educators and parents to make 11+ learning fun and effective. Our goal is to make high-quality mock tests, flashcards, and maths challenges free for every learner.</p>
-      </div>
-      <div class="badge">
-        <span>📬</span>
-        <span>Contact: info@prepify11plus.co.uk</span>
+  <main id="main" class="page-shell">
+    <section class="section page-intro">
+      <div class="container narrow">
+        <h1>Making practice purposeful and joyful</h1>
+        <p>Prepify11Plus started as weekend mock papers printed at a kitchen table. Today it is a free digital gym where learners train for the 11+ with instant feedback, playful animations, and respectful pacing.</p>
       </div>
     </section>
 
     <section class="section">
-      <div class="section-intro">
-        <h2>Choose the hero that motivates your learner</h2>
-        <p>The theme dropdown in the header lets you pick the colour palette that feels just right. We remember your choice for next time.</p>
+      <div class="container card-grid card-grid--compact">
+        <article class="category-card">
+          <h2>Built by teachers &amp; parents</h2>
+          <p>We prototype with Year 5 classrooms and tutoring groups. Real learner reactions shape every interaction, from the sparkle on a revealed answer to the words we choose for encouragement.</p>
+        </article>
+        <article class="category-card">
+          <h2>Practice-first philosophy</h2>
+          <p>Lessons and theory live elsewhere. Prepify focuses on purposeful reps, seeded randomness for endless variety, and clear metrics so you know exactly what to revise next.</p>
+        </article>
+        <article class="category-card">
+          <h2>Accessible by default</h2>
+          <p>Keyboard controls, ARIA live regions, reduced-motion support, and dyslexia-friendly typography are baked in. If something feels off, tell us—we iterate fast.</p>
+        </article>
       </div>
-      <div class="card-grid">
-        <article class="info-card">
-          <h3>Why superheroes?</h3>
-          <p>Every learner is a hero-in-training. Colourful themes, dynamic progress meters, and positive language keep motivation high.</p>
-        </article>
-        <article class="info-card">
-          <h3>Editable resources</h3>
-          <p>Parents and tutors can update the vocabulary text file and JSON maths banks without touching the layouts.</p>
-        </article>
-        <article class="info-card">
-          <h3>Community goals</h3>
-          <p>We are on a mission to hit 100,000 learners. The live visitor counter shows the Prepify11Plus community growing every day.</p>
-        </article>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container resources">
+        <div class="resources-copy">
+          <h2>Resources you can extend</h2>
+          <p>All data files are plain text or JSON. Duplicate them, add your own questions, and drop them back into the <code>data/</code> folder. Learner progress stays stored locally, so no logins or trackers are required.</p>
+          <ul class="resource-list">
+            <li><a href="data/vocab/words500.json">Download the 500-word vocab list</a></li>
+            <li><a href="data/quotes.json">See the motivational quotes</a></li>
+            <li><a href="flashcards.html">Export flashcard bookmarks</a> as you practise</li>
+          </ul>
+        </div>
+        <aside class="contact-card">
+          <h3>Contact</h3>
+          <p>Email <a href="mailto:info@prepify11plus.co.uk">info@prepify11plus.co.uk</a> or message <a href="https://twitter.com/prepify11plus">@prepify11plus</a>.</p>
+          <p>We love hearing how your learner uses Prepify and what to build next.</p>
+        </aside>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus.</p>
-      <div class="counter">
-        <span>👀 Visitors so far:</span>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="currentYear"></span> Prepify11Plus. Making practice purposeful.</p>
+      <div class="counter" aria-live="polite">
+        <span>Visitors so far:</span>
         <span id="countValue">40,000+</span>
       </div>
     </div>
   </footer>
 
-  <script src="/assets/theme.js" defer></script>
-  <script src="/assets/counter.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-    });
-  </script>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/counter.js" defer></script>
 </body>
 </html>
