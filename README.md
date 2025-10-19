@@ -18,7 +18,7 @@ ElevenSpark is a fully static HTML/CSS/JS site designed for GitHub Pages. It sho
 
 - **Word bank & templates:** Edit `assets/js/demo.js`. Maths question templates live near the top, vocabulary templates and the word bank below. Each generator returns an object with `stem`, `choices`, `answer`, and `explanation`.
 - **Colours & fonts:** Update CSS variables in `assets/css/styles.css`. Headings use Google Font Poppins; body text uses system fonts.
-- **Logo & images:** Replace `favicon.ico` and `assets/img/og-image.png` with your own assets.
+- **Logo & images:** Replace `favicon.svg` and `assets/img/og-image.svg` with your own assets.
 
 ## Privacy & accessibility notes
 
@@ -39,7 +39,7 @@ assets/js/main.js          # Navigation, modals, consent banner
 assets/js/demo.js          # Seeded quiz & flashcard logic
 sitemap.xml, robots.txt    # SEO helpers
 manifest.webmanifest       # PWA metadata
-favicon.ico, assets/img/*  # Icons & social image
+favicon.svg, assets/img/*  # Icons & social image
 ```
 
 Enjoy exploring the ElevenSpark experience!
