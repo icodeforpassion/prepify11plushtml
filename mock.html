@@ -2,170 +2,193 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Prepify11Plus – Mock Tests</title>
-  <meta name="description" content="Generate custom 11+ mock tests from Arithmetic, Fractions, Geometry, Reasoning and more with timer and instant results." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css" />
+  <meta name="description" content="Build timed 11+ mock tests by choosing a category. Clean UI, readable in any superhero theme, and fully responsive."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site.css"/>
+
   <style>
+    /* Page shell uses your CSS variables from theme.js / site.css */
     main.page-shell {
       background: var(--bg);
       color: var(--text);
-      padding: 2rem 1rem;
-      font-family: 'Poppins', sans-serif;
-      transition: background 0.3s, color 0.3s;
+      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
+      transition: background .3s, color .3s;
     }
 
-    .mock-container {
-      max-width: 960px;
-      margin: auto;
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: clamp(1rem, 2vw, 2rem);
+    }
+
+    .intro-card {
       background: var(--bg-alt);
-      border-radius: 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
       box-shadow: var(--shadow-s);
-      padding: 2rem;
-    }
-
-    .mock-header {
+      padding: clamp(1rem, 2vw, 1.5rem);
       text-align: center;
-      margin-bottom: 1.5rem;
     }
 
-    .mock-header h1 {
+    .intro-card h1 {
+      margin: 0 0 .5rem 0;
       background: var(--gradient-text);
       -webkit-background-clip: text;
       color: transparent;
+      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
     }
 
-    .mock-form {
+    .intro-card p {
+      color: var(--text-light);
+      margin: 0 auto;
+      max-width: 720px;
+    }
+
+    /* Category grid */
+    .category-grid {
       display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
-      margin-bottom: 2rem;
+      margin-top: 1.2rem;
     }
+    @media (max-width: 900px) { .category-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .category-grid { grid-template-columns: 1fr; } }
 
-    .mock-form label {
+    .category-chip {
+      position: relative;
       display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    select, input[type="number"] {
-      font: inherit;
-      padding: 0.6rem;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    select:focus, input:focus {
-      outline: none;
-      box-shadow: var(--focus-ring);
-    }
-
-    button {
-      background: var(--primary);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 0.7rem 1.2rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: var(--primary-hover);
-    }
-
-    button.secondary {
-      background: var(--bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .mock-question {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      border-radius: 12px;
-      background: var(--bg-alt);
-      box-shadow: var(--shadow-xs);
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .mock-question h2 {
-      margin-bottom: 1rem;
-    }
-
-    .mock-options {
-      display: grid;
-      gap: 0.6rem;
-    }
-
-    .mock-options button {
-      text-align: left;
-      background: var(--bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 0.8rem;
-      transition: all 0.2s;
-    }
-
-    .mock-options button:hover {
-      background: rgba(70,110,255,0.1);
-      border-color: var(--primary);
-    }
-
-    .mock-options button.correct {
-      background: #2ecc71;
-      color: white;
-      border-color: #27ae60;
-    }
-
-    .mock-options button.incorrect {
-      background: #e74c3c;
-      color: white;
-      border-color: #c0392b;
-    }
-
-    .scoreboard {
-      display: flex;
+      align-items: center;
       justify-content: space-between;
+      gap: .8rem;
+      padding: .9rem 1rem;
       background: var(--bg);
+      color: var(--text);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.6rem 1rem;
-      margin-top: 1rem;
-    }
-
-    .feedback {
-      margin-top: 1rem;
-      font-weight: 600;
-    }
-
-    .feedback.correct { color: #2ecc71; }
-    .feedback.incorrect { color: #e74c3c; }
-
-    .result-card {
-      text-align: center;
-      padding: 2rem;
-      border-radius: 12px;
-      background: var(--bg-alt);
+      border-radius: 14px;
       box-shadow: var(--shadow-xs);
-      margin-top: 2rem;
+      cursor: pointer;
+      transition: transform .12s ease, background .25s ease, border-color .2s ease, opacity .35s ease;
+      user-select: none;
+    }
+    .category-chip:hover { transform: translateY(-1px); border-color: var(--primary); }
+    .category-chip .title { font-weight: 600; }
+    .category-chip .meta { color: var(--text-light); font-size: .85rem; }
+    .category-chip.fade-out { opacity: 0; transform: scale(.96); pointer-events: none; }
+
+    /* Config row (count/time) */
+    .config-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: end;
+    }
+    @media (max-width: 680px) { .config-row { grid-template-columns: 1fr; } }
+
+    .control {
+      display: flex; flex-direction: column; gap: .45rem;
+    }
+    .control label { font-weight: 600; }
+    .control input, .control select {
+      font: inherit; padding: .65rem .8rem; border-radius: 10px;
+      border: 1px solid var(--border); background: var(--bg); color: var(--text);
+      outline: none; transition: box-shadow .2s ease, background .2s ease;
+    }
+    .control input:focus, .control select:focus { box-shadow: var(--focus-ring); background: var(--bg-alt); }
+
+    .btn-primary {
+      background: var(--primary); color: #fff; border: none;
+      border-radius: 10px; padding: .75rem 1.1rem; font-weight: 700;
+      cursor: pointer; transition: background .25s ease; box-shadow: var(--shadow-xs);
+    }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-outline {
+      background: var(--bg); color: var(--text); border: 1px solid var(--border);
+      border-radius: 10px; padding: .75rem 1.1rem; font-weight: 600; cursor: pointer;
     }
 
-    @media (max-width: 700px) {
-      .mock-container { padding: 1.3rem; }
-      button { width: 100%; }
+    /* HUD row */
+    .hud {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: .8rem;
+      align-items: center;
+      margin: 1.3rem 0 .8rem;
+    }
+    @media (max-width: 640px) { .hud { grid-template-columns: 1fr; row-gap: .6rem; } }
+
+    .progress-outer {
+      height: 12px; border-radius: 999px; overflow: hidden;
+      background: var(--bg); border: 1px solid var(--border); box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
+    }
+    .progress-inner {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, #3b65ff, #6a8fff, #8f46ff);
+      background-size: 200% 100%;
+      animation: flow 8s linear infinite;
+      transition: width .3s ease;
+    }
+    @keyframes flow { 0%{ background-position: 0 0; } 100%{ background-position: 200% 0; } }
+
+    .pill {
+      display: inline-flex; gap: .45rem; align-items: center;
+      border: 1px solid var(--border); background: var(--bg);
+      padding: .35rem .65rem; border-radius: 999px; font-size: .9rem;
+    }
+
+    /* Question card */
+    .question-card {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-s);
+      padding: 1.1rem 1.1rem 1.3rem;
+    }
+    .q-text { font-weight: 700; font-size: clamp(1rem, 1.6vw, 1.2rem); margin: 0 0 .9rem 0; }
+
+    .options { display: grid; gap: .6rem; }
+    .option-btn {
+      text-align: left; width: 100%; padding: .7rem .9rem;
+      background: var(--bg); color: var(--text); border: 1px solid var(--border);
+      border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s, transform .05s;
+    }
+    .option-btn:hover { border-color: var(--primary); background: rgba(70,110,255,.08); }
+    .option-btn.correct { background: #2ecc71; color: #fff; border-color: #27ae60; }
+    .option-btn.incorrect { background: #e74c3c; color: #fff; border-color: #c0392b; }
+    .option-btn:disabled { opacity: .8; cursor: not-allowed; }
+
+    .feedback { margin-top: .75rem; font-weight: 600; min-height: 1.1rem; }
+    .feedback.ok { color: #2ecc71; }
+    .feedback.no { color: #e74c3c; }
+
+    .controls-row {
+      margin-top: 1rem; display: flex; gap: .6rem; flex-wrap: wrap; justify-content: flex-end;
+    }
+
+    /* Results */
+    .result-card {
+      margin-top: 1.2rem;
+      background: var(--bg-alt); border: 1px solid var(--border);
+      border-radius: 16px; box-shadow: var(--shadow-s); padding: 1.2rem;
+    }
+    .result-card h3 { margin: 0 0 .5rem 0; }
+    .result-list { margin: .6rem 0 0 1rem; line-height: 1.35; }
+
+    /* Subtle badge */
+    .badge {
+      display: inline-flex; align-items: center; gap: .35rem;
+      padding: .28rem .6rem; border-radius: 999px; font-size: .78rem; font-weight: 700;
+      color: #fff; box-shadow: var(--shadow-xs);
+      background: linear-gradient(90deg, #3558ff, #8f46ff 55%, #ff8a3d);
     }
   </style>
 </head>
 <body>
+  <!-- Navbar (keeps your existing theme picker + styling) -->
   <header>
     <div class="navbar">
       <div class="brand">
@@ -200,68 +223,94 @@
   </header>
 
   <main class="page-shell">
-    <div class="mock-container">
-      <div class="mock-header">
-        <h1>Custom Mock Test Builder</h1>
-        <p>Select topics, choose the number of questions, and start your timed 11+ mock test instantly.</p>
-      </div>
+    <div class="container">
+      <!-- Intro / Category selection -->
+      <section class="intro-card" id="landing">
+        <span class="badge">Build your own mock</span>
+        <h1>Pick a category to begin</h1>
+        <p>Select a topic card below. The card will dissolve and your test will start with stylish, easy controls, a clear timer and progress.</p>
 
-      <form id="mockForm" class="mock-form">
-        <label>Topic
-          <select id="topicSelect">
-            <option value="all">All Topics</option>
-            <option value="arithmetic_questions.json">Arithmetic</option>
-            <option value="fractions_questions.json">Fractions</option>
-            <option value="geometry_questions.json">Geometry</option>
-            <option value="measurement_questions.json">Measurement</option>
-            <option value="reasoning_questions.json">Reasoning</option>
-            <option value="triangle_logic_questions.json">Triangle Logic</option>
-          </select>
-        </label>
+        <div class="category-grid" id="categoryGrid" aria-label="Choose a category">
+          <button class="category-chip" data-category="all">
+            <div>
+              <div class="title">All Topics</div>
+              <div class="meta">Mix of Maths & Reasoning</div>
+            </div>
+            <span>▶</span>
+          </button>
 
-        <label>Number of Questions
-          <input type="number" id="questionCount" min="5" max="50" value="10">
-        </label>
+          <button class="category-chip" data-category="maths">
+            <div>
+              <div class="title">Maths</div>
+              <div class="meta">Arithmetic, Fractions, Geometry, Measurement, Triangle Logic</div>
+            </div>
+            <span>▶</span>
+          </button>
 
-        <label>Time Limit (minutes)
-          <input type="number" id="timeLimit" min="5" max="60" value="15">
-        </label>
-
-        <button type="button" id="startMock">Start Mock</button>
-        <p id="statusMessage" style="color:var(--text-light); font-size:0.9rem;">Loading question banks...</p>
-      </form>
-
-      <section id="mockSection" hidden>
-        <div class="scoreboard">
-          <div>Question <span id="qIndex">0</span></div>
-          <div>Score <span id="score">0</span></div>
-          <div>Time <span id="timer">--:--</span></div>
+          <button class="category-chip" data-category="reasoning">
+            <div>
+              <div class="title">Reasoning</div>
+              <div class="meta">Verbal & logic style questions</div>
+            </div>
+            <span>▶</span>
+          </button>
         </div>
 
-        <div class="mock-question">
-          <h2 id="questionText">Question text will appear here</h2>
-          <div id="optionsContainer" class="mock-options"></div>
-          <p id="feedback" class="feedback"></p>
+        <div class="config-row" id="configRow" aria-label="Configure your mock">
+          <div class="control">
+            <label for="questionCount">Number of Questions</label>
+            <input id="questionCount" type="number" min="5" max="50" value="10"/>
+          </div>
+          <div class="control">
+            <label for="timeLimit">Time Limit (minutes)</label>
+            <input id="timeLimit" type="number" min="5" max="120" value="15"/>
+          </div>
+          <div class="control">
+            <button class="btn-primary" id="startBtn" disabled>Start Mock</button>
+          </div>
         </div>
 
-        <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;">
-          <button id="nextQuestion" class="secondary" disabled>Next Question</button>
-          <button id="endMock" class="secondary">End Test</button>
-        </div>
+        <p id="loadStatus" style="margin-top:.6rem; color:var(--text-light);"></p>
       </section>
 
-      <section id="resultSection" class="result-card" hidden>
-        <h2>Your Results</h2>
-        <p id="resultSummary"></p>
-        <button id="restartMock">Start New Mock</button>
+      <!-- In-test HUD -->
+      <section id="testHud" hidden>
+        <div class="hud">
+          <div class="progress-outer" aria-label="Progress">
+            <div class="progress-inner" id="progressFill"></div>
+          </div>
+          <div class="pill">Score&nbsp;<strong id="score">0</strong></div>
+          <div class="pill">Time&nbsp;<strong id="timer">--:--</strong></div>
+        </div>
+
+        <!-- Question card -->
+        <article class="question-card">
+          <p class="q-text" id="qText">Loading…</p>
+          <div class="options" id="options"></div>
+          <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
+          <div class="controls-row">
+            <button class="btn-outline" id="endBtn">End Test</button>
+            <button class="btn-primary" id="nextBtn" disabled>Next</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- Results -->
+      <section id="results" class="result-card" hidden>
+        <h3>Results</h3>
+        <p id="summary"></p>
+        <ol class="result-list" id="resultList"></ol>
+        <div class="controls-row">
+          <button class="btn-outline" id="restartBtn">Choose Another Category</button>
+        </div>
       </section>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus. Keep practising smart!</p>
-      <div class="counter">
+      <p>© <span id="currentYear"></span> Prepify11Plus. Test smart, train smarter.</p>
+      <div class="counter" aria-live="polite">
         <span>Visitors so far:</span>
         <span id="countValue">40,000+</span>
       </div>
@@ -271,152 +320,270 @@
   <script src="assets/theme.js" defer></script>
   <script src="assets/counter.js" defer></script>
   <script>
-    const DATA_FILES = [
-      "data/arithmetic_questions.json",
-      "data/fractions_questions.json",
-      "data/geometry_questions.json",
-      "data/measurement_questions.json",
-      "data/reasoning_questions.json",
-      "data/triangle_logic_questions.json"
-    ];
+    // ---- Data files grouped by category ----
+    const FILES = {
+      maths: [
+        'data/arithmetic_questions.json',
+        'data/fractions_questions.json',
+        'data/geometry_questions.json',
+        'data/measurement_questions.json',
+        'data/triangle_logic_questions.json'
+      ],
+      reasoning: [
+        'data/reasoning_questions.json'
+      ]
+    };
+    const ALL_FILES = [...FILES.maths, ...FILES.reasoning];
 
-    let questionBank = [];
+    // ---- Elements
+    const loadStatus = document.getElementById('loadStatus');
+    const categoryGrid = document.getElementById('categoryGrid');
+    const startBtn = document.getElementById('startBtn');
+    const qCountEl = document.getElementById('questionCount');
+    const timeEl = document.getElementById('timeLimit');
+    const landing = document.getElementById('landing');
+
+    const testHud = document.getElementById('testHud');
+    const qText = document.getElementById('qText');
+    const optionsEl = document.getElementById('options');
+    const feedback = document.getElementById('feedback');
+    const nextBtn = document.getElementById('nextBtn');
+    const endBtn = document.getElementById('endBtn');
+    const progressFill = document.getElementById('progressFill');
+    const scoreEl = document.getElementById('score');
+    const timerEl = document.getElementById('timer');
+
+    const resultsEl = document.getElementById('results');
+    const summaryEl = document.getElementById('summary');
+    const resultList = document.getElementById('resultList');
+    const restartBtn = document.getElementById('restartBtn');
+
+    // ---- State
+    let bankAll = [];
+    let bankMaths = [];
+    let bankReason = [];
+    let activeCategory = null;
     let questions = [];
-    let currentIndex = 0;
+    let idx = 0;
     let score = 0;
     let timer = null;
-    let timeLeft = 0;
+    let remaining = 0;
+    let answers = [];
 
-    const statusMsg = document.getElementById('statusMessage');
-    const mockForm = document.getElementById('mockForm');
-    const mockSection = document.getElementById('mockSection');
-    const resultSection = document.getElementById('resultSection');
-    const qText = document.getElementById('questionText');
-    const optionsContainer = document.getElementById('optionsContainer');
-    const feedback = document.getElementById('feedback');
-    const scoreDisplay = document.getElementById('score');
-    const qIndex = document.getElementById('qIndex');
-    const timerDisplay = document.getElementById('timer');
-    const nextBtn = document.getElementById('nextQuestion');
-    const endBtn = document.getElementById('endMock');
-    const resultSummary = document.getElementById('resultSummary');
-    const restartBtn = document.getElementById('restartMock');
+    // ---- Helpers
+    const shuffle = (arr) => {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    };
 
-    // Load all data files
-    Promise.all(DATA_FILES.map(f => fetch(f).then(r => r.json())))
-      .then(results => {
-        questionBank = results.flat();
-        statusMsg.textContent = `✅ Loaded ${questionBank.length} total questions`;
-      })
-      .catch(() => statusMsg.textContent = '⚠️ Error loading question files.');
+    const formatTime = (s) => {
+      const m = Math.floor(s / 60);
+      const sec = s % 60;
+      return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+    };
 
-    function startTimer(minutes) {
-      timeLeft = minutes * 60;
-      timerDisplay.textContent = formatTime(timeLeft);
-      timer = setInterval(() => {
-        timeLeft--;
-        timerDisplay.textContent = formatTime(timeLeft);
-        if (timeLeft <= 0) {
-          clearInterval(timer);
-          finishMock(true);
+    const setProgress = () => {
+      const pct = questions.length ? Math.round((idx / questions.length) * 100) : 0;
+      progressFill.style.width = pct + '%';
+    };
+
+    function dissolveSelection(target) {
+      if (!target) return;
+      target.classList.add('fade-out');
+      setTimeout(() => {
+        // Disable all chips after dissolve
+        [...categoryGrid.querySelectorAll('.category-chip')].forEach(b => b.disabled = true);
+        startBtn.disabled = false; // enable Start
+      }, 300);
+    }
+
+    // ---- Load banks
+    async function loadFiles(files) {
+      const out = [];
+      for (const f of files) {
+        try {
+          const res = await fetch(f);
+          const data = await res.json();
+          // normalize fields
+          data.forEach(q => {
+            // Some files might have slightly different keys — normalize
+            out.push({
+              question: q.question || q.q || '',
+              options: q.options || q.opts || [],
+              answer: q.answer ?? q.ans,
+              explanation: q.explanation || q.exp || ''
+            });
+          });
+        } catch (e) {
+          console.error('Failed to load', f, e);
         }
-      }, 1000);
+      }
+      return out;
     }
 
-    function formatTime(sec) {
-      const m = Math.floor(sec / 60);
-      const s = sec % 60;
-      return `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    async function preloadAll() {
+      loadStatus.textContent = 'Loading question banks…';
+      const [m, r] = await Promise.all([loadFiles(FILES.maths), loadFiles(FILES.reasoning)]);
+      bankMaths = m;
+      bankReason = r;
+      bankAll = [...bankMaths, ...bankReason];
+      const total = bankAll.length;
+      loadStatus.textContent = total
+        ? `✅ Loaded ${total} total questions`
+        : '⚠️ Could not load question banks. Check file paths.';
     }
 
-    document.getElementById('startMock').addEventListener('click', () => {
-      const topic = document.getElementById('topicSelect').value;
-      const count = parseInt(document.getElementById('questionCount').value, 10);
-      const time = parseInt(document.getElementById('timeLimit').value, 10);
+    // ---- Start mock
+    function startMock() {
+      const count = Math.max(5, Math.min(50, parseInt(qCountEl.value, 10) || 10));
+      const time = Math.max(5, Math.min(120, parseInt(timeEl.value, 10) || 15));
 
-      if (!questionBank.length) {
-        alert('Questions not loaded yet. Please wait a few seconds.');
+      let pool = [];
+      if (activeCategory === 'maths') pool = bankMaths;
+      else if (activeCategory === 'reasoning') pool = bankReason;
+      else pool = bankAll;
+
+      if (!pool.length) {
+        alert('Questions are not loaded yet. Please wait a moment.');
         return;
       }
 
-      if (topic === 'all') {
-        questions = questionBank.slice();
-      } else {
-        questions = questionBank.filter(q => q.source?.includes(topic) || true);
-      }
+      questions = shuffle(pool.slice()).slice(0, count);
+      idx = 0; score = 0; answers = [];
+      scoreEl.textContent = score;
+      remaining = time * 60;
+      timerEl.textContent = formatTime(remaining);
 
-      questions = questions.sort(() => Math.random() - 0.5).slice(0, count);
-      score = 0;
-      currentIndex = 0;
+      // Hide landing → show test
+      landing.hidden = true;
+      resultsEl.hidden = true;
+      testHud.hidden = false;
 
-      mockForm.hidden = true;
-      resultSection.hidden = true;
-      mockSection.hidden = false;
-      scoreDisplay.textContent = score;
-      qIndex.textContent = 1;
-      startTimer(time);
-      showQuestion();
-    });
+      // Timer
+      if (timer) clearInterval(timer);
+      timer = setInterval(() => {
+        remaining--;
+        timerEl.textContent = formatTime(Math.max(0, remaining));
+        if (remaining <= 0) {
+          clearInterval(timer);
+          finish(true);
+        }
+      }, 1000);
 
-    function showQuestion() {
-      const q = questions[currentIndex];
-      qText.textContent = q.question;
-      optionsContainer.innerHTML = '';
-      feedback.textContent = '';
-      nextBtn.disabled = true;
-      const shuffled = q.options.sort(() => Math.random() - 0.5);
-      shuffled.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.textContent = opt;
-        btn.onclick = () => handleAnswer(btn, q.answer, q.explanation);
-        optionsContainer.appendChild(btn);
-      });
+      setProgress();
+      renderQuestion();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function handleAnswer(btn, correct, exp) {
-      const allBtns = optionsContainer.querySelectorAll('button');
-      allBtns.forEach(b => b.disabled = true);
-      const isCorrect = btn.textContent === correct;
-      if (isCorrect) {
+    function renderQuestion() {
+      const q = questions[idx];
+      qText.textContent = `${idx + 1}. ${q.question}`;
+      optionsEl.innerHTML = '';
+      feedback.textContent = '';
+      nextBtn.disabled = true;
+
+      shuffle((q.options || []).slice()).forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = opt;
+        btn.addEventListener('click', () => grade(btn, q.answer, q.explanation));
+        optionsEl.appendChild(btn);
+      });
+
+      setProgress();
+    }
+
+    function grade(btn, correct, exp) {
+      const all = optionsEl.querySelectorAll('.option-btn');
+      all.forEach(b => b.disabled = true);
+      const isRight = btn.textContent === String(correct);
+
+      if (isRight) {
         btn.classList.add('correct');
         feedback.textContent = '✅ Correct! ' + (exp || '');
-        feedback.className = 'feedback correct';
+        feedback.className = 'feedback ok';
         score++;
+        scoreEl.textContent = score;
       } else {
         btn.classList.add('incorrect');
-        feedback.textContent = '❌ Incorrect. Correct: ' + correct;
-        feedback.className = 'feedback incorrect';
-        allBtns.forEach(b => { if (b.textContent === correct) b.classList.add('correct'); });
+        feedback.textContent = `❌ Incorrect. Correct: ${correct}` + (exp ? ` — ${exp}` : '');
+        feedback.className = 'feedback no';
+        all.forEach(b => { if (b.textContent === String(correct)) b.classList.add('correct'); });
       }
-      scoreDisplay.textContent = score;
+
+      answers.push({
+        idx: idx + 1,
+        selected: btn.textContent,
+        correct: String(correct)
+      });
+
       nextBtn.disabled = false;
     }
 
-    nextBtn.addEventListener('click', () => {
-      currentIndex++;
-      if (currentIndex >= questions.length) finishMock(false);
-      else {
-        qIndex.textContent = currentIndex + 1;
-        showQuestion();
+    function next() {
+      idx++;
+      if (idx >= questions.length) {
+        finish(false);
+      } else {
+        renderQuestion();
       }
-    });
-
-    function finishMock(timeout) {
-      clearInterval(timer);
-      mockSection.hidden = true;
-      resultSection.hidden = false;
-      resultSummary.textContent = timeout
-        ? `⏰ Time's up! You scored ${score}/${questions.length}.`
-        : `You scored ${score}/${questions.length}.`;
     }
 
-    endBtn.addEventListener('click', () => finishMock(false));
-    restartBtn.addEventListener('click', () => {
-      resultSection.hidden = true;
-      mockForm.hidden = false;
+    function finish(timeout) {
+      if (timer) clearInterval(timer);
+      testHud.hidden = true;
+      resultsEl.hidden = false;
+
+      const base = `You scored ${score}/${questions.length}.`;
+      summaryEl.textContent = timeout ? `⏰ Time's up! ${base}` : base;
+
+      resultList.innerHTML = '';
+      questions.forEach((q, i) => {
+        const ans = answers[i];
+        const li = document.createElement('li');
+        const correct = ans && ans.selected === ans.correct;
+        li.innerHTML = `
+          <div><strong>Q${i + 1}.</strong> ${q.question}</div>
+          <div>Answer: <strong>${q.answer}</strong>${q.explanation ? ` — ${q.explanation}` : ''}</div>
+          <div>Your choice: <span style="font-weight:600; ${correct ? 'color:#2ecc71' : 'color:#e74c3c'}">${ans ? ans.selected : '—'}</span></div>
+        `;
+        resultList.appendChild(li);
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function resetToLanding() {
+      resultsEl.hidden = true;
+      landing.hidden = false;
+      startBtn.disabled = true;
+      // Re-enable chips
+      [...categoryGrid.querySelectorAll('.category-chip')].forEach(b => {
+        b.classList.remove('fade-out');
+        b.disabled = false;
+      });
+      activeCategory = null;
+    }
+
+    // ---- Events
+    categoryGrid.addEventListener('click', (e) => {
+      const chip = e.target.closest('.category-chip');
+      if (!chip) return;
+      activeCategory = chip.dataset.category; // 'all' | 'maths' | 'reasoning'
+      dissolveSelection(chip);
     });
 
+    startBtn.addEventListener('click', startMock);
+    nextBtn.addEventListener('click', next);
+    endBtn.addEventListener('click', () => finish(false));
+    restartBtn.addEventListener('click', resetToLanding);
+
+    // Init
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+    preloadAll();
   </script>
 </body>
 </html>
