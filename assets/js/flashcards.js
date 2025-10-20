@@ -1,5 +1,18 @@
 (function () {
   const doc = document;
+  const assetRoot = (() => {
+    const rootAttr = doc.body?.dataset?.root || '.';
+    if (rootAttr === '/' || rootAttr === '') {
+      return '';
+    }
+    return rootAttr.endsWith('/') ? rootAttr.slice(0, -1) : rootAttr;
+  })();
+
+  const resolvePath = (path) => {
+    if (!path) return path;
+    return `${assetRoot}/${path.replace(/^\//, '')}`;
+  };
+
   const flashcard = doc.querySelector('[data-flashcard]');
   if (!flashcard) return;
 
@@ -270,7 +283,7 @@
 
   const loadSampleList = async () => {
     try {
-      const response = await fetch('data/sample_vocabulary.txt');
+      const response = await fetch(resolvePath('data/sample_vocabulary.txt'));
       if (!response.ok) return [];
       const text = await response.text();
       return text
@@ -305,7 +318,7 @@
   const loadDeck = async () => {
     try {
       const [primary, sample] = await Promise.all([
-        fetch('data/vocab/words500.json').then((res) => res.json()),
+        fetch(resolvePath('data/vocab/words500.json')).then((res) => res.json()),
         loadSampleList(),
       ]);
       const merged = uniqueByWord([...primary, ...sample]);

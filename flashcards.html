@@ -3,316 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Prepify11Plus – Flashcards</title>
-  <meta name="description" content="Boost your vocabulary with smart 11+ flashcards. Flip to reveal meanings, examples, and test yourself interactively.">
+  <title>Prepify11Plus Flashcards | 11+ Vocabulary Practice</title>
+  <meta name="description" content="Flip, type, and quiz through 500+ curated 11+ vocabulary flashcards. Track mastered words, bookmark tricky terms, and export progress." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css">
-  <style>
-    main.page-shell {
-      font-family: 'Poppins', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 2rem 1rem 4rem;
-      transition: background .3s, color .3s;
-    }
-
-    h1 {
-      font-size: clamp(1.5rem, 2vw, 2rem);
-      margin: 1rem 0 0.5rem;
-      text-align: center;
-      background: var(--gradient-text);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    p.intro {
-      max-width: 640px;
-      text-align: center;
-      color: var(--text-light);
-      margin-bottom: 2rem;
-    }
-
-    /* Flashcard styling */
-    .flashcard {
-      width: min(90vw, 400px);
-      height: 250px;
-      perspective: 1000px;
-      position: relative;
-      margin-bottom: 1.5rem;
-    }
-
-    .flashcard-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-      cursor: pointer;
-      border-radius: 16px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-
-    .flashcard.flipped .flashcard-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flashcard-face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 16px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1.5rem;
-      background: var(--bg-alt);
-      color: var(--text);
-    }
-
-    .flashcard-face.back {
-      transform: rotateY(180deg);
-    }
-
-    .flashcard-face h2 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .flashcard-face p {
-      font-size: 0.95rem;
-      line-height: 1.4;
-      color: var(--text-light);
-    }
-
-    /* Controls */
-    .controls {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .input-box {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      width: min(90vw, 400px);
-    }
-
-    .input-box input {
-      flex: 1;
-      padding: 0.6rem 0.8rem;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      background: var(--bg);
-      color: var(--text);
-      font-size: 1rem;
-    }
-
-    .btn {
-      padding: 0.6rem 1rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: background .2s;
-    }
-
-    .btn-primary {
-      background: var(--primary);
-      color: #fff;
-    }
-    .btn-primary:hover {
-      background: var(--primary-hover);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .mode-switch {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .mode-switch button.active {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    footer {
-      margin-top: auto;
-      padding-top: 3rem;
-      text-align: center;
-      font-size: 0.85rem;
-      color: var(--text-light);
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
-
-<body>
-  <header>
-    <div class="navbar">
-      <div class="brand">
-        <div class="brand-logo">P</div>
-        <h1>Prepify11Plus</h1>
-      </div>
-      <div class="nav-group">
-        <nav class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="flashcards.html" aria-current="page">Flashcards</a>
-          <a href="maths.html">Maths Practice</a>
-          <a href="mock.html">Mock Tests</a>
-          <a href="about.html">About</a>
-        </nav>
-        <label class="theme-picker">
-          <span>Theme</span>
-          <select data-theme-select>
-            <option value="superman">Superman</option>
-            <option value="spiderman">Spiderman</option>
-            <option value="captain">Captain America</option>
-            <option value="batman">Batman</option>
-            <option value="ironman">Iron Man</option>
-            <option value="hulk">Hulk</option>
-            <option value="thor">Thor</option>
-            <option value="blackpanther">Black Panther</option>
-            <option value="wonderwoman">Wonder Woman</option>
-            <option value="flash">Flash</option>
-          </select>
-        </label>
-      </div>
+<body data-root=".">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html" aria-label="Prepify11Plus home">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <span class="brand-title">Prepify11Plus</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="flashcards.html" aria-current="page">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-primary nav-cta" href="mock.html">Start practising</a>
+      </nav>
     </div>
   </header>
 
-  <main class="page-shell">
-    <h1>Smart Vocabulary Flashcards</h1>
-    <p class="intro">
-      Boost your vocabulary the smart way! Flip each card to reveal meanings and examples, or test yourself by typing answers.
-    </p>
+  <main id="main" class="site-main page-shell">
+    <section class="section">
+      <div class="section-header">
+        <span class="badge">Vocabulary lab</span>
+        <h1>Flip joyful 11+ flashcards</h1>
+        <p class="section-subtitle">Tap to reveal definitions, type your answers, and bookmark favourites. Prepify11Plus keeps progress local so every learner can practise confidently.</p>
+      </div>
 
-    <div class="flashcard" id="flashcard">
-      <div class="flashcard-inner">
-        <div class="flashcard-face front">
-          <h2 id="word">Loading...</h2>
+      <div class="flashcards-page" aria-live="polite">
+        <div class="flashcard" data-flashcard tabindex="0" aria-label="Flashcard" role="group">
+          <div class="flashcard-inner">
+            <div class="flashcard-face" data-flashcard-front>Loading…</div>
+            <div class="flashcard-face back" data-flashcard-back hidden>
+              <p>Meaning appears here.</p>
+            </div>
+          </div>
+          <span class="sparkle" aria-hidden="true"></span>
         </div>
-        <div class="flashcard-face back">
-          <p><strong id="meaning"></strong></p>
-          <p id="example"></p>
+        <p class="section-subtitle" data-flashcard-progress>Preparing your deck…</p>
+        <div class="mode-switch" role="toolbar" aria-label="Flashcard deck controls">
+          <button type="button" class="btn-outline" data-flip-card>Flip card</button>
+          <button type="button" class="btn-outline" data-prev-card>Previous</button>
+          <button type="button" class="btn-outline" data-next-card>Next</button>
+          <button type="button" class="btn-outline" data-random-card>Random</button>
+          <button type="button" class="btn-outline" data-shuffle-cards>Shuffle</button>
         </div>
+        <div class="controls" aria-label="Flashcard actions">
+          <p data-flashcard-topic>Focus: vocabulary</p>
+          <div class="section-actions">
+            <button class="btn btn-primary" type="button" data-mark-mastered>Mark as mastered</button>
+            <button class="btn btn-secondary" type="button" data-toggle-bookmark aria-pressed="false">Bookmark word</button>
+          </div>
+          <div class="section-actions">
+            <button class="btn btn-outline" type="button" data-reset-mastery>Reset stats</button>
+            <button class="btn btn-outline" type="button" data-restore-mastered>Restore mastered words</button>
+            <button class="btn btn-outline" type="button" data-export-bookmarks>Export bookmarks</button>
+          </div>
+        </div>
+        <p class="section-subtitle" data-status-message role="status">Deck loading…</p>
       </div>
-    </div>
+    </section>
 
-    <div class="controls">
-      <div class="input-box" id="typingBox">
-        <input type="text" id="userInput" placeholder="Type the meaning..." />
-        <button class="btn btn-primary" id="checkBtn">Check</button>
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Track what matters</h2>
+        <p class="section-subtitle">Every stat updates instantly as you work. Refresh the page any time—your progress stays safely on your device.</p>
       </div>
-
-      <div class="mode-switch">
-        <button class="btn btn-outline active" id="flipMode">Flip Mode</button>
-        <button class="btn btn-outline" id="typeMode">Typing Mode</button>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Total cards</h3>
+          <p><strong data-total-count>0</strong> vocabulary challenges, including rich example sentences.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Mastered words</h3>
+          <p><strong data-mastered-count>0</strong> marked as mastered. Tap restore to cycle through them again.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Bookmarked favourites</h3>
+          <p><strong data-bookmarked-count>0</strong> saved for revision. Export them as a JSON file whenever you like.</p>
+        </article>
       </div>
-
-      <div class="nav">
-        <button class="btn btn-primary" id="nextBtn">Next Card</button>
-      </div>
-    </div>
+    </section>
   </main>
 
-  <footer>
-    © <span id="year"></span> Prepify11Plus | Keep building your word power ✨
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <div>
+          <p>© <span id="currentYear"></span> Prepify11Plus.</p>
+          <p>Confident, joyful 11+ preparation for curious minds.</p>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="flashcards.html" aria-current="page">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-meta">
+        <span>Visitors so far:</span>
+        <strong id="countValue" data-visitor-count>40,000+</strong>
+      </div>
+    </div>
   </footer>
 
-  <script src="assets/theme.js" defer></script>
-  <script>
-    const wordEl = document.getElementById('word');
-    const meaningEl = document.getElementById('meaning');
-    const exampleEl = document.getElementById('example');
-    const flashcard = document.getElementById('flashcard');
-    const userInput = document.getElementById('userInput');
-    const checkBtn = document.getElementById('checkBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const flipModeBtn = document.getElementById('flipMode');
-    const typeModeBtn = document.getElementById('typeMode');
-    const typingBox = document.getElementById('typingBox');
-
-    let words = [];
-    let index = 0;
-    let mode = 'flip';
-
-    // Load from file
-    async function loadWords() {
-      const res = await fetch('data/sample_vocabulary.txt');
-      const text = await res.text();
-      words = text.split(/\r?\n/).map(line => {
-        const parts = line.split('–');
-        return {
-          word: parts[0]?.replace(/^\d+\.\s*/, '').trim(),
-          meaning: parts[1]?.trim(),
-          example: parts[2]?.trim()
-        };
-      }).filter(w => w.word);
-      showCard();
-    }
-
-    function showCard() {
-      const w = words[index];
-      wordEl.textContent = w.word;
-      meaningEl.textContent = w.meaning;
-      exampleEl.textContent = w.example ? 'Example: ' + w.example : '';
-      flashcard.classList.remove('flipped');
-      userInput.value = '';
-    }
-
-    flashcard.addEventListener('click', () => {
-      if (mode === 'flip') flashcard.classList.toggle('flipped');
-    });
-
-    nextBtn.addEventListener('click', () => {
-      index = (index + 1) % words.length;
-      showCard();
-    });
-
-    checkBtn.addEventListener('click', () => {
-      const userAns = userInput.value.trim().toLowerCase();
-      const correct = words[index].meaning?.toLowerCase() || '';
-      if (userAns && correct.includes(userAns)) {
-        alert('✅ Correct!');
-      } else {
-        alert(`❌ Not quite. Correct: ${words[index].meaning}`);
-      }
-    });
-
-    flipModeBtn.addEventListener('click', () => {
-      mode = 'flip';
-      flipModeBtn.classList.add('active');
-      typeModeBtn.classList.remove('active');
-      typingBox.style.display = 'none';
-    });
-
-    typeModeBtn.addEventListener('click', () => {
-      mode = 'type';
-      typeModeBtn.classList.add('active');
-      flipModeBtn.classList.remove('active');
-      typingBox.style.display = 'flex';
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    loadWords();
-  </script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/flashcards.js" defer></script>
+  <script src="assets/counter.js" defer></script>
 </body>
 </html>

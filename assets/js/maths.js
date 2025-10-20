@@ -14,8 +14,6 @@
 
   if (!grid || !questionText) return;
 
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
   const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
   const choice = (array) => array[rand(0, array.length - 1)];
 
@@ -459,17 +457,16 @@
     questionText.textContent = question.question;
     optionList.innerHTML = '';
     question.options.forEach((option) => {
-      const item = doc.createElement('li');
       const button = doc.createElement('button');
       button.type = 'button';
-      button.className = 'maths-option';
+      button.className = 'option-btn';
       button.textContent = option;
       button.dataset.optionValue = option;
-      item.appendChild(button);
-      optionList.appendChild(item);
+      optionList.appendChild(button);
     });
     nextButton.disabled = true;
     feedback.textContent = '';
+    feedback.className = 'maths-feedback';
   };
 
   const startMission = (categoryId) => {
@@ -497,25 +494,27 @@
     buttons.forEach((button) => {
       button.disabled = true;
       if (button.dataset.optionValue === state.currentQuestion.answer) {
-        button.classList.add('maths-option--correct');
+        button.classList.add('correct');
       }
     });
 
     state.answered += 1;
-    let correct = false;
     if (selected === state.currentQuestion.answer) {
       state.correct += 1;
       state.streak += 1;
       feedback.textContent = state.currentQuestion.explanation || 'Correct!';
-      feedback.classList.remove('maths-feedback--wrong');
-      feedback.classList.add('maths-feedback--right');
+      feedback.className = 'maths-feedback ok';
       window.PrepifyFX?.play('success');
     } else {
       state.streak = 0;
       feedback.textContent = `Not quite. ${state.currentQuestion.explanation || ''}`.trim();
-      feedback.classList.remove('maths-feedback--right');
-      feedback.classList.add('maths-feedback--wrong');
+      feedback.className = 'maths-feedback no';
       window.PrepifyFX?.play('error');
+      buttons.forEach((button) => {
+        if (button.dataset.optionValue === selected) {
+          button.classList.add('incorrect');
+        }
+      });
     }
 
     if (state.correct === state.answered && state.answered > 0) {
@@ -542,6 +541,7 @@
     questionText.textContent = 'Choose a mission to generate your first question.';
     optionList.innerHTML = '';
     feedback.textContent = '';
+    feedback.className = 'maths-feedback';
     nextButton.disabled = true;
     updateScoreboard();
   };
