@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://prepify11plus.example/</loc></url>
-  <url><loc>https://prepify11plus.example/about.html</loc></url>
-  <url><loc>https://prepify11plus.example/flashcards.html</loc></url>
-  <url><loc>https://prepify11plus.example/maths.html</loc></url>
-  <url><loc>https://prepify11plus.example/maths-triangles.html</loc></url>
-  <url><loc>https://prepify11plus.example/mock.html</loc></url>
-  <url><loc>https://prepify11plus.example/pricing.html</loc></url>
-  <url><loc>https://prepify11plus.example/faq.html</loc></url>
-  <url><loc>https://prepify11plus.example/blog.html</loc></url>
-  <url><loc>https://prepify11plus.example/blog/11-plus-maths-fractions-made-easy.html</loc></url>
-  <url><loc>https://prepify11plus.example/blog/11-plus-vocabulary-150-words.html</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.prepify11plus.co.uk/</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/about.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/flashcards.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/maths.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/maths-triangles.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/mock.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/pricing.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/faq.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/blog.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/blog/11-plus-maths-fractions-made-easy.html</loc></url>
+  <url><loc>https://www.prepify11plus.co.uk/blog/11-plus-vocabulary-150-words.html</loc></url>
 </urlset>
