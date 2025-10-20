@@ -107,12 +107,13 @@
     payload.options.forEach((option) => {
       const button = doc.createElement('button');
       button.type = 'button';
-      button.className = 'triangle-option';
+      button.className = 'option-btn';
       button.textContent = option;
       button.dataset.value = option;
       optionsContainer.appendChild(button);
     });
     feedback.textContent = '';
+    feedback.className = 'triangle-feedback';
     nextButton.disabled = true;
   };
 
@@ -131,20 +132,20 @@
     const buttons = optionsContainer.querySelectorAll('button');
     buttons.forEach((btn) => {
       btn.disabled = true;
-      if (btn.dataset.value === answer) btn.classList.add('triangle-option--correct');
-      if (btn === button && selected !== answer) btn.classList.add('triangle-option--wrong');
+      if (btn.dataset.value === answer) btn.classList.add('correct');
+      if (btn === button && selected !== answer) btn.classList.add('incorrect');
     });
 
     state.attempts += 1;
     if (selected === answer) {
       state.correct += 1;
-      feedback.textContent = explanation;
-      feedback.style.color = '#15803d';
+      feedback.textContent = explanation || 'Great choice!';
+      feedback.className = 'triangle-feedback ok';
       window.PrepifyFX?.play('success');
       window.PrepifyFX?.sparkle?.();
     } else {
       feedback.textContent = `Not quite. ${explanation}`.trim();
-      feedback.style.color = '#b91c1c';
+      feedback.className = 'triangle-feedback no';
       window.PrepifyFX?.play('error');
     }
 
@@ -182,7 +183,11 @@
 
   modeButtons.forEach((button) => {
     button.addEventListener('click', () => {
-      modeButtons.forEach((btn) => btn.classList.remove('btn--active'));
+      modeButtons.forEach((btn) => {
+        btn.classList.remove('btn--active');
+        btn.classList.add('btn-outline');
+      });
+      button.classList.remove('btn-outline');
       button.classList.add('btn--active');
       requestQuestion(button.dataset.questionMode);
     });

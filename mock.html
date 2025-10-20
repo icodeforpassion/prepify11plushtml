@@ -2,588 +2,142 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Prepify11Plus – Mock Tests</title>
-  <meta name="description" content="Build timed 11+ mock tests by choosing a category. Clean UI, readable in any superhero theme, and fully responsive."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="assets/site.css"/>
-
-  <style>
-    /* Page shell uses your CSS variables from theme.js / site.css */
-    main.page-shell {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
-      transition: background .3s, color .3s;
-    }
-
-    .container {
-      max-width: 1040px;
-      margin: 0 auto;
-      padding: clamp(1rem, 2vw, 2rem);
-    }
-
-    .intro-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: var(--shadow-s);
-      padding: clamp(1rem, 2vw, 1.5rem);
-      text-align: center;
-    }
-
-    .intro-card h1 {
-      margin: 0 0 .5rem 0;
-      background: var(--gradient-text);
-      -webkit-background-clip: text;
-      color: transparent;
-      font-size: clamp(1.2rem, 2.2vw, 1.7rem);
-    }
-
-    .intro-card p {
-      color: var(--text-light);
-      margin: 0 auto;
-      max-width: 720px;
-    }
-
-    /* Category grid */
-    .category-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.2rem;
-    }
-    @media (max-width: 900px) { .category-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 560px) { .category-grid { grid-template-columns: 1fr; } }
-
-    .category-chip {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .8rem;
-      padding: .9rem 1rem;
-      background: var(--bg);
-      color: var(--text);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      box-shadow: var(--shadow-xs);
-      cursor: pointer;
-      transition: transform .12s ease, background .25s ease, border-color .2s ease, opacity .35s ease;
-      user-select: none;
-    }
-    .category-chip:hover { transform: translateY(-1px); border-color: var(--primary); }
-    .category-chip .title { font-weight: 600; }
-    .category-chip .meta { color: var(--text-light); font-size: .85rem; }
-    .category-chip.fade-out { opacity: 0; transform: scale(.96); pointer-events: none; }
-
-    /* Config row (count/time) */
-    .config-row {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-      align-items: end;
-    }
-    @media (max-width: 680px) { .config-row { grid-template-columns: 1fr; } }
-
-    .control {
-      display: flex; flex-direction: column; gap: .45rem;
-    }
-    .control label { font-weight: 600; }
-    .control input, .control select {
-      font: inherit; padding: .65rem .8rem; border-radius: 10px;
-      border: 1px solid var(--border); background: var(--bg); color: var(--text);
-      outline: none; transition: box-shadow .2s ease, background .2s ease;
-    }
-    .control input:focus, .control select:focus { box-shadow: var(--focus-ring); background: var(--bg-alt); }
-
-    .btn-primary {
-      background: var(--primary); color: #fff; border: none;
-      border-radius: 10px; padding: .75rem 1.1rem; font-weight: 700;
-      cursor: pointer; transition: background .25s ease; box-shadow: var(--shadow-xs);
-    }
-    .btn-primary:hover { background: var(--primary-hover); }
-    .btn-outline {
-      background: var(--bg); color: var(--text); border: 1px solid var(--border);
-      border-radius: 10px; padding: .75rem 1.1rem; font-weight: 600; cursor: pointer;
-    }
-
-    /* HUD row */
-    .hud {
-      display: grid;
-      grid-template-columns: 1fr auto auto;
-      gap: .8rem;
-      align-items: center;
-      margin: 1.3rem 0 .8rem;
-    }
-    @media (max-width: 640px) { .hud { grid-template-columns: 1fr; row-gap: .6rem; } }
-
-    .progress-outer {
-      height: 12px; border-radius: 999px; overflow: hidden;
-      background: var(--bg); border: 1px solid var(--border); box-shadow: inset 0 1px 2px rgba(0,0,0,.05);
-    }
-    .progress-inner {
-      height: 100%; width: 0%;
-      background: linear-gradient(90deg, #3b65ff, #6a8fff, #8f46ff);
-      background-size: 200% 100%;
-      animation: flow 8s linear infinite;
-      transition: width .3s ease;
-    }
-    @keyframes flow { 0%{ background-position: 0 0; } 100%{ background-position: 200% 0; } }
-
-    .pill {
-      display: inline-flex; gap: .45rem; align-items: center;
-      border: 1px solid var(--border); background: var(--bg);
-      padding: .35rem .65rem; border-radius: 999px; font-size: .9rem;
-    }
-
-    /* Question card */
-    .question-card {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow-s);
-      padding: 1.1rem 1.1rem 1.3rem;
-    }
-    .q-text { font-weight: 700; font-size: clamp(1rem, 1.6vw, 1.2rem); margin: 0 0 .9rem 0; }
-
-    .options { display: grid; gap: .6rem; }
-    .option-btn {
-      text-align: left; width: 100%; padding: .7rem .9rem;
-      background: var(--bg); color: var(--text); border: 1px solid var(--border);
-      border-radius: 12px; cursor: pointer; transition: background .2s, border-color .2s, transform .05s;
-    }
-    .option-btn:hover { border-color: var(--primary); background: rgba(70,110,255,.08); }
-    .option-btn.correct { background: #2ecc71; color: #fff; border-color: #27ae60; }
-    .option-btn.incorrect { background: #e74c3c; color: #fff; border-color: #c0392b; }
-    .option-btn:disabled { opacity: .8; cursor: not-allowed; }
-
-    .feedback { margin-top: .75rem; font-weight: 600; min-height: 1.1rem; }
-    .feedback.ok { color: #2ecc71; }
-    .feedback.no { color: #e74c3c; }
-
-    .controls-row {
-      margin-top: 1rem; display: flex; gap: .6rem; flex-wrap: wrap; justify-content: flex-end;
-    }
-
-    /* Results */
-    .result-card {
-      margin-top: 1.2rem;
-      background: var(--bg-alt); border: 1px solid var(--border);
-      border-radius: 16px; box-shadow: var(--shadow-s); padding: 1.2rem;
-    }
-    .result-card h3 { margin: 0 0 .5rem 0; }
-    .result-list { margin: .6rem 0 0 1rem; line-height: 1.35; }
-
-    /* Subtle badge */
-    .badge {
-      display: inline-flex; align-items: center; gap: .35rem;
-      padding: .28rem .6rem; border-radius: 999px; font-size: .78rem; font-weight: 700;
-      color: #fff; box-shadow: var(--shadow-xs);
-      background: linear-gradient(90deg, #3558ff, #8f46ff 55%, #ff8a3d);
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prepify11Plus Mock Tests | Build Personalised 11+ Papers</title>
+  <meta name="description" content="Design free 11+ mock tests with custom categories, timers, and instant marking. Mix maths, reasoning, and vocabulary questions to mirror the real exam." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
 </head>
-<body>
-  <!-- Navbar (keeps your existing theme picker + styling) -->
-  <header>
-    <div class="navbar">
-      <div class="brand">
-        <div class="brand-logo">P</div>
-        <h1>Prepify11Plus</h1>
-      </div>
-      <div class="nav-group">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="flashcards.html">Flashcards</a>
-          <a href="maths.html">Maths Practice</a>
-          <a href="mock.html" aria-current="page">Mock Tests</a>
-          <a href="about.html">About</a>
-        </nav>
-        <label class="theme-picker">
-          <span>Theme</span>
-          <select data-theme-select aria-label="Choose a superhero theme">
-            <option value="superman">Superman</option>
-            <option value="spiderman">Spiderman</option>
-            <option value="captain">Captain America</option>
-            <option value="batman">Batman</option>
-            <option value="ironman">Iron Man</option>
-            <option value="hulk">Hulk</option>
-            <option value="thor">Thor</option>
-            <option value="blackpanther">Black Panther</option>
-            <option value="wonderwoman">Wonder Woman</option>
-            <option value="flash">Flash</option>
-          </select>
-        </label>
-      </div>
+<body data-root=".">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html" aria-label="Prepify11Plus home">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <span class="brand-title">Prepify11Plus</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html" aria-current="page">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-primary nav-cta" href="mock.html">Start practising</a>
+      </nav>
     </div>
   </header>
 
-  <main class="page-shell">
-    <div class="container">
-      <!-- Intro / Category selection -->
+  <main id="main" class="site-main page-shell">
+    <section class="mock-page">
       <section class="intro-card" id="landing">
         <span class="badge">Build your own mock</span>
         <h1>Pick a category to begin</h1>
-        <p>Select a topic card below. The card will dissolve and your test will start with stylish, easy controls, a clear timer and progress.</p>
+        <p>Select a topic card below. We’ll pull questions from our curated banks, track your score, and highlight areas to revisit.</p>
 
-        <div class="category-grid" id="categoryGrid" aria-label="Choose a category">
+        <div class="category-grid" id="categoryGrid" aria-label="Choose a mock test category">
           <button class="category-chip" data-category="all">
             <div>
-              <div class="title">All Topics</div>
-              <div class="meta">Mix of Maths & Reasoning</div>
+              <div class="title">All topics</div>
+              <div class="meta">Mix of maths, reasoning, and vocabulary</div>
             </div>
-            <span>▶</span>
+            <span aria-hidden="true">▶</span>
           </button>
-
           <button class="category-chip" data-category="maths">
             <div>
               <div class="title">Maths</div>
-              <div class="meta">Arithmetic, Fractions, Geometry, Measurement, Triangle Logic</div>
+              <div class="meta">Arithmetic, fractions, geometry, measurement</div>
             </div>
-            <span>▶</span>
+            <span aria-hidden="true">▶</span>
           </button>
-
           <button class="category-chip" data-category="reasoning">
             <div>
               <div class="title">Reasoning</div>
-              <div class="meta">Verbal & logic style questions</div>
+              <div class="meta">Verbal reasoning and logic puzzles</div>
             </div>
-            <span>▶</span>
+            <span aria-hidden="true">▶</span>
           </button>
         </div>
 
         <div class="config-row" id="configRow" aria-label="Configure your mock">
           <div class="control">
-            <label for="questionCount">Number of Questions</label>
-            <input id="questionCount" type="number" min="5" max="50" value="10"/>
+            <label for="questionCount">Number of questions</label>
+            <input id="questionCount" type="number" min="5" max="50" value="10" />
           </div>
           <div class="control">
-            <label for="timeLimit">Time Limit (minutes)</label>
-            <input id="timeLimit" type="number" min="5" max="120" value="15"/>
+            <label for="timeLimit">Time limit (minutes)</label>
+            <input id="timeLimit" type="number" min="5" max="120" value="15" />
           </div>
           <div class="control">
-            <button class="btn-primary" id="startBtn" disabled>Start Mock</button>
+            <button class="btn btn-primary" id="startBtn" disabled>Start mock</button>
           </div>
         </div>
-
-        <p id="loadStatus" style="margin-top:.6rem; color:var(--text-light);"></p>
+        <p id="loadStatus" class="section-subtitle"></p>
       </section>
 
-      <!-- In-test HUD -->
       <section id="testHud" hidden>
         <div class="hud">
-          <div class="progress-outer" aria-label="Progress">
+          <div class="progress-outer" aria-label="Mock progress">
             <div class="progress-inner" id="progressFill"></div>
           </div>
           <div class="pill">Score&nbsp;<strong id="score">0</strong></div>
           <div class="pill">Time&nbsp;<strong id="timer">--:--</strong></div>
         </div>
 
-        <!-- Question card -->
         <article class="question-card">
           <p class="q-text" id="qText">Loading…</p>
           <div class="options" id="options"></div>
           <p class="feedback" id="feedback" role="status" aria-live="polite"></p>
           <div class="controls-row">
-            <button class="btn-outline" id="endBtn">End Test</button>
-            <button class="btn-primary" id="nextBtn" disabled>Next</button>
+            <button class="btn btn-outline" id="endBtn">End test</button>
+            <button class="btn btn-primary" id="nextBtn" disabled>Next</button>
           </div>
         </article>
       </section>
 
-      <!-- Results -->
       <section id="results" class="result-card" hidden>
-        <h3>Results</h3>
+        <h2>Results</h2>
         <p id="summary"></p>
         <ol class="result-list" id="resultList"></ol>
         <div class="controls-row">
-          <button class="btn-outline" id="restartBtn">Choose Another Category</button>
+          <button class="btn btn-outline" id="restartBtn">Choose another category</button>
         </div>
       </section>
-    </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus. Test smart, train smarter.</p>
-      <div class="counter" aria-live="polite">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <div>
+          <p>© <span id="currentYear"></span> Prepify11Plus.</p>
+          <p>Confident, joyful 11+ preparation for curious minds.</p>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html" aria-current="page">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-meta">
         <span>Visitors so far:</span>
-        <span id="countValue">40,000+</span>
+        <strong id="countValue" data-visitor-count>40,000+</strong>
       </div>
     </div>
   </footer>
 
-  <script src="assets/theme.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/mock-test.js" defer></script>
   <script src="assets/counter.js" defer></script>
-  <script>
-    // ---- Data files grouped by category ----
-    const FILES = {
-      maths: [
-        'data/arithmetic_questions.json',
-        'data/fractions_questions.json',
-        'data/geometry_questions.json',
-        'data/measurement_questions.json',
-        'data/triangle_logic_questions.json'
-      ],
-      reasoning: [
-        'data/reasoning_questions.json'
-      ]
-    };
-    const ALL_FILES = [...FILES.maths, ...FILES.reasoning];
-
-    // ---- Elements
-    const loadStatus = document.getElementById('loadStatus');
-    const categoryGrid = document.getElementById('categoryGrid');
-    const startBtn = document.getElementById('startBtn');
-    const qCountEl = document.getElementById('questionCount');
-    const timeEl = document.getElementById('timeLimit');
-    const landing = document.getElementById('landing');
-
-    const testHud = document.getElementById('testHud');
-    const qText = document.getElementById('qText');
-    const optionsEl = document.getElementById('options');
-    const feedback = document.getElementById('feedback');
-    const nextBtn = document.getElementById('nextBtn');
-    const endBtn = document.getElementById('endBtn');
-    const progressFill = document.getElementById('progressFill');
-    const scoreEl = document.getElementById('score');
-    const timerEl = document.getElementById('timer');
-
-    const resultsEl = document.getElementById('results');
-    const summaryEl = document.getElementById('summary');
-    const resultList = document.getElementById('resultList');
-    const restartBtn = document.getElementById('restartBtn');
-
-    // ---- State
-    let bankAll = [];
-    let bankMaths = [];
-    let bankReason = [];
-    let activeCategory = null;
-    let questions = [];
-    let idx = 0;
-    let score = 0;
-    let timer = null;
-    let remaining = 0;
-    let answers = [];
-
-    // ---- Helpers
-    const shuffle = (arr) => {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    };
-
-    const formatTime = (s) => {
-      const m = Math.floor(s / 60);
-      const sec = s % 60;
-      return `${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
-    };
-
-    const setProgress = () => {
-      const pct = questions.length ? Math.round((idx / questions.length) * 100) : 0;
-      progressFill.style.width = pct + '%';
-    };
-
-    function dissolveSelection(target) {
-      if (!target) return;
-      target.classList.add('fade-out');
-      setTimeout(() => {
-        // Disable all chips after dissolve
-        [...categoryGrid.querySelectorAll('.category-chip')].forEach(b => b.disabled = true);
-        startBtn.disabled = false; // enable Start
-      }, 300);
-    }
-
-    // ---- Load banks
-    async function loadFiles(files) {
-      const out = [];
-      for (const f of files) {
-        try {
-          const res = await fetch(f);
-          const data = await res.json();
-          // normalize fields
-          data.forEach(q => {
-            // Some files might have slightly different keys — normalize
-            out.push({
-              question: q.question || q.q || '',
-              options: q.options || q.opts || [],
-              answer: q.answer ?? q.ans,
-              explanation: q.explanation || q.exp || ''
-            });
-          });
-        } catch (e) {
-          console.error('Failed to load', f, e);
-        }
-      }
-      return out;
-    }
-
-    async function preloadAll() {
-      loadStatus.textContent = 'Loading question banks…';
-      const [m, r] = await Promise.all([loadFiles(FILES.maths), loadFiles(FILES.reasoning)]);
-      bankMaths = m;
-      bankReason = r;
-      bankAll = [...bankMaths, ...bankReason];
-      const total = bankAll.length;
-      loadStatus.textContent = total
-        ? `✅ Loaded ${total} total questions`
-        : '⚠️ Could not load question banks. Check file paths.';
-    }
-
-    // ---- Start mock
-    function startMock() {
-      const count = Math.max(5, Math.min(50, parseInt(qCountEl.value, 10) || 10));
-      const time = Math.max(5, Math.min(120, parseInt(timeEl.value, 10) || 15));
-
-      let pool = [];
-      if (activeCategory === 'maths') pool = bankMaths;
-      else if (activeCategory === 'reasoning') pool = bankReason;
-      else pool = bankAll;
-
-      if (!pool.length) {
-        alert('Questions are not loaded yet. Please wait a moment.');
-        return;
-      }
-
-      questions = shuffle(pool.slice()).slice(0, count);
-      idx = 0; score = 0; answers = [];
-      scoreEl.textContent = score;
-      remaining = time * 60;
-      timerEl.textContent = formatTime(remaining);
-
-      // Hide landing → show test
-      landing.hidden = true;
-      resultsEl.hidden = true;
-      testHud.hidden = false;
-
-      // Timer
-      if (timer) clearInterval(timer);
-      timer = setInterval(() => {
-        remaining--;
-        timerEl.textContent = formatTime(Math.max(0, remaining));
-        if (remaining <= 0) {
-          clearInterval(timer);
-          finish(true);
-        }
-      }, 1000);
-
-      setProgress();
-      renderQuestion();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function renderQuestion() {
-      const q = questions[idx];
-      qText.textContent = `${idx + 1}. ${q.question}`;
-      optionsEl.innerHTML = '';
-      feedback.textContent = '';
-      nextBtn.disabled = true;
-
-      shuffle((q.options || []).slice()).forEach(opt => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.textContent = opt;
-        btn.addEventListener('click', () => grade(btn, q.answer, q.explanation));
-        optionsEl.appendChild(btn);
-      });
-
-      setProgress();
-    }
-
-    function grade(btn, correct, exp) {
-      const all = optionsEl.querySelectorAll('.option-btn');
-      all.forEach(b => b.disabled = true);
-      const isRight = btn.textContent === String(correct);
-
-      if (isRight) {
-        btn.classList.add('correct');
-        feedback.textContent = '✅ Correct! ' + (exp || '');
-        feedback.className = 'feedback ok';
-        score++;
-        scoreEl.textContent = score;
-      } else {
-        btn.classList.add('incorrect');
-        feedback.textContent = `❌ Incorrect. Correct: ${correct}` + (exp ? ` — ${exp}` : '');
-        feedback.className = 'feedback no';
-        all.forEach(b => { if (b.textContent === String(correct)) b.classList.add('correct'); });
-      }
-
-      answers.push({
-        idx: idx + 1,
-        selected: btn.textContent,
-        correct: String(correct)
-      });
-
-      nextBtn.disabled = false;
-    }
-
-    function next() {
-      idx++;
-      if (idx >= questions.length) {
-        finish(false);
-      } else {
-        renderQuestion();
-      }
-    }
-
-    function finish(timeout) {
-      if (timer) clearInterval(timer);
-      testHud.hidden = true;
-      resultsEl.hidden = false;
-
-      const base = `You scored ${score}/${questions.length}.`;
-      summaryEl.textContent = timeout ? `⏰ Time's up! ${base}` : base;
-
-      resultList.innerHTML = '';
-      questions.forEach((q, i) => {
-        const ans = answers[i];
-        const li = document.createElement('li');
-        const correct = ans && ans.selected === ans.correct;
-        li.innerHTML = `
-          <div><strong>Q${i + 1}.</strong> ${q.question}</div>
-          <div>Answer: <strong>${q.answer}</strong>${q.explanation ? ` — ${q.explanation}` : ''}</div>
-          <div>Your choice: <span style="font-weight:600; ${correct ? 'color:#2ecc71' : 'color:#e74c3c'}">${ans ? ans.selected : '—'}</span></div>
-        `;
-        resultList.appendChild(li);
-      });
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function resetToLanding() {
-      resultsEl.hidden = true;
-      landing.hidden = false;
-      startBtn.disabled = true;
-      // Re-enable chips
-      [...categoryGrid.querySelectorAll('.category-chip')].forEach(b => {
-        b.classList.remove('fade-out');
-        b.disabled = false;
-      });
-      activeCategory = null;
-    }
-
-    // ---- Events
-    categoryGrid.addEventListener('click', (e) => {
-      const chip = e.target.closest('.category-chip');
-      if (!chip) return;
-      activeCategory = chip.dataset.category; // 'all' | 'maths' | 'reasoning'
-      dissolveSelection(chip);
-    });
-
-    startBtn.addEventListener('click', startMock);
-    nextBtn.addEventListener('click', next);
-    endBtn.addEventListener('click', () => finish(false));
-    restartBtn.addEventListener('click', resetToLanding);
-
-    // Init
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    preloadAll();
-  </script>
 </body>
 </html>

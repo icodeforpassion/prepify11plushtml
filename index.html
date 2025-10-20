@@ -2,164 +2,223 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prepify11Plus | Train for the 11+</title>
-  <meta name="description" content="Prepify11Plus is the practice gym for 11+ learners: motivating flashcards, adaptive maths drills, and build-your-own mock tests with instant feedback.">
+  <title>Prepify11Plus | Free 11+ Mock Tests, Maths Missions & Flashcards</title>
+  <meta name="description" content="Prepify11Plus is the free 11+ practice gym for families. Train with adaptive maths missions, quick-fire vocabulary flashcards, and build-your-own mock tests that feel like exam day.">
+  <meta name="keywords" content="11 plus, 11+, mock tests, vocabulary flashcards, maths practice, grammar school preparation">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-  <header>
-    <div class="navbar">
-      <div class="brand">
-        <div class="brand-logo">P</div>
-        <h1>Prepify11Plus</h1>
-      </div>
-      <div class="nav-group">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="flashcards.html">Flashcards</a>
-          <a href="maths.html">Maths Practice</a>
-          <a href="mock.html">Mock Tests</a>
-          <a href="about.html">About</a>
-        </nav>
-        <label class="theme-picker">
-          <span>Theme</span>
-          <select data-theme-select aria-label="Choose a superhero theme">
-            <option value="superman">Superman</option>
-            <option value="spiderman">Spiderman</option>
-            <option value="captain">Captain America</option>
-            <option value="batman">Batman</option>
-            <option value="ironman">Iron Man</option>
-            <option value="hulk">Hulk</option>
-            <option value="thor">Thor</option>
-            <option value="blackpanther">Black Panther</option>
-            <option value="wonderwoman">Wonder Woman</option>
-            <option value="flash">Flash</option>
-          </select>
-        </label>
-      </div>
+<body data-root=".">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html" aria-label="Prepify11Plus home">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <span class="brand-title">Prepify11Plus</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-primary nav-cta" href="mock.html">Start practising</a>
+      </nav>
     </div>
   </header>
 
-  <div class="quote-strip" data-quote-strip>
-    <div class="container quote-strip__inner">
-      <span class="quote-label">Today’s boost</span>
-      <p class="quote-text" data-quote-text>Consistency beats intensity.</p>
-      <button class="quote-refresh" type="button" data-quote-refresh aria-label="Show another motivational quote">↻</button>
-    </div>
-  </div>
-
-    <section class="section" id="mock">
-      <h2>Free 11+ mock practice</h2>
-      <p>Take full-length English and Maths papers built to mirror the exam day. Timed challenges, instant scoring, and detailed feedback help every learner grow.</p>
-      <div class="section-actions">
-        <a class="btn btn-primary" href="mock.html">Start practising</a>
-        <a class="btn btn-secondary" href="about.html">See how it works</a>
+  <main id="main" class="site-main">
+    <section class="section" id="hero">
+      <div class="section-header">
+        <span class="badge">11+ practice hub</span>
+        <h1>Confident 11+ preparation starts here</h1>
+        <p class="section-subtitle">Prepify11Plus blends adaptive maths drills, joyful vocabulary flashcards, and build-your-own mock tests so every learner walks into the 11+ exam feeling ready.</p>
       </div>
-      <div class="feature-grid">
-        <article class="feature-card" aria-label="Timed missions">
-          <div class="feature-icon">⏱️</div>
-          <div>
-            <h3>Timed missions</h3>
-            <p>Countdown timers train focus and build exam stamina with gentle reminders when time is almost up.</p>
-          </div>
+      <div class="section-actions">
+        <a class="btn btn-primary" href="mock.html">Launch a mock test</a>
+        <a class="btn btn-secondary" href="flashcards.html">Flip vocabulary cards</a>
+      </div>
+      <div class="hero-highlights" aria-label="Prepify11Plus highlights">
+        <div class="highlight-card">
+          <strong>20</strong>
+          <span>maths categories with step-by-step feedback</span>
         </div>
-        <div class="hero-highlights" aria-hidden="true">
-          <div class="highlight-card">
-            <strong>500</strong>
-            <span>high-energy vocab cards</span>
-          </div>
-          <div class="highlight-card">
-            <strong>20</strong>
-            <span>maths categories, including a new triangles lab</span>
-          </div>
-          <div class="highlight-card">
-            <strong>∞</strong>
-            <span>seeded mocks tailored to your goals</span>
-          </div>
+        <div class="highlight-card">
+          <strong>500+</strong>
+          <span>curated 11+ vocabulary flashcards</span>
+        </div>
+        <div class="highlight-card">
+          <strong>∞</strong>
+          <span>mock test combinations for exam-day rehearsal</span>
         </div>
       </div>
     </section>
 
-    <section class="section" id="flashcards">
-      <h2>Flashcards & vocabulary lab</h2>
-      <p>Vocabulary is fuel for powerful writing and comprehension. Prepify11Plus keeps it fun with flip cards, typing challenges, and mastery badges.</p>
+    <div class="quote-strip" data-quote-strip>
+      <div class="container quote-strip__inner">
+        <span class="quote-label">Today’s boost</span>
+        <p class="quote-text" data-quote-text>Stay curious and keep practising.</p>
+        <button class="quote-refresh" type="button" data-quote-refresh aria-label="Show another motivational quote">↻</button>
+      </div>
+    </div>
+
+    <section class="section" id="mock">
+      <div class="section-header">
+        <h2 class="section-title">11+ mock tests with live scoring</h2>
+        <p class="section-subtitle">Create your own mock by mixing maths, reasoning, and vocabulary question banks. Timers, progress rings, and detailed summaries mirror the real exam experience without the nerves.</p>
+      </div>
       <div class="section-actions">
-        <a class="btn btn-primary" href="flashcards.html">Explore flashcards</a>
-        <a class="btn btn-secondary" href="data/sample_vocabulary.txt">Download vocab list</a>
+        <a class="btn btn-primary" href="mock.html">Build a mock now</a>
+        <a class="btn btn-outline" href="mock.html">See how it works</a>
       </div>
       <div class="feature-grid">
-        <article class="feature-card" aria-label="Flip & reveal">
-          <div class="feature-icon">🔄</div>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⏱️</div>
           <div>
-            <h3>Flip & reveal</h3>
-            <p>Tap to reveal meanings and example sentences sourced directly from the editable vocabulary file.</p>
+            <h3>Timed missions</h3>
+            <p>Flexible time limits coach pacing for CEM and GL formats with gentle reminders when time is nearly up.</p>
           </div>
         </article>
-        <article class="feature-card" aria-label="Typing challenges">
-          <div class="feature-icon">⌨️</div>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📊</div>
+          <div>
+            <h3>Instant insights</h3>
+            <p>See accuracy, tricky topics, and suggested next steps as soon as the mock test finishes.</p>
+          </div>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🎯</div>
+          <div>
+            <h3>Personalised runs</h3>
+            <p>Choose question counts, difficulty ranges, and topics to suit the learner’s revision focus.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="flashcards">
+      <div class="section-header">
+        <h2 class="section-title">Vocabulary flashcards that stick</h2>
+        <p class="section-subtitle">Flip, type, and multiple-choice modes transform tricky 11+ vocabulary into fun memory games. Export bookmarks, download word lists, and add your own terms.</p>
+      </div>
+      <div class="section-actions">
+        <a class="btn btn-primary" href="flashcards.html">Explore flashcards</a>
+        <a class="btn btn-outline" href="data/vocab/words500.json">Download the master list</a>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🔄</div>
+          <div>
+            <h3>Flip &amp; reveal</h3>
+            <p>Tap to reveal definitions, synonyms, and model sentences curated for 11+ comprehension papers.</p>
+          </div>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⌨️</div>
           <div>
             <h3>Typing challenges</h3>
-            <p>Spell the word, check your accuracy, and celebrate progress with badges made for young heroes.</p>
+            <p>Spell the word, check accuracy instantly, and earn badges for streaks. Perfect for daily warm-ups.</p>
           </div>
         </article>
-        <article class="feature-card" aria-label="Multiple choice mode">
-          <div class="feature-icon">🧠</div>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🧠</div>
           <div>
-            <h3>Multiple choice mode</h3>
-            <p>Pick the correct definition from four options, ideal for quick revision bursts at home or on the go.</p>
+            <h3>Quiz mode</h3>
+            <p>Quick multiple-choice bursts build confidence for verbal reasoning sections on the real exam.</p>
           </div>
         </article>
       </div>
     </section>
 
     <section class="section" id="maths">
-      <h2>Maths skill builders</h2>
-      <p>Supercharge arithmetic, geometry, logic, and measurement skills. Each question is stored in easy-to-edit JSON files.</p>
+      <div class="section-header">
+        <h2 class="section-title">Adaptive maths missions</h2>
+        <p class="section-subtitle">Pick from arithmetic, fractions, geometry, reasoning, measurement, and our dedicated triangles studio. Every attempt shuffles questions and offers friendly explanations.</p>
+      </div>
       <div class="section-actions">
-        <a class="btn btn-primary" href="maths.html">Launch maths missions</a>
-        <a class="btn btn-secondary" href="mock.html#maths">Try a mock exam</a>
+        <a class="btn btn-primary" href="maths.html">Start a maths mission</a>
+        <a class="btn btn-outline" href="maths-triangles.html">Visit the triangles studio</a>
       </div>
       <div class="feature-grid">
-        <article class="feature-card" aria-label="Arithmetic adventures">
-          <div class="feature-icon">➕</div>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">➕</div>
           <div>
-            <h3>Arithmetic adventures</h3>
-            <p>Randomised questions covering addition, subtraction, multiplication, and division keep learners engaged.</p>
+            <h3>Core number skills</h3>
+            <p>Targeted drills cover addition, subtraction, multiplication, division, and mental strategies.</p>
           </div>
         </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">📐</div>
+          <div>
+            <h3>Geometry mastery</h3>
+            <p>Angle hunts, perimeter puzzles, and area investigations visualise the trickiest exam topics.</p>
+          </div>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🤖</div>
+          <div>
+            <h3>Smart feedback</h3>
+            <p>Immediate explanations celebrate correct thinking and highlight the next step when mistakes happen.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="why-prepify">
+      <div class="section-header">
+        <h2 class="section-title">Why families choose Prepify11Plus</h2>
+        <p class="section-subtitle">Everything lives in the browser, so there are no logins, no data worries, and no hidden paywalls. Just joyful practice for the whole 11+ journey.</p>
+      </div>
+      <div class="feature-grid">
         <article class="feature">
-          <h3>Thoughtful accessibility</h3>
-          <p>ARIA labels, keyboard shortcuts, and screen-reader friendly status messages are built in so every learner can train confidently.</p>
+          <h3>Accessible by default</h3>
+          <p>High contrast colours, keyboard controls, and screen-reader friendly messages welcome every learner.</p>
         </article>
         <article class="feature">
-          <h3>Local-first progress</h3>
-          <p>All mastery, bookmarks, and mock configurations live in your browser. Refresh without losing streaks.</p>
+          <h3>Editable question banks</h3>
+          <p>All questions live in open JSON files. Duplicate them, remix them, and personalise practice at home or in class.</p>
+        </article>
+        <article class="feature">
+          <h3>Celebrates progress</h3>
+          <p>Confetti, badges, and gentle affirmations motivate without pressure. Reduced-motion preferences are honoured.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus. Making practice purposeful.</p>
-      <div class="counter" aria-live="polite">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <div>
+          <p>© <span id="currentYear"></span> Prepify11Plus.</p>
+          <p>Confident, joyful 11+ preparation for curious minds.</p>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-meta">
         <span>Visitors so far:</span>
-        <span id="countValue">40,000+</span>
+        <strong id="countValue" data-visitor-count>40,000+</strong>
       </div>
     </div>
   </footer>
 
-  <script src="assets/theme.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
   <script src="assets/counter.js" defer></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-    });
-  </script>
 </body>
 </html>

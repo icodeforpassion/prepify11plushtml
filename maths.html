@@ -3,68 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prepify11Plus Maths Missions</title>
-  <meta name="description" content="20 adaptive maths categories with infinite question generators, angle labs, and live scoring for 11+ practice.">
+  <title>Prepify11Plus Maths Missions | Adaptive 11+ Practice</title>
+  <meta name="description" content="Launch adaptive 11+ maths missions covering arithmetic, fractions, geometry, reasoning, measurement, and angles. Fresh questions, instant feedback, and progress tracking." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
-  <header>
-    <div class="navbar">
-      <div class="brand">
-        <div class="brand-logo">P</div>
-        <h1>Prepify11Plus</h1>
-      </div>
-      <div class="nav-group">
-        <nav class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="flashcards.html">Flashcards</a>
-          <a href="maths.html" aria-current="page">Maths Practice</a>
-          <a href="mock.html">Mock Tests</a>
-          <a href="about.html">About</a>
-        </nav>
-        <label class="theme-picker">
-          <span>Theme</span>
-          <select data-theme-select aria-label="Choose a superhero theme">
-            <option value="superman">Superman</option>
-            <option value="spiderman">Spiderman</option>
-            <option value="captain">Captain America</option>
-            <option value="batman">Batman</option>
-            <option value="ironman">Iron Man</option>
-            <option value="hulk">Hulk</option>
-            <option value="thor">Thor</option>
-            <option value="blackpanther">Black Panther</option>
-            <option value="wonderwoman">Wonder Woman</option>
-            <option value="flash">Flash</option>
-          </select>
-        </label>
-      </div>
+<body data-root=".">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html" aria-label="Prepify11Plus home">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <span class="brand-title">Prepify11Plus</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html" aria-current="page">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-primary nav-cta" href="mock.html">Start practising</a>
+      </nav>
     </div>
   </header>
 
-  <main id="main" class="page-shell">
+  <main id="main" class="site-main page-shell">
     <section class="section page-intro">
       <div class="container narrow">
-        <span class="badge badge--glow">20 categories • virtually infinite AI-generated questions</span>
+        <span class="badge badge--glow">20 categories • infinite variations</span>
         <h1>Maths missions that grow with every attempt</h1>
-        <p>Pick a category, set your pace, and let our generators craft fresh 11+ style questions on every load. Feedback arrives instantly and perfect streaks unlock confetti (with reduced-motion respect).</p>
+        <p>Pick a mission, set your pace, and let Prepify11Plus craft fresh 11+ style questions. Feedback lands instantly and streaks unlock celebratory sparkles (respecting reduced-motion settings).</p>
       </div>
     </section>
 
     <section class="section maths-categories">
-      <div class="container">
-        <header class="section-header">
-          <h2>Choose a mission</h2>
-          <p>Smaller cards mean faster scanning. Tap any category to launch a fresh run or dive deeper into the triangles studio for diagrams and SVG challenges.</p>
-        </header>
-        <div class="card-grid card-grid--compact" data-maths-grid></div>
+      <div class="section-header">
+        <h2 class="section-title">Choose a mission</h2>
+        <p class="section-subtitle">Tap any category card to generate a new run. You can revisit missions, reset progress, and jump to the triangles studio for SVG-powered angle practice.</p>
       </div>
+      <div class="card-grid card-grid--compact" data-maths-grid aria-live="polite"></div>
     </section>
 
-    <section class="section maths-engine">
-      <div class="container maths-engine__layout">
+    <section class="section maths-engine" id="maths-engine">
+      <div class="maths-engine__layout">
         <aside class="maths-engine__sidebar" aria-live="polite">
           <h2>Mission dashboard</h2>
           <p class="maths-engine__active" data-active-category>Pick a category to begin.</p>
@@ -92,10 +79,10 @@
         <article class="maths-engine__question">
           <div class="maths-question" data-question-container>
             <p class="maths-question__text" data-question-text>Choose a mission to generate your first question.</p>
-            <ul class="maths-options" data-option-list></ul>
+            <div class="maths-options" data-option-list></div>
           </div>
-          <div class="maths-engine__actions">
-            <button class="btn" type="button" data-next-question disabled>Next question</button>
+          <div class="maths-engine__actions section-actions">
+            <button class="btn btn-primary" type="button" data-next-question disabled>Next question</button>
           </div>
           <p class="maths-feedback" data-feedback role="status"></p>
         </article>
@@ -104,185 +91,32 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus. Keep training your maths muscles.</p>
-      <div class="counter" aria-live="polite">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <div>
+          <p>© <span id="currentYear"></span> Prepify11Plus.</p>
+          <p>Confident, joyful 11+ preparation for curious minds.</p>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html" aria-current="page">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-meta">
         <span>Visitors so far:</span>
-        <span id="countValue">40,000+</span>
+        <strong id="countValue" data-visitor-count>40,000+</strong>
       </div>
     </div>
   </footer>
 
-  <script src="assets/theme.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/maths.js" defer></script>
   <script src="assets/counter.js" defer></script>
-  <script>
-    const categoryConfig = [
-      {
-        id: 'arithmetic',
-        title: 'Arithmetic',
-        icon: '➗',
-        description: 'Mental maths drills covering addition, subtraction, multiplication, and division.',
-        file: '/data/arithmetic_questions.json'
-      },
-      {
-        id: 'fractions',
-        title: 'Fractions & Decimals',
-        icon: '🟰',
-        description: 'Convert, compare, and simplify with visual-friendly fraction scenarios.',
-        file: '/data/fractions_questions.json'
-      },
-      {
-        id: 'geometry',
-        title: 'Geometry',
-        icon: '📐',
-        description: 'Explore perimeter, area, angles, and shapes you meet in the 11+. ',
-        file: '/data/geometry_questions.json'
-      },
-      {
-        id: 'triangles',
-        title: 'Triangle Logic',
-        icon: '🔺',
-        description: 'Classify triangles, spot patterns, and reason about missing angles.',
-        file: '/data/triangle_logic_questions.json'
-      },
-      {
-        id: 'reasoning',
-        title: 'Reasoning & Patterns',
-        icon: '🧠',
-        description: 'Number sequences, codes, and shape patterns built to stretch thinking.',
-        file: '/data/reasoning_questions.json'
-      },
-      {
-        id: 'measurement',
-        title: 'Measurement & Units',
-        icon: '📏',
-        description: 'Conversions, time problems, and comparisons to keep practice practical.',
-        file: '/data/measurement_questions.json'
-      }
-    ];
-
-    const mathsState = {
-      activeCategory: null,
-      questions: [],
-      currentIndex: 0,
-      score: 0,
-      answered: 0
-    };
-
-    function buildCategoryCards() {
-      const grid = document.getElementById('categoryGrid');
-      categoryConfig.forEach(category => {
-        const card = document.createElement('article');
-        card.className = 'info-card';
-        card.innerHTML = `
-          <div class="feature-icon" aria-hidden="true">${category.icon}</div>
-          <div>
-            <h3>${category.title}</h3>
-            <p>${category.description}</p>
-          </div>
-          <button class="btn btn-primary" data-category="${category.id}">Start mission</button>
-        `;
-        grid.appendChild(card);
-      });
-    }
-
-    function loadCategory(categoryId) {
-      const config = categoryConfig.find(cat => cat.id === categoryId);
-      if (!config) return;
-      document.getElementById('questionArea').hidden = false;
-      document.getElementById('activeCategoryLabel').textContent = `${config.title} mission`;
-      document.getElementById('questionText').textContent = 'Loading questions…';
-      document.getElementById('optionList').innerHTML = '';
-      document.getElementById('questionFeedback').textContent = '';
-      mathsState.currentIndex = 0;
-      mathsState.score = 0;
-      mathsState.answered = 0;
-      updateScoreboard();
-      fetch(config.file)
-        .then(res => res.json())
-        .then(data => {
-          mathsState.activeCategory = config;
-          mathsState.questions = data.sort(() => Math.random() - 0.5);
-          if (!mathsState.questions.length) {
-            document.getElementById('questionText').textContent = 'No questions available yet. Add some to the JSON file!';
-            return;
-          }
-          displayQuestion();
-        })
-        .catch(() => {
-          document.getElementById('questionText').textContent = 'Unable to load questions. Check the JSON file path.';
-        });
-    }
-
-    function displayQuestion() {
-      const question = mathsState.questions[mathsState.currentIndex];
-      if (!question) return;
-      document.getElementById('questionText').textContent = question.question;
-      const optionList = document.getElementById('optionList');
-      optionList.innerHTML = '';
-      const shuffled = [...question.options].sort(() => Math.random() - 0.5);
-      shuffled.forEach(option => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'option-btn';
-        btn.textContent = option;
-        btn.addEventListener('click', () => handleAnswer(option === question.answer, btn, question));
-        optionList.appendChild(btn);
-      });
-      document.getElementById('nextQuestion').disabled = true;
-      document.getElementById('questionFeedback').textContent = '';
-      updateProgressBar();
-    }
-
-    function handleAnswer(isCorrect, button, question) {
-      const optionButtons = document.querySelectorAll('.option-btn');
-      optionButtons.forEach(btn => btn.disabled = true);
-      mathsState.answered += 1;
-      if (isCorrect) {
-        button.classList.add('correct');
-        mathsState.score += 1;
-        document.getElementById('questionFeedback').textContent = question.explanation || 'Correct! Keep it up.';
-      } else {
-        button.classList.add('incorrect');
-        document.getElementById('questionFeedback').textContent = `Not quite. The correct answer is ${question.answer}. ${question.explanation || ''}`.trim();
-        optionButtons.forEach(btn => {
-          if (btn.textContent === question.answer) {
-            btn.classList.add('correct');
-          }
-        });
-      }
-      document.getElementById('nextQuestion').disabled = false;
-      updateScoreboard();
-      updateProgressBar();
-    }
-
-    function nextQuestion() {
-      if (!mathsState.questions.length) return;
-      mathsState.currentIndex = (mathsState.currentIndex + 1) % mathsState.questions.length;
-      displayQuestion();
-    }
-
-    function updateScoreboard() {
-      document.getElementById('scoreDisplay').textContent = mathsState.score;
-      document.getElementById('answeredDisplay').textContent = mathsState.answered;
-    }
-
-    function updateProgressBar() {
-      const total = mathsState.questions.length || 1;
-      const progress = Math.min(100, Math.round((mathsState.answered / total) * 100));
-      document.getElementById('mathsProgress').style.width = `${progress}%`;
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      buildCategoryCards();
-      document.getElementById('currentYear').textContent = new Date().getFullYear();
-      document.getElementById('categoryGrid').addEventListener('click', event => {
-        const button = event.target.closest('button[data-category]');
-        if (!button) return;
-        loadCategory(button.dataset.category);
-      });
-      document.getElementById('nextQuestion').addEventListener('click', nextQuestion);
-    });
-  </script>
 </body>
 </html>
