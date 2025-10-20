@@ -1,765 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Prepify11Plus Vocabulary Lab</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/site.css">
+  <meta charset="UTF-8" />
+  <title>Prepify11Plus Vocabulary Flashcards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css" />
+
   <style>
-    :root {
-      --bg: #f5f8fc;
-      --bg-alt: #ffffff;
-      --bg-accent: linear-gradient(135deg,#5c8dfd,#3b65ff);
-      --text: #1f2933;
-      --text-light: #4b5b68;
-      --border: #d9e2ec;
-      --primary: #3b65ff;
-      --primary-hover: #2d51d6;
-      --danger: #e54848;
-      --danger-hover: #c93b3b;
-      --warning: #f7b500;
-      --success: #2ecc71;
-      --radius-s: 6px;
-      --radius-m: 12px;
-      --radius-l: 22px;
-      --shadow-xs: 0 1px 2px rgba(0,0,0,0.06);
-      --shadow-s: 0 2px 6px rgba(0,0,0,0.08);
-      --shadow-m: 0 4px 14px rgba(0,0,0,0.12);
-      --transition: 160ms cubic-bezier(.4,0,.2,1);
-      --focus-ring: 0 0 0 3px rgba(80,125,255,0.45);
-      --card-front: linear-gradient(145deg,#3b65ff,#6b8dff);
-      --card-back: #ffffff;
-      --gradient-text: linear-gradient(90deg,#3558ff,#8f46ff 55%, #ff8a3d);
-    }
-
-    .dark {
-      --bg: #0f141b;
-      --bg-alt: #1b2430;
-      --bg-accent: linear-gradient(135deg,#375bd9,#2741a3);
-      --text: #f1f5f9;
-      --text-light: #b6c2cf;
-      --border: #2c3a47;
-      --primary: #5b82ff;
-      --primary-hover: #4870f0;
-      --card-back: #243244;
-      --shadow-s: 0 2px 8px rgba(0,0,0,0.5);
-      --shadow-m: 0 4px 18px rgba(0,0,0,0.55);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
+      font-family: 'Poppins', sans-serif;
       margin: 0;
-      font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, sans-serif;
       background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      line-height: 1.4;
-      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
     }
 
-    h1, h2, h3 {
-      font-weight: 600;
-      letter-spacing: -0.5px;
-      margin: 0 0 0.65em;
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      text-align: center;
     }
 
     h1.gradient {
       background: var(--gradient-text);
       -webkit-background-clip: text;
       color: transparent;
+      margin-bottom: 0.5rem;
     }
 
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    button {
-      font: inherit;
-      cursor: pointer;
-      border: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.4rem;
-      background: var(--primary);
-      color: #fff;
-      border-radius: var(--radius-s);
-      padding: 0.65rem 1.1rem;
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      position: relative;
-      transition: var(--transition);
-      box-shadow: var(--shadow-xs);
-    }
-
-    button:hover,
-    button:focus-visible {
-      background: var(--primary-hover);
-    }
-
-    button:focus-visible {
-      outline: none;
-      box-shadow: var(--focus-ring);
-    }
-
-    button.secondary {
-      background: var(--bg-alt);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    button.secondary:hover {
-      background: #e7eef9;
-    }
-
-    .dark button.secondary:hover {
-      background: #2d3b49;
-    }
-
-    button.danger {
-      background: var(--danger);
-    }
-
-    button.danger:hover {
-      background: var(--danger-hover);
-    }
-
-    button.outline {
-      background: transparent;
-      border: 1px solid var(--border);
+    p.intro {
       color: var(--text-light);
-    }
-
-    button.outline:hover {
-      color: var(--text);
-      background: rgba(0,0,0,0.05);
-    }
-
-    .dark button.outline:hover {
-      background: rgba(255,255,255,0.07);
-    }
-
-    .study-header {
-      padding: clamp(0.7rem, 2vw, 1.1rem) clamp(1rem, 3vw, 2rem);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem 2rem;
-      align-items: center;
-      justify-content: space-between;
-      background: var(--bg-alt);
-      border-bottom: 1px solid var(--border);
-      box-shadow: var(--shadow-xs);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .study-header .left,
-    .study-header .right {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .download-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--bg-accent);
-      color: #fff;
-      padding: 0.55rem 0.95rem;
-      border-radius: var(--radius-s);
-      font-size: 0.9rem;
-      font-weight: 500;
-      box-shadow: var(--shadow-s);
-      transition: var(--transition);
-    }
-
-    .download-link:hover {
-      filter: brightness(1.08);
-      text-decoration: none;
-    }
-
-    .toggle-theme {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--bg-accent);
-      box-shadow: var(--shadow-s);
-      font-size: 1.05rem;
-    }
-
-    .study-layout {
-      flex: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 360px;
-      gap: 1.5rem;
-      padding: clamp(1rem, 2.2vw, 2rem);
-    }
-
-    @media (max-width: 1100px) {
-      .study-layout {
-        grid-template-columns: minmax(0, 1fr) 320px;
-      }
-    }
-
-    @media (max-width: 980px) {
-      .study-layout {
-        grid-template-columns: 100%;
-        padding-bottom: 6rem;
-      }
-    }
-
-    .panel {
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-l);
-      padding: clamp(1rem, 2.2vw, 1.5rem);
-      box-shadow: var(--shadow-s);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .panel::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      background: radial-gradient(at 30% 15%, rgba(255,255,255,0.35), transparent 60%),
-                  radial-gradient(at 85% 85%, rgba(255,255,255,0.12), transparent 70%);
-      opacity: 0.7;
-    }
-
-    .panel h2 {
-      margin-top: 0;
-      font-size: clamp(1.15rem, 1.9vw, 1.45rem);
-    }
-
-    .flex-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .segmented {
-      display: inline-flex;
-      background: var(--bg);
-      padding: 0.35rem;
-      border-radius: 1000px;
-      border: 1px solid var(--border);
-      gap: 0.35rem;
-    }
-
-    .segmented button {
-      border-radius: 1000px;
-      background: transparent;
-      color: var(--text-light);
-      padding: 0.5rem 0.9rem;
-      font-size: 0.85rem;
-      border: none;
-      box-shadow: none;
-    }
-
-    .segmented button.active {
-      background: var(--primary);
-      color: #fff;
-    }
-
-    .segmented button:hover {
-      background: var(--primary-hover);
-      color: #fff;
-    }
-
-    .card-wrapper {
-      margin: 1.1rem auto 1.4rem;
-      max-width: 420px;
-      width: 100%;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+      line-height: 1.4;
     }
 
     .flashcard {
-      width: 100%;
-      aspect-ratio: 3/2;
-      perspective: 1400px;
-      cursor: pointer;
-    }
-
-    .flashcard-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform-style: preserve-3d;
-      transition: transform 700ms cubic-bezier(.65,.02,.25,1);
-      border-radius: 24px;
-      box-shadow: var(--shadow-m);
-    }
-
-    .flashcard.flipped .flashcard-inner {
-      transform: rotateY(180deg);
-    }
-
-    .face {
-      position: absolute;
-      inset: 0;
-      backface-visibility: hidden;
-      border-radius: 24px;
-      display: flex;
-      padding: 1.2rem 1.1rem 1rem;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      line-height: 1.25;
-      font-weight: 500;
-      font-size: clamp(1rem, 1.8vw, 1.35rem);
-    }
-
-    .face.front {
       background: var(--card-front);
       color: #fff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .face.front::after {
-      content:"";
-      position:absolute;
-      width: 180%;
-      height: 180%;
-      top:-40%;
-      left:-40%;
-      background:
-        radial-gradient(circle at 30% 30%,rgba(255,255,255,0.25),transparent 60%),
-        radial-gradient(circle at 75% 70%,rgba(255,255,255,0.15),transparent 65%);
-      animation: pulse 7s linear infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(25deg) scale(1.04); }
-      100% { transform: rotate(0deg) scale(1); }
-    }
-
-    .face.back {
-      background: var(--card-back);
-      color: var(--text);
-      transform: rotateY(180deg);
-      align-items: flex-start;
-      font-size: clamp(0.85rem, 1.3vw, 1rem);
-      overflow-y: auto;
-    }
-
-    .face.back::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .face.back::-webkit-scrollbar-thumb {
-      background: linear-gradient(var(--primary), var(--primary-hover));
-      border-radius: 100px;
-    }
-
-    .answer-block {
-      width: 100%;
-      text-align: left;
-      line-height: 1.35;
-      word-wrap: break-word;
-    }
-
-    .answer-block h4 {
-      margin: 0 0 0.4rem;
-      font-size: 0.85rem;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      opacity: 0.5;
-    }
-
-    .meta-line {
-      font-size: 0.75rem;
-      opacity: 0.65;
-      margin-top: 0.75rem;
-      font-weight: 400;
-    }
-
-    input[type="text"],
-    .search-box,
-    textarea {
-      width: 100%;
-      padding: 0.7rem 0.85rem;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-m);
-      font: inherit;
-      background: var(--bg);
-      color: var(--text);
-      transition: var(--transition);
-      outline: none;
-    }
-
-    input[type="text"]:focus,
-    .search-box:focus,
-    textarea:focus {
-      box-shadow: var(--focus-ring);
-      background: var(--bg-alt);
-    }
-
-    .options {
-      margin-top: 0.6rem;
-      display: grid;
-      gap: 0.55rem;
-    }
-
-    .option-label {
-      display: flex;
-      gap: 0.65rem;
-      align-items: center;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 0.65rem 0.8rem;
-      border-radius: var(--radius-m);
-      font-size: 0.85rem;
+      border-radius: 18px;
+      box-shadow: var(--shadow-m);
+      padding: 2rem;
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+      transition: transform 0.5s;
       cursor: pointer;
       position: relative;
-      transition: var(--transition);
+      min-height: 220px;
     }
 
-    .option-label:hover,
-    .option-label:has(input:focus-visible) {
-      border-color: var(--primary);
-      background: linear-gradient(90deg,rgba(70,110,255,0.12),transparent);
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+      background: var(--card-back);
+      color: var(--text);
     }
 
-    .option-label input {
-      accent-color: var(--primary);
-      transform: scale(1.1);
+    .input-area {
+      margin-top: 1rem;
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
     }
 
-    #feedback {
-      margin-top: 0.6rem;
-      font-size: 0.9rem;
+    input[type="text"] {
+      width: 100%;
+      padding: 0.7rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg-alt);
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: box-shadow 0.2s;
+    }
+
+    input[type="text"]:focus {
+      box-shadow: var(--focus-ring);
+    }
+
+    .actions {
+      margin-top: 1.1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
       font-weight: 500;
+      cursor: pointer;
+      box-shadow: var(--shadow-xs);
+      transition: background 0.2s;
     }
 
-    .feedback-positive {
+    button:hover {
+      background: var(--primary-hover);
+    }
+
+    .feedback {
+      margin-top: 0.9rem;
+      font-weight: 600;
+      min-height: 1.5rem;
+    }
+
+    .feedback.positive {
       color: var(--success);
     }
 
-    .feedback-negative {
+    .feedback.negative {
       color: var(--danger);
     }
 
-    .actions-row {
-      margin-top: 0.8rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-
-    .stats-bar {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      align-items: stretch;
-      margin-top: 0.6rem;
-    }
-
-    .stat-chip {
-      flex: 1 1 110px;
-      min-width: 110px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-m);
-      padding: 0.55rem 0.7rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .stat-chip strong {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      opacity: 0.6;
-    }
-
-    .stat-chip span {
-      font-size: 0.95rem;
-      font-weight: 600;
-    }
-
-    .progress-outer {
-      width: 100%;
-      height: 10px;
-      background: var(--bg);
-      border-radius: 100px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      margin: 0.3rem 0 0.8rem;
-      box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
-    }
-
-    .progress-inner {
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg,#3b65ff,#6a8fff,#8f46ff);
-      background-size: 200% 100%;
-      animation: progressFlow 9s linear infinite;
-      transition: width 400ms cubic-bezier(.4,0,.2,1);
-    }
-
-    @keyframes progressFlow {
-      0% { background-position: 0 0; }
-      100% { background-position: 200% 0; }
-    }
-
-    .bookmarks {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      height: 100%;
-    }
-
-    .bookmark-toolbar {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .bookmark-list {
-      max-height: 300px;
-      overflow-y: auto;
-      padding-right: 0.3rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
-
-    .bookmark-list::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .bookmark-list::-webkit-scrollbar-thumb {
-      background: var(--primary);
-      border-radius: 100px;
-    }
-
-    .bookmark-item {
-      position: relative;
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      padding: 0.55rem 0.7rem;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-m);
-      font-size: 0.8rem;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .bookmark-item:hover {
-      background: linear-gradient(90deg,rgba(80,120,255,0.18),rgba(80,120,255,0.05));
-      border-color: var(--primary);
-    }
-
-    .bookmark-item button {
-      padding: 0.3rem 0.45rem;
-      font-size: 0.75rem;
-      background: var(--danger);
-    }
-
-    .bookmark-item button:hover {
-      background: var(--danger-hover);
-    }
-
-    .tag {
-      display: inline-flex;
-      padding: 0.2rem 0.55rem;
-      background: var(--primary);
-      color: #fff;
-      border-radius: 1000px;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .truncate {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .mode-utils {
-      display: flex;
-      gap: 0.45rem;
-      flex-wrap: wrap;
-    }
-
-    .muted {
-      opacity: 0.6;
-      font-size: 0.75rem;
-    }
-
-    .divider {
-      height: 1px;
-      background: var(--border);
-      margin: 0.9rem 0 1rem;
-      width: 100%;
-    }
-
-    .drag-zone {
-      margin-top: 0.6rem;
-      border: 2px dashed var(--border);
-      border-radius: var(--radius-m);
-      padding: 1rem 0.9rem;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      background: var(--bg);
-      transition: var(--transition);
-    }
-
-    .drag-zone.dragover {
-      background: linear-gradient(150deg,rgba(70,110,255,0.12),rgba(140,90,255,0.12));
-      border-color: var(--primary);
-      color: var(--text);
-    }
-
-    .inline-badge {
-      background: var(--primary);
-      color: #fff;
-      padding: 0.15rem 0.5rem;
-      border-radius: 1000px;
-      font-size: 0.6rem;
-      letter-spacing: 0.5px;
-      font-weight: 600;
-    }
-
-    .pill-row {
-      display: flex;
-      gap: 0.4rem;
-      flex-wrap: wrap;
-      margin-top: 0.4rem;
-    }
-
-    .pill {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      font-size: 0.65rem;
-      padding: 0.35rem 0.6rem;
-      border-radius: 1000px;
-      color: var(--text-light);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-    }
-
-    .pill strong {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    .footer-mobile {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+    footer {
       background: var(--bg-alt);
       border-top: 1px solid var(--border);
-      display: none;
-      padding: 0.7rem 0.9rem env(safe-area-inset-bottom);
-      gap: 0.6rem;
-      justify-content: center;
-      z-index: 30;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-light);
     }
 
-    @media (max-width: 980px) {
-      .footer-mobile {
-        display: flex;
-        flex-wrap: wrap;
+    .example {
+      font-size: 0.9rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .flashcard {
+        padding: 1.4rem;
       }
-
-      .footer-mobile button {
-        flex: 1 1 calc(50% - 0.6rem);
-        min-width: 140px;
-      }
-    }
-
-    .mastered-badge {
-      position: absolute;
-      top: 0.7rem;
-      right: 0.7rem;
-      background: linear-gradient(90deg,#2ecc71,#54d88b);
-      color: #fff;
-      font-size: 0.6rem;
-      padding: 0.3rem 0.55rem;
-      border-radius: 1000px;
-      letter-spacing: 0.75px;
-      font-weight: 600;
-      box-shadow: var(--shadow-s);
-    }
-
-    .info-block {
-      font-size: 0.7rem;
-      opacity: 0.65;
-      margin-top: 0.8rem;
-      line-height: 1.3;
-    }
-
-    .empty {
-      opacity: 0.55;
-      font-style: italic;
-      font-size: 0.8rem;
-      padding: 0.3rem 0;
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
-    }
-
-    .fade-in {
-      animation: fadeIn 0.5s ease;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(4px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .scale-in {
-      animation: scaleIn 0.5s cubic-bezier(.4,0,.2,1);
-    }
-
-    @keyframes scaleIn {
-      0% { transform: scale(0.94); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="navbar">
@@ -794,569 +183,63 @@
     </div>
   </header>
 
-  <div class="page-content">
-    <header class="study-header" aria-label="Flashcards controls">
-      <div class="left">
-        <h1 class="gradient" style="font-size:clamp(1.2rem,2.2vw,1.65rem);">Vocabulary Flashcards</h1>
-        <a class="download-link" href="data/sample_vocabulary.txt" download title="Download sample word list">
-          <span>⬇️ Sample List</span>
-        </a>
-      </div>
-      <div class="right">
-        <div class="segmented" role="tablist" aria-label="Study Mode">
-          <button id="modeTyping" role="tab" aria-selected="true" class="active" data-mode="input">Typing</button>
-          <button id="modeChoice" role="tab" aria-selected="false" data-mode="choice">Multiple Choice</button>
-        </div>
-      </div>
-    </section>
+  <main>
+    <h1 class="gradient">Vocabulary Flashcards</h1>
+    <p class="intro">Boost your vocabulary the smart way! Flip each card to reveal meanings and examples, or test yourself by typing answers.</p>
 
-    <section class="section flashcards-section">
-      <div class="container flashcards-grid">
-        <article class="flashcard-stack" aria-live="polite">
-          <div class="flashcard-card" data-flashcard tabindex="0" aria-label="Vocabulary flashcard">
-            <div class="flashcard-face flashcard-front" data-flashcard-front>Loading…</div>
-            <div class="flashcard-face flashcard-back" data-flashcard-back hidden>Loading definition…</div>
-            <button class="flashcard-flip" type="button" data-flip-card aria-label="Flip card">↺</button>
-            <span class="sparkle" aria-hidden="true"></span>
-          </div>
-          <p class="flashcard-meta">
-            <span data-flashcard-progress>Card 0 of 0</span>
-            <span>•</span>
-            <span data-flashcard-topic>Focus: —</span>
-          </p>
-          <div class="flashcard-actions">
-            <button class="btn" type="button" data-prev-card>Previous</button>
-            <button class="btn" type="button" data-next-card>Next</button>
-            <button class="btn btn-outline" type="button" data-random-card>Random</button>
-            <button class="btn btn-outline" type="button" data-shuffle-cards>Shuffle deck</button>
-          </div>
-        </article>
+    <div id="flashcard" class="flashcard" tabindex="0">
+      <div id="questionWord">Loading…</div>
+      <div id="meaningText" style="display:none;"></div>
+      <div id="exampleText" class="example" style="display:none;"></div>
+    </div>
 
-        <aside class="flashcard-controls" aria-label="Flashcard controls and stats">
-          <div class="control-panel">
-            <div class="control-row">
-              <button class="btn btn-secondary" type="button" data-mark-mastered>Mark as mastered</button>
-              <button class="btn btn-secondary" type="button" data-toggle-bookmark>Bookmark word</button>
-            </div>
-            <dl class="stats">
-              <div>
-                <dt>Total words</dt>
-                <dd data-total-count>0</dd>
-              </div>
-              <div>
-                <dt>Mastered</dt>
-                <dd data-mastered-count>0</dd>
-              </div>
-              <div>
-                <dt>Bookmarked</dt>
-                <dd data-bookmarked-count>0</dd>
-              </div>
-            </dl>
-            <p class="status-message" role="status" data-status-message></p>
-            <div class="control-row">
-              <button class="btn btn-outline" type="button" data-reset-mastery>Reset stats</button>
-              <button class="btn btn-outline" type="button" data-restore-mastered>Restore mastered to deck</button>
-              <button class="btn btn-outline" type="button" data-export-bookmarks>Export bookmarks</button>
-            </div>
-          </div>
-          <div class="flashcard-note">
-            <h2>How it works</h2>
-            <ul>
-              <li>Cards pull from <code>data/vocab/words500.json</code> and merge with any custom additions you drop in <code>data/</code>.</li>
-              <li>Mastered words pause from the shuffle until you restore them, keeping the focus on newer terms.</li>
-              <li>Bookmarks export as a tidy JSON file for sharing with tutors or printing.</li>
-            </ul>
-          </div>
-        </aside>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>© <span id="currentYear"></span> Prepify11Plus. Keep building your word power.</p>
-      <div class="counter" aria-live="polite">
-        <span>Visitors so far:</span>
-        <span id="countValue">40,000+</span>
+    <div class="input-area" id="inputArea">
+      <input type="text" id="userAnswer" placeholder="Type the meaning here..." />
+      <div class="actions">
+        <button id="btnCheck">Check</button>
+        <button id="btnReveal">Flip</button>
+        <button id="btnNext">Next</button>
       </div>
     </div>
+
+    <p id="feedback" class="feedback"></p>
+
+    <div class="actions">
+      <button id="btnShuffle">Shuffle Deck</button>
+      <button id="btnResetStats">Reset Stats</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="currentYear"></span> Prepify11Plus | Keep building your word power ✨</p>
   </footer>
 
   <script src="assets/theme.js" defer></script>
-  <script src="assets/counter.js" defer></script>
+
   <script>
     let words = [];
-    let activePool = [];
-    let mastered = new Set(JSON.parse(localStorage.getItem('masteredWords') || '[]'));
     let current = null;
-    let mode = localStorage.getItem('studyMode') || 'input';
-    let stats = JSON.parse(localStorage.getItem('stats') || JSON.stringify({
-      answered: 0,
-      correct: 0,
-      streak: 0
-    }));
-    let bookmarks = JSON.parse(localStorage.getItem('bookmarksV2') || '[]');
-    let lastAnswerCorrect = null;
-    let theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    if (theme === 'dark') document.documentElement.classList.add('dark');
+    let stats = { answered: 0, correct: 0 };
 
     const els = {
-      modeTyping: document.getElementById('modeTyping'),
-      modeChoice: document.getElementById('modeChoice'),
-      inputArea: document.getElementById('inputArea'),
-      choiceArea: document.getElementById('choiceArea'),
-      userAnswer: document.getElementById('userAnswer'),
-      feedback: document.getElementById('feedback'),
+      flashcard: document.getElementById('flashcard'),
       questionWord: document.getElementById('questionWord'),
       meaningText: document.getElementById('meaningText'),
       exampleText: document.getElementById('exampleText'),
-      metaInfo: document.getElementById('metaInfo'),
-      flashcard: document.getElementById('flashcard'),
-      flashcardInner: document.getElementById('flashcardInner'),
-      keywordPills: document.getElementById('keywordPills'),
-      statAnswered: document.getElementById('statAnswered'),
-      statCorrect: document.getElementById('statCorrect'),
-      statAccuracy: document.getElementById('statAccuracy'),
-      statStreak: document.getElementById('statStreak'),
-      statPool: document.getElementById('statPool'),
-      progressFill: document.getElementById('progressFill'),
+      userAnswer: document.getElementById('userAnswer'),
       btnCheck: document.getElementById('btnCheck'),
       btnReveal: document.getElementById('btnReveal'),
       btnNext: document.getElementById('btnNext'),
-      btnBookmark: document.getElementById('btnBookmark'),
-      btnMastered: document.getElementById('btnMastered'),
+      feedback: document.getElementById('feedback'),
       btnShuffle: document.getElementById('btnShuffle'),
-      btnResetStats: document.getElementById('btnResetStats'),
-      btnRestoreMastered: document.getElementById('btnRestoreMastered'),
-      btnExportBookmarks: document.getElementById('btnExportBookmarks'),
-      fileInput: document.getElementById('fileInput'),
-      dragZone: document.getElementById('dragZone'),
-      themeToggle: document.getElementById('themeToggle'),
-      bookmarkList: document.getElementById('bookmarkList'),
-      bookmarkCount: document.getElementById('bookmarkCount'),
-      bookmarkSearch: document.getElementById('bookmarkSearch'),
-      noBookmarks: document.getElementById('noBookmarks'),
-      btnClearBookmarks: document.getElementById('btnClearBookmarks'),
-      btnCollapseBookmarks: document.getElementById('btnCollapseBookmarks'),
-      mobCheck: document.getElementById('mobCheck'),
-      mobNext: document.getElementById('mobNext'),
-      mobFlip: document.getElementById('mobFlip'),
-      mobBookmark: document.getElementById('mobBookmark')
+      btnResetStats: document.getElementById('btnResetStats')
     };
-
-    function saveStats() {
-      localStorage.setItem('stats', JSON.stringify(stats));
-    }
-
-    function updateStatsUI() {
-      els.statAnswered.textContent = stats.answered;
-      els.statCorrect.textContent = stats.correct;
-      els.statStreak.textContent = stats.streak;
-      const accuracy = stats.answered ? Math.round((stats.correct / stats.answered) * 100) : 0;
-      els.statAccuracy.textContent = accuracy + '%';
-      const poolSize = activePool.length;
-      els.statPool.textContent = poolSize;
-      const total = words.length || 1;
-      const pct = Math.min(100, (stats.answered / total) * 100);
-      els.progressFill.style.width = pct + '%';
-    }
-
-    function persistBookmarks() {
-      localStorage.setItem('bookmarksV2', JSON.stringify(bookmarks));
-    }
-
-    function persistMastered() {
-      localStorage.setItem('masteredWords', JSON.stringify(Array.from(mastered)));
-    }
-
-    function setMode(newMode) {
-      mode = newMode;
-      localStorage.setItem('studyMode', mode);
-      els.modeTyping.classList.toggle('active', mode === 'input');
-      els.modeChoice.classList.toggle('active', mode === 'choice');
-      els.modeTyping.setAttribute('aria-selected', mode === 'input');
-      els.modeChoice.setAttribute('aria-selected', mode === 'choice');
-      if (mode === 'input') {
-        els.inputArea.classList.remove('hidden');
-        els.choiceArea.classList.add('hidden');
-        setTimeout(() => els.userAnswer.focus(), 50);
-      } else {
-        els.inputArea.classList.add('hidden');
-        els.choiceArea.classList.remove('hidden');
-      }
-      renderCurrent();
-    }
-
-    function randomItem(arr) {
-      return arr[Math.floor(Math.random() * arr.length)];
-    }
-
-    function shuffleInPlace(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-    }
-
-    function sanitizeMeaning(str) {
-      return str.toLowerCase().replace(/[^\w\s]/g, ' ').replace(/\s+/g, ' ').trim();
-    }
-
-    function extractKeywords(meaning) {
-      const parts = sanitizeMeaning(meaning).split(/\s+/).filter(Boolean);
-      const stop = new Set(['the','a','an','and','or','of','to','in','on','for','with','by','is','are','be','as','at','that','this','it']);
-      const freq = {};
-      parts.forEach((w) => {
-        if (!stop.has(w)) freq[w] = (freq[w] || 0) + 1;
-      });
-      return Object.entries(freq).sort((a,b) => b[1] - a[1]).slice(0, 6).map((entry) => entry[0]);
-    }
-
-    function levenshtein(a, b) {
-      if (a === b) return 0;
-      const al = a.length;
-      const bl = b.length;
-      if (!al) return bl;
-      if (!bl) return al;
-      const v0 = new Array(bl + 1).fill(0);
-      const v1 = new Array(bl + 1).fill(0);
-      for (let i = 0; i <= bl; i++) v0[i] = i;
-      for (let i = 0; i < al; i++) {
-        v1[0] = i + 1;
-        for (let j = 0; j < bl; j++) {
-          const cost = a[i] === b[j] ? 0 : 1;
-          v1[j + 1] = Math.min(v1[j] + 1, v0[j + 1] + 1, v0[j] + cost);
-        }
-        for (let j = 0; j <= bl; j++) v0[j] = v1[j];
-      }
-      return v1[bl];
-    }
-
-    function similarity(a, b) {
-      a = a.trim().toLowerCase();
-      b = b.trim().toLowerCase();
-      if (!a && !b) return 1;
-      if (!a || !b) return 0;
-      const dist = levenshtein(a, b);
-      return 1 - dist / Math.max(a.length, b.length);
-    }
-
-    function partialKeywordScore(user, target) {
-      const userTokens = sanitizeMeaning(user).split(' ').filter(Boolean);
-      const targetTokens = sanitizeMeaning(target).split(' ').filter(Boolean);
-      if (!targetTokens.length) return 0;
-      let matched = 0;
-      targetTokens.forEach((token) => {
-        if (userTokens.includes(token)) matched++;
-      });
-      return matched / targetTokens.length;
-    }
-
-    function formatExample(example) {
-      if (!example) return "<em style='opacity:.55;'>No example</em>";
-      return example;
-    }
-
-    function chooseNext() {
-      if (!activePool.length) {
-        current = null;
-        els.questionWord.textContent = 'All mastered!';
-        els.meaningText.textContent = 'Restore mastered to continue.';
-        els.exampleText.textContent = '';
-        return;
-      }
-      current = randomItem(activePool);
-    }
-
-    function renderCurrent() {
-      els.flashcard.classList.remove('flipped');
-      if (!current) {
-        chooseNext();
-      }
-      if (!current) return;
-      els.questionWord.textContent = current.word;
-      els.meaningText.innerHTML = current.meaning;
-      els.exampleText.innerHTML = formatExample(current.example);
-      els.metaInfo.textContent = '';
-      document.querySelectorAll('.mastered-badge').forEach((badge) => badge.remove());
-      if (mastered.has(current.word)) {
-        const badge = document.createElement('div');
-        badge.className = 'mastered-badge';
-        badge.textContent = 'MASTERED';
-        els.flashcard.appendChild(badge);
-      }
-      const isMastered = mastered.has(current.word);
-      els.btnMastered.textContent = isMastered ? '↩️ Unmaster' : '🏆 Mastered';
-      els.keywordPills.innerHTML = '';
-      const keywords = extractKeywords(current.meaning);
-      keywords.forEach((word) => {
-        const pill = document.createElement('div');
-        pill.className = 'pill';
-        pill.innerHTML = `<strong>${word}</strong>`;
-        els.keywordPills.appendChild(pill);
-      });
-      const isBookmarked = bookmarks.some((b) => b.word === current.word && b.meaning === current.meaning);
-      els.btnBookmark.textContent = isBookmarked ? '✅ Bookmarked' : '🔖 Bookmark';
-      if (mode === 'choice') {
-        renderChoices();
-      }
-      els.feedback.textContent = '';
-      els.feedback.className = '';
-      if (mode === 'input') {
-        els.userAnswer.value = '';
-        els.userAnswer.focus();
-      }
-    }
-
-    function renderChoices() {
-      els.choiceArea.innerHTML = '';
-      if (!current) return;
-      const correct = current.meaning;
-      const options = new Set([correct]);
-      const pool = activePool.length ? activePool : words;
-      while (options.size < Math.min(4, pool.length)) {
-        const candidate = randomItem(pool).meaning;
-        options.add(candidate);
-      }
-      const final = Array.from(options);
-      shuffleInPlace(final);
-      final.forEach((opt) => {
-        const id = 'opt_' + Math.random().toString(36).slice(2);
-        const label = document.createElement('label');
-        label.className = 'option-label';
-        label.setAttribute('for', id);
-        label.innerHTML = `<input type="radio" name="mc" id="${id}" value="${encodeURIComponent(opt)}"> <span>${opt}</span>`;
-        els.choiceArea.appendChild(label);
-      });
-    }
-
-    function updateBookmarkUI() {
-      els.bookmarkCount.textContent = bookmarks.length;
-      persistBookmarks();
-      filterAndRenderBookmarks();
-    }
-
-    function filterAndRenderBookmarks() {
-      const query = els.bookmarkSearch.value.trim().toLowerCase();
-      const list = bookmarks.filter((b) => !query || b.word.toLowerCase().includes(query));
-      els.bookmarkList.innerHTML = '';
-      if (!list.length) {
-        els.noBookmarks.classList.remove('hidden');
-      } else {
-        els.noBookmarks.classList.add('hidden');
-      }
-      list.forEach((item) => {
-        const row = document.createElement('div');
-        row.className = 'bookmark-item';
-        row.setAttribute('role', 'listitem');
-        row.title = item.meaning;
-        row.addEventListener('click', () => {
-          current = item;
-          if (!mastered.has(item.word) && !activePool.find((x) => x.word === item.word)) {
-            activePool.push(item);
-          }
-          renderCurrent();
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        const text = document.createElement('div');
-        text.className = 'truncate';
-        text.style.flex = '1';
-        text.textContent = item.word;
-        const del = document.createElement('button');
-        del.textContent = '✖';
-        del.className = 'danger';
-        del.title = 'Remove bookmark';
-        del.addEventListener('click', (event) => {
-          event.stopPropagation();
-          bookmarks = bookmarks.filter((b) => !(b.word === item.word && b.meaning === item.meaning));
-          updateBookmarkUI();
-        });
-        row.appendChild(text);
-        row.appendChild(del);
-        els.bookmarkList.appendChild(row);
-      });
-    }
-
-    function showFeedback(msg, positive, subtle) {
-      els.feedback.textContent = msg;
-      els.feedback.className = '';
-      if (!subtle) {
-        els.feedback.classList.add(positive ? 'feedback-positive' : 'feedback-negative');
-      }
-    }
-
-    function applyResult(correct, message) {
-      stats.answered++;
-      if (correct) {
-        stats.correct++;
-        stats.streak++;
-      } else {
-        stats.streak = 0;
-      }
-      lastAnswerCorrect = correct;
-      saveStats();
-      updateStatsUI();
-      showFeedback(message, correct);
-    }
-
-    function checkAnswer() {
-      if (!current) return;
-      let isCorrect = false;
-      let feedbackMsg = '';
-      if (mode === 'input') {
-        const user = els.userAnswer.value.trim();
-        if (!user) {
-          feedbackMsg = 'Please type an answer.';
-          showFeedback(feedbackMsg, false, true);
-          return;
-        }
-        const target = current.meaning;
-        const sim = similarity(user, target);
-        const keywordCoverage = partialKeywordScore(user, target);
-        isCorrect = sim >= 0.7 || (sim >= 0.55 && keywordCoverage >= 0.45) || keywordCoverage >= 0.65;
-        const percent = Math.round(sim * 100);
-        const coverage = Math.round(keywordCoverage * 100);
-        feedbackMsg = (isCorrect ? '✅ Good! ' : '❌ Not quite. ') + `Similarity: ${percent}%, Keyword match: ${coverage}%.`;
-        if (!isCorrect) feedbackMsg += ' Flip or try again.';
-      } else {
-        const selected = els.choiceArea.querySelector("input[name='mc']:checked");
-        if (!selected) {
-          feedbackMsg = 'Select an option.';
-          showFeedback(feedbackMsg, false, true);
-          return;
-        }
-        const chosen = decodeURIComponent(selected.value);
-        isCorrect = chosen === current.meaning;
-        feedbackMsg = isCorrect ? '✅ Correct!' : '❌ Wrong. Correct: ' + current.meaning;
-      }
-      applyResult(isCorrect, feedbackMsg);
-    }
-
-    function nextQuestion(force = false) {
-      if (!activePool.length) {
-        renderCurrent();
-        return;
-      }
-      if (!force && lastAnswerCorrect === true) {
-        for (let i = 0; i < 3; i++) {
-          const candidate = randomItem(activePool);
-          if (candidate.word !== current.word) {
-            current = candidate;
-            break;
-          }
-        }
-      } else {
-        current = randomItem(activePool);
-      }
-      lastAnswerCorrect = null;
-      renderCurrent();
-    }
-
-    function flipCard() {
-      els.flashcard.classList.toggle('flipped');
-    }
-
-    function toggleBookmark() {
-      if (!current) return;
-      const exists = bookmarks.find((b) => b.word === current.word && b.meaning === current.meaning);
-      if (exists) {
-        bookmarks = bookmarks.filter((b) => !(b.word === current.word && b.meaning === current.meaning));
-        els.btnBookmark.textContent = '🔖 Bookmark';
-      } else {
-        bookmarks.push({ ...current });
-        els.btnBookmark.textContent = '✅ Bookmarked';
-      }
-      updateBookmarkUI();
-    }
-
-    function markMastered() {
-      if (!current) return;
-      if (mastered.has(current.word)) {
-        mastered.delete(current.word);
-      } else {
-        mastered.add(current.word);
-      }
-      persistMastered();
-      rebuildActivePool();
-      nextQuestion(true);
-    }
-
-    function restoreMastered() {
-      mastered.clear();
-      persistMastered();
-      rebuildActivePool();
-      renderCurrent();
-    }
-
-    function rebuildActivePool() {
-      activePool = words.filter((w) => !mastered.has(w.word));
-      updateStatsUI();
-    }
-
-    function resetStats() {
-      if (!confirm('Reset statistics?')) return;
-      stats = { answered: 0, correct: 0, streak: 0 };
-      saveStats();
-      updateStatsUI();
-    }
-
-    function shuffleWords() {
-      shuffleInPlace(words);
-      rebuildActivePool();
-      nextQuestion(true);
-    }
-
-    function exportBookmarksCSV() {
-      if (!bookmarks.length) {
-        alert('No bookmarks to export.');
-        return;
-      }
-      let csv = 'Word,Meaning,Example\n';
-      bookmarks.forEach((b) => {
-        const line = [
-          JSON.stringify(b.word),
-          JSON.stringify(b.meaning),
-          JSON.stringify(b.example || '')
-        ].join(',');
-        csv += line + '\n';
-      });
-      const blob = new Blob([csv], { type: 'text/csv' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'bookmarks.csv';
-      document.body.appendChild(link);
-      link.click();
-      URL.revokeObjectURL(url);
-      link.remove();
-    }
-
-    function clearBookmarks() {
-      if (!bookmarks.length) return;
-      if (!confirm('Clear all bookmarks?')) return;
-      bookmarks = [];
-      updateBookmarkUI();
-    }
-
-    let bookmarksCollapsed = false;
-    function toggleBookmarksCollapse() {
-      bookmarksCollapsed = !bookmarksCollapsed;
-      els.bookmarkList.style.display = bookmarksCollapsed ? 'none' : 'flex';
-      els.noBookmarks.style.display = bookmarksCollapsed ? 'none' : (bookmarks.length ? 'none' : 'block');
-      els.btnCollapseBookmarks.textContent = bookmarksCollapsed ? '🗂 Expand' : '🗂 Collapse';
-    }
-
-    function toggleTheme() {
-      document.documentElement.classList.toggle('dark');
-      theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-      localStorage.setItem('theme', theme);
-    }
 
     function parseLines(raw) {
       return raw.split(/\r?\n/)
-        .map((line) => line.trim())
+        .map(line => line.trim())
         .filter(Boolean)
-        .map((line) => {
+        .map(line => {
           let parts = line.split('–');
           if (parts.length < 2) parts = line.split(' - ');
           const [rawWord, rawMeaning, rawExample] = [
@@ -1370,150 +253,105 @@
             example: (rawExample || '').trim()
           };
         })
-        .filter((entry) => entry.word);
-    }
-
-    function handleFile(file) {
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const text = event.target.result;
-        words = parseLines(text);
-        if (!words.length) {
-          alert('No valid lines found.');
-          return;
-        }
-        rebuildActivePool();
-        chooseNext();
-        renderCurrent();
-        updateStatsUI();
-        els.dragZone.classList.remove('dragover');
-      };
-      reader.readAsText(file);
+        .filter(entry => entry.word);
     }
 
     function loadDefaultVocabulary() {
       fetch('/data/sample_vocabulary.txt')
-        .then((response) => {
-          if (!response.ok) throw new Error('Network response was not ok');
-          return response.text();
-        })
-        .then((data) => {
+        .then(r => r.text())
+        .then(data => {
           words = parseLines(data);
-          if (!words.length) {
-            alert('No valid lines found in the sample vocabulary.');
-            return;
-          }
-          rebuildActivePool();
-          chooseNext();
-          renderCurrent();
-          updateStatsUI();
+          if (!words.length) throw new Error('No valid words found');
+          shuffle(words);
+          nextWord();
         })
-        .catch((error) => console.error('Error loading vocabulary:', error));
+        .catch(err => console.error('Error loading vocabulary:', err));
     }
 
-    els.modeTyping.addEventListener('click', () => setMode('input'));
-    els.modeChoice.addEventListener('click', () => setMode('choice'));
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+    }
+
+    function nextWord() {
+      if (!words.length) return;
+      current = words[Math.floor(Math.random() * words.length)];
+      els.questionWord.textContent = current.word;
+      els.meaningText.textContent = current.meaning;
+      els.exampleText.textContent = current.example ? "Example: " + current.example : '';
+      els.meaningText.style.display = "none";
+      els.exampleText.style.display = "none";
+      els.flashcard.classList.remove('flipped');
+      els.feedback.textContent = '';
+      els.userAnswer.value = '';
+    }
+
+    function flipCard() {
+      const isFlipped = els.flashcard.classList.toggle('flipped');
+      els.meaningText.style.display = isFlipped ? "block" : "none";
+      els.exampleText.style.display = isFlipped ? "block" : "none";
+    }
+
+    function checkAnswer() {
+      if (!current) return;
+      const user = els.userAnswer.value.trim().toLowerCase();
+      const correct = current.meaning.toLowerCase();
+      const sim = similarity(user, correct);
+      stats.answered++;
+      if (sim >= 0.7) {
+        stats.correct++;
+        els.feedback.textContent = "✅ Correct!";
+        els.feedback.className = "feedback positive";
+      } else {
+        els.feedback.textContent = "❌ Not quite. It means: " + current.meaning;
+        els.feedback.className = "feedback negative";
+      }
+    }
+
+    function similarity(a, b) {
+      const dist = levenshtein(a, b);
+      return 1 - dist / Math.max(a.length, b.length);
+    }
+
+    function levenshtein(a, b) {
+      const matrix = [];
+      let i, j;
+      for (i = 0; i <= b.length; i++) matrix[i] = [i];
+      for (j = 0; j <= a.length; j++) matrix[0][j] = j;
+      for (i = 1; i <= b.length; i++) {
+        for (j = 1; j <= a.length; j++) {
+          if (b.charAt(i - 1) === a.charAt(j - 1)) {
+            matrix[i][j] = matrix[i - 1][j - 1];
+          } else {
+            matrix[i][j] = Math.min(
+              matrix[i - 1][j - 1] + 1,
+              Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1)
+            );
+          }
+        }
+      }
+      return matrix[b.length][a.length];
+    }
+
+    function resetStats() {
+      stats = { answered: 0, correct: 0 };
+      els.feedback.textContent = "🔄 Stats reset!";
+      els.feedback.className = "feedback";
+    }
+
+    // Event listeners
+    els.flashcard.addEventListener('click', flipCard);
     els.btnCheck.addEventListener('click', checkAnswer);
     els.btnReveal.addEventListener('click', flipCard);
-    els.btnNext.addEventListener('click', () => nextQuestion(true));
-    els.btnBookmark.addEventListener('click', toggleBookmark);
-    els.btnMastered.addEventListener('click', markMastered);
-    els.btnShuffle.addEventListener('click', shuffleWords);
+    els.btnNext.addEventListener('click', nextWord);
+    els.btnShuffle.addEventListener('click', () => { shuffle(words); nextWord(); });
     els.btnResetStats.addEventListener('click', resetStats);
-    els.btnRestoreMastered.addEventListener('click', restoreMastered);
-    els.btnExportBookmarks.addEventListener('click', exportBookmarksCSV);
-    els.bookmarkSearch.addEventListener('input', filterAndRenderBookmarks);
-    els.btnClearBookmarks.addEventListener('click', clearBookmarks);
-    els.btnCollapseBookmarks.addEventListener('click', toggleBookmarksCollapse);
-    els.themeToggle.addEventListener('click', toggleTheme);
-    els.fileInput.addEventListener('change', (event) => {
-      if (event.target.files && event.target.files[0]) handleFile(event.target.files[0]);
-    });
+    els.userAnswer.addEventListener('keydown', e => { if (e.key === 'Enter') checkAnswer(); });
 
-    ['dragenter', 'dragover'].forEach((evt) => {
-      els.dragZone.addEventListener(evt, (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        els.dragZone.classList.add('dragover');
-      });
-    });
-
-    ['dragleave', 'drop'].forEach((evt) => {
-      els.dragZone.addEventListener(evt, (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        if (evt === 'drop') {
-          const file = event.dataTransfer.files[0];
-          handleFile(file);
-        }
-        els.dragZone.classList.remove('dragover');
-      });
-    });
-
-    els.dragZone.addEventListener('click', () => {
-      els.fileInput.click();
-    });
-
-    els.flashcard.addEventListener('click', flipCard);
-    els.flashcard.addEventListener('keydown', (event) => {
-      if (event.code === 'Space' || event.key === 'Enter') {
-        event.preventDefault();
-        flipCard();
-      }
-    });
-
-    document.addEventListener('keydown', (event) => {
-      const tag = document.activeElement.tagName;
-      const typingContext = tag === 'INPUT' || tag === 'TEXTAREA';
-      if (event.key === 'Enter') {
-        if (typingContext) {
-          if (lastAnswerCorrect !== null) {
-            nextQuestion(true);
-          } else {
-            checkAnswer();
-          }
-          return;
-        }
-        if (lastAnswerCorrect !== null) {
-          nextQuestion(true);
-        } else {
-          checkAnswer();
-        }
-      } else if (event.code === 'Space' && !typingContext) {
-        event.preventDefault();
-        flipCard();
-      } else if (event.key.toLowerCase() === 'm') {
-        setMode(mode === 'input' ? 'choice' : 'input');
-      } else if (event.key.toLowerCase() === 'd') {
-        toggleTheme();
-      }
-    });
-
-    els.mobCheck.addEventListener('click', checkAnswer);
-    els.mobNext.addEventListener('click', () => nextQuestion(true));
-    els.mobFlip.addEventListener('click', flipCard);
-    els.mobBookmark.addEventListener('click', toggleBookmark);
-
-    els.userAnswer.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
-        if (lastAnswerCorrect !== null) {
-          nextQuestion(true);
-        } else {
-          checkAnswer();
-        }
-      }
-    });
-
-    function init() {
-      setMode(mode);
-      updateStatsUI();
-      updateBookmarkUI();
-      loadDefaultVocabulary();
-    }
-
-    init();
     document.getElementById('currentYear').textContent = new Date().getFullYear();
+    loadDefaultVocabulary();
   </script>
 </body>
 </html>
