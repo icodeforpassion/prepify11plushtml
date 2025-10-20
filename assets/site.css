@@ -1176,6 +1176,24 @@ details.faq-item[open] summary::after {
   border-radius: 26px;
   padding: clamp(2rem, 4vw, 3rem);
   box-shadow: var(--shadow-s);
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.post p,
+.post li {
+  color: var(--text-soft);
+}
+
+.post-lede {
+  font-size: clamp(1.12rem, 2.3vw, 1.3rem);
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.post-body {
+  display: block;
 }
 
 .post h2 {
@@ -1185,6 +1203,117 @@ details.faq-item[open] summary::after {
 .post ul,
 .post ol {
   padding-left: 1.4rem;
+}
+
+.post-body section + section {
+  margin-top: 2.25rem;
+}
+
+.responsive-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .responsive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.info-card {
+  background: var(--surface-alt);
+  padding: 1.4rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid rgba(37, 99, 235, 0.12);
+}
+
+.info-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.numbered-steps {
+  counter-reset: steps;
+  list-style: none;
+  padding-left: 0;
+}
+
+.numbered-steps li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 1.4rem;
+}
+
+.numbered-steps li::before {
+  counter-increment: steps;
+  content: counter(steps);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+}
+
+.callout {
+  background: rgba(37, 99, 235, 0.08);
+  border-left: 4px solid var(--primary);
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  margin-top: 1.25rem;
+  color: var(--text);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1.25rem;
+  border-radius: 16px;
+}
+
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+}
+
+.post-table caption {
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--text);
+}
+
+.post-table th,
+.post-table td {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  vertical-align: top;
+  text-align: left;
+  color: var(--text-soft);
+}
+
+.post-table thead th {
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--text);
+}
+
+.post-table tbody tr:nth-child(even) {
+  background: rgba(241, 245, 249, 0.5);
 }
 
 /* Footer */
