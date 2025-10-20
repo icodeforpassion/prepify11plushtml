@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /data/
-Sitemap: https://prepify11plus.example/sitemap.xml
+Sitemap: https://www.prepify11plus.co.uk/sitemap.xml
