@@ -2,149 +2,163 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Prepify11Plus Vocabulary Flashcards</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css" />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prepify11Plus – Flashcards</title>
+  <meta name="description" content="Boost your vocabulary with smart 11+ flashcards. Flip to reveal meanings, examples, and test yourself interactively.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
   <style>
-    body {
+    main.page-shell {
       font-family: 'Poppins', sans-serif;
-      margin: 0;
       background: var(--bg);
       color: var(--text);
-      display: flex;
-      flex-direction: column;
       min-height: 100vh;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    main {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem;
-      text-align: center;
+      justify-content: flex-start;
+      padding: 2rem 1rem 4rem;
+      transition: background .3s, color .3s;
     }
 
-    h1.gradient {
+    h1 {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      margin: 1rem 0 0.5rem;
+      text-align: center;
       background: var(--gradient-text);
       -webkit-background-clip: text;
       color: transparent;
-      margin-bottom: 0.5rem;
     }
 
     p.intro {
+      max-width: 640px;
+      text-align: center;
       color: var(--text-light);
-      margin-bottom: 1.5rem;
-      max-width: 600px;
-      line-height: 1.4;
+      margin-bottom: 2rem;
     }
 
+    /* Flashcard styling */
     .flashcard {
-      background: var(--card-front);
-      color: #fff;
-      border-radius: 18px;
-      box-shadow: var(--shadow-m);
-      padding: 2rem;
-      text-align: center;
-      width: 90%;
-      max-width: 400px;
-      transition: transform 0.5s;
-      cursor: pointer;
+      width: min(90vw, 400px);
+      height: 250px;
+      perspective: 1000px;
       position: relative;
-      min-height: 220px;
+      margin-bottom: 1.5rem;
     }
 
-    .flashcard.flipped {
-      transform: rotateY(180deg);
-      background: var(--card-back);
-      color: var(--text);
-    }
-
-    .input-area {
-      margin-top: 1rem;
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
       text-align: center;
-      width: 100%;
-      max-width: 400px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
 
-    input[type="text"] {
+    .flashcard.flipped .flashcard-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-face {
+      position: absolute;
       width: 100%;
-      padding: 0.7rem;
-      border-radius: 10px;
-      border: 1px solid var(--border);
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
       background: var(--bg-alt);
       color: var(--text);
-      font-size: 1rem;
-      outline: none;
-      transition: box-shadow 0.2s;
     }
 
-    input[type="text"]:focus {
-      box-shadow: var(--focus-ring);
+    .flashcard-face.back {
+      transform: rotateY(180deg);
     }
 
-    .actions {
-      margin-top: 1.1rem;
+    .flashcard-face h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .flashcard-face p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: var(--text-light);
+    }
+
+    /* Controls */
+    .controls {
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.6rem;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
     }
 
-    button {
+    .input-box {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: min(90vw, 400px);
+    }
+
+    .input-box input {
+      flex: 1;
+      padding: 0.6rem 0.8rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background .2s;
+    }
+
+    .btn-primary {
       background: var(--primary);
       color: #fff;
-      border: none;
-      border-radius: 8px;
-      padding: 0.6rem 1rem;
-      font-weight: 500;
-      cursor: pointer;
-      box-shadow: var(--shadow-xs);
-      transition: background 0.2s;
     }
-
-    button:hover {
+    .btn-primary:hover {
       background: var(--primary-hover);
     }
 
-    .feedback {
-      margin-top: 0.9rem;
-      font-weight: 600;
-      min-height: 1.5rem;
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
     }
 
-    .feedback.positive {
-      color: var(--success);
+    .mode-switch {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
     }
 
-    .feedback.negative {
-      color: var(--danger);
+    .mode-switch button.active {
+      background: var(--primary);
+      color: #fff;
     }
 
     footer {
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border);
+      margin-top: auto;
+      padding-top: 3rem;
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: var(--text-light);
-    }
-
-    .example {
-      font-size: 0.9rem;
-      opacity: 0.8;
-      margin-top: 0.5rem;
-    }
-
-    @media (max-width: 600px) {
-      .flashcard {
-        padding: 1.4rem;
-      }
     }
   </style>
 </head>
@@ -157,7 +171,7 @@
         <h1>Prepify11Plus</h1>
       </div>
       <div class="nav-group">
-        <nav class="nav-links" aria-label="Primary">
+        <nav class="nav-links">
           <a href="index.html">Home</a>
           <a href="flashcards.html" aria-current="page">Flashcards</a>
           <a href="maths.html">Maths Practice</a>
@@ -166,7 +180,7 @@
         </nav>
         <label class="theme-picker">
           <span>Theme</span>
-          <select data-theme-select aria-label="Choose a superhero theme">
+          <select data-theme-select>
             <option value="superman">Superman</option>
             <option value="spiderman">Spiderman</option>
             <option value="captain">Captain America</option>
@@ -183,175 +197,122 @@
     </div>
   </header>
 
-  <main>
-    <h1 class="gradient">Vocabulary Flashcards</h1>
-    <p class="intro">Boost your vocabulary the smart way! Flip each card to reveal meanings and examples, or test yourself by typing answers.</p>
+  <main class="page-shell">
+    <h1>Smart Vocabulary Flashcards</h1>
+    <p class="intro">
+      Boost your vocabulary the smart way! Flip each card to reveal meanings and examples, or test yourself by typing answers.
+    </p>
 
-    <div id="flashcard" class="flashcard" tabindex="0">
-      <div id="questionWord">Loading…</div>
-      <div id="meaningText" style="display:none;"></div>
-      <div id="exampleText" class="example" style="display:none;"></div>
-    </div>
-
-    <div class="input-area" id="inputArea">
-      <input type="text" id="userAnswer" placeholder="Type the meaning here..." />
-      <div class="actions">
-        <button id="btnCheck">Check</button>
-        <button id="btnReveal">Flip</button>
-        <button id="btnNext">Next</button>
+    <div class="flashcard" id="flashcard">
+      <div class="flashcard-inner">
+        <div class="flashcard-face front">
+          <h2 id="word">Loading...</h2>
+        </div>
+        <div class="flashcard-face back">
+          <p><strong id="meaning"></strong></p>
+          <p id="example"></p>
+        </div>
       </div>
     </div>
 
-    <p id="feedback" class="feedback"></p>
+    <div class="controls">
+      <div class="input-box" id="typingBox">
+        <input type="text" id="userInput" placeholder="Type the meaning..." />
+        <button class="btn btn-primary" id="checkBtn">Check</button>
+      </div>
 
-    <div class="actions">
-      <button id="btnShuffle">Shuffle Deck</button>
-      <button id="btnResetStats">Reset Stats</button>
+      <div class="mode-switch">
+        <button class="btn btn-outline active" id="flipMode">Flip Mode</button>
+        <button class="btn btn-outline" id="typeMode">Typing Mode</button>
+      </div>
+
+      <div class="nav">
+        <button class="btn btn-primary" id="nextBtn">Next Card</button>
+      </div>
     </div>
   </main>
 
   <footer>
-    <p>© <span id="currentYear"></span> Prepify11Plus | Keep building your word power ✨</p>
+    © <span id="year"></span> Prepify11Plus | Keep building your word power ✨
   </footer>
 
   <script src="assets/theme.js" defer></script>
-
   <script>
+    const wordEl = document.getElementById('word');
+    const meaningEl = document.getElementById('meaning');
+    const exampleEl = document.getElementById('example');
+    const flashcard = document.getElementById('flashcard');
+    const userInput = document.getElementById('userInput');
+    const checkBtn = document.getElementById('checkBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const flipModeBtn = document.getElementById('flipMode');
+    const typeModeBtn = document.getElementById('typeMode');
+    const typingBox = document.getElementById('typingBox');
+
     let words = [];
-    let current = null;
-    let stats = { answered: 0, correct: 0 };
+    let index = 0;
+    let mode = 'flip';
 
-    const els = {
-      flashcard: document.getElementById('flashcard'),
-      questionWord: document.getElementById('questionWord'),
-      meaningText: document.getElementById('meaningText'),
-      exampleText: document.getElementById('exampleText'),
-      userAnswer: document.getElementById('userAnswer'),
-      btnCheck: document.getElementById('btnCheck'),
-      btnReveal: document.getElementById('btnReveal'),
-      btnNext: document.getElementById('btnNext'),
-      feedback: document.getElementById('feedback'),
-      btnShuffle: document.getElementById('btnShuffle'),
-      btnResetStats: document.getElementById('btnResetStats')
-    };
-
-    function parseLines(raw) {
-      return raw.split(/\r?\n/)
-        .map(line => line.trim())
-        .filter(Boolean)
-        .map(line => {
-          let parts = line.split('–');
-          if (parts.length < 2) parts = line.split(' - ');
-          const [rawWord, rawMeaning, rawExample] = [
-            parts[0] || '',
-            parts[1] || '',
-            parts.slice(2).join('–')
-          ];
-          return {
-            word: rawWord.replace(/^\d+\.\s*/, '').trim(),
-            meaning: (rawMeaning || '').trim(),
-            example: (rawExample || '').trim()
-          };
-        })
-        .filter(entry => entry.word);
+    // Load from file
+    async function loadWords() {
+      const res = await fetch('data/sample_vocabulary.txt');
+      const text = await res.text();
+      words = text.split(/\r?\n/).map(line => {
+        const parts = line.split('–');
+        return {
+          word: parts[0]?.replace(/^\d+\.\s*/, '').trim(),
+          meaning: parts[1]?.trim(),
+          example: parts[2]?.trim()
+        };
+      }).filter(w => w.word);
+      showCard();
     }
 
-    function loadDefaultVocabulary() {
-      fetch('/data/sample_vocabulary.txt')
-        .then(r => r.text())
-        .then(data => {
-          words = parseLines(data);
-          if (!words.length) throw new Error('No valid words found');
-          shuffle(words);
-          nextWord();
-        })
-        .catch(err => console.error('Error loading vocabulary:', err));
+    function showCard() {
+      const w = words[index];
+      wordEl.textContent = w.word;
+      meaningEl.textContent = w.meaning;
+      exampleEl.textContent = w.example ? 'Example: ' + w.example : '';
+      flashcard.classList.remove('flipped');
+      userInput.value = '';
     }
 
-    function shuffle(arr) {
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-    }
+    flashcard.addEventListener('click', () => {
+      if (mode === 'flip') flashcard.classList.toggle('flipped');
+    });
 
-    function nextWord() {
-      if (!words.length) return;
-      current = words[Math.floor(Math.random() * words.length)];
-      els.questionWord.textContent = current.word;
-      els.meaningText.textContent = current.meaning;
-      els.exampleText.textContent = current.example ? "Example: " + current.example : '';
-      els.meaningText.style.display = "none";
-      els.exampleText.style.display = "none";
-      els.flashcard.classList.remove('flipped');
-      els.feedback.textContent = '';
-      els.userAnswer.value = '';
-    }
+    nextBtn.addEventListener('click', () => {
+      index = (index + 1) % words.length;
+      showCard();
+    });
 
-    function flipCard() {
-      const isFlipped = els.flashcard.classList.toggle('flipped');
-      els.meaningText.style.display = isFlipped ? "block" : "none";
-      els.exampleText.style.display = isFlipped ? "block" : "none";
-    }
-
-    function checkAnswer() {
-      if (!current) return;
-      const user = els.userAnswer.value.trim().toLowerCase();
-      const correct = current.meaning.toLowerCase();
-      const sim = similarity(user, correct);
-      stats.answered++;
-      if (sim >= 0.7) {
-        stats.correct++;
-        els.feedback.textContent = "✅ Correct!";
-        els.feedback.className = "feedback positive";
+    checkBtn.addEventListener('click', () => {
+      const userAns = userInput.value.trim().toLowerCase();
+      const correct = words[index].meaning?.toLowerCase() || '';
+      if (userAns && correct.includes(userAns)) {
+        alert('✅ Correct!');
       } else {
-        els.feedback.textContent = "❌ Not quite. It means: " + current.meaning;
-        els.feedback.className = "feedback negative";
+        alert(`❌ Not quite. Correct: ${words[index].meaning}`);
       }
-    }
+    });
 
-    function similarity(a, b) {
-      const dist = levenshtein(a, b);
-      return 1 - dist / Math.max(a.length, b.length);
-    }
+    flipModeBtn.addEventListener('click', () => {
+      mode = 'flip';
+      flipModeBtn.classList.add('active');
+      typeModeBtn.classList.remove('active');
+      typingBox.style.display = 'none';
+    });
 
-    function levenshtein(a, b) {
-      const matrix = [];
-      let i, j;
-      for (i = 0; i <= b.length; i++) matrix[i] = [i];
-      for (j = 0; j <= a.length; j++) matrix[0][j] = j;
-      for (i = 1; i <= b.length; i++) {
-        for (j = 1; j <= a.length; j++) {
-          if (b.charAt(i - 1) === a.charAt(j - 1)) {
-            matrix[i][j] = matrix[i - 1][j - 1];
-          } else {
-            matrix[i][j] = Math.min(
-              matrix[i - 1][j - 1] + 1,
-              Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1)
-            );
-          }
-        }
-      }
-      return matrix[b.length][a.length];
-    }
+    typeModeBtn.addEventListener('click', () => {
+      mode = 'type';
+      typeModeBtn.classList.add('active');
+      flipModeBtn.classList.remove('active');
+      typingBox.style.display = 'flex';
+    });
 
-    function resetStats() {
-      stats = { answered: 0, correct: 0 };
-      els.feedback.textContent = "🔄 Stats reset!";
-      els.feedback.className = "feedback";
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Event listeners
-    els.flashcard.addEventListener('click', flipCard);
-    els.btnCheck.addEventListener('click', checkAnswer);
-    els.btnReveal.addEventListener('click', flipCard);
-    els.btnNext.addEventListener('click', nextWord);
-    els.btnShuffle.addEventListener('click', () => { shuffle(words); nextWord(); });
-    els.btnResetStats.addEventListener('click', resetStats);
-    els.userAnswer.addEventListener('keydown', e => { if (e.key === 'Enter') checkAnswer(); });
-
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    loadDefaultVocabulary();
+    loadWords();
   </script>
 </body>
 </html>
