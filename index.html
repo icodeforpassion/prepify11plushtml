@@ -171,6 +171,109 @@
       </div>
     </section>
 
+    <section class="section section--dashboard" id="learning-hub">
+      <div class="section-header">
+        <span class="badge badge-soft">Prepify11Plus account</span>
+        <h2 class="section-title">Your learning hub</h2>
+        <p class="section-subtitle">Sign in to track mock test progress, celebrate wins, and share ideas to make Prepify11Plus even better.</p>
+      </div>
+      <div class="dashboard-wrapper" data-auth-wrapper>
+        <div class="card auth-card" data-auth-panel>
+          <h3 class="card-title">Login / Signup</h3>
+          <p class="card-subtitle">Create a free account or sign in to unlock personalised progress tracking.</p>
+          <form class="auth-form" data-auth-form>
+            <label class="form-field">
+              <span class="form-label">Learner name</span>
+              <input type="text" name="name" placeholder="Ada Explorers" autocomplete="name" data-auth-name>
+            </label>
+            <label class="form-field">
+              <span class="form-label">Email</span>
+              <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required data-auth-email>
+            </label>
+            <label class="form-field">
+              <span class="form-label">Password</span>
+              <input type="password" name="password" placeholder="Create a password" autocomplete="current-password" required data-auth-password>
+            </label>
+            <div class="auth-actions">
+              <button type="button" class="btn btn-primary" data-auth-action="signup">Sign up</button>
+              <button type="button" class="btn btn-outline" data-auth-action="login">Log in</button>
+            </div>
+            <p class="form-hint">By signing up you agree to our friendly prep guidelines.</p>
+            <p class="form-message" role="status" aria-live="polite" data-auth-message></p>
+          </form>
+          <div class="auth-divider" role="presentation"><span>or</span></div>
+          <button type="button" class="btn btn-google" data-google-signin>
+            <span class="btn-google__icon" aria-hidden="true">🔐</span>
+            <span>Continue with Google</span>
+          </button>
+        </div>
+
+        <div class="card dashboard-card" data-dashboard hidden>
+          <div class="dashboard-header">
+            <div>
+              <p class="dashboard-subtitle">Welcome back</p>
+              <h3 class="dashboard-title">Hi, <span data-user-name>Explorer</span>!</h3>
+            </div>
+            <button type="button" class="btn btn-outline" data-logout>Logout</button>
+          </div>
+
+          <div class="dashboard-section" aria-live="polite">
+            <h4 class="dashboard-section__title">Mock test progress</h4>
+            <p class="dashboard-section__subtitle">Your recent Prepify11Plus adventures, saved securely to continue anytime.</p>
+            <div class="progress-card">
+              <table class="progress-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Mock</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Attempted</th>
+                  </tr>
+                </thead>
+                <tbody data-progress-rows>
+                  <tr>
+                    <td colspan="3">Loading your progress…</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="progress-message" role="status" aria-live="polite" data-progress-message></p>
+            </div>
+          </div>
+
+          <div class="dashboard-section" id="feature-requests">
+            <h4 class="dashboard-section__title">Feature requests</h4>
+            <p class="dashboard-section__subtitle">Share ideas to shape the next set of learning tools. We read every suggestion!</p>
+            <form class="feature-form" data-feature-form>
+              <label class="form-field">
+                <span class="form-label">What would you love us to build next?</span>
+                <textarea rows="3" placeholder="Add more non-verbal reasoning puzzles…" required data-feature-text></textarea>
+              </label>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit request</button>
+                <p class="form-message" role="status" aria-live="polite" data-feature-message></p>
+              </div>
+            </form>
+            <div class="feature-requests" data-feature-list>
+              <table class="feature-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Request</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action taken</th>
+                    <th scope="col">Response</th>
+                  </tr>
+                </thead>
+                <tbody data-feature-rows>
+                  <tr>
+                    <td colspan="4">Feature requests will appear here once submitted.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--alt" id="why-prepify">
       <div class="section-header">
         <h2 class="section-title">Why families choose Prepify11Plus</h2>
@@ -218,6 +321,7 @@
     </div>
   </footer>
 
+  <script type="module" src="assets/js/firebase.js"></script>
   <script src="assets/js/site.js" defer></script>
   <script src="assets/counter.js" defer></script>
 </body>
