@@ -239,37 +239,36 @@
             </div>
           </div>
 
-          <div class="dashboard-section" id="feature-requests">
-            <h4 class="dashboard-section__title">Feature requests</h4>
+          <section class="dashboard-section" id="featureRequests">
+            <h4 class="dashboard-section__title">Feature Requests</h4>
             <p class="dashboard-section__subtitle">Share ideas to shape the next set of learning tools. We read every suggestion!</p>
-            <form class="feature-form" data-feature-form>
-              <label class="form-field">
+            <form class="feature-form" id="featureRequestForm">
+              <label class="form-field" for="requestText">
                 <span class="form-label">What would you love us to build next?</span>
-                <textarea rows="3" placeholder="Add more non-verbal reasoning puzzles…" required data-feature-text></textarea>
+                <textarea id="requestText" rows="3" placeholder="Add more non-verbal reasoning puzzles…" required></textarea>
               </label>
               <div class="form-actions">
-                <button type="submit" class="btn btn-primary">Submit request</button>
-                <p class="form-message" role="status" aria-live="polite" data-feature-message></p>
+                <button type="submit" class="btn btn-primary" id="submitRequest">Submit request</button>
+                <p class="form-message" id="requestFeedback" role="status" aria-live="polite"></p>
               </div>
             </form>
-            <div class="feature-requests" data-feature-list>
+            <div class="feature-requests" id="requestList">
               <table class="feature-table">
                 <thead>
                   <tr>
                     <th scope="col">Request</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Action taken</th>
                     <th scope="col">Response</th>
                   </tr>
                 </thead>
-                <tbody data-feature-rows>
+                <tbody id="requestRows">
                   <tr>
-                    <td colspan="4">Feature requests will appear here once submitted.</td>
+                    <td colspan="3">Feature requests will appear here once submitted.</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>
+          </section>
         </div>
       </div>
     </section>
@@ -321,7 +320,7 @@
     </div>
   </footer>
 
-  <script type="module" src="assets/js/firebase.js"></script>
+  <script type="module" src="scripts/auth.js"></script>
   <script src="assets/js/site.js" defer></script>
   <script src="assets/counter.js" defer></script>
 </body>
