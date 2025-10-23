@@ -64,6 +64,7 @@ export {
   where,
   addDoc,
   getDocs,
+  getDoc,
   setDoc,
   doc
 };
