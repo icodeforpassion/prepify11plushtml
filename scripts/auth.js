@@ -21,6 +21,19 @@ import { initRequestModule, setRequestUser, clearRequestUI } from "./requests.js
 
 initFirebase();
 
+const oauthFriendlyDomains = [
+  "localhost",
+  "127.0.0.1",
+  "modernairlineretailing-e2dbc.firebaseapp.com"
+];
+
+function isDomainAuthorizedForOAuth(hostname) {
+  if (!hostname) return false;
+  return oauthFriendlyDomains.some((domain) => {
+    return hostname === domain || hostname.endsWith(`.${domain}`);
+  });
+}
+
 const ui = {
   authPanel: document.querySelector("[data-auth-panel]"),
   dashboard: document.querySelector("[data-dashboard]"),
@@ -174,6 +187,22 @@ function handleAuthButtons() {
 
 function handleGoogleSignin() {
   if (!ui.googleButton) return;
+
+  const hostname = window.location.hostname;
+  const domainAuthorized = isDomainAuthorizedForOAuth(hostname);
+
+  if (!domainAuthorized) {
+    ui.googleButton.disabled = true;
+    ui.googleButton.setAttribute("aria-disabled", "true");
+    ui.googleButton.classList.add("is-disabled");
+    setStatusMessage(
+      ui.authMessage,
+      "Google sign-in isn't available on this site yet. Please use email and password while we register this domain.",
+      "error"
+    );
+    return;
+  }
+
   ui.googleButton.addEventListener("click", async () => {
     try {
       setStatusMessage(ui.authMessage, "Opening Google sign-in…");
@@ -184,6 +213,13 @@ function handleGoogleSignin() {
       showToast("Welcome back!", "success");
       ui.authForm?.reset();
     } catch (error) {
+      if (error?.code === "auth/unauthorized-domain") {
+        const message =
+          "Google sign-in can't run on this domain yet. Please contact hello@prepify11plus.co.uk so we can approve it.";
+        setStatusMessage(ui.authMessage, message, "error");
+        showToast(message, "error");
+        return;
+      }
       setStatusMessage(ui.authMessage, error.message, "error");
       showToast(error.message || "Google sign-in failed", "error");
     }

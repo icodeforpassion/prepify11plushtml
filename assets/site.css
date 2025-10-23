@@ -1505,11 +1505,24 @@ details.faq-item[open] summary::after {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
+.btn-google.is-disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+  transform: none;
+}
+
 .btn-google:hover,
 .btn-google:focus-visible {
   transform: translateY(-1px);
   box-shadow: var(--shadow-xs);
   outline: none;
+}
+
+.btn-google.is-disabled:hover,
+.btn-google.is-disabled:focus-visible {
+  transform: none;
+  box-shadow: none;
 }
 
 .btn-google__icon {
