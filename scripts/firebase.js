@@ -1,6 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
-import {
+import * as firestore from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+
+const {
   getFirestore,
   Timestamp,
   serverTimestamp,
@@ -11,7 +13,30 @@ import {
   getDocs,
   setDoc,
   doc
-} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+} = firestore;
+
+const nativeGetDoc = firestore.getDoc;
+
+async function getDocumentSnapshot(documentRef) {
+  if (typeof nativeGetDoc === "function") {
+    return nativeGetDoc(documentRef);
+  }
+
+  console.warn(
+    "Firestore getDoc() is unavailable in this build; falling back to a query-based lookup."
+  );
+
+  const fallbackQuery = query(documentRef.parent, where("__name__", "==", documentRef.id));
+  const querySnapshot = await getDocs(fallbackQuery);
+  const docSnapshot = querySnapshot.docs[0];
+
+  return {
+    exists: () => Boolean(docSnapshot),
+    data: () => docSnapshot?.data(),
+    id: documentRef.id,
+    ref: documentRef
+  };
+}
 
 const firebaseConfig = {
   apiKey: "AIzaSyD88NJ5MhwqXAQqd-9z748dH0ZoFWBMvUM",
@@ -64,7 +89,7 @@ export {
   where,
   addDoc,
   getDocs,
-  getDoc,
+  getDocumentSnapshot as getDoc,
   setDoc,
   doc
 };
