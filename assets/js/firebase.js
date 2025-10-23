@@ -245,20 +245,38 @@ function renderFeatureRequests(rows) {
     return bTime - aTime;
   });
 
-  ui.featureRows.innerHTML = sorted
-    .map((entry) => {
-      const submitted = formatDate(entry.date_submitted);
-      const status = entry.status || "New";
-      const action = entry.action_taken || "—";
-      const response = entry.response || "—";
-      return `<tr>
-        <td>${entry.request_text || "—"}<span>Submitted ${submitted}</span></td>
-        <td>${status}</td>
-        <td>${action}</td>
-        <td>${response}</td>
-      </tr>`;
-    })
-    .join("");
+  const fragment = document.createDocumentFragment();
+
+  sorted.forEach((entry) => {
+    const submitted = formatDate(entry.date_submitted);
+    const status = entry.status || "New";
+    const action = entry.action_taken || "—";
+    const response = entry.response || "—";
+    const requestText = entry.request_text || "—";
+
+    const row = document.createElement("tr");
+
+    const requestCell = document.createElement("td");
+    requestCell.textContent = requestText;
+    const submittedSpan = document.createElement("span");
+    submittedSpan.textContent = `Submitted ${submitted}`;
+    requestCell.appendChild(submittedSpan);
+
+    const statusCell = document.createElement("td");
+    statusCell.textContent = status;
+
+    const actionCell = document.createElement("td");
+    actionCell.textContent = action;
+
+    const responseCell = document.createElement("td");
+    responseCell.textContent = response;
+
+    row.append(requestCell, statusCell, actionCell, responseCell);
+    fragment.appendChild(row);
+  });
+
+  ui.featureRows.innerHTML = "";
+  ui.featureRows.appendChild(fragment);
 }
 
 export function fetchFeatureRequests(userId) {
