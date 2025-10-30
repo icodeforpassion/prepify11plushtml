@@ -1413,8 +1413,12 @@ details.faq-item[open] summary::after {
   box-shadow: var(--shadow-s);
   border: 1px solid rgba(125, 211, 252, 0.32);
   padding: clamp(1.6rem, 3vw, 2.2rem);
-  display: grid;
+  display: none;
   gap: 2rem;
+}
+
+.dashboard-card.is-visible {
+  display: grid;
 }
 
 .card-title {
