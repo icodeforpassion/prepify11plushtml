@@ -44,8 +44,7 @@ const ui = {
   authPassword: document.querySelector("[data-auth-password]"),
   authMessage: document.querySelector("[data-auth-message]"),
   googleButton: document.querySelector("[data-google-signin]"),
-  logoutButton: document.querySelector("[data-logout]"),
-  userName: document.querySelector("[data-user-name]")
+  logoutButton: document.querySelector("[data-logout]")
 };
 
 let toastContainer;
@@ -92,9 +91,13 @@ function toggleInterface(user) {
   if (user) {
     ui.authPanel.setAttribute("hidden", "");
     ui.dashboard.removeAttribute("hidden");
+    ui.dashboard.classList.add("is-visible");
+    ui.dashboard.removeAttribute("aria-hidden");
   } else {
     ui.authPanel.removeAttribute("hidden");
     ui.dashboard.setAttribute("hidden", "");
+    ui.dashboard.classList.remove("is-visible");
+    ui.dashboard.setAttribute("aria-hidden", "true");
   }
 }
 
@@ -251,17 +254,11 @@ function watchAuthState() {
     if (user) {
       toggleInterface(user);
       const name = friendlyName(user);
-      if (ui.userName) {
-        ui.userName.textContent = name;
-      }
       await ensureUserDocument(user, name);
       await loadProgressForUser(user.uid);
       setRequestUser(user);
     } else {
       toggleInterface(null);
-      if (ui.userName) {
-        ui.userName.textContent = "Explorer";
-      }
       clearDashboard();
       setRequestUser(null);
     }
