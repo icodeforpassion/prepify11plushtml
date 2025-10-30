@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /data/
+Crawl-delay: 1
 Sitemap: https://www.prepify11plus.co.uk/sitemap.xml
