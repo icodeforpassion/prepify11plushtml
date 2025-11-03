@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Prepify11Plus Icon</title>
+  <desc id="desc">Stylised Prepify11Plus book icon with layered gradients</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4a3aff" />
+      <stop offset="100%" stop-color="#7c4dff" />
+    </linearGradient>
+    <linearGradient id="spine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffb347" />
+      <stop offset="100%" stop-color="#ffcc33" />
+    </linearGradient>
+    <linearGradient id="pages" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#e5ecff" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="96" fill="url(#bg)" />
+  <path d="M156 120h96c92 0 164 58 164 148s-72 148-164 148h-96z" fill="#2b1cb0" opacity="0.2" />
+  <path d="M152 120h128c68 0 116 40 116 96s-48 96-116 96h-96v80h-32z" fill="url(#pages)" stroke="#ffffff" stroke-width="12" stroke-linejoin="round" />
+  <path d="M184 152h96c48 0 80 24 80 64s-32 64-80 64h-96z" fill="#4a3aff" opacity="0.35" />
+  <path d="M152 120v248c0 18 14 32 32 32h16v-80h80c80 0 140-52 140-128s-60-128-140-128h-128z" fill="url(#spine)" stroke="#e97820" stroke-width="12" stroke-linejoin="round" />
+  <circle cx="184" cy="376" r="18" fill="#ffffff" opacity="0.8" />
+</svg>
