@@ -1,272 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>11+ Vocabulary Flashcards | Word Power Builders – Prepify11Plus</title>
-  <meta name="description" content="Grow 11+ vocabulary with themed flashcards, audio pronunciation, and quizzes that strengthen memory for grammar school exams.">
-  <link rel="canonical" href="https://www.prepify11plus.co.uk/flashcards.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="11+ Vocabulary Flashcards | Word Power Builders – Prepify11Plus">
-  <meta property="og:description" content="Interactive flashcards covering synonyms, antonyms, idioms, and subject vocabulary for the 11 Plus exam.">
-  <meta property="og:url" content="https://www.prepify11plus.co.uk/flashcards.html">
-  <meta property="og:site_name" content="Prepify11Plus">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="11+ Vocabulary Flashcards | Word Power Builders – Prepify11Plus">
-  <meta name="twitter:description" content="Boost word knowledge with playlists of 11+ flashcards and quick quizzes on Prepify11Plus.">
-  <link rel="icon" href="/assets/images/favicon.ico">
-  <link rel="apple-touch-icon" href="/assets/images/icon-192.png">
-  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <style>
-    :root {
-      color-scheme: light;
-      --accent: #c8e6c9;
-      --text: #1f2a33;
-      --background: #ffffff;
-      --muted: #4f6f52;
-      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    }
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a {
-      color: #1a5d3f;
-      text-decoration: none;
-    }
-    a:hover,
-    a:focus {
-      text-decoration: underline;
-    }
-    header {
-      border-bottom: 1px solid rgba(79, 111, 82, 0.2);
-      background: rgba(200, 230, 201, 0.2);
-    }
-    nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    nav .brand {
-      font-weight: 700;
-      font-size: 1.25rem;
-      color: #10472c;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-    }
-    nav ul li a {
-      padding: 0.5rem 0.75rem;
-      border-radius: 0.5rem;
-    }
-    nav ul li a:hover,
-    nav ul li a:focus,
-    nav ul li a[aria-current="page"] {
-      background: var(--accent);
-    }
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem;
-    }
-    h1 {
-      font-size: clamp(2rem, 4vw, 2.75rem);
-      margin-bottom: 1rem;
-    }
-    h2 {
-      margin-top: 2.5rem;
-      color: var(--muted);
-    }
-    .hero {
-      background: rgba(200, 230, 201, 0.35);
-      border-radius: 1.25rem;
-      padding: 2rem;
-      margin-bottom: 2rem;
-    }
-    .hero img {
-      width: 100%;
-      border-radius: 1rem;
-      margin-top: 1.5rem;
-    }
-    .feature-grid {
-      display: grid;
-      gap: 1.5rem;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-    .card {
-      border: 1px solid rgba(79, 111, 82, 0.2);
-      border-radius: 1rem;
-      padding: 1.5rem;
-      background: #fff;
-      box-shadow: 0 5px 20px rgba(16, 71, 44, 0.05);
-    }
-    #faq div {
-      border-top: 1px solid rgba(79, 111, 82, 0.2);
-      padding: 1rem 0;
-    }
-    #faq div:first-of-type {
-      border-top: none;
-    }
-    footer {
-      border-top: 1px solid rgba(79, 111, 82, 0.2);
-      background: rgba(200, 230, 201, 0.2);
-      padding: 1.5rem 1rem;
-      text-align: center;
-    }
-    footer nav a {
-      margin: 0 0.5rem;
-    }
-    @media (max-width: 720px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav ul {
-        width: 100%;
-        justify-content: flex-start;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" sizes="32x32" href="/assets/images/site-icon.svg" />
+  <link rel="icon" type="image/svg+xml" sizes="192x192" href="/assets/images/site-icon.svg" />
+  <link rel="apple-touch-icon" href="/assets/images/site-icon.svg" />
+  <meta property="og:image" content="https://www.prepify11plus.co.uk/assets/images/site-icon.svg" />
+  <meta property="og:image:secure_url" content="https://www.prepify11plus.co.uk/assets/images/site-icon.svg" />
+  <meta property="og:image:type" content="image/svg+xml" />
+  <meta property="og:image:width" content="512" />
+  <meta property="og:image:height" content="512" />
+  <meta property="og:image:alt" content="Stylised Prepify11Plus book icon" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://www.prepify11plus.co.uk/assets/images/site-icon.svg" />
+  <meta name="twitter:image:type" content="image/svg+xml" />
+  <meta name="twitter:image:alt" content="Stylised Prepify11Plus book icon" />
+  <link rel="canonical" href="https://www.prepify11plus.co.uk/flashcards.html" />
+  <link rel="alternate" hreflang="en-gb" href="https://www.prepify11plus.co.uk/flashcards.html" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="author" content="Prepify11Plus Team" />
+  <meta name="publisher" content="Prepify11Plus" />
+  <meta name="theme-color" content="#4a3aff" />
+  <meta property="og:site_name" content="Prepify11Plus" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.prepify11plus.co.uk/flashcards.html" />
+  <meta property="og:title" content="Prepify11Plus Flashcards | 11+ Vocabulary Practice" />
+  <meta property="og:description" content="Flip, type, and quiz through 500+ curated 11+ vocabulary flashcards. Track mastered words, bookmark tricky terms, and export progress for grammar school exams." />
+  <meta name="twitter:site" content="@prepify11plus" />
+  <meta name="twitter:creator" content="@prepify11plus" />
+  <meta name="twitter:url" content="https://www.prepify11plus.co.uk/flashcards.html" />
+  <meta name="twitter:title" content="Prepify11Plus Flashcards | 11+ Vocabulary Practice" />
+  <meta name="twitter:description" content="Sharpen 11+ vocabulary with interactive flashcards featuring definitions, examples, and mastery tracking." />
+  <title>Prepify11Plus Flashcards | 11+ Vocabulary Practice</title>
+  <meta name="description" content="Flip, type, and quiz through 500+ curated 11+ vocabulary flashcards. Track mastered words, bookmark tricky terms, and export progress." />
+  <meta name="keywords" content="11 plus vocabulary flashcards, 11+ word list, online flashcards for eleven plus, grammar school vocabulary practice, free 11 plus revision" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "Prepify 11 Plus",
-      "url": "https://www.prepify11plus.co.uk",
-      "description": "Online platform for 11+ exam preparation: mock tests, maths drills, and vocabulary flashcards.",
-      "sameAs": [
-        "https://www.youtube.com/@Prepify11Plus",
-        "https://www.linkedin.com/in/neerej/",
-        "https://x.com/prepify11plus"
-      ]
-    }
-  </script>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="/" class="brand">Prepify11Plus</a>
-      <ul>
-        <li><a href="/maths.html">Maths</a></li>
-        <li><a href="/english.html">English</a></li>
-        <li><a href="/reasoning.html">Reasoning</a></li>
-        <li><a href="/flashcards.html" aria-current="page">Flashcards</a></li>
-        <li><a href="/blog.html">Blog</a></li>
-        <li><a href="/pricing.html">Pricing</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Vocabulary flashcards that unlock 11+ word confidence</h1>
-    <section class="hero">
-      <p>Prepify11Plus flashcards transform tricky vocabulary into memorable stories, pictures, and sounds. Each deck focuses on exam-ready themes such as character traits, academic language, and synonyms that appear in CEM and GL reading passages. Learners swipe through definitions, sample sentences, and quick quizzes that encourage them to say the word aloud and connect it to real-life experiences. Spaced repetition technology resurfaces words right before they are forgotten, keeping revision short and effective.</p>
-      <p>Flashcards are grouped into playlists for morning commutes, evening wind downs, or weekend power sessions. Families can assign decks that match current <a href="/english.html">English comprehension</a> texts or <a href="/maths.html">maths problem solving</a> vocabulary. Each card includes audio pronunciation, word families, and short writing prompts to encourage deeper understanding. Pupils can bookmark favourites, star challenging words, and unlock badges as their mastery grows.</p>
-      <p>To strengthen retrieval, pair flashcards with printable quizzes or link them to reasoning puzzles on the <a href="/reasoning.html">reasoning page</a>. Teachers can export curated lists to share with tutoring groups, while parents monitor progress through weekly email summaries. When you are ready to expand the library further, explore the <a href="/pricing.html">plans and pricing</a> page for premium decks and exam-cram playlists, and keep an eye on the <a href="/blog.html">blog</a> for seasonal vocabulary challenges.</p>
-      <img src="/assets/images/hero-flashcards.jpg" alt="Child studying 11 Plus vocabulary flashcards" width="1200" height="400" loading="lazy" decoding="async" onerror="this.style.display='none'">
-    </section>
-    <section>
-      <h2>Flashcard features designed for busy families</h2>
-      <div class="feature-grid">
-        <article class="card">
-          <h3>Themed word packs</h3>
-          <p>Browse decks for emotions, science terms, classical literature, and exam command words so revision aligns with school topics.</p>
-        </article>
-        <article class="card">
-          <h3>Smart revision reminders</h3>
-          <p>Automated notifications nudge learners to review words before they fade, helping build long-term retention without stress.</p>
-        </article>
-        <article class="card">
-          <h3>Family collaboration tools</h3>
-          <p>Share progress dashboards, set friendly competitions, and co-create custom cards featuring inside jokes that make revision fun.</p>
-        </article>
-      </div>
-    </section>
-    <section id="faq">
-      <h2>FAQs About the 11 Plus Exam</h2>
-      <div>
-        <h3>What is the 11+ exam?</h3>
-        <p>The 11 Plus is a UK entrance exam for grammar schools covering maths, English and reasoning.</p>
-      </div>
-      <div>
-        <h3>Who can take the 11+?</h3>
-        <p>Usually students in Year 5 or 6 applying for grammar school entry.</p>
-      </div>
-      <div>
-        <h3>How can Prepify11Plus help?</h3>
-        <p>Prepify11Plus offers free practice papers, flashcards, and personalised drills aligned with CEM and GL formats.</p>
-      </div>
-    </section>
-  </main>
-  <footer>
-    <p>© 2025 Prepify11Plus • Helping students ace the UK 11+ Exam</p>
-    <nav>
-      <a href="/">Home</a> | <a href="/about.html">About</a> | <a href="/contact.html">Contact</a>
-    </nav>
-  </footer>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
+      "@graph": [
         {
-          "@type": "Question",
-          "name": "What is the 11+ exam?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The 11 Plus is a UK entrance exam for grammar schools covering maths, English and reasoning."
+          "@type": "Organization",
+          "@id": "https://www.prepify11plus.co.uk/#organization",
+          "name": "Prepify11Plus",
+          "url": "https://www.prepify11plus.co.uk/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.prepify11plus.co.uk/assets/images/site-icon.svg"
+          },
+          "sameAs": [
+            "https://twitter.com/prepify11plus"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.prepify11plus.co.uk/#website",
+          "url": "https://www.prepify11plus.co.uk/",
+          "name": "Prepify11Plus",
+          "description": "Free 11 plus practice hub with mock exams, maths missions, and vocabulary flashcards.",
+          "publisher": {
+            "@id": "https://www.prepify11plus.co.uk/#organization"
           }
         },
         {
-          "@type": "Question",
-          "name": "Who can take the 11+?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Usually students in Year 5 or 6 applying for grammar school entry."
+          "@type": "WebPage",
+          "@id": "https://www.prepify11plus.co.uk/flashcards.html#page",
+          "url": "https://www.prepify11plus.co.uk/flashcards.html",
+          "name": "Prepify11Plus Flashcards",
+          "description": "Interactive 11 plus vocabulary flashcards with mastery tracking and exportable bookmarks.",
+          "inLanguage": "en-GB",
+          "isPartOf": {
+            "@id": "https://www.prepify11plus.co.uk/#website"
+          },
+          "publisher": {
+            "@id": "https://www.prepify11plus.co.uk/#organization"
+          },
+          "breadcrumb": {
+            "@id": "https://www.prepify11plus.co.uk/flashcards.html#breadcrumb"
           }
         },
         {
-          "@type": "Question",
-          "name": "How can Prepify11Plus help?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Prepify11Plus offers free practice papers, flashcards, and personalised drills aligned with CEM and GL formats."
-          }
+          "@type": "BreadcrumbList",
+          "@id": "https://www.prepify11plus.co.uk/flashcards.html#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.prepify11plus.co.uk/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Flashcards",
+              "item": "https://www.prepify11plus.co.uk/flashcards.html"
+            }
+          ]
         }
       ]
     }
   </script>
-  <script defer>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a[href*="linkedin.com"]').forEach(link => {
-        link.addEventListener('click', e => {
-          const url = link.getAttribute('href');
-          if (typeof gtag === 'function') {
-            gtag('event', 'linkedin_redirect', {
-              event_category: 'Outbound',
-              event_label: url,
-              transport_type: 'beacon'
-            });
-          }
-          e.preventDefault();
-          setTimeout(() => window.open(url, '_blank'), 150);
-        });
-      });
-    });
-  </script>
+</head>
+<body data-root=".">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html" aria-label="Prepify11Plus home">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <span class="brand-title">Prepify11Plus</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="flashcards.html" aria-current="page">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-primary nav-cta" href="mock.html">Start practising</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="site-main page-shell">
+    <section class="section">
+      <div class="section-header">
+        <span class="badge">Vocabulary lab</span>
+        <h1>Flip joyful 11+ flashcards</h1>
+        <p class="section-subtitle">Tap to reveal definitions, type your answers, and bookmark favourites. Prepify11Plus keeps progress local so every learner can practise confidently.</p>
+      </div>
+
+      <div class="flashcards-page" aria-live="polite">
+        <div class="flashcard" data-flashcard tabindex="0" aria-label="Flashcard" role="group">
+          <div class="flashcard-inner">
+            <div class="flashcard-face" data-flashcard-front>Loading…</div>
+            <div class="flashcard-face back" data-flashcard-back hidden>
+              <p>Meaning appears here.</p>
+            </div>
+          </div>
+          <span class="sparkle" aria-hidden="true"></span>
+        </div>
+        <p class="section-subtitle" data-flashcard-progress>Preparing your deck…</p>
+        <div class="mode-switch" role="toolbar" aria-label="Flashcard deck controls">
+          <button type="button" class="btn-outline" data-flip-card>Flip card</button>
+          <button type="button" class="btn-outline" data-prev-card>Previous</button>
+          <button type="button" class="btn-outline" data-next-card>Next</button>
+          <button type="button" class="btn-outline" data-random-card>Random</button>
+          <button type="button" class="btn-outline" data-shuffle-cards>Shuffle</button>
+        </div>
+        <div class="controls" aria-label="Flashcard actions">
+          <p data-flashcard-topic>Focus: vocabulary</p>
+          <div class="section-actions">
+            <button class="btn btn-primary" type="button" data-mark-mastered>Mark as mastered</button>
+            <button class="btn btn-secondary" type="button" data-toggle-bookmark aria-pressed="false">Bookmark word</button>
+          </div>
+          <div class="section-actions">
+            <button class="btn btn-outline" type="button" data-reset-mastery>Reset stats</button>
+            <button class="btn btn-outline" type="button" data-restore-mastered>Restore mastered words</button>
+            <button class="btn btn-outline" type="button" data-export-bookmarks>Export bookmarks</button>
+          </div>
+        </div>
+        <p class="section-subtitle" data-status-message role="status">Deck loading…</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Track what matters</h2>
+        <p class="section-subtitle">Every stat updates instantly as you work. Refresh the page any time—your progress stays safely on your device.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <h3>Total cards</h3>
+          <p><strong data-total-count>0</strong> vocabulary challenges, including rich example sentences.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Mastered words</h3>
+          <p><strong data-mastered-count>0</strong> marked as mastered. Tap restore to cycle through them again.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Bookmarked favourites</h3>
+          <p><strong data-bookmarked-count>0</strong> saved for revision. Export them as a JSON file whenever you like.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <div>
+          <p>© <span id="currentYear"></span> Prepify11Plus.</p>
+          <p>Confident, joyful 11+ preparation for curious minds.</p>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="flashcards.html" aria-current="page">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+      </div>
+      <div class="footer-meta">
+        <span>Visitors so far:</span>
+        <strong id="countValue" data-visitor-count>40,000+</strong>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/flashcards.js" defer></script>
+  <script src="assets/counter.js" defer></script>
 </body>
 </html>
