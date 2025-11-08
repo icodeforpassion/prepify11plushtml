@@ -1196,6 +1196,36 @@ details.faq-item[open] summary::after {
   color: var(--primary);
 }
 
+.insights-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.insight-card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 1.6rem;
+  box-shadow: var(--shadow-xs);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.insight-card h3 {
+  margin: 0;
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+.insight-card a {
+  color: var(--primary);
+}
+
+@media (min-width: 48rem) {
+  .insights-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .post-header {
   display: grid;
   gap: 0.6rem;
@@ -1240,6 +1270,38 @@ details.faq-item[open] summary::after {
 .post ul,
 .post ol {
   padding-left: 1.4rem;
+}
+
+.post-related {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.post-related h2 {
+  margin: 0;
+  font-size: clamp(1.3rem, 2.2vw, 1.5rem);
+}
+
+.related-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.related-links a {
+  color: var(--primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.related-links a:hover,
+.related-links a:focus {
+  text-decoration: underline;
 }
 
 .post-body section + section {
