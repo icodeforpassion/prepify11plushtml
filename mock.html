@@ -38,15 +38,15 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.prepify11plus.co.uk/mock.html" />
   <meta property="og:title" content="Free 11 Plus Mock Exam | Prepify11Plus Personalised Papers" />
-  <meta property="og:description" content="Sit a free 11 plus mock exam with realistic grammar school timings, adaptive question banks, and instant feedback tailored to your child." />
+  <meta property="og:description" content="Sit a free 11 plus mock exam with flexible exam-style timing, adaptive question banks, and instant feedback to guide your next practice." />
   <meta name="twitter:site" content="@prepify11plus" />
   <meta name="twitter:creator" content="@prepify11plus" />
   <meta name="twitter:url" content="https://www.prepify11plus.co.uk/mock.html" />
   <meta name="twitter:title" content="Free 11 Plus Mock Exam | Prepify11Plus Personalised Papers" />
-  <meta name="twitter:description" content="Access a free 11 plus mock exam with exam-day timers, automatic marking, and topic breakdowns for grammar school success." />
+  <meta name="twitter:description" content="Access a free 11 plus mock exam with exam-style timers, automatic marking, and topic breakdowns to shape future revision." />
   <title>Free 11 Plus Mock Exam | Prepify11Plus Personalised Papers</title>
-  <meta name="description" content="Access a free 11 plus mock exam that mirrors grammar school timings, includes maths, verbal reasoning, and vocabulary drills, and delivers instant feedback." />
-  <meta name="keywords" content="free 11 plus mock exam, eleven plus free mock, grammar school mock test, online 11+ practice, free 11+ papers" />
+  <meta name="description" content="Access a free 11 plus mock exam with adjustable timers, maths, verbal reasoning, and vocabulary drills, plus instant feedback after each run." />
+  <meta name="keywords" content="free 11 plus mock exam, eleven plus free mock, online 11+ practice, free 11+ papers" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -83,7 +83,7 @@
           "@id": "https://www.prepify11plus.co.uk/mock.html#page",
           "url": "https://www.prepify11plus.co.uk/mock.html",
           "name": "Free 11 Plus Mock Exam",
-          "description": "Sit a free 11 plus mock exam online with exam-style timing, automatic scoring, and grammar school benchmarking.",
+          "description": "Sit a free 11 plus mock exam online with exam-style timing, automatic scoring, and friendly benchmarking insights.",
           "inLanguage": "en-GB",
           "isPartOf": {
             "@id": "https://www.prepify11plus.co.uk/#website"
@@ -127,10 +127,10 @@
             },
             {
               "@type": "Question",
-              "name": "How do the free mocks match grammar school exams?",
+              "name": "How realistic are the free mocks?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Each mock uses grammar school-style timings, question difficulty, and adaptive topic weights so pupils rehearse the real exam experience."
+                "text": "Each mock offers exam-style timing, varied difficulty, and adaptive topic weights so pupils can rehearse authentic question mixes without added pressure."
               }
             },
             {
@@ -175,29 +175,38 @@
       <section class="intro-card" id="landing">
         <span class="badge">Build your own mock</span>
         <h1>Pick a category to begin</h1>
-        <p>Select a topic card below. We’ll pull questions from our curated banks, track your score, and highlight areas to revisit.</p>
+        <p>Choose a practice card below. We’ll mix questions from our curated banks, track your score, and spotlight topics to revisit — all free to explore at your own pace.</p>
 
         <div class="category-grid" id="categoryGrid" aria-label="Choose a mock test category">
           <button class="category-chip" data-category="all">
-            <div>
-              <div class="title">All topics</div>
-              <div class="meta">Mix of maths, reasoning, and vocabulary</div>
+            <div class="category-chip__body">
+              <span class="category-chip__icon" aria-hidden="true">🌍</span>
+              <div>
+                <div class="title">All topics</div>
+                <div class="meta">Blend maths, reasoning, and vocabulary in one flight plan</div>
+              </div>
             </div>
-            <span aria-hidden="true">▶</span>
+            <span class="category-chip__arrow" aria-hidden="true">➜</span>
           </button>
           <button class="category-chip" data-category="maths">
-            <div>
-              <div class="title">Maths</div>
-              <div class="meta">Arithmetic, fractions, geometry, measurement</div>
+            <div class="category-chip__body">
+              <span class="category-chip__icon" aria-hidden="true">➗</span>
+              <div>
+                <div class="title">Maths</div>
+                <div class="meta">Arithmetic, fractions, geometry, and measurement drills</div>
+              </div>
             </div>
-            <span aria-hidden="true">▶</span>
+            <span class="category-chip__arrow" aria-hidden="true">➜</span>
           </button>
           <button class="category-chip" data-category="reasoning">
-            <div>
-              <div class="title">Reasoning</div>
-              <div class="meta">Verbal reasoning and logic puzzles</div>
+            <div class="category-chip__body">
+              <span class="category-chip__icon" aria-hidden="true">🧩</span>
+              <div>
+                <div class="title">Reasoning</div>
+                <div class="meta">Verbal twists, logic puzzles, and deduction practice</div>
+              </div>
             </div>
-            <span aria-hidden="true">▶</span>
+            <span class="category-chip__arrow" aria-hidden="true">➜</span>
           </button>
         </div>
 
@@ -211,7 +220,7 @@
             <input id="timeLimit" type="number" min="5" max="120" value="15" />
           </div>
           <div class="control">
-            <button class="btn btn-primary" id="startBtn" disabled>Start mock</button>
+            <button class="btn btn-primary" id="startBtn" disabled>Begin session</button>
           </div>
         </div>
         <p id="loadStatus" class="section-subtitle"></p>
@@ -248,14 +257,14 @@
       <section class="seo-section" aria-labelledby="free-mock-benefits">
         <h2 id="free-mock-benefits">Why families choose our free 11 plus mock exam</h2>
         <p>
-          Prepify11Plus mirrors real grammar school entrance papers with timed sections, adaptive difficulty, and expertly written
+          Prepify11Plus captures the rhythm of exam day with timed sections, adaptive difficulty, and carefully written
           questions. Learners receive immediate explanations, topic-level reports, and suggested revision playlists so every free
-          attempt drives measurable progress.
+          attempt fuels confident practice rather than stressful cram sessions.
         </p>
         <div class="feature-grid">
           <article>
             <h3>Exam-day authenticity</h3>
-            <p>Mix maths, verbal reasoning, and vocabulary drills with the same timings and layout pupils face in popular grammar school selections.</p>
+            <p>Mix maths, verbal reasoning, and vocabulary drills with layouts inspired by the entrance papers families tell us they want to rehearse.</p>
           </article>
           <article>
             <h3>Instant personalised insights</h3>
@@ -269,14 +278,14 @@
       </section>
 
       <section class="seo-section" aria-labelledby="free-mock-steps">
-        <h2 id="free-mock-steps">How to launch your free grammar school mock</h2>
+        <h2 id="free-mock-steps">How to launch your free practice mock</h2>
         <ol>
           <li>Select <strong>All topics</strong> for a balanced eleven plus rehearsal or target a single category for focused revision.</li>
-          <li>Choose the number of questions and set an exam-style timer that matches your child’s upcoming grammar school assessment.</li>
+          <li>Choose the number of questions and set an exam-style timer that matches the pace you’d like to rehearse.</li>
           <li>Start the mock, track progress in real time, and review auto-marked answers with improvement tips in the results screen.</li>
         </ol>
         <p>
-          Looking for even deeper benchmarking? Explore our <a href="pricing.html">premium insights</a> to compare performance with other aspiring grammar school pupils.
+          Looking for even deeper benchmarking? Explore our <a href="pricing.html">premium insights</a> to compare performance trends across the Prepify11Plus community.
         </p>
       </section>
 
@@ -292,8 +301,8 @@
             <p>After finishing a session, export a printable summary to review questions offline or share with a tutor.</p>
           </article>
           <article>
-            <h3>Does the mock support grammar school timings?</h3>
-            <p>Every paper supports configurable timers that align with GL, CEM, and school-specific formats so pacing feels natural.</p>
+            <h3>How realistic are the free mocks?</h3>
+            <p>Each session pairs adjustable timers with varied difficulty so learners can experience authentic question mixes without pressure to perform perfectly.</p>
           </article>
         </div>
       </section>
