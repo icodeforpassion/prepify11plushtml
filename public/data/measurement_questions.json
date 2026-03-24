@@ -1,0 +1,14 @@
+[
+  {"question": "How many centimetres are in 3 metres?", "options": ["30 cm", "300 cm", "3,000 cm", "3 cm"], "answer": "300 cm", "explanation": "Multiply metres by 100."},
+  {"question": "Convert 2.5 litres to millilitres", "options": ["250 ml", "2,500 ml", "25 ml", "250,000 ml"], "answer": "2,500 ml", "explanation": "Multiply litres by 1,000."},
+  {"question": "A race starts at 2:15 pm and ends at 2:42 pm. How long did it last?", "options": ["17 minutes", "25 minutes", "27 minutes", "32 minutes"], "answer": "27 minutes", "explanation": "From 2:15 to 2:42 is 27 minutes."},
+  {"question": "What is the perimeter of a square with sides 9cm?", "options": ["18 cm", "27 cm", "36 cm", "81 cm"], "answer": "36 cm", "explanation": "Perimeter = 4 × side."},
+  {"question": "A jug holds 1.5 litres of juice. How many 250ml cups can be filled?", "options": ["4", "5", "6", "7"], "answer": "6", "explanation": "1.5 litres = 1,500ml. 1,500 ÷ 250 = 6."},
+  {"question": "Convert 90 minutes into hours", "options": ["1 hour", "1.5 hours", "1.75 hours", "2 hours"], "answer": "1.5 hours", "explanation": "60 minutes = 1 hour, remaining 30 minutes = 0.5 hour."},
+  {"question": "Which is heavier: 3 kilograms or 2,500 grams?", "options": ["3 kilograms", "2,500 grams", "They are equal", "Cannot tell"], "answer": "3 kilograms", "explanation": "3 kg = 3,000 g which is heavier."},
+  {"question": "A garden bed is 4m long and 2m wide. What is its area?", "options": ["6 m²", "8 m²", "10 m²", "8 m"], "answer": "8 m²", "explanation": "Area = length × width."},
+  {"question": "Convert 5km to metres", "options": ["500 m", "5,000 m", "50,000 m", "5 m"], "answer": "5,000 m", "explanation": "Multiply kilometres by 1,000."},
+  {"question": "How many seconds are there in 3 minutes?", "options": ["120", "150", "180", "210"], "answer": "180", "explanation": "3 × 60 = 180 seconds."},
+  {"question": "A recipe needs 750 grams of flour. How many 250g bags are required?", "options": ["2", "3", "4", "5"], "answer": "3", "explanation": "750 ÷ 250 = 3."},
+  {"question": "What is the temperature difference between 18°C and -4°C?", "options": ["14°C", "18°C", "22°C", "24°C"], "answer": "22°C", "explanation": "From -4 to 0 is 4 degrees, plus 18 more = 22."}
+]

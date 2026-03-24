@@ -1,0 +1,14 @@
+[
+  {"question": "Triangle with sides 3, 4, 5 is:", "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"], "answer": "Right-angled", "explanation": "3² + 4² = 5² so it forms a right triangle."},
+  {"question": "Triangle with angles 60°, 60°, 60° is:", "options": ["Equilateral", "Acute", "Obtuse", "Scalene"], "answer": "Equilateral", "explanation": "All angles equal and sides equal."},
+  {"question": "If two sides of a triangle are 6cm and 6cm, what type is it?", "options": ["Scalene", "Isosceles", "Equilateral", "Right-angled"], "answer": "Isosceles", "explanation": "Two sides are equal."},
+  {"question": "Which set of lengths cannot form a triangle?", "options": ["4cm, 5cm, 6cm", "2cm, 3cm, 9cm", "5cm, 5cm, 5cm", "7cm, 8cm, 10cm"], "answer": "2cm, 3cm, 9cm", "explanation": "The two smaller sides must add to more than the largest."},
+  {"question": "A triangle has angles 30°, 60°, and 90°. What type of triangle is it?", "options": ["Acute", "Right-angled", "Obtuse", "Equilateral"], "answer": "Right-angled", "explanation": "One angle is 90°."},
+  {"question": "If a triangle has sides 5cm, 5cm, and 8cm, which statement is true?", "options": ["It is equilateral", "It has a right angle", "It is isosceles", "It is impossible"], "answer": "It is isosceles", "explanation": "Two sides match."},
+  {"question": "A triangle has sides 9cm, 12cm, and 15cm. What type is it?", "options": ["Equilateral", "Scalene", "Isosceles", "Impossible"], "answer": "Scalene", "explanation": "All sides differ."},
+  {"question": "If one angle in a triangle is obtuse, the triangle is:", "options": ["Acute", "Obtuse", "Right-angled", "Impossible"], "answer": "Obtuse", "explanation": "An obtuse triangle has one obtuse angle."},
+  {"question": "A triangle with sides 7cm, 9cm, and 11cm is:", "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"], "answer": "Scalene", "explanation": "All sides different."},
+  {"question": "If two angles in a triangle are 45° and 55°, the third angle is:", "options": ["70°", "75°", "80°", "85°"], "answer": "80°", "explanation": "Angles sum to 180° so 180 - 100 = 80°."},
+  {"question": "Can a triangle have more than one right angle?", "options": ["Yes", "No", "Only if equilateral", "Only if scalene"], "answer": "No", "explanation": "Two right angles would already make 180°."},
+  {"question": "A triangle with sides 10cm, 10cm, and 10cm is:", "options": ["Scalene", "Isosceles", "Equilateral", "Right-angled"], "answer": "Equilateral", "explanation": "All sides equal."}
+]

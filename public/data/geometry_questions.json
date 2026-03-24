@@ -1,0 +1,14 @@
+[
+  {"question": "What is the perimeter of a rectangle with length 8cm and width 5cm?", "options": ["13 cm", "26 cm", "40 cm", "16 cm"], "answer": "26 cm", "explanation": "Perimeter = 2 × (length + width) = 2 × (8 + 5)."},
+  {"question": "A square has an area of 49 cm². What is the length of one side?", "options": ["6 cm", "7 cm", "8 cm", "9 cm"], "answer": "7 cm", "explanation": "Square root of 49 is 7."},
+  {"question": "How many degrees are in a right angle?", "options": ["45°", "90°", "180°", "360°"], "answer": "90°", "explanation": "A right angle always measures 90 degrees."},
+  {"question": "Which shape has exactly one pair of parallel sides?", "options": ["Square", "Parallelogram", "Isosceles triangle", "Trapezium"], "answer": "Trapezium", "explanation": "A trapezium has one pair of parallel sides."},
+  {"question": "What is the area of a triangle with base 10cm and height 6cm?", "options": ["30 cm²", "60 cm²", "20 cm²", "16 cm²"], "answer": "30 cm²", "explanation": "Area = 1/2 × base × height."},
+  {"question": "The sum of angles in a triangle is…", "options": ["90°", "120°", "180°", "360°"], "answer": "180°", "explanation": "All triangles add up to 180 degrees."},
+  {"question": "A cube has edges of 4cm. What is its volume?", "options": ["16 cm³", "32 cm³", "48 cm³", "64 cm³"], "answer": "64 cm³", "explanation": "Volume = side³ = 4³."},
+  {"question": "What is the name of a six-sided polygon?", "options": ["Pentagon", "Hexagon", "Heptagon", "Octagon"], "answer": "Hexagon", "explanation": "Hexa means six."},
+  {"question": "Which angle is greater than a right angle but less than a straight angle?", "options": ["Acute", "Obtuse", "Reflex", "Complete"], "answer": "Obtuse", "explanation": "Obtuse angles measure between 90° and 180°."},
+  {"question": "If one angle of an equilateral triangle is 60°, what are the other angles?", "options": ["60° and 60°", "50° and 70°", "80° and 40°", "90° and 30°"], "answer": "60° and 60°", "explanation": "All angles in an equilateral triangle are equal."},
+  {"question": "A circle has a radius of 3cm. What is its diameter?", "options": ["3 cm", "6 cm", "9 cm", "12 cm"], "answer": "6 cm", "explanation": "Diameter = 2 × radius."},
+  {"question": "Which 3D shape has 6 faces, all rectangles or squares?", "options": ["Sphere", "Cylinder", "Cuboid", "Cone"], "answer": "Cuboid", "explanation": "A cuboid (rectangular prism) has 6 rectangular faces."}
+]
