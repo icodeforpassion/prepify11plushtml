@@ -1,0 +1,29 @@
+[
+  {
+    "id": "750e8400-e29b-41d4-a716-446655440000",
+    "type": "Multiple Choice",
+    "difficulty": 1,
+    "question_text": "If CAT is written as DBU, how would DOG be written?",
+    "options": ["EPH", "COF", "DPH", "EOH"],
+    "correct_answer": "EPH",
+    "explanation": "Each letter is shifted 1 position forward in the alphabet. DOG becomes EPH."
+  },
+  {
+    "id": "750e8400-e29b-41d4-a716-446655440001",
+    "type": "Multiple Choice",
+    "difficulty": 2,
+    "question_text": "CAT is to MEOW as DOG is to ?",
+    "options": ["BARK", "RUN", "TAIL", "COLLAR"],
+    "correct_answer": "BARK",
+    "explanation": "CAT and MEOW have the same relationship as DOG and BARK (animal to sound)."
+  },
+  {
+    "id": "750e8400-e29b-41d4-a716-446655440002",
+    "type": "Multiple Choice",
+    "difficulty": 1,
+    "question_text": "<div style=\"font-size: 24px;\">What letter completes the sequence?<br><br>A B C D ?</div>",
+    "options": ["<span style=\"font-size: 24px;\">E</span>", "<span style=\"font-size: 24px;\">F</span>", "<span style=\"font-size: 24px;\">D</span>", "<span style=\"font-size: 24px;\">G</span>"],
+    "correct_answer": "<span style=\"font-size: 24px;\">E</span>",
+    "explanation": "The sequence follows alphabetical order. The missing letter is E."
+  }
+]

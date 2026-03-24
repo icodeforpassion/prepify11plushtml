@@ -1,0 +1,29 @@
+[
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "type": "Multiple Choice",
+    "difficulty": 1,
+    "question_text": "What is 25% of 80?",
+    "options": ["20", "15", "25", "30"],
+    "correct_answer": "20",
+    "explanation": "25% of 80 = (25/100) × 80 = 20"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440001",
+    "type": "Multiple Choice",
+    "difficulty": 2,
+    "question_text": "If a shop increases its prices by 20%, and an item originally cost £50, what is the new price?",
+    "options": ["£60", "£55", "£70", "£65"],
+    "correct_answer": "£60",
+    "explanation": "New price = £50 × (1 + 20/100) = £50 × 1.2 = £60"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440002",
+    "type": "Multiple Choice",
+    "difficulty": 1,
+    "question_text": "Calculate: 3/4 + 1/4",
+    "options": ["1", "4/8", "2/4", "1/2"],
+    "correct_answer": "1",
+    "explanation": "3/4 + 1/4 = 4/4 = 1"
+  }
+]
