@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Prepify11Plus fun purple icon</title>
+  <desc id="desc">A cheerful purple square with a yellow smiling book character designed for Prepify11Plus website favicon.</desc>
+
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6C4DFF"/>
+      <stop offset="100%" stop-color="#9E7BFF"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="8" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="512" height="512" rx="96" fill="url(#grad)"/>
+
+  <!-- Smiling book -->
+  <g filter="url(#shadow)">
+    <rect x="120" y="140" width="272" height="240" rx="40" fill="#FFD94F"/>
+    <path d="M120 180 Q256 100 392 180" stroke="#FFE680" stroke-width="8" fill="none"/>
+  </g>
+
+  <!-- Eyes -->
+  <circle cx="200" cy="260" r="20" fill="#333"/>
+  <circle cx="312" cy="260" r="20" fill="#333"/>
+
+  <!-- Smile -->
+  <path d="M200 300 Q256 340 312 300" stroke="#333" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+  <!-- Letter P overlay for brand -->
+  <text x="255" y="420" text-anchor="middle" font-family="Poppins, sans-serif" font-size="120" font-weight="700" fill="#4A3AFF" opacity="0.25">P</text>
+</svg>
