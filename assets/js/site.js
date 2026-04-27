@@ -98,6 +98,53 @@
     });
   };
 
+
+  const initFundingBars = () => {
+    doc.querySelectorAll('[data-funding-progress]').forEach((node) => {
+      const goal = Number(node.getAttribute('data-goal')) || 25;
+      const current = Number(node.getAttribute('data-current')) || 0;
+      const bar = node.querySelector('.funding-bar span');
+      if (bar) {
+        const pct = Math.max(0, Math.min(100, Math.round((current / goal) * 100)));
+        bar.style.width = `${pct}%`;
+      }
+    });
+  };
+
+  const initExitIntentPopup = () => {
+    const popup = doc.querySelector('[data-exit-popup]');
+    if (!popup) return;
+    const storageKey = 'prepify11plus.exit.popup';
+    if (localStorage.getItem(storageKey) === 'seen') return;
+
+    const close = () => {
+      popup.hidden = true;
+      try {
+        localStorage.setItem(storageKey, 'seen');
+      } catch (error) {
+        // ignore storage issues
+      }
+    };
+
+    popup.querySelector('[data-exit-close]')?.addEventListener('click', close);
+
+    let shown = false;
+    doc.addEventListener('mouseout', (event) => {
+      if (shown) return;
+      if (event.clientY <= 4) {
+        popup.hidden = false;
+        shown = true;
+      }
+    });
+
+    window.setTimeout(() => {
+      if (!shown && window.innerWidth < 860) {
+        popup.hidden = false;
+        shown = true;
+      }
+    }, 20000);
+  };
+
   const initConsentBanner = () => {
     const banner = doc.querySelector('[data-consent-banner]');
     if (!banner) return;
@@ -129,6 +176,8 @@
     setCurrentYear();
     initQuoteStrip();
     initNavigation();
+    initFundingBars();
+    initExitIntentPopup();
     initConsentBanner();
   });
 })();
