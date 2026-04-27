@@ -1,15 +1,7 @@
 User-agent: *
 Allow: /
-Crawl-delay: 1
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: DuckDuckBot
-Allow: /
+Disallow: /scripts/
+Disallow: /data/
 
 Sitemap: https://www.prepify11plus.co.uk/sitemap.xml
 Host: https://www.prepify11plus.co.uk

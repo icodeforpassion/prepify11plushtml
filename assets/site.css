@@ -1956,3 +1956,82 @@ details.faq-item[open] summary::after {
     align-items: flex-start;
   }
 }
+
+/* SEO landing + donation modules */
+.seo-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+.two-col {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.2rem;
+}
+.sidebar-card,
+.support-box,
+.inline-cta,
+.faq-block details {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow-xs);
+}
+.support-box h2,
+.support-box h3 { margin-top: 0; }
+.support-box--a { border-left: 5px solid #ef4444; }
+.support-box--b { border-left: 5px solid #2563eb; }
+.support-box--c { border-left: 5px solid #16a34a; }
+.support-proof { color: var(--text-soft); font-size: 0.9rem; }
+.resource-list { padding-left: 1.2rem; }
+.inline-cta { margin-top: 1rem; }
+.funding-progress { margin-top: 1rem; }
+.funding-bar { background: #e2e8f0; border-radius: 999px; height: 10px; overflow: hidden; }
+.funding-bar span { display:block; height:100%; width:0; background: linear-gradient(90deg, #16a34a, #22c55e); }
+.footer-donate { max-width: 320px; }
+.mobile-support-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 12;
+  background: #111827;
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+  font-weight: 600;
+  display: none;
+}
+.exit-popup[hidden] { display: none; }
+.exit-popup {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.62);
+  display: grid;
+  place-items: center;
+  z-index: 30;
+  padding: 1rem;
+}
+.exit-popup__card {
+  width: min(520px, 95vw);
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.2rem;
+  position: relative;
+}
+.exit-popup__close {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.6rem;
+  border: 0;
+  background: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+@media (max-width: 860px) {
+  .seo-hero, .two-col { grid-template-columns: 1fr; }
+  .mobile-support-bar { display: block; }
+  body { padding-bottom: 3.2rem; }
+}
