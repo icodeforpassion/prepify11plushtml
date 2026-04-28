@@ -1,119 +1,160 @@
 (() => {
-  const sequenceEl = document.querySelector("[data-nv-sequence]");
-  const optionsEl = document.querySelector("[data-nv-options]");
-  const messageEl = document.querySelector("[data-nv-message]");
-  const nextBtn = document.querySelector("[data-nv-next]");
-  if (!sequenceEl || !optionsEl || !nextBtn) return;
+  const sequenceEl = document.querySelector('[data-nv-sequence]');
+  const optionsEl = document.querySelector('[data-nv-options]');
+  const messageEl = document.querySelector('[data-nv-message]');
+  const nextBtn = document.querySelector('[data-nv-next]');
+  const promptEl = document.querySelector('[data-nv-prompt]');
+  const typeEl = document.querySelector('[data-nv-type]');
+  if (!sequenceEl || !optionsEl || !nextBtn || !promptEl || !typeEl) return;
 
-  const shapes = ["circle", "square", "triangle", "diamond"];
-  const colors = ["#4f46e5", "#ec4899", "#0ea5e9", "#f97316", "#22c55e"];
+  const SYMBOLS = ['●', '■', '▲', '◆', '★', '✚', '⬢', '⬣'];
+  const ARROWS = ['↑', '→', '↓', '←'];
 
-  let answerKey = "";
+  let answerKey = '';
 
-  function randomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
+  const randomInt = (max) => Math.floor(Math.random() * max);
 
-  function uniqueShuffle(items) {
-    return [...items]
-      .map((item) => ({ item, sort: Math.random() }))
-      .sort((a, b) => a.sort - b.sort)
-      .map(({ item }) => item);
-  }
+  const uniqueShuffle = (items) => [...items]
+    .map((item) => ({ item, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ item }) => item);
 
-  function buildState(step) {
-    const shapeIndex = (step.startShape + step.index * step.shapeJump) % shapes.length;
-    const colorIndex = (step.startColor + step.index * step.colorJump) % colors.length;
-    const rotation = (step.startRotation + step.index * step.rotationJump) % 360;
-    const scale = 0.8 + (step.index % 3) * 0.2;
+  const makeOptionButton = (option, idx) => {
+    const button = document.createElement('button');
+    button.className = 'nv-option';
+    button.type = 'button';
+    button.dataset.key = option.key;
+    button.innerHTML = `
+      <span class="nv-option__label">Option ${idx + 1}</span>
+      <span class="nv-card__value">${option.label}</span>
+    `;
+    return button;
+  };
 
+  const makeSequenceCard = (value) => {
+    const card = document.createElement('div');
+    card.className = 'nv-card';
+    card.innerHTML = `<span class="nv-card__value">${value}</span>`;
+    return card;
+  };
+
+  const sequencePuzzle = () => {
+    const startIndex = randomInt(SYMBOLS.length);
+    const step = randomInt(3) + 1;
+    const sequence = Array.from({ length: 4 }, (_, i) => SYMBOLS[(startIndex + (i * step)) % SYMBOLS.length]);
+    const correct = SYMBOLS[(startIndex + (4 * step)) % SYMBOLS.length];
+    const wrong = uniqueShuffle(SYMBOLS.filter((symbol) => symbol !== correct)).slice(0, 3);
+
+    const options = uniqueShuffle([{ key: 'correct', label: correct }, ...wrong.map((label, index) => ({ key: `wrong-${index}`, label }))]);
     return {
-      shape: shapes[shapeIndex],
-      color: colors[colorIndex],
-      rotation,
-      scale
+      type: 'Pattern sequence',
+      prompt: 'Which symbol comes next in the sequence?',
+      sequence,
+      options,
+      explanation: `Move forward by ${step} symbol${step > 1 ? 's' : ''} each step.`
     };
-  }
+  };
 
-  function shapeMarkup({ shape, color, rotation, scale }) {
-    return `<div class="nv-shape nv-shape--${shape}" style="--shape-color:${color};--shape-rotation:${rotation}deg;--shape-scale:${scale};"></div>`;
-  }
-
-  function questionFactory() {
-    const seed = {
-      startShape: randomInt(shapes.length),
-      startColor: randomInt(colors.length),
-      startRotation: randomInt(4) * 45,
-      shapeJump: randomInt(3) + 1,
-      colorJump: randomInt(2) + 1,
-      rotationJump: [45, 90, 135][randomInt(3)]
-    };
-
-    const sequence = Array.from({ length: 4 }, (_, index) => buildState({ ...seed, index }));
-    const correctState = buildState({ ...seed, index: 4 });
-
-    const wrongStates = [
-      { ...correctState, color: colors[(colors.indexOf(correctState.color) + 1) % colors.length] },
-      { ...correctState, shape: shapes[(shapes.indexOf(correctState.shape) + 1) % shapes.length] },
-      { ...correctState, rotation: (correctState.rotation + 90) % 360 }
-    ];
+  const oddOneOutPuzzle = () => {
+    const symbol = SYMBOLS[randomInt(SYMBOLS.length)];
+    const direction = ARROWS[randomInt(ARROWS.length)];
+    const oddDirection = ARROWS[(ARROWS.indexOf(direction) + 2) % ARROWS.length];
 
     const options = uniqueShuffle([
-      { key: "correct", state: correctState },
-      ...wrongStates.map((state, index) => ({ key: `wrong-${index}`, state }))
+      { key: 'correct', label: `${symbol}${oddDirection}` },
+      { key: 'wrong-1', label: `${symbol}${direction}` },
+      { key: 'wrong-2', label: `${symbol}${direction}` },
+      { key: 'wrong-3', label: `${symbol}${direction}` }
     ]);
 
-    return { sequence, options };
-  }
+    return {
+      type: 'Odd one out',
+      prompt: 'Three options follow the same rule. Which one breaks it?',
+      sequence: [`Rule hint: ${symbol} should point ${direction}`, `${symbol}${direction}`, `${symbol}${direction}`, `${symbol}${direction}`],
+      options,
+      explanation: `The outlier flips the arrow direction from ${direction} to ${oddDirection}.`
+    };
+  };
+
+  const analogyPuzzle = () => {
+    const source = SYMBOLS[randomInt(SYMBOLS.length)];
+    const target = SYMBOLS[(SYMBOLS.indexOf(source) + 2) % SYMBOLS.length];
+    const cSource = SYMBOLS[(SYMBOLS.indexOf(source) + 3) % SYMBOLS.length];
+    const correct = SYMBOLS[(SYMBOLS.indexOf(cSource) + 2) % SYMBOLS.length];
+
+    const wrong = uniqueShuffle(SYMBOLS.filter((symbol) => symbol !== correct)).slice(0, 3);
+    const options = uniqueShuffle([{ key: 'correct', label: correct }, ...wrong.map((label, index) => ({ key: `wrong-${index}`, label }))]);
+
+    return {
+      type: 'Figure analogy',
+      prompt: `${source} changes to ${target}. ${cSource} changes to…`,
+      sequence: [`${source} → ${target}`, `${cSource} → ?`],
+      options,
+      explanation: 'Use the same jump in symbol position for the second pair.'
+    };
+  };
+
+  const rotationPuzzle = () => {
+    const start = randomInt(ARROWS.length);
+    const step = randomInt(2) + 1;
+    const sequence = Array.from({ length: 4 }, (_, i) => ARROWS[(start + (i * step)) % ARROWS.length]);
+    const correct = ARROWS[(start + (4 * step)) % ARROWS.length];
+    const wrong = uniqueShuffle(ARROWS.filter((arrow) => arrow !== correct));
+    const options = uniqueShuffle([{ key: 'correct', label: correct }, ...wrong.map((label, index) => ({ key: `wrong-${index}`, label }))]);
+
+    return {
+      type: 'Rotation logic',
+      prompt: 'Track the turn direction. Which arrow completes the pattern?',
+      sequence,
+      options,
+      explanation: `Each step rotates ${step === 1 ? '90°' : '180°'}.`
+    };
+  };
+
+  const puzzleFactories = [sequencePuzzle, oddOneOutPuzzle, analogyPuzzle, rotationPuzzle];
 
   function renderQuestion() {
-    const question = questionFactory();
-    sequenceEl.innerHTML = "";
-    optionsEl.innerHTML = "";
-    messageEl.textContent = "";
+    const question = puzzleFactories[randomInt(puzzleFactories.length)]();
+    sequenceEl.innerHTML = '';
+    optionsEl.innerHTML = '';
+    messageEl.textContent = '';
+    messageEl.className = 'form-message';
+    promptEl.textContent = question.prompt;
+    typeEl.textContent = question.type;
 
-    question.sequence.forEach((state) => {
-      const card = document.createElement("div");
-      card.className = "nv-card";
-      card.innerHTML = shapeMarkup(state);
-      sequenceEl.appendChild(card);
+    question.sequence.forEach((value) => {
+      sequenceEl.appendChild(makeSequenceCard(value));
     });
 
     question.options.forEach((option, idx) => {
-      const button = document.createElement("button");
-      button.className = "nv-option";
-      button.type = "button";
-      button.innerHTML = `<span class="nv-option__label">Option ${idx + 1}</span>${shapeMarkup(option.state)}`;
-      button.dataset.key = option.key;
-      optionsEl.appendChild(button);
+      optionsEl.appendChild(makeOptionButton(option, idx));
     });
 
-    answerKey = "correct";
+    answerKey = 'correct';
+    nextBtn.dataset.explanation = question.explanation;
   }
 
-  optionsEl.addEventListener("click", (event) => {
-    const button = event.target.closest("button.nv-option");
+  optionsEl.addEventListener('click', (event) => {
+    const button = event.target.closest('button.nv-option');
     if (!button) return;
 
     const isCorrect = button.dataset.key === answerKey;
-    optionsEl.querySelectorAll(".nv-option").forEach((item) => {
+    optionsEl.querySelectorAll('.nv-option').forEach((item) => {
       item.disabled = true;
-      if (item.dataset.key === answerKey) item.classList.add("is-correct");
+      if (item.dataset.key === answerKey) item.classList.add('is-correct');
     });
 
     if (isCorrect) {
-      button.classList.add("is-correct");
-      messageEl.textContent = "Excellent! You spotted the pattern.";
-      messageEl.classList.remove("is-error");
-      messageEl.classList.add("is-success");
+      button.classList.add('is-correct');
+      messageEl.textContent = `Excellent! ${nextBtn.dataset.explanation}`;
+      messageEl.classList.add('is-success');
     } else {
-      button.classList.add("is-wrong");
-      messageEl.textContent = "Good try! Check colour, rotation, and shape changes.";
-      messageEl.classList.remove("is-success");
-      messageEl.classList.add("is-error");
+      button.classList.add('is-wrong');
+      messageEl.textContent = `Good try! ${nextBtn.dataset.explanation}`;
+      messageEl.classList.add('is-error');
     }
   });
 
-  nextBtn.addEventListener("click", renderQuestion);
+  nextBtn.addEventListener('click', renderQuestion);
   renderQuestion();
 })();

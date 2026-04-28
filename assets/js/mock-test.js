@@ -47,6 +47,7 @@
   let bankAll = [];
   let bankMaths = [];
   let bankReason = [];
+  let bankNonVerbal = [];
   let activeCategory = null;
   let questions = [];
   let idx = 0;
@@ -106,6 +107,80 @@
     return output;
   };
 
+  const buildNonVerbalBank = (size = 160) => {
+    const symbols = ['●', '■', '▲', '◆', '★', '✚', '⬢', '⬣'];
+    const arrows = ['↑', '→', '↓', '←'];
+    const result = [];
+
+    const nextSymbol = (index, jump) => symbols[(index + jump) % symbols.length];
+    const nextArrow = (index, jump) => arrows[(index + jump) % arrows.length];
+
+    for (let i = 0; i < size; i += 1) {
+      const variant = i % 4;
+      if (variant === 0) {
+        const start = Math.floor(Math.random() * symbols.length);
+        const jump = Math.floor(Math.random() * 3) + 1;
+        const seq = Array.from({ length: 4 }, (_, idx) => nextSymbol(start + (idx * jump), 0));
+        const answer = nextSymbol(start + (4 * jump), 0);
+        const options = [answer];
+        while (options.length < 4) {
+          const candidate = symbols[Math.floor(Math.random() * symbols.length)];
+          if (!options.includes(candidate)) options.push(candidate);
+        }
+        result.push({
+          question: `Non-verbal sequence: ${seq.join('  →  ')}  →  ?`,
+          options: shuffle(options),
+          answer,
+          explanation: `Advance ${jump} symbol step(s) each time.`
+        });
+      } else if (variant === 1) {
+        const symbol = symbols[Math.floor(Math.random() * symbols.length)];
+        const direction = arrows[Math.floor(Math.random() * arrows.length)];
+        const opposite = arrows[(arrows.indexOf(direction) + 2) % arrows.length];
+        const answer = `${symbol}${opposite}`;
+        result.push({
+          question: `Odd one out: choose the option that breaks the rule "${symbol} should point ${direction}".`,
+          options: shuffle([`${symbol}${direction}`, `${symbol}${direction}`, `${symbol}${direction}`, answer]),
+          answer,
+          explanation: `Only one option flips from ${direction} to ${opposite}.`
+        });
+      } else if (variant === 2) {
+        const a = Math.floor(Math.random() * symbols.length);
+        const b = (a + 2) % symbols.length;
+        const c = (a + 3) % symbols.length;
+        const answer = symbols[(c + 2) % symbols.length];
+        const options = [answer];
+        while (options.length < 4) {
+          const candidate = symbols[Math.floor(Math.random() * symbols.length)];
+          if (!options.includes(candidate)) options.push(candidate);
+        }
+        result.push({
+          question: `Figure analogy: ${symbols[a]} becomes ${symbols[b]}. ${symbols[c]} becomes ?`,
+          options: shuffle(options),
+          answer,
+          explanation: 'Apply the same symbol jump used in the first pair.'
+        });
+      } else {
+        const start = Math.floor(Math.random() * arrows.length);
+        const jump = Math.floor(Math.random() * 2) + 1;
+        const seq = Array.from({ length: 4 }, (_, idx) => nextArrow(start + (idx * jump), 0));
+        const answer = nextArrow(start + (4 * jump), 0);
+        const options = [answer];
+        while (options.length < 4) {
+          const candidate = arrows[Math.floor(Math.random() * arrows.length)];
+          if (!options.includes(candidate)) options.push(candidate);
+        }
+        result.push({
+          question: `Rotation logic: ${seq.join('  →  ')}  →  ?`,
+          options: shuffle(options),
+          answer,
+          explanation: `Each move rotates ${jump === 1 ? '90°' : '180°'}.`
+        });
+      }
+    }
+    return result;
+  };
+
   const preloadAll = async () => {
     if (loadStatus) loadStatus.textContent = 'Loading question banks…';
     const [mathsBank, reasoningBank] = await Promise.all([
@@ -114,7 +189,8 @@
     ]);
     bankMaths = mathsBank;
     bankReason = reasoningBank;
-    bankAll = [...bankMaths, ...bankReason];
+    bankNonVerbal = buildNonVerbalBank();
+    bankAll = [...bankMaths, ...bankReason, ...bankNonVerbal];
     if (loadStatus) {
       const total = bankAll.length;
       loadStatus.textContent = total
@@ -130,6 +206,7 @@
     let bank;
     if (activeCategory === 'maths') bank = bankMaths;
     else if (activeCategory === 'reasoning') bank = bankReason;
+    else if (activeCategory === 'nonverbal') bank = bankNonVerbal;
     else bank = bankAll;
 
     if (!bank.length) {
