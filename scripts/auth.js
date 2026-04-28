@@ -76,7 +76,6 @@ function setStatusMessage(element, message, type = "") {
 }
 
 function toFriendlyAuthMessage(error, fallback = "Something went wrong.") {
-
   const currentHost = window.location.hostname || "this domain";
   const code = error?.code || "";
   const friendlyMap = {
@@ -94,8 +93,7 @@ function toFriendlyAuthMessage(error, fallback = "Something went wrong.") {
     "auth/popup-blocked":
       "Your browser blocked the Google pop-up. We'll switch to secure redirect sign-in instead.",
     "auth/unauthorized-domain":
-    "auth/unauthorized-domain":
-      "Google sign-in is not enabled for this domain yet. Please contact prepify11plus@gmail.com."
+      `Google sign-in is not enabled for ${currentHost} yet. Please ask prepify11plus@gmail.com to add this domain in Firebase Authentication → Settings → Authorized domains.`
   };
 
   return friendlyMap[code] || error?.message || fallback;

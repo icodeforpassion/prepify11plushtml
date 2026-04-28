@@ -1855,6 +1855,17 @@ details.faq-item[open] summary::after {
   margin-bottom: 0.4rem;
 }
 
+.nv-card__value {
+  font-size: clamp(1.2rem, 3vw, 1.9rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.nv-prompt {
+  margin: 1rem 0 0.8rem;
+}
+
 .nv-shape {
   width: 62px;
   height: 62px;
