@@ -13,6 +13,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   signOut,
   updateProfile
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
@@ -74,6 +76,8 @@ function setStatusMessage(element, message, type = "") {
 }
 
 function toFriendlyAuthMessage(error, fallback = "Something went wrong.") {
+
+  const currentHost = window.location.hostname || "this domain";
   const code = error?.code || "";
   const friendlyMap = {
     "auth/email-already-in-use":
@@ -86,6 +90,10 @@ function toFriendlyAuthMessage(error, fallback = "Something went wrong.") {
       "No account found with that email. Try signing up first.",
     "auth/popup-closed-by-user":
       "Google sign-in was closed before completion. Please try again.",
+
+    "auth/popup-blocked":
+      "Your browser blocked the Google pop-up. We'll switch to secure redirect sign-in instead.",
+    "auth/unauthorized-domain":
     "auth/unauthorized-domain":
       "Google sign-in is not enabled for this domain yet. Please contact prepify11plus@gmail.com."
   };
@@ -196,6 +204,22 @@ function handleAuthButtons() {
   });
 }
 
+async function completeRedirectSignin() {
+  try {
+    const auth = getAuthInstance();
+    const result = await getRedirectResult(auth);
+    if (!result?.user) return;
+    await ensureUserDocument(result.user);
+    setStatusMessage(ui.authMessage, "Signed in with Google successfully.", "success");
+    showToast("Signed in with Google successfully.", "success");
+    ui.authForm?.reset();
+  } catch (error) {
+    const message = toFriendlyAuthMessage(error, "Google sign-in failed after redirect.");
+    setStatusMessage(ui.authMessage, message, "error");
+    showToast(message, "error");
+  }
+}
+
 function handleGoogleSignin() {
   if (!ui.googleButton) return;
 
@@ -203,12 +227,19 @@ function handleGoogleSignin() {
     try {
       setStatusMessage(ui.authMessage, "Opening Google sign-in…");
       const auth = getAuthInstance();
+      googleProvider.setCustomParameters({ prompt: "select_account" });
       const result = await signInWithPopup(auth, googleProvider);
       await ensureUserDocument(result.user);
       setStatusMessage(ui.authMessage, "Welcome back!", "success");
       showToast("Welcome back!", "success");
       ui.authForm?.reset();
     } catch (error) {
+
+      if (error?.code === "auth/popup-blocked") {
+        const auth = getAuthInstance();
+        await signInWithRedirect(auth, googleProvider);
+        return;
+      }
       const message = toFriendlyAuthMessage(error, "Google sign-in failed.");
       setStatusMessage(ui.authMessage, message, "error");
       showToast(message, "error");
@@ -256,6 +287,7 @@ function watchAuthState() {
 function bootstrap() {
   clearDashboard();
   initRequestModule({ showToast });
+  completeRedirectSignin();
   handleAuthButtons();
   handleGoogleSignin();
   handleLogout();
