@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-Verbal Reasoning | Prepify11Plus</title>
+  <meta name="description" content="Practice 11+ non-verbal reasoning with randomly generated shape pattern questions.">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-root=".">
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html" aria-label="Prepify11Plus home">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <span class="brand-title">Prepify11Plus</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="typing.html">Typing Challenge</a>
+        <a href="non-verbal.html" aria-current="page">Non-Verbal</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="section nonverbal-section">
+      <div class="section-header">
+        <span class="badge">Non-verbal reasoning</span>
+        <h1 class="section-title">Shape pattern challenge</h1>
+        <p class="section-subtitle">Find the next shape in the sequence. Every round is random, using exam-style transformations.</p>
+      </div>
+
+      <div class="nonverbal-board" data-nv-board>
+        <div class="nv-sequence" data-nv-sequence aria-label="Pattern sequence"></div>
+        <h2 class="section-title nv-prompt">Which option completes the pattern?</h2>
+        <div class="nv-options" data-nv-options></div>
+        <div class="section-actions">
+          <button type="button" class="btn btn-primary" data-nv-next>Next random question</button>
+        </div>
+        <p class="form-message" data-nv-message role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/non-verbal.js" defer></script>
+</body>
+</html>
