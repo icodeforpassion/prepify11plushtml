@@ -13,6 +13,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
+  getRedirectResult,
   signOut,
   updateProfile
 } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
@@ -20,19 +22,6 @@ import { loadProgressForUser, clearProgressUI } from "./progress.js";
 import { initRequestModule, setRequestUser, clearRequestUI } from "./requests.js";
 
 initFirebase();
-
-const oauthFriendlyDomains = [
-  "localhost",
-  "127.0.0.1",
-  "modernairlineretailing-e2dbc.firebaseapp.com"
-];
-
-function isDomainAuthorizedForOAuth(hostname) {
-  if (!hostname) return false;
-  return oauthFriendlyDomains.some((domain) => {
-    return hostname === domain || hostname.endsWith(`.${domain}`);
-  });
-}
 
 const ui = {
   authPanel: document.querySelector("[data-auth-panel]"),
@@ -84,6 +73,29 @@ function setStatusMessage(element, message, type = "") {
   if (type) {
     element.classList.add(type === "error" ? "is-error" : "is-success");
   }
+}
+
+function toFriendlyAuthMessage(error, fallback = "Something went wrong.") {
+  const currentHost = window.location.hostname || "this domain";
+  const code = error?.code || "";
+  const friendlyMap = {
+    "auth/email-already-in-use":
+      "This email already has an account. Please log in or use Continue with Google.",
+    "auth/invalid-credential":
+      "That email/password combination did not match. Please try again.",
+    "auth/wrong-password":
+      "Incorrect password. Please try again.",
+    "auth/user-not-found":
+      "No account found with that email. Try signing up first.",
+    "auth/popup-closed-by-user":
+      "Google sign-in was closed before completion. Please try again.",
+    "auth/popup-blocked":
+      "Your browser blocked the Google pop-up. We'll switch to secure redirect sign-in instead.",
+    "auth/unauthorized-domain":
+      `Google sign-in is not enabled for ${currentHost} yet. Please add this domain in Firebase Auth → Settings → Authorized domains, then try again.`
+  };
+
+  return friendlyMap[code] || error?.message || fallback;
 }
 
 function toggleInterface(user) {
@@ -181,50 +193,52 @@ function handleAuthButtons() {
         }
         ui.authForm.reset();
       } catch (error) {
-        setStatusMessage(ui.authMessage, error.message, "error");
-        showToast(error.message || "Something went wrong", "error");
+        const message = toFriendlyAuthMessage(error);
+        setStatusMessage(ui.authMessage, message, "error");
+        showToast(message, "error");
       }
     });
   });
 }
 
+async function completeRedirectSignin() {
+  try {
+    const auth = getAuthInstance();
+    const result = await getRedirectResult(auth);
+    if (!result?.user) return;
+    await ensureUserDocument(result.user);
+    setStatusMessage(ui.authMessage, "Signed in with Google successfully.", "success");
+    showToast("Signed in with Google successfully.", "success");
+    ui.authForm?.reset();
+  } catch (error) {
+    const message = toFriendlyAuthMessage(error, "Google sign-in failed after redirect.");
+    setStatusMessage(ui.authMessage, message, "error");
+    showToast(message, "error");
+  }
+}
+
 function handleGoogleSignin() {
   if (!ui.googleButton) return;
-
-  const hostname = window.location.hostname;
-  const domainAuthorized = isDomainAuthorizedForOAuth(hostname);
-
-  if (!domainAuthorized) {
-    ui.googleButton.disabled = true;
-    ui.googleButton.setAttribute("aria-disabled", "true");
-    ui.googleButton.classList.add("is-disabled");
-    setStatusMessage(
-      ui.authMessage,
-      "Google sign-in isn't available on this site yet. Please use email and password while we register this domain.",
-      "error"
-    );
-    return;
-  }
 
   ui.googleButton.addEventListener("click", async () => {
     try {
       setStatusMessage(ui.authMessage, "Opening Google sign-in…");
       const auth = getAuthInstance();
+      googleProvider.setCustomParameters({ prompt: "select_account" });
       const result = await signInWithPopup(auth, googleProvider);
       await ensureUserDocument(result.user);
       setStatusMessage(ui.authMessage, "Welcome back!", "success");
       showToast("Welcome back!", "success");
       ui.authForm?.reset();
     } catch (error) {
-      if (error?.code === "auth/unauthorized-domain") {
-        const message =
-          "Google sign-in can't run on this domain yet. Please contact hello@prepify11plus.co.uk so we can approve it.";
-        setStatusMessage(ui.authMessage, message, "error");
-        showToast(message, "error");
+      if (error?.code === "auth/popup-blocked") {
+        const auth = getAuthInstance();
+        await signInWithRedirect(auth, googleProvider);
         return;
       }
-      setStatusMessage(ui.authMessage, error.message, "error");
-      showToast(error.message || "Google sign-in failed", "error");
+      const message = toFriendlyAuthMessage(error, "Google sign-in failed.");
+      setStatusMessage(ui.authMessage, message, "error");
+      showToast(message, "error");
     }
   });
 }
@@ -235,8 +249,9 @@ function handleLogout() {
     try {
       await logout();
     } catch (error) {
-      setStatusMessage(ui.authMessage, error.message, "error");
-      showToast(error.message || "Unable to logout", "error");
+      const message = toFriendlyAuthMessage(error, "Unable to logout.");
+      setStatusMessage(ui.authMessage, message, "error");
+      showToast(message, "error");
     }
   });
 }
@@ -268,6 +283,7 @@ function watchAuthState() {
 function bootstrap() {
   clearDashboard();
   initRequestModule({ showToast });
+  completeRedirectSignin();
   handleAuthButtons();
   handleGoogleSignin();
   handleLogout();

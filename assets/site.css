@@ -400,6 +400,7 @@ main.page-shell {
   padding: 0.85rem 1.6rem;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1rem;
   box-shadow: var(--shadow-xs);
   backdrop-filter: blur(12px);
@@ -415,6 +416,7 @@ main.page-shell {
 .quote-text {
   flex: 1;
   font-weight: 600;
+  margin: 0;
 }
 
 .quote-refresh {
@@ -1756,6 +1758,130 @@ details.faq-item[open] summary::after {
 
 .btn-google__icon {
   font-size: 1.2rem;
+}
+
+.typing-panel,
+.nonverbal-board {
+  background: linear-gradient(145deg, rgba(79, 70, 229, 0.1), rgba(14, 165, 233, 0.08));
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  border-radius: 20px;
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.typing-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.typing-stats p {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.65rem 0.8rem;
+}
+
+.typing-word {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 700;
+  margin: 0 0 1rem;
+  text-transform: lowercase;
+}
+
+.typing-input {
+  width: 100%;
+  border: 2px solid rgba(79, 70, 229, 0.28);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.typing-input:focus {
+  outline: none;
+  border-color: rgba(37, 99, 235, 0.85);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.nv-sequence,
+.nv-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.9rem;
+}
+
+.nv-sequence {
+  margin-bottom: 1.2rem;
+}
+
+.nv-card,
+.nv-option {
+  border: 1px solid var(--border);
+  background: #fff;
+  border-radius: 14px;
+  min-height: 120px;
+  display: grid;
+  place-items: center;
+  padding: 0.8rem;
+}
+
+.nv-option {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.nv-option:hover,
+.nv-option:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-xs);
+}
+
+.nv-option.is-correct {
+  border-color: #16a34a;
+  box-shadow: inset 0 0 0 2px rgba(22, 163, 74, 0.3);
+}
+
+.nv-option.is-wrong {
+  border-color: #dc2626;
+}
+
+.nv-option__label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.4rem;
+}
+
+.nv-shape {
+  width: 62px;
+  height: 62px;
+  transform: rotate(var(--shape-rotation)) scale(var(--shape-scale));
+  background: var(--shape-color);
+}
+
+.nv-shape--circle {
+  border-radius: 50%;
+}
+
+.nv-shape--square {
+  border-radius: 10px;
+}
+
+.nv-shape--triangle {
+  width: 0;
+  height: 0;
+  border-left: 34px solid transparent;
+  border-right: 34px solid transparent;
+  border-bottom: 62px solid var(--shape-color);
+  background: transparent;
+}
+
+.nv-shape--diamond {
+  border-radius: 10px;
+  transform: rotate(calc(var(--shape-rotation) + 45deg)) scale(var(--shape-scale));
 }
 
 .form-message,
