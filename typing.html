@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Challenge | Prepify11Plus</title>
+  <meta name="description" content="Boost 11+ spelling and typing speed with Prepify11Plus typing challenges.">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-root=".">
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html" aria-label="Prepify11Plus home">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <span class="brand-title">Prepify11Plus</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="typing.html" aria-current="page">Typing Challenge</a>
+        <a href="non-verbal.html">Non-Verbal</a>
+        <a href="pricing.html">Pricing</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="section typing-section">
+      <div class="section-header">
+        <span class="badge">Typing challenge</span>
+        <h1 class="section-title">One-minute vocabulary sprint</h1>
+        <p class="section-subtitle">Type each word exactly as shown. New words appear instantly so learners can train speed and accuracy together.</p>
+      </div>
+
+      <div class="typing-panel">
+        <div class="typing-stats">
+          <p><strong data-typing-timer>60</strong>s left</p>
+          <p><strong data-typing-wpm>0</strong> WPM</p>
+          <p><strong data-typing-accuracy>100</strong>% accuracy</p>
+        </div>
+        <p class="typing-word" data-typing-word>press start</p>
+        <input class="typing-input" type="text" data-typing-input placeholder="Type the word and press space" autocomplete="off" autocorrect="off" autocapitalize="none" spellcheck="false">
+        <div class="section-actions">
+          <button class="btn btn-primary" type="button" data-typing-start>Start challenge</button>
+          <button class="btn btn-outline" type="button" data-typing-reset>Reset</button>
+        </div>
+        <p class="form-message" data-typing-message role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/typing.js" defer></script>
+</body>
+</html>
