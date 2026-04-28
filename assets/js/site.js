@@ -65,6 +65,32 @@
     });
   };
 
+
+  const injectScheduleBuilderLinks = () => {
+    doc.querySelectorAll('.primary-nav').forEach((nav) => {
+      const hasLink = Array.from(nav.querySelectorAll('a')).some((link) => link.getAttribute('href') === 'schedule-builder.html');
+      if (hasLink) return;
+      const pricing = Array.from(nav.querySelectorAll('a')).find((link) => link.getAttribute('href') === 'pricing.html');
+      const link = doc.createElement('a');
+      link.href = 'schedule-builder.html';
+      link.textContent = 'Schedule Builder';
+      if (pricing) {
+        nav.insertBefore(link, pricing);
+      } else {
+        nav.appendChild(link);
+      }
+    });
+
+    doc.querySelectorAll('.footer-links').forEach((wrap) => {
+      const hasLink = Array.from(wrap.querySelectorAll('a')).some((link) => link.getAttribute('href') === 'schedule-builder.html');
+      if (hasLink) return;
+      const link = doc.createElement('a');
+      link.href = 'schedule-builder.html';
+      link.textContent = 'Schedule Builder';
+      wrap.appendChild(link);
+    });
+  };
+
   const initNavigation = () => {
     const toggle = doc.querySelector('[data-nav-toggle]');
     const menu = doc.querySelector('[data-nav-menu]');
@@ -175,6 +201,7 @@
   doc.addEventListener('DOMContentLoaded', () => {
     setCurrentYear();
     initQuoteStrip();
+    injectScheduleBuilderLinks();
     initNavigation();
     initFundingBars();
     initExitIntentPopup();
