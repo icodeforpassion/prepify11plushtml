@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weekly Study Calendar Builder | Prepify11Plus</title>
+  <meta name="description" content="Build a joyful, balanced weekly study calendar for 11+ preparation. Drag activities, personalise targets, save progress, and print a beautiful planner.">
+  <link rel="canonical" href="https://www.prepify11plus.co.uk/schedule-builder.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body data-root=".">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="nav-bar">
+      <a class="brand" href="index.html" aria-label="Prepify11Plus home">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <span class="brand-title">Prepify11Plus</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+        <a href="typing.html">Typing Challenge</a>
+        <a href="non-verbal.html">Non-Verbal</a>
+        <a href="schedule-builder.html" aria-current="page">Schedule Builder</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="blog.html">Blog</a>
+        <a href="faq.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a class="btn btn-primary nav-cta" href="schedule-builder.html">Build your week</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page-shell schedule-page">
+    <section class="schedule-hero">
+      <div>
+        <span class="badge">Weekly Study Calendar Builder</span>
+        <h1>Build your perfect study week 🚀</h1>
+        <p>Create a calm, confident weekly rhythm with short focused sessions, fun breaks, and motivational rewards your child will be excited to follow.</p>
+      </div>
+      <div class="hero-fields">
+        <label>Child name
+          <input id="childName" type="text" maxlength="60" placeholder="e.g. Aisha">
+        </label>
+        <label>Week commencing
+          <input id="weekStart" type="date">
+        </label>
+      </div>
+    </section>
+
+    <section class="schedule-grid" aria-label="Schedule builder tools">
+      <article class="tool-card controls-panel">
+        <h2>1) Smart setup</h2>
+        <p class="subtitle">Set a healthy routine. We'll suggest a balanced plan you can tweak together.</p>
+        <div class="slider-group">
+          <label for="studyTarget">Daily study target: <strong><span data-slider-value="studyTarget">60</span> mins</strong></label>
+          <input id="studyTarget" type="range" min="20" max="180" step="5" value="60">
+        </div>
+        <div class="slider-group">
+          <label for="breakFrequency">Break frequency: <strong>every <span data-slider-value="breakFrequency">30</span> mins</strong></label>
+          <input id="breakFrequency" type="range" min="15" max="60" step="5" value="30">
+        </div>
+        <div class="slider-group">
+          <label for="sportTarget">Sport / outdoor target: <strong><span data-slider-value="sportTarget">40</span> mins/day</strong></label>
+          <input id="sportTarget" type="range" min="10" max="120" step="5" value="40">
+        </div>
+        <div class="slider-group">
+          <label for="readingTarget">Reading target: <strong><span data-slider-value="readingTarget">25</span> mins/day</strong></label>
+          <input id="readingTarget" type="range" min="10" max="90" step="5" value="25">
+        </div>
+        <div class="control-actions">
+          <button id="generateWeek" class="btn btn-primary" type="button">Generate balanced week</button>
+          <button id="saveSchedule" class="btn btn-secondary" type="button">Save now</button>
+          <button id="resetSchedule" class="btn btn-outline" type="button">Reset / start again</button>
+        </div>
+        <p class="helper-note" id="helperMessage">Tip: keep sessions short and celebrate consistency over perfection 🌟</p>
+      </article>
+
+      <article class="tool-card activity-panel">
+        <h2>2) Activity library</h2>
+        <p class="subtitle">Drag any activity into a day column, then edit duration and priority.</p>
+        <div id="activityLibrary" class="activity-library" aria-live="polite"></div>
+
+        <details class="custom-form-wrap" open>
+          <summary>Add custom activity</summary>
+          <form id="customActivityForm" class="custom-form">
+            <label>Activity name
+              <input name="name" required maxlength="50" placeholder="e.g. Science museum quiz">
+            </label>
+            <label>Category / type
+              <input name="category" required maxlength="40" placeholder="e.g. Enrichment">
+            </label>
+            <label>Preferred duration (mins)
+              <input name="duration" type="number" min="5" max="180" value="25" required>
+            </label>
+            <label>Preferred days
+              <select name="days" multiple size="4">
+                <option>Monday</option><option>Tuesday</option><option>Wednesday</option><option>Thursday</option>
+                <option>Friday</option><option>Saturday</option><option>Sunday</option>
+              </select>
+            </label>
+            <label>Notes (optional)
+              <textarea name="notes" rows="3" maxlength="200" placeholder="Anything helpful for this activity."></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Add activity</button>
+          </form>
+        </details>
+      </article>
+    </section>
+
+    <section class="tool-card planner-shell">
+      <div class="planner-header">
+        <div>
+          <h2>3) Weekly planner</h2>
+          <p class="subtitle">Move cards around until your week feels calm, focused, and doable.</p>
+        </div>
+        <div class="priority-legend">
+          <span class="pill must">Must do</span>
+          <span class="pill nice">Nice to do</span>
+          <span class="pill fun">Fun</span>
+        </div>
+      </div>
+      <div id="weeklyPlanner" class="weekly-planner" aria-label="Monday to Sunday planner"></div>
+    </section>
+
+    <section class="tool-card print-panel">
+      <div class="print-panel-head">
+        <h2>4) Beautiful print preview</h2>
+        <button id="printSchedule" class="btn btn-primary" type="button">Print weekly calendar</button>
+      </div>
+      <p class="subtitle">This printable planner hides all controls and keeps only your final weekly calendar.</p>
+      <div id="printPreview" class="print-preview" aria-live="polite"></div>
+    </section>
+
+    <section class="tool-card tips-panel">
+      <h2>Helpful parent tips</h2>
+      <ul>
+        <li>Little and often beats long, tiring sessions.</li>
+        <li>Mix challenge blocks with confidence-building wins.</li>
+        <li>Include rest, play, and praise to keep motivation high.</li>
+        <li>Review mistakes kindly—they are stepping stones.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-logo" aria-hidden="true">P</span>
+        <div>
+          <p>© <span id="currentYear"></span> Prepify11Plus.</p>
+          <p>Confident, joyful 11+ preparation for curious minds.</p>
+        </div>
+      </div>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="schedule-builder.html">Schedule Builder</a>
+        <a href="flashcards.html">Flashcards</a>
+        <a href="maths.html">Maths Practice</a>
+        <a href="mock.html">Mock Tests</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.6/Sortable.min.js" defer></script>
+  <script src="assets/js/site.js" defer></script>
+  <script src="assets/js/schedule-builder.js" defer></script>
+</body>
+</html>
