@@ -21,7 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Generate runtime Firebase/Analytics config
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Generate runtime Firebase config
         shell: bash
         env:
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY || vars.NEXT_PUBLIC_FIREBASE_API_KEY }}
@@ -34,36 +37,22 @@ jobs:
           NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID || vars.NEXT_PUBLIC_GA_ID }}
         run: |
           set -euo pipefail
-          mkdir -p scripts
-
-          required_vars=(
-            NEXT_PUBLIC_FIREBASE_API_KEY
-            NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
-            NEXT_PUBLIC_FIREBASE_PROJECT_ID
-            NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
-            NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
-            NEXT_PUBLIC_FIREBASE_APP_ID
-            NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
-          )
-
-          missing=()
-          for name in "${required_vars[@]}"; do
-            if [ -z "${!name:-}" ]; then
-              missing+=("$name")
-            fi
-          done
-
-          if [ ${#missing[@]} -gt 0 ]; then
-            echo "Error: missing required Firebase config values: ${missing[*]}" >&2
-            exit 1
+          UPLOAD_PATH="."
+          TARGET_DIR="${UPLOAD_PATH#./}"
+          if [ -z "$TARGET_DIR" ] || [ "$TARGET_DIR" = "." ]; then
+            TARGET_DIR="."
           fi
 
-          GA_MEASUREMENT_ID="${NEXT_PUBLIC_GA_ID:-}"
-          if [ -z "$GA_MEASUREMENT_ID" ]; then
-            GA_MEASUREMENT_ID="$NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID"
-          fi
+          : "${NEXT_PUBLIC_FIREBASE_API_KEY:?Missing NEXT_PUBLIC_FIREBASE_API_KEY}"
+          : "${NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN:?Missing NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}"
+          : "${NEXT_PUBLIC_FIREBASE_PROJECT_ID:?Missing NEXT_PUBLIC_FIREBASE_PROJECT_ID}"
+          : "${NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET:?Missing NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET}"
+          : "${NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID:?Missing NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID}"
+          : "${NEXT_PUBLIC_FIREBASE_APP_ID:?Missing NEXT_PUBLIC_FIREBASE_APP_ID}"
 
-          cat > scripts/firebase-config.js <<EOF
+          mkdir -p "${TARGET_DIR}/scripts"
+
+          cat > "${TARGET_DIR}/scripts/firebase-config.js" <<EOF
           window.__PREPIFY_PUBLIC_CONFIG__ = {
             firebase: {
               apiKey: "${NEXT_PUBLIC_FIREBASE_API_KEY}",
@@ -74,12 +63,19 @@ jobs:
               appId: "${NEXT_PUBLIC_FIREBASE_APP_ID}",
               measurementId: "${NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID}"
             },
-            gaMeasurementId: "${GA_MEASUREMENT_ID}"
+            gaMeasurementId: "${NEXT_PUBLIC_GA_ID:-$NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID}"
           };
           EOF
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+          test -f "${TARGET_DIR}/scripts/firebase-config.js"
+          echo "Generated runtime config at: ./${TARGET_DIR#./}/scripts/firebase-config.js"
+
+      - name: Verify deployed Firebase config exists
+        run: |
+          echo "Checking deployed files..."
+          find . -path "*/scripts/firebase-config.js" -print
+          test -f "./scripts/firebase-config.js"
+          test -f "./index.html"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
