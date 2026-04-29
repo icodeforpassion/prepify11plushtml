@@ -1,6 +1,15 @@
-const GA_ID = window.NEXT_PUBLIC_GA_ID || window.NEXT_PUBLIC_GTAG_ID || window.NEXT_PUBLIC_GOOGLE_TAG_ID || "G-7MCRTLTXHS";
+function resolveGaId() {
+  const source = window.__PREPIFY_PUBLIC_CONFIG__ || window;
+  return source.NEXT_PUBLIC_GA_ID || source.NEXT_PUBLIC_GTAG_ID || source.NEXT_PUBLIC_GOOGLE_TAG_ID || source.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || "";
+}
+
+const GA_ID = resolveGaId();
 
 function initAnalytics() {
+  if (!GA_ID) {
+    console.warn("[Prepify11Plus] Analytics ID missing. Set NEXT_PUBLIC_GA_ID/NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID.");
+    return;
+  }
   if (window.__prepifyAnalyticsInit) return;
   window.__prepifyAnalyticsInit = true;
   const script = document.createElement("script");

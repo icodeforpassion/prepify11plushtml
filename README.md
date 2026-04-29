@@ -26,3 +26,26 @@ Prepify11Plus is a superhero-themed practice hub for 11+ learners. The site ship
 ## Deployment
 
 The project is designed for GitHub Pages. Push to the `main` branch and enable Pages for the repository root. GitHub will automatically provision HTTPS for the custom domain configured in `CNAME`.
+
+## Firebase and analytics configuration (required)
+
+This is a static HTML/JS project, so Firebase public config is loaded at runtime.
+
+1. Copy `scripts/firebase-config.example.js` to `scripts/firebase-config.js`.
+2. Fill the `NEXT_PUBLIC_FIREBASE_*` and optional `NEXT_PUBLIC_GA_ID` values.
+3. Keep `scripts/firebase-config.js` private (it is ignored by git).
+4. Ensure production injects or serves the same config file securely.
+
+Environment placeholders are also documented in `.env.example` for platforms that can inject `window.NEXT_PUBLIC_*` values.
+
+### Key rotation and restriction checklist
+
+If a Firebase API key was exposed, rotate it in Google Cloud Console and restrict the replacement key:
+
+- HTTP referrers:
+  - `https://prepify11plus.co.uk/*`
+  - `https://www.prepify11plus.co.uk/*`
+  - `http://localhost/*` (development only, optional)
+- API restrictions: allow only required Firebase/Google APIs used by this app.
+
+Never store private service account credentials in client-side code.

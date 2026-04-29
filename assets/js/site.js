@@ -40,7 +40,61 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     });
   };
 
-  const watchAuth = () => onAuthStateChanged(getAuthInstance(), (user) => renderAuthNav(user));
+  const watchAuth = () => {
+    const auth = getAuthInstance();
+    if (!auth) {
+      renderAuthNav(null);
+      return;
+    }
+    onAuthStateChanged(auth, (user) => renderAuthNav(user));
+  };
+
+
+  const initShareButton = () => {
+    const trigger = doc.querySelector('[data-share-open]');
+    const modal = doc.querySelector('[data-share-modal]');
+    if (!trigger || !modal) return;
+    const closeBtn = modal.querySelector('[data-share-close]');
+    const copyBtn = modal.querySelector('[data-share-copy]');
+    const instaBtn = modal.querySelector('[data-share-instagram]');
+    const options = modal.querySelectorAll('[data-share-platform]');
+    const caption = "Help more students discover calm, joyful 11+ prep with Prepify11Plus. Thanks for supporting Prepify11Plus";
+
+    const openModal = async () => {
+      trackEvent('social_share_opened', { platform: 'sheet' });
+      if (navigator.share) {
+        try {
+          await navigator.share({ title: 'Prepify11Plus', text: 'Help more students discover calm, joyful 11+ prep.', url: window.location.origin });
+          trackEvent('social_share_clicked', { platform: 'native' });
+          return;
+        } catch (_) {}
+      }
+      modal.hidden = false;
+    };
+
+    const closeModal = () => { modal.hidden = true; };
+
+    trigger.addEventListener('click', openModal);
+    closeBtn?.addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+
+    options.forEach((btn) => btn.addEventListener('click', () => {
+      const platform = btn.dataset.sharePlatform;
+      trackEvent('social_share_clicked', { platform });
+    }));
+
+    copyBtn?.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(window.location.origin);
+      copyBtn.textContent = 'Copied — thank you for helping more students!';
+      trackEvent('social_share_copied', { platform: 'copy_link' });
+    });
+
+    instaBtn?.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(`${caption}\n${window.location.origin}`);
+      instaBtn.textContent = 'Caption + link copied for Instagram';
+      trackEvent('social_share_copied', { platform: 'instagram_copy' });
+    });
+  };
 
   const initTracking = () => {
     trackPageView(window.location.pathname);
@@ -53,5 +107,6 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     initNavigation();
     watchAuth();
     initTracking();
+    initShareButton();
   });
 })();
