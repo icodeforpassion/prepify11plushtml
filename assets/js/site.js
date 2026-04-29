@@ -53,30 +53,80 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
   const initShareButton = () => {
     const trigger = doc.querySelector('[data-share-open]');
     const modal = doc.querySelector('[data-share-modal]');
+    const dismissBtn = doc.querySelector('[data-share-dismiss]');
     if (!trigger || !modal) return;
+    const shareCard = doc.querySelector('[data-share-widget]');
+    const SHARE_STATE_KEY = 'prepify_share_state_v1';
+    const HIDE_AFTER_SHARE_MS = 1000 * 60 * 60 * 24 * 30;
     const closeBtn = modal.querySelector('[data-share-close]');
     const copyBtn = modal.querySelector('[data-share-copy]');
     const instaBtn = modal.querySelector('[data-share-instagram]');
     const options = modal.querySelectorAll('[data-share-platform]');
     const caption = "Help more students discover calm, joyful 11+ prep with Prepify11Plus. Thanks for supporting Prepify11Plus";
 
+    const readShareState = () => {
+      try {
+        return JSON.parse(localStorage.getItem(SHARE_STATE_KEY) || '{}');
+      } catch (_) {
+        return {};
+      }
+    };
+
+    const writeShareState = (patch) => {
+      const next = { ...readShareState(), ...patch };
+      localStorage.setItem(SHARE_STATE_KEY, JSON.stringify(next));
+      return next;
+    };
+
+    const shouldHideShareWidget = () => {
+      const state = readShareState();
+      if (state.dismissed) return true;
+      if (state.sharedAt && (Date.now() - state.sharedAt) < HIDE_AFTER_SHARE_MS) return true;
+      return false;
+    };
+
+    const syncWidgetVisibility = () => {
+      if (!shareCard) return;
+      shareCard.hidden = shouldHideShareWidget();
+    };
+
     const openModal = async () => {
+      writeShareState({ openedAt: Date.now() });
       trackEvent('social_share_opened', { platform: 'sheet' });
       if (navigator.share) {
         try {
           await navigator.share({ title: 'Prepify11Plus', text: 'Help more students discover calm, joyful 11+ prep.', url: window.location.origin });
           trackEvent('social_share_clicked', { platform: 'native' });
+          trackEvent('social_share_copied', { platform: 'native' });
+          writeShareState({ sharedAt: Date.now() });
+          syncWidgetVisibility();
           return;
         } catch (_) {}
       }
+      modal.setAttribute('aria-hidden', 'false');
       modal.hidden = false;
+      closeBtn?.focus();
     };
 
-    const closeModal = () => { modal.hidden = true; };
+    const closeModal = () => {
+      modal.hidden = true;
+      modal.setAttribute('aria-hidden', 'true');
+      trigger.focus();
+    };
 
     trigger.addEventListener('click', openModal);
     closeBtn?.addEventListener('click', closeModal);
     modal.addEventListener('click', (event) => { if (event.target === modal) closeModal(); });
+    dismissBtn?.addEventListener('click', () => {
+      writeShareState({ dismissed: true, dismissedAt: Date.now() });
+      trackEvent('social_share_dismissed', { placement: 'floating_widget' });
+      syncWidgetVisibility();
+    });
+    doc.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !modal.hidden) {
+        closeModal();
+      }
+    });
 
     options.forEach((btn) => btn.addEventListener('click', () => {
       const platform = btn.dataset.sharePlatform;
@@ -87,13 +137,21 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
       await navigator.clipboard.writeText(window.location.origin);
       copyBtn.textContent = 'Copied — thank you for helping more students!';
       trackEvent('social_share_copied', { platform: 'copy_link' });
+      writeShareState({ sharedAt: Date.now() });
+      syncWidgetVisibility();
     });
 
     instaBtn?.addEventListener('click', async () => {
       await navigator.clipboard.writeText(`${caption}\n${window.location.origin}`);
       instaBtn.textContent = 'Caption + link copied for Instagram';
       trackEvent('social_share_copied', { platform: 'instagram_copy' });
+      writeShareState({ sharedAt: Date.now() });
+      syncWidgetVisibility();
     });
+
+    modal.hidden = true;
+    modal.setAttribute('aria-hidden', 'true');
+    syncWidgetVisibility();
   };
 
   const initTracking = () => {
