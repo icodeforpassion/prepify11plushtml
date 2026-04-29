@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-import { getAuth, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+import { getAuth, GoogleAuthProvider, setPersistence, browserLocalPersistence } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import * as firestore from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
 const {
@@ -40,13 +40,13 @@ async function getDocumentSnapshot(documentRef) {
 }
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD88NJ5MhwqXAQqd-9z748dH0ZoFWBMvUM",
-  authDomain: "modernairlineretailing-e2dbc.firebaseapp.com",
-  projectId: "modernairlineretailing-e2dbc",
-  storageBucket: "modernairlineretailing-e2dbc.firebasestorage.app",
-  messagingSenderId: "758331886243",
-  appId: "1:758331886243:web:7572b85439be4796ad8d16",
-  measurementId: "G-RHHZ7MJ521"
+  apiKey: "AIzaSyCfrAl1QmQgJFDDA_sNfW5lIDZ2nNWu58A",
+  authDomain: "prepify11plus-d7cca.firebaseapp.com",
+  projectId: "prepify11plus-d7cca",
+  storageBucket: "prepify11plus-d7cca.firebasestorage.app",
+  messagingSenderId: "974439166848",
+  appId: "1:974439166848:web:1036f627b432d87271c765",
+  measurementId: "G-7MCRTLTXHS"
 };
 
 let appInstance;
@@ -58,6 +58,7 @@ export function initFirebase() {
   if (!appInstance) {
     appInstance = initializeApp(firebaseConfig);
     authInstance = getAuth(appInstance);
+    setPersistence(authInstance, browserLocalPersistence).catch(() => {});
     firestoreInstance = getFirestore(appInstance);
   }
   return {
