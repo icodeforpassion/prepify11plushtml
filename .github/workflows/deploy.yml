@@ -10,6 +10,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 concurrency:
   group: pages
   cancel-in-progress: true
@@ -47,7 +50,7 @@ jobs:
 
           mkdir -p scripts
 
-          cat > "${TARGET_DIR}/scripts/firebase-config.js" <<EOF
+          cat > "scripts/firebase-config.js" <<EOF
           window.__PREPIFY_PUBLIC_CONFIG__ = {
             firebase: {
               apiKey: "${NEXT_PUBLIC_FIREBASE_API_KEY}",
