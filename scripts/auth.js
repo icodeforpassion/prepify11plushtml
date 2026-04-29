@@ -21,7 +21,7 @@ import {
 import { loadProgressForUser, clearProgressUI } from "./progress.js";
 import { initRequestModule, setRequestUser, clearRequestUI } from "./requests.js";
 
-initFirebase();
+const firebaseState = initFirebase();
 
 const ui = {
   authPanel: document.querySelector("[data-auth-panel]"),
@@ -267,6 +267,7 @@ function friendlyName(user) {
 
 function watchAuthState() {
   const auth = getAuthInstance();
+  if (!auth) return;
   onAuthStateChanged(auth, async (user) => {
     if (user) {
       toggleInterface(user);
@@ -283,6 +284,10 @@ function watchAuthState() {
 }
 
 function bootstrap() {
+  if (!firebaseState.auth || !firebaseState.db) {
+    console.warn("[Prepify11Plus] Auth module disabled because Firebase config is missing.");
+    return;
+  }
   clearDashboard();
   initRequestModule({ showToast });
   completeRedirectSignin();
