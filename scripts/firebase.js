@@ -58,7 +58,10 @@ function resolveFirebaseConfig() {
   const requiredKeys = ["apiKey", "authDomain", "projectId", "storageBucket", "messagingSenderId", "appId"];
   const missing = requiredKeys.filter((key) => !config[key]);
   if (missing.length) {
-    console.warn(`[Prepify11Plus] Firebase config missing: ${missing.join(", ")}. Add scripts/firebase-config.js or env-injected NEXT_PUBLIC_FIREBASE_* values.`);
+    if (!window.__prepifyFirebaseConfigWarned) {
+      window.__prepifyFirebaseConfigWarned = true;
+      console.warn(`[Prepify11Plus] Firebase config missing: ${missing.join(", ")}. Add scripts/firebase-config.js or env-injected NEXT_PUBLIC_FIREBASE_* values.`);
+    }
     return null;
   }
 
