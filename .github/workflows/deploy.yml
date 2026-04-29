@@ -47,7 +47,7 @@ jobs:
 
           mkdir -p scripts
 
-          cat > scripts/firebase-config.js <<EOF
+          cat > "${TARGET_DIR}/scripts/firebase-config.js" <<EOF
           window.__PREPIFY_PUBLIC_CONFIG__ = {
             firebase: {
               apiKey: "${NEXT_PUBLIC_FIREBASE_API_KEY}",
