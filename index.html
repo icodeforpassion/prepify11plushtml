@@ -580,10 +580,25 @@
   </div>
   <a class="mobile-support-bar" href="https://ko-fi.com/prepify11plus" target="_blank" rel="noopener">❤️ Support Prepify11Plus</a>
 
-  <script src="scripts/firebase-config.js"></script>
-  <script type="module" src="scripts/firebase.js"></script>
-  <script type="module" src="scripts/analytics.js"></script>
-  <script type="module" src="scripts/auth.js"></script>
+  <script type="module">
+    async function loadOptionalFirebaseConfig() {
+      try {
+        const response = await fetch("scripts/firebase-config.js", { cache: "no-store" });
+        if (!response.ok) return;
+        const configSource = await response.text();
+        if (!configSource.trim()) return;
+        const runConfig = new Function(configSource);
+        runConfig();
+      } catch {
+        // Optional config is intentionally silent when unavailable.
+      }
+    }
+
+    await loadOptionalFirebaseConfig();
+    await import("./scripts/firebase.js");
+    await import("./scripts/analytics.js");
+    await import("./scripts/auth.js");
+  </script>
   <script type="module" src="assets/js/site.js"></script>
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
