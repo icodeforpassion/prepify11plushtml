@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L4958PW125"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-L4958PW125');
-  </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/svg+xml" sizes="32x32" href="/assets/images/site-icon.svg">
@@ -145,6 +135,7 @@
         <a href="faq.html">FAQ</a>
         <a href="about.html">About</a>
         <a class="btn btn-primary nav-cta" href="mock.html">Start practising</a>
+        <div class="auth-nav" data-auth-nav aria-live="polite"></div>
       </nav>
     </div>
   </header>
@@ -567,16 +558,6 @@
         <a href="faq.html">FAQ</a>
         <a href="about.html">About</a>
       </div>
-
-      <div class="footer-donate support-box support-box--b">
-        <h3>☕ Help Keep Prepify11Plus Free</h3>
-        <p>Running this site costs money and time. Even a small <strong>£2 donation</strong> helps us create more free content and keep helping parents prepare for the 11+.</p>
-        <a class="btn btn-outline" href="https://ko-fi.com/prepify11plus" target="_blank" rel="noopener">Buy us a coffee</a>
-      </div>
-      <div class="footer-meta">
-        <span>Visitors so far:</span>
-        <strong id="countValue" data-visitor-count>40,000+</strong>
-      </div>
     </div>
   </footer>
 
@@ -592,8 +573,7 @@
   <a class="mobile-support-bar" href="https://ko-fi.com/prepify11plus" target="_blank" rel="noopener">❤️ Support Prepify11Plus</a>
 
   <script type="module" src="scripts/auth.js"></script>
-  <script src="assets/js/site.js" defer></script>
-  <script src="assets/counter.js" defer></script>
+  <script type="module" src="assets/js/site.js"></script>
   <script defer>
     document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('a[href*="linkedin.com"]').forEach(link => {

@@ -1,4 +1,6 @@
 (() => {
+  const track = (name, params = {}) => { if (typeof window.gtag === 'function') window.gtag('event', name, params); };
+
   const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   const STORAGE_KEY = 'prepify11plus.schedule.builder.v1';
 
@@ -136,6 +138,7 @@
               event.item.replaceWith(buildBlock(newBlock, day));
               state.schedule[day].splice(event.newIndex, 0, newBlock);
               setHelperMessage('Great choice! Drag more activities to build a happy, balanced week.');
+              track('activity_added');
               saveState();
               renderPlanner();
             } else {
@@ -207,6 +210,7 @@
       saveState();
       renderPlanner();
       setHelperMessage('Duplicated! Helpful for routines that repeat.');
+      track('activity_added');
     });
 
     item.querySelector('[data-action="remove"]').addEventListener('click', () => {
@@ -270,6 +274,7 @@
 
     state.schedule = next;
     setHelperMessage('Balanced week generated! You can still drag, swap, and personalise anything. 🎉');
+    track('schedule_generated');
     saveState();
     renderPlanner();
   }
@@ -355,6 +360,7 @@
         state.settings[key] = value;
         output.textContent = String(value);
         saveState();
+        track('slider_changed', { slider: key });
       });
     });
 
@@ -362,11 +368,12 @@
     document.getElementById('saveSchedule').addEventListener('click', () => saveState(true));
     document.getElementById('resetSchedule').addEventListener('click', () => {
       state = defaultState();
+      track('schedule_reset');
       saveState();
       hydrate();
       setHelperMessage('Fresh start ready! Let’s build a joyful week together.');
     });
-    document.getElementById('printSchedule').addEventListener('click', () => window.print());
+    document.getElementById('printSchedule').addEventListener('click', () => { track('schedule_printed'); window.print(); });
 
     document.getElementById('customActivityForm').addEventListener('submit', (event) => {
       event.preventDefault();
@@ -400,6 +407,7 @@
       renderLibrary();
       renderPlanner();
       setHelperMessage('Custom activity added! Great tailoring for your child.');
+      track('custom_activity_added');
     });
   }
 
