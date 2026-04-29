@@ -30,6 +30,7 @@ jobs:
       - name: Generate runtime Firebase config
         shell: bash
         env:
+          ARTIFACT_PATH: .
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.NEXT_PUBLIC_FIREBASE_API_KEY || vars.NEXT_PUBLIC_FIREBASE_API_KEY }}
           NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${{ secrets.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || vars.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN }}
           NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${{ secrets.NEXT_PUBLIC_FIREBASE_PROJECT_ID || vars.NEXT_PUBLIC_FIREBASE_PROJECT_ID }}
@@ -48,9 +49,9 @@ jobs:
           : "${NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID:?Missing NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID}"
           : "${NEXT_PUBLIC_FIREBASE_APP_ID:?Missing NEXT_PUBLIC_FIREBASE_APP_ID}"
 
-          mkdir -p scripts
+          mkdir -p "${ARTIFACT_PATH}/scripts"
 
-          cat > "scripts/firebase-config.js" <<EOF
+          cat > "${ARTIFACT_PATH}/scripts/firebase-config.js" <<EOF
           window.__PREPIFY_PUBLIC_CONFIG__ = {
             firebase: {
               apiKey: "${NEXT_PUBLIC_FIREBASE_API_KEY}",
@@ -65,12 +66,15 @@ jobs:
           };
           EOF
 
-          test -f scripts/firebase-config.js
+          test -f "${ARTIFACT_PATH}/scripts/firebase-config.js"
 
-      - name: Verify runtime config file exists
+      - name: Verify Firebase runtime config is in deploy artifact
         run: |
-          test -f scripts/firebase-config.js || test -f dist/scripts/firebase-config.js
-          find . -path "*/scripts/firebase-config.js" -print
+          echo "Artifact path:"
+          echo "."
+          test -f "./scripts/firebase-config.js"
+          test -f "./index.html"
+          find "." -path "*/scripts/firebase-config.js" -print
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
