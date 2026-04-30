@@ -123,10 +123,12 @@
       </a>
       <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav id="primary-nav" class="primary-nav" data-nav-menu data-open="false" aria-label="Primary">
-        <a href="index.html" aria-current="page">Home</a>
+        <a href="index.html" aria-current="page">Start Quest</a>
+        <a href="maths.html">Practice</a>
+        <a href="mock.html">Mock Arena</a>
+        <a href="#learning-hub">Progress</a>
+        <a href="#parent-hub">Parent Hub</a>
         <a href="flashcards.html">Flashcards</a>
-        <a href="maths.html">Maths Practice</a>
-        <a href="mock.html">Mock Tests</a>
         <a href="typing.html">Typing Challenge</a>
         <a href="non-verbal.html">Non-Verbal</a>
         <a href="schedule-builder.html">Schedule Builder</a>
@@ -144,11 +146,12 @@
     <section class="section" id="hero">
       <div class="section-header">
         <span class="badge">11+ practice hub</span>
-        <h1>Confident 11+ preparation starts here</h1>
-        <p class="section-subtitle">Prepify11Plus blends adaptive maths drills, joyful vocabulary flashcards, and build-your-own mock tests so every learner walks into the 11+ exam feeling ready.</p>
+        <h1>Ready for today's 11+ quest?</h1>
+        <p class="section-subtitle">Pick a mission, earn XP, and build exam confidence one challenge at a time.</p>
       </div>
       <div class="section-actions">
-        <a class="btn btn-primary" href="mock.html">Launch a mock test</a>
+        <a class="btn btn-primary" href="#daily-quest">Start today's quest</a>
+        <a class="btn btn-secondary" href="mock.html">Launch a mock test</a>
         <a class="btn btn-secondary" href="flashcards.html">Flip vocabulary cards</a>
       </div>
       <aside class="support-box support-box--a" aria-label="Support Prepify11Plus">
@@ -236,17 +239,7 @@
       </article>
     </section>
 
-    <section class="section section--galaxy" aria-labelledby="galaxy-title">
-      <div class="section-header"><h2 class="section-title" id="galaxy-title">Learning Galaxy</h2><p class="section-subtitle">Track every topic as a planet with clear next steps for learners and parents.</p></div>
-      <div class="galaxy-grid">
-        <article class="planet-card state-improving"><h3>Fractions Planet</h3><p>68% • improving</p><small>Next: 5 mixed denominator questions</small></article>
-        <article class="planet-card state-started"><h3>Vocabulary Moon</h3><p>34% • started</p><small>Next: Prefix and suffix quest</small></article>
-        <article class="planet-card state-glowing"><h3>Angles Asteroid Belt</h3><p>82% • glowing</p><small>Next: Timed angle hunt</small></article>
-        <article class="planet-card state-locked"><h3>NVR Nebula</h3><p>0% • locked</p><small>Next: Complete Shape Puzzle Lab level 1</small></article>
-        <article class="planet-card state-mastered"><h3>Reading Comprehension Comet</h3><p>95% • mastered</p><small>Next: Weekly maintenance mission</small></article>
-        <article class="planet-card state-improving"><h3>Typing Star</h3><p>71% • improving</p><small>Next: 60-second sprint with tricky spellings</small></article>
-      </div>
-    </section>
+    
 
     <div class="quote-strip" data-quote-strip>
       <div class="container quote-strip__inner">
@@ -426,31 +419,25 @@
 
 
 
-    <section class="section section--arena" id="exam-arena">
-      <div class="section-header"><h2 class="section-title">ExamArena mode</h2><p class="section-subtitle">Calm breathing, realistic timer, question flags, and child-friendly score reports.</p></div>
-      <div class="feature-grid">
-        <article class="feature-card"><h3>1) Breathe &amp; begin</h3><p>30-second breathing animation before the timer starts.</p></article>
-        <article class="feature-card"><h3>2) Smart navigation grid</h3><p>Jump between questions, flag tricky ones, and see answered/unanswered status.</p></article>
-        <article class="feature-card"><h3>3) Results that teach</h3><p>Topic strengths, growth areas, printable certificate, and parent summary included.</p></article>
-      </div>
-    </section>
+    
 
-    <section class="section section--alt" id="parent-next-steps">
-      <div class="section-header"><h2 class="section-title">Parent Next Steps dashboard</h2><p class="section-subtitle">One glance clarity on progress, readiness, wellbeing, and what to do next.</p></div>
+    <section class="section section--alt" id="parent-hub">
+      <div class="section-header"><h2 class="section-title">Parent Hub: clear next steps</h2><p class="section-subtitle">Track real activity and choose the next best mission with child-safe guidance.</p></div>
       <div class="feature-grid">
-        <article class="feature-card"><h3>Exam readiness score</h3><p>74 / 100 with a balanced 7-day study plan recommendation.</p></article>
-        <article class="feature-card"><h3>Strengths and weak spots</h3><p>Strongest: comprehension, angles. Focus next: vocab precision and NVR rotation.</p></article>
-        <article class="feature-card"><h3>Burnout risk indicator</h3><p>Low risk — keep sessions short, playful, and consistent.</p></article>
+        <article class="feature-card"><h3>Recent activity</h3><p>Use the learning hub below to review real mock attempts and spot where support is needed next.</p></article>
+        <article class="feature-card"><h3>Suggested daily plan</h3><p>Start with the 15-minute quest first, then one focused mission in a weaker area.</p></article>
+        <article class="feature-card"><h3>Healthy pace check</h3><p>Keep sessions short and consistent. If focus drops, switch to a lighter confidence activity.</p></article>
       </div>
-      <div class="section-actions"><a class="btn btn-primary" href="#learning-hub">See my child’s plan</a></div>
+      <div class="section-actions"><a class="btn btn-primary" href="#learning-hub">Open parent dashboard</a></div>
     </section>
 
     <section class="section" id="target-school-profile">
       <div class="section-header"><h2 class="section-title">Target School Profile</h2><p class="section-subtitle">Choose your exam style to personalise missions and mock priorities.</p></div>
-      <form class="profile-selector card" aria-label="Target school profile">
+      <form class="profile-selector card" aria-label="Target school profile" data-target-profile>
         <label for="examStyle" class="form-label">Exam style</label>
         <select id="examStyle" class="input"><option>GL-style</option><option>CEM/FSCE-style</option><option>Maths-heavy</option><option>Vocabulary-heavy</option><option>Reasoning-heavy</option><option>Mixed preparation</option></select>
-        <p>Recommended path: 3 maths missions, 2 vocab quests, 2 reasoning labs, and 1 mock arena this week.</p>
+        <p data-target-profile-message>Your child’s practice path has been adjusted for this exam style.</p>
+        <button type="button" class="btn btn-primary" data-target-profile-save>Save exam style</button>
       </form>
     </section>
 
@@ -651,9 +638,11 @@
         </div>
       </div>
       <div class="footer-links" aria-label="Footer navigation">
+        <a href="maths.html">Practice</a>
+        <a href="mock.html">Mock Arena</a>
+        <a href="#learning-hub">Progress</a>
+        <a href="#parent-hub">Parent Hub</a>
         <a href="flashcards.html">Flashcards</a>
-        <a href="maths.html">Maths Practice</a>
-        <a href="mock.html">Mock Tests</a>
         <a href="typing.html">Typing Challenge</a>
         <a href="non-verbal.html">Non-Verbal</a>
         <a href="schedule-builder.html">Schedule Builder</a>

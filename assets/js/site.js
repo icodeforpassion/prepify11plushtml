@@ -157,34 +157,52 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
 
 
   const initKidFirstModules = () => {
+    const questKey = 'prepify_daily_quest_v1';
     const checkpoints = doc.querySelector('[data-quest-checkpoints]');
     const nextBtn = doc.querySelector('[data-quest-next]');
     const status = doc.querySelector('[data-quest-status]');
     const ring = doc.querySelector('[data-quest-ring]');
     const label = doc.querySelector('[data-quest-progress-label]');
-    const tasks = ['5 maths questions', '5 vocabulary flashcards', '3 non-verbal puzzles', '1 typing sprint'];
+    const tasks = [
+      { label: '5 maths questions', href: 'maths.html' },
+      { label: '5 vocabulary flashcards', href: 'flashcards.html' },
+      { label: '3 non-verbal puzzles', href: 'non-verbal.html' },
+      { label: '1 typing sprint', href: 'typing.html' },
+    ];
+    const today = new Date().toISOString().slice(0, 10);
+    const readQuest = () => {
+      try { return JSON.parse(localStorage.getItem(questKey) || '{}'); } catch (_) { return {}; }
+    };
+    const writeQuest = (payload) => localStorage.setItem(questKey, JSON.stringify(payload));
+
     if (checkpoints && nextBtn && status && ring && label) {
-      checkpoints.innerHTML = tasks.map((t) => `<li>${t}</li>`).join('');
-      let completed = 0;
+      const saved = readQuest();
+      let completed = saved.date === today && Number.isInteger(saved.completed) ? Math.min(saved.completed, tasks.length) : 0;
+      checkpoints.innerHTML = tasks.map((task, i) => `<li class="${i < completed ? 'done' : ''}"><a href="${task.href}">${task.label}</a></li>`).join('');
       const radius = 50;
       const circumference = 2 * Math.PI * radius;
       const update = () => {
         const pct = Math.round((completed / tasks.length) * 100);
         ring.style.strokeDashoffset = String(circumference - (pct / 100) * circumference);
         label.textContent = `${pct}%`;
-        [...checkpoints.children].forEach((li, i) => li.classList.toggle('done', i < completed));
+        if (completed === tasks.length) {
+          nextBtn.textContent = 'Quest complete';
+          nextBtn.disabled = true;
+          status.textContent = 'Amazing focus! Quest complete — chest unlocked.';
+        } else {
+          nextBtn.textContent = completed > 0 ? 'Continue quest' : 'Start today’s quest';
+          status.textContent = completed > 0 ? 'You’re only 3 steps from keeping your streak!' : 'Complete today’s quest first?';
+        }
       };
       update();
       nextBtn.addEventListener('click', () => {
-        if (completed < tasks.length) {
-          completed += 1;
-          status.textContent = completed === tasks.length ? 'Amazing focus! Quest complete — chest unlocked!' : `Checkpoint ${completed} complete. Keep going!`;
-          update();
-        }
+        const nextTask = tasks[completed];
+        writeQuest({ date: today, completed: Math.min(completed + 1, tasks.length) });
+        if (nextTask) window.location.href = nextTask.href;
       });
     }
 
-    const mascotLines = ['Great try! Let’s spot the trick together.', 'You’re close — check the pattern again.', 'Amazing focus! Ready for the next mission?'];
+    const mascotLines = ['Great try! Let’s spot the trick together.', 'You’re close — check the pattern again.', 'Amazing focus! Ready for the next mission?', 'Mistakes are clues. Let’s use them.'];
     const mascotMessage = doc.querySelector('[data-mascot-message]');
     const mascotNext = doc.querySelector('[data-mascot-next]');
     if (mascotMessage && mascotNext) {
@@ -192,6 +210,20 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
       mascotNext.addEventListener('click', () => {
         idx = (idx + 1) % mascotLines.length;
         mascotMessage.textContent = mascotLines[idx];
+      });
+    }
+
+    const profileForm = doc.querySelector('[data-target-profile]');
+    const saveProfile = doc.querySelector('[data-target-profile-save]');
+    const profileMessage = doc.querySelector('[data-target-profile-message]');
+    const styleSelect = doc.getElementById('examStyle');
+    const profileKey = 'prepify_exam_style_v1';
+    if (profileForm && saveProfile && profileMessage && styleSelect) {
+      const existing = localStorage.getItem(profileKey);
+      if (existing) styleSelect.value = existing;
+      saveProfile.addEventListener('click', () => {
+        localStorage.setItem(profileKey, styleSelect.value);
+        profileMessage.textContent = 'Your child’s practice path has been adjusted for this exam style.';
       });
     }
   };
