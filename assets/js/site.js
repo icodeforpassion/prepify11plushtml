@@ -160,11 +160,53 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     if (window.location.pathname.includes('schedule-builder')) trackEvent('schedule_builder_view');
   };
 
+  const initDailyBoost = async () => {
+    const quoteTextEl = doc.querySelector('[data-quote-text]');
+    const refreshBtn = doc.querySelector('[data-quote-refresh]');
+    if (!quoteTextEl || !refreshBtn) return;
+
+    try {
+      const response = await fetch('data/quotes.json', { cache: 'no-store' });
+      if (!response.ok) return;
+      const payload = await response.json();
+      const quotes = Array.isArray(payload) ? payload : payload?.quotes;
+      if (!Array.isArray(quotes) || !quotes.length) return;
+
+      let currentIndex = Math.floor(Math.random() * quotes.length);
+      const getQuoteText = (value) => {
+        if (typeof value === 'string') return value;
+        if (value && typeof value.text === 'string') return value.text;
+        return '';
+      };
+
+      const renderQuote = (index) => {
+        const text = getQuoteText(quotes[index]) || 'Stay curious and keep practising.';
+        quoteTextEl.textContent = text;
+      };
+
+      renderQuote(currentIndex);
+
+      refreshBtn.addEventListener('click', () => {
+        if (quotes.length === 1) {
+          renderQuote(0);
+          return;
+        }
+        let nextIndex = currentIndex;
+        while (nextIndex === currentIndex) {
+          nextIndex = Math.floor(Math.random() * quotes.length);
+        }
+        currentIndex = nextIndex;
+        renderQuote(currentIndex);
+      });
+    } catch (_) {}
+  };
+
   doc.addEventListener('DOMContentLoaded', () => {
     setCurrentYear();
     initNavigation();
     watchAuth();
     initTracking();
     initShareButton();
+    initDailyBoost();
   });
 })();
