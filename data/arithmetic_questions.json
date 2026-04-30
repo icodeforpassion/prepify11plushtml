@@ -49633,11 +49633,5 @@
     ],
     "answer": "32",
     "explanation": "Multiply by 2 each time."
-  },
-  {
-    "question": "Simplify: 35/28",
-    "options": [
-      "4/3",
-      "5/4"
-    ],
-  
+  }
+]
