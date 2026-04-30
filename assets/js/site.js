@@ -196,6 +196,49 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     }
   };
 
+  const initVisualDepthFx = () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const createConfetti = () => {
+      if (prefersReducedMotion) return;
+      const layer = doc.createElement('div');
+      layer.className = 'celebration-confetti';
+      const colors = ['#2563eb', '#7c3aed', '#f97316', '#16a34a', '#ec4899'];
+      for (let i = 0; i < 28; i += 1) {
+        const piece = doc.createElement('span');
+        piece.style.left = `${Math.random() * 100}%`;
+        piece.style.background = colors[i % colors.length];
+        piece.style.setProperty('--x-drift', `${(Math.random() - 0.5) * 32}vw`);
+        piece.style.animationDelay = `${Math.random() * 0.25}s`;
+        layer.appendChild(piece);
+      }
+      doc.body.appendChild(layer);
+      window.setTimeout(() => layer.remove(), 1700);
+    };
+
+    window.PrepifyFX = {
+      ...(window.PrepifyFX || {}),
+      play: () => {},
+      sparkle: () => doc.querySelector('.sparkle')?.classList.add('sparkle-active'),
+      celebrate: () => {
+        doc.body.classList.remove('completion-glow');
+        void doc.body.offsetWidth;
+        doc.body.classList.add('completion-glow');
+        createConfetti();
+        window.setTimeout(() => doc.body.classList.remove('completion-glow'), 1000);
+      },
+    };
+
+    doc.querySelectorAll('.progress-bar__fill').forEach((fill) => {
+      const observer = new MutationObserver(() => {
+        fill.classList.remove('is-updating');
+        void fill.offsetWidth;
+        fill.classList.add('is-updating');
+        window.setTimeout(() => fill.classList.remove('is-updating'), 800);
+      });
+      observer.observe(fill, { attributes: true, attributeFilter: ['style'] });
+    });
+  };
+
   const initTracking = () => {
     trackPageView(window.location.pathname);
     trackEvent('route_changes', { route: window.location.pathname });
@@ -251,5 +294,6 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     initShareButton();
     initDailyBoost();
     initKidFirstModules();
+    initVisualDepthFx();
   });
 })();
