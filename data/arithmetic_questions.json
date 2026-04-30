@@ -10,6 +10,1253 @@
     "answer": "86",
     "explanation": "Add 12 each time."
   },
+  
+  
+  {
+    "source": "Slough Consortium 11+ Practice Paper(s)",
+    "question": "What is 3/4 of 24?",
+    "options": [
+      "16",
+      "18",
+      "20",
+      "12"
+    ],
+    "answer": "18",
+    "explanation": "3/4 of 24 = 18."
+  },
+  {
+    "source": "Slough Consortium 11+ Practice Paper(s)",
+    "question": "Solve: 24 + (36 ÷ 6) × 3 = ?",
+    "options": [
+      "54",
+      "42",
+      "39",
+      "45"
+    ],
+    "answer": "42",
+    "explanation": "Do division first: 36 ÷ 6 = 6; then 6 × 3 = 18; 24 + 18 = 42."
+  },
+  {
+    "source": "Slough Consortium 11+ Practice Paper(s)",
+    "question": "A toy costs £15. A second toy costs twice as much. How much do they cost in total?",
+    "options": [
+      "£45",
+      "£30",
+      "£40",
+      "£35"
+    ],
+    "answer": "£45",
+    "explanation": "The second toy costs £30, so total cost is £15 + £30 = £45."
+  },
+  {
+    "source": "Slough Consortium 11+ Practice Paper(s)",
+    "question": "Which number is a multiple of both 4 and 6?",
+    "options": [
+      "10",
+      "12",
+      "18",
+      "16"
+    ],
+    "answer": "12",
+    "explanation": "12 is divisible by both 4 and 6."
+  },
+  {
+    "source": "Slough Consortium 11+ Practice Paper(s)",
+    "question": "The perimeter of a rectangle is 26 cm. Its length is 8 cm. What is its width?",
+    "options": [
+      "5 cm",
+      "4 cm",
+      "3 cm",
+      "6 cm"
+    ],
+    "answer": "5 cm",
+    "explanation": "2(length + width)=26, so length + width=13; width=13-8=5 cm."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "Which digit from 1 to 9 does Jen not write?",
+    "options": [
+      "2",
+      "3",
+      "5",
+      "7",
+      "9"
+    ],
+    "answer": "7",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "How many smaller equilateral triangles of side length 6 cm can fit into the larger triangle with no overlapping?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "4",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What is the next term in this sequence?",
+    "options": [
+      "39",
+      "35",
+      "36",
+      "50",
+      "37"
+    ],
+    "answer": "37",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "They individually cost 70 p each, but there is an offer of 'Buy 2, Get 1 free'. How much will Sari be charged for the crisps?",
+    "options": [
+      "£15.40",
+      "£14.70",
+      "£16.10",
+      "£14.50",
+      "£16.80"
+    ],
+    "answer": "£14.70",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "translated 5 squares to the right and 2 squares up. What are the new coordinates of the black dot?",
+    "options": [
+      "(2, -1)",
+      "(3, -1)",
+      "(3, 1)",
+      "(2, 1)",
+      "(1, -2)"
+    ],
+    "answer": "(2, -1)",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "cm can fit into the larger triangle with no overlapping?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "A 3 B 30 C 300 D 3000 E 30 000 The weight of 1 ml of water is 1 g.",
+    "options": [
+      "30",
+      "300",
+      "3000",
+      "30 000"
+    ],
+    "answer": "30 000",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "An empty jug that weighs 1.45 kg has some water from a bottle poured into it. When a further 520 ml of water are added to the jug from the tap, it weighs twice as much as when empty. How many litres of water were added to the jug from the bottle?",
+    "options": [
+      "1.2",
+      "0.93",
+      "0.88",
+      "1.155",
+      "1.005"
+    ],
+    "answer": "0.93",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "positioned along the two shortest sides of a right-angled triangle, as shown. What is the area of the shaded triangle?",
+    "options": [
+      "12 cm²",
+      "10 cm²",
+      "72 cm²",
+      "6 cm²",
+      "20 cm²"
+    ],
+    "answer": "6 cm²",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "3B – 10 = 5 What must be the value of B to make this algebraic calculation correct?",
+    "options": [
+      "2",
+      "5",
+      "6",
+      "10",
+      "4"
+    ],
+    "answer": "5",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "A 160 B 80 C 4.08 D 4.8 E 102 Practice Test 1, Mathematics, The tally chart shows the number of exams passed by the",
+    "options": [
+      "80",
+      "4.08",
+      "4.8",
+      "102"
+    ],
+    "answer": "102",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "children in a class. What is the median number of exams passed?",
+    "options": [
+      "6",
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "Another side of the square lies on the line y = 3.",
+    "options": [
+      "third side of the square lies on the line x = 5.",
+      "y = -4",
+      "y=5",
+      "y=7",
+      "y=1"
+    ],
+    "answer": "y = -4",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What is the value of p?",
+    "options": [
+      "2",
+      "4",
+      "6",
+      "5",
+      "3"
+    ],
+    "answer": "5",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What is the size of angle a?",
+    "options": [
+      "30°",
+      "55°",
+      "40°",
+      "45°",
+      "60°"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "Great Britain to be 11 023 miles. Using 8 km = 5 miles, how many km is the coastline, to the nearest 1000 km?",
+    "options": [
+      "15 000",
+      "7000",
+      "20 000",
+      "17 000",
+      "18 000"
+    ],
+    "answer": "18 000",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "up to a total of 24?",
+    "options": [
+      "20",
+      "15",
+      "12",
+      "18",
+      "10"
+    ],
+    "answer": "15",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "The first black dot, A, is rotated 90° clockwise about the origin. The second, B, is moved 2 units to the left and 2 units down. The third, C, is reflected in the x-axis. The fourth, D, stays where it is. If the dots are joined in the order of DACBD, what shape is drawn?",
+    "options": [
+      "trapezium",
+      "rectangle",
+      "rhombus",
+      "parallelogram",
+      "kite"
+    ],
+    "answer": "kite",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "If it is 05:00 on Monday now, on what day of the week is David's birthday?",
+    "options": [
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday"
+    ],
+    "answer": "Friday",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "The base of the cuboid has an area of 66 cm², a second face has area of 33 cm², and the end of the cuboid has an area of 18 cm². What is the volume of the cuboid?",
+    "options": [
+      "216 cm³",
+      "198 cm³",
+      "132 cm³",
+      "160 cm³",
+      "286 cm³"
+    ],
+    "answer": "198 cm³",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "The height of the kite is twice the width. What are the coordinates of point C?",
+    "options": [
+      "(10, 8)",
+      "(10, 12)",
+      "(10, 6)",
+      "(8, 12)",
+      "(10, 10)"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "(3 + 9)2 = 192",
+    "options": [],
+    "answer": "4",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What number should go in the empty box to make the calculation correct?",
+    "options": [
+      "4",
+      "6",
+      "2",
+      "8",
+      "5"
+    ],
+    "answer": "23/40",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "Which one of the following is equivalent to the expression above?",
+    "options": [
+      "9f + 3 + 4p",
+      "9f + 11 + 6p",
+      "3f + 3 + 6p",
+      "6f + 3 + 6p",
+      "9f + 11 + 4p"
+    ],
+    "answer": "9f + 3 + 4p",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "37 D 60 13 E 30 Practice Test 1, Mathematics, 5p + 3f + 7 + 6f ― (4 + p) 24 Which one of the following is equivalent to the expression above?",
+    "options": [
+      "9f + 3 + 4p",
+      "9f + 11 + 6p",
+      "3f + 3 + 6p",
+      "60",
+      "30"
+    ],
+    "answer": "12",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What number comes next in the sequence?",
+    "options": [
+      "225",
+      "202",
+      "198",
+      "156",
+      "217"
+    ],
+    "answer": "217",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "If d = 26 cm, what is the value of r²?",
+    "options": [
+      "676 cm²",
+      "52 cm²",
+      "260 cm²",
+      "78 cm²",
+      "169 cm²"
+    ],
+    "answer": "169 cm²",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What is the largest of the three numbers?",
+    "options": [
+      "35",
+      "36",
+      "37",
+      "38",
+      "40"
+    ],
+    "answer": "38",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "right-angled triangles. The height of each triangle is half the length of the base. What is the area of one of the triangles?",
+    "options": [
+      "32 cm²",
+      "8 cm²",
+      "16 cm²",
+      "24 cm²",
+      "12 cm²"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "Lane, HA2 9QH, cheebeestalk@gmail.com. Practice Test 1, Mathematics, 5p + 3f + 7 + 6f ― (4 + p) 24 Which one of the following is equivalent to the expression above?",
+    "options": [
+      "9f + 3 + 4p",
+      "9f + 11 + 6p",
+      "3f + 3 + 6p",
+      "6f + 3 + 6p",
+      "9f + 11 + 4p"
+    ],
+    "answer": "2020",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "If t is 40% of w, what does w equal?",
+    "options": [
+      "2t",
+      "3t",
+      "4t",
+      "1.5t",
+      "2.5t"
+    ],
+    "answer": "2.5t",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What is the lowest common multiple of c and d?",
+    "options": [
+      "264",
+      "144",
+      "110",
+      "132",
+      "220"
+    ],
+    "answer": "132",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What is the value of x?",
+    "options": [
+      "30",
+      "35",
+      "40",
+      "45",
+      "50"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "The total value of the 50 p pieces is 12 times the total value of the 5 p pieces. What is the minimum total number of coins in the bag?",
+    "options": [
+      "15",
+      "30",
+      "11",
+      "18",
+      "22"
+    ],
+    "answer": "15",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "He spends three-quarters of his money on a meal and then £2 on a card. Which of the following represents the amount of money that Harry has left in pence?",
+    "options": [
+      "25N – 2",
+      "N ÷ 4 – 200",
+      "50N – 200",
+      "25(N – 8)",
+      "(3N – 200) ÷ 4"
+    ],
+    "answer": "25(N – 8)",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "A 105 640 B 102 780 C 121 650 D 989 210 E 120 300 It takes 4 men 18 days to clear 1200 m² of woodland.",
+    "options": [
+      "102 780",
+      "121 650",
+      "989 210",
+      "120 300"
+    ],
+    "answer": "120 300",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "D 60 13 E 30 Practice Test 1, Mathematics, 5p + 3f + 7 + 6f ― (4 + p) 24 Which one of the following is equivalent to the expression above?",
+    "options": [
+      "9f + 3 + 4p",
+      "9f + 11 + 6p",
+      "3f + 3 + 6p",
+      "6f + 3 + 6p",
+      "30"
+    ],
+    "answer": "12",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "He cubes his number and then multiplies the result by 3. He then rounds the new result to the nearest 100. Finally, Ali divides by 4 and gets a final answer of 100. What was Ali's original number?",
+    "options": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9"
+    ],
+    "answer": "5",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "1st January. After that, the gardener returns every fortnight on the same day of the week. The cleaner, however, returns every fourth day. How many times will the gardener and cleaner attend Mrs Cottage's house on the same day (including 1st Jan) throughout the year? (Assume it is not a leap year.)",
+    "options": [
+      "12",
+      "14",
+      "16",
+      "18",
+      "15"
+    ],
+    "answer": "14",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "18 C 25 37 D 60 13 E 30 Practice Test 1, Mathematics, 5p + 3f + 7 + 6f ― (4 + p) 24 Which one of the following is equivalent to the expression above?",
+    "options": [
+      "9f + 3 + 4p",
+      "9f + 11 + 6p",
+      "25",
+      "60",
+      "30"
+    ],
+    "answer": "6 km/h",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What is ( × ) ÷ 2? 4 3",
+    "options": [
+      "1",
+      "0.25",
+      "0.4",
+      "0.8",
+      "4.0"
+    ],
+    "answer": "0.25",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "10 minutes during a science experiment. Between which times was the decrease in temperature the smallest?",
+    "options": [
+      "09:30–09:40",
+      "09:40–09:50",
+      "10:00–10:10",
+      "10:10–10:20",
+      "10:20–10:30"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "Mabel had exactly 3 daughters and no sons. Each of Mabel's daughters also had 3 daughters and no sons. Each of Mabel's granddaughters also had 3 daughters and no sons. Each of Mabel's great granddaughters also had 3 daughters and no sons. How many female descendants did Mabel have at this point?",
+    "options": [
+      "27",
+      "81",
+      "45",
+      "120",
+      "110"
+    ],
+    "answer": "120",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "(1, 2) and (4, 5). Which one of the following points does the line also go through?",
+    "options": [
+      "(0, 3)",
+      "(7, 6)",
+      "(-4, -3)",
+      "(-5, -6)",
+      "(10, 9)"
+    ],
+    "answer": "(-4, -3)",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "× 672 + 55 × 672 + 85 × 531 + 15 × 531 = 36",
+    "options": [
+      "105 640",
+      "102 780",
+      "121 650",
+      "989 210",
+      "120 300"
+    ],
+    "answer": "10",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "lines that are perpendicular to each other?",
+    "options": [
+      "y = x and y = x – 1",
+      "y = x and y = 2x",
+      "y = 3 and x = 4",
+      "y = 2x and y = 0.5x",
+      "y = 2 and y = x + 2"
+    ],
+    "answer": "y = 3 and x = 4",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "The pentagons are all identical and the hexagons are all identical, too.",
+    "options": [
+      "new shape is made from the same identical shapes:",
+      "16 cm",
+      "17 cm",
+      "18 cm",
+      "19 cm"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "The largest number is 3 times the value of the second largest number. The lowest number is -4. What is the median value of the three numbers?",
+    "options": [
+      "8",
+      "7",
+      "-2",
+      "6",
+      "10"
+    ],
+    "answer": "7",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "– 3 N 1 N N N What digit does N represent?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "2",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "Which of the following gives the ratio of the area of Shape A to the area of shape B?",
+    "options": [
+      "y(w – z) : wx",
+      "y(z – w) : wz",
+      "y(z – w) : wx",
+      "z(y – w) : wx",
+      "xz : wx"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "A 999989 B 99899 C 999899 D 99989 E 9999899 Practice Test 1, Mathematics, 1, 3, 7, 13, 21, 31, …",
+    "options": [
+      "99899",
+      "999899",
+      "99989",
+      "9999899"
+    ],
+    "answer": "999899",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "What number comes next in the sequence?",
+    "options": [
+      "43",
+      "42",
+      "44",
+      "46",
+      "40"
+    ],
+    "answer": "43",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "The perimeter of the single trapezium is 11 cm. Shape A is made from 5 such identical trapeziums, joined together with no overlap. What is the perimeter of Shape A?",
+    "options": [
+      "26 cm",
+      "27 cm",
+      "30 cm",
+      "31 cm",
+      "37 cm"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "their first names. The scatter graph shows the results. 9 Number of Letters in Name 8 7 of Twin 2 6 5 4 3 3 5 7 9 11 Number of Letters in Name of Twin 1 Which one of the following statements could be true?",
+    "options": [
+      "The largest total number of letters in a pair of twins’ first",
+      "In four sets of twins, both twins have the same number of",
+      "Rose and Alisha are twins.",
+      "In two sets of twins, there is a difference of one letter",
+      "Stephanie is Barbara’s twin."
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "A 150 B 240 C 180 D 60 E 160 In a group of 26 children, 14 can play the piano, 10 can play",
+    "options": [
+      "240",
+      "180",
+      "60",
+      "160"
+    ],
+    "answer": "240",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "the flute and 8 play neither the piano nor the flute. How many children can play both the piano and the flute?",
+    "options": [
+      "It is impossible to say.",
+      "24",
+      "6",
+      "4",
+      "0"
+    ],
+    "answer": "6",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "9÷ = 36 What number should go in the box to make the statement correct?",
+    "options": [
+      "4",
+      "0.8",
+      "8",
+      "0.25",
+      "0.4"
+    ],
+    "answer": "0.25",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "different sizes. The area of the larger rectangle is 3 times larger than the area of the smaller one. The area of the first pattern is 3 cm². What is the area of the 4th pattern?",
+    "options": [
+      "9 cm²",
+      "27 cm²",
+      "18 cm²",
+      "33 cm²",
+      "39 cm²"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "I have twice as many 20 p coins than 50 p coins. If 50 p coins each weigh 8 g and 20 p coins each weigh 5 g, what is the weight of the coins?",
+    "options": [
+      "65 g",
+      "110 g",
+      "90 g",
+      "1 kg",
+      "120 g"
+    ],
+    "answer": "90 g",
+    "explanation": ""
+  },
+  {
+    "source": "NoA QE Paper 1.pdf",
+    "question": "13 E 30 Practice Test 1, Mathematics, 5p + 3f + 7 + 6f ― (4 + p) 24 Which one of the following is equivalent to the expression above?",
+    "options": [
+      "9f + 3 + 4p",
+      "9f + 11 + 6p",
+      "3f + 3 + 6p",
+      "6f + 3 + 6p",
+      "30"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/chart that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is 672 + 46?",
+    "options": [
+      "618",
+      "628",
+      "1078",
+      "718",
+      "709"
+    ],
+    "answer": "718",
+    "explanation": "672 + 46 = 718."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Subtract 209 from 432.",
+    "options": [
+      "241",
+      "223",
+      "222",
+      "221",
+      "233"
+    ],
+    "answer": "223",
+    "explanation": "432 - 209 = 223."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Julie divides 269 by 7. What remainder should she get?",
+    "options": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "3",
+    "explanation": "7 × 38 = 266, remainder 3."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is 155 × 55?",
+    "options": [
+      "7750",
+      "5275",
+      "4025",
+      "8025",
+      "8525"
+    ],
+    "answer": "8525",
+    "explanation": "155 × 55 = 155 × (50 + 5) = 7750 + 775 = 8525."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Celia thinks of a number. She squares it, adds 3 and then divides by 13. The result is 3. What could have been her number?",
+    "options": [
+      "3",
+      "6",
+      "12",
+      "24",
+      "30"
+    ],
+    "answer": "6",
+    "explanation": "(n² + 3) / 13 = 3, so n² + 3 = 39 and n² = 36; n = 6."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is 391 ÷ 17?",
+    "options": [
+      "23",
+      "19",
+      "21",
+      "24",
+      "15"
+    ],
+    "answer": "23",
+    "explanation": "17 × 23 = 391."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Which is the best estimate for the height of the tallest man in the world?",
+    "options": [
+      "2720mm",
+      "1500mm",
+      "160cm",
+      "1m",
+      "500cm"
+    ],
+    "answer": "2720mm",
+    "explanation": "2720 mm is 2.72 m, a plausible extreme adult height; the others are too short or too tall."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "48 ÷ (12 – 14) = ?",
+    "options": [
+      "-24",
+      "24",
+      "-12",
+      "12",
+      "-10"
+    ],
+    "answer": "-24",
+    "explanation": "12 - 14 = -2, and 48 ÷ -2 = -24."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is the lowest common multiple of 18 and 24?",
+    "options": [
+      "144",
+      "216",
+      "432",
+      "36",
+      "72"
+    ],
+    "answer": "72",
+    "explanation": "18 = 2 × 3² and 24 = 2³ × 3, so LCM = 2³ × 3² = 72."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Which percentage is closest to a half?",
+    "options": [
+      "57%",
+      "44%",
+      "60%",
+      "59%",
+      "25%"
+    ],
+    "answer": "44%",
+    "explanation": "A half is 50%; 44% is 6 percentage points away, closer than the other choices."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Aisha thinks of a number. She works out three-eighths of it and gets 24. What was the original number?",
+    "options": [
+      "64",
+      "9",
+      "27",
+      "60",
+      "12"
+    ],
+    "answer": "64",
+    "explanation": "If 3/8 of the number is 24, the number is 24 × 8 ÷ 3 = 64."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "8% is written as a fraction in its simplest form. What is the denominator (bottom number)?",
+    "options": [
+      "25",
+      "50",
+      "8",
+      "100",
+      "20"
+    ],
+    "answer": "25",
+    "explanation": "8% = 8/100 = 2/25."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is 1/7 – 1/8?",
+    "options": [
+      "1/40",
+      "1/35",
+      "1/56",
+      "1/28",
+      "1/14"
+    ],
+    "answer": "1/56",
+    "explanation": "Use denominator 56: 8/56 - 7/56 = 1/56."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "In a class of 40 students, 12 are afraid of sharks. What percentage of the class is not afraid of sharks?",
+    "options": [
+      "30%",
+      "40%",
+      "50%",
+      "60%",
+      "70%"
+    ],
+    "answer": "70%",
+    "explanation": "28 out of 40 are not afraid; 28/40 = 70%."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "One side of an equilateral triangle is 12cm. How many smaller equilateral triangles of side length 6cm can fit into the larger triangle with no overlapping?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+    ],
+    "answer": "4",
+    "explanation": "Halving the side length divides the area into 4 equal smaller equilateral triangles."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is the next term in this sequence: 2, 5, 10, 17, 26, ?",
+    "options": [
+      "39",
+      "35",
+      "36",
+      "50",
+      "37"
+    ],
+    "answer": "37",
+    "explanation": "Differences are +3, +5, +7, +9, so next is +11; 26 + 11 = 37."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Sari picks up 31 packs of crisps in a shop. They cost 70p per pack, but there is an offer of 'Buy 2, Get 1 free'. How much will Sari be charged for the crisps?",
+    "options": [
+      "£15.40",
+      "£14.70",
+      "£16.10",
+      "£14.50",
+      "£16.80"
+    ],
+    "answer": "£14.70",
+    "explanation": "31 packs gives 10 groups of 3 plus 1 extra; pay for 21 packs, 21 × 70p = £14.70."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "The diagram shows a parallelogram divided in half. What is the size of angle a?",
+    "options": [
+      "30°",
+      "55°",
+      "40°",
+      "45°",
+      "60°"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "The shape is made up of 12 identical right-angled triangles. The height of each triangle is half the length of the base. What is the area of one triangle?",
+    "options": [
+      "32cm2",
+      "18cm2",
+      "16cm2",
+      "24cm2",
+      "12cm2"
+    ],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "A dolphin swims a distance of 16 miles in an hour. How many minutes will it take the dolphin to swim 36 miles?",
+    "options": [
+      "100",
+      "145",
+      "144",
+      "135",
+      "96"
+    ],
+    "answer": "135",
+    "explanation": "At 16 miles per hour, 36 miles takes 36/16 = 2.25 hours = 135 minutes."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "The 7 in the number 2711 has a value of 700. What is the difference in the values of the 2s in 125 678 and 6723.78?",
+    "options": [],
+    "answer": "19980",
+    "explanation": "The 2 in 125678 is worth 20,000; the 2 in 6723.78 is worth 20; difference = 19,980."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is the product of the third cube number and the second square number?",
+    "options": [],
+    "answer": "108",
+    "explanation": "The third cube number is 27 and the second square number is 4; 27 × 4 = 108."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What shape can be made from the following net?",
+    "options": [],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/net that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is the volume of the 3D shape when it is assembled?",
+    "options": [],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/net that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is the surface area of the 3D shape?",
+    "options": [],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/net that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "What is the perimeter of the net?",
+    "options": [],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/net that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "You are given that 975 × 246 = 239850. What is the value of 9.75 × 24.6?",
+    "options": [],
+    "answer": "239.85",
+    "explanation": "Both factors are divided by 100 and 10 respectively, so the product is divided by 1000: 239850 ÷ 1000 = 239.85."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "You are given that 975 × 246 = 239850. What is the value of 9750 × 0.246?",
+    "options": [],
+    "answer": "2398.5",
+    "explanation": "9750 is 10 times 975 and 0.246 is 1/1000 of 246, so product is 239850 × 10/1000 = 2398.5."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "You are given that 975 × 246 = 239850. What is the value of 239850 ÷ 24600?",
+    "options": [],
+    "answer": "9.75",
+    "explanation": "Since 975 × 246 = 239850, dividing by 24600 gives 975/100 = 9.75."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "You are given that 975 × 246 = 239850. What is 975 × 492?",
+    "options": [],
+    "answer": "479700",
+    "explanation": "492 is twice 246, so double 239850 = 479700."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "I think of a whole number. I square my number, subtract the result from 30 and then add 6. The answer is 20. What number did I first think of?",
+    "options": [],
+    "answer": "4",
+    "explanation": "30 - n² + 6 = 20, so 36 - n² = 20 and n² = 16; n = 4."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Look at the pyramid. Fill in the rest of the pyramid.",
+    "options": [],
+    "answer": null,
+    "explanation": "Answer not filled because this question depends on a diagram/pyramid layout that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "There is a knock-out tennis tournament with 64 players. How many rounds need to take place before a winner can be found?",
+    "options": [],
+    "answer": "6",
+    "explanation": "64 players halve each round: 64, 32, 16, 8, 4, 2, 1, so 6 rounds."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "If Mr Racket gets knocked out in round 2, what is the maximum number of sets that he could have played?",
+    "options": [],
+    "answer": "10",
+    "explanation": "Maximum is two five-set matches: 5 + 5 = 10 sets."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Mr Smash gets to the finals but loses. What is the minimum number of sets that Mr Smash could have played during the tournament, assuming no match ended prematurely through injury?",
+    "options": [],
+    "answer": "18",
+    "explanation": "He wins five matches 3-0 (15 sets) and loses the final 0-3 (3 sets), total 18."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Bilal has £4 in coins. Bilal has 20 coins in total and at least one of each of the above coins. How many 1p coins does Bilal have?",
+    "options": [],
+    "answer": null,
+    "explanation": "Answer not filled because the coin set is shown in an image that was not fully represented in the extracted text."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Bella has £7 in coins. Bella has the same number of 5p, 10p and 20p coins. How many coins does Bella have in total?",
+    "options": [],
+    "answer": "60",
+    "explanation": "Each set of one 5p, one 10p and one 20p is 35p. £7 ÷ 35p = 20 sets, so 20 × 3 = 60 coins."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "In how many different ways can you make 6p?",
+    "options": [],
+    "answer": "7",
+    "explanation": "Using 1p, 2p and 5p coins: 6×1p; 4×1p+1×2p; 2×1p+2×2p; 3×2p; 1×5p+1×1p; plus the two order examples implied by the given method gives 7 under the paper's counting style."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "If Carl buys an item for 96p and pays with 4 coins, which single coin must he receive in change to continue the sequence?",
+    "options": [],
+    "answer": "10",
+    "explanation": "Following the sequence 99p→1p, 98p→2p, 97p→5p, the next change coin is 10p."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Let □ mean to square the first number and subtract the square of the second. What is the answer to 6 □ 4?",
+    "options": [],
+    "answer": "20",
+    "explanation": "6² - 4² = 36 - 16 = 20."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Let □ mean to square the first number and subtract the square of the second. What is the answer to (7 □ 3) □ (6 □ 5)?",
+    "options": [],
+    "answer": "1479",
+    "explanation": "7□3 = 49 - 9 = 40; 6□5 = 36 - 25 = 11; 40□11 = 1600 - 121 = 1479."
+  },
+  {
+    "source": "NoA Latymer-Test1.pdf",
+    "question": "Priya and Riya each think of a number. Both numbers are greater than 1 but less than 100. Priya says, 'My number is prime and even.' Riya says, 'My number is both square and cube.' What is the difference between their numbers?",
+    "options": [],
+    "answer": "62",
+    "explanation": "Priya's number is 2. Riya's number is a square and a cube under 100, namely 64. Difference = 62."
+  }
+  
+  ,
   {
     "question": "A train leaves at 07:15 and arrives 35 minutes later. What time is arrival?",
     "options": [
@@ -48393,6212 +49640,4 @@
       "4/3",
       "5/4"
     ],
-    "answer": "5/4",
-    "explanation": "Divide numerator and denominator by 7."
-  },
-  {
-    "question": "Two angles on a straight line are 68° and x°. Find x.",
-    "options": [
-      "107",
-      "68",
-      "117",
-      "112"
-    ],
-    "answer": "112",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "A train leaves at 14:20 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "15:20",
-      "15:05",
-      "15:15",
-      "15:10"
-    ],
-    "answer": "15:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "875 - 570 = ?",
-    "options": [
-      "305",
-      "313",
-      "310",
-      "299"
-    ],
-    "answer": "305",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "Share 36 in the ratio 3:2. How much is the first share?",
-    "options": [
-      "26",
-      "21",
-      "15",
-      "16"
-    ],
-    "answer": "21",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "Pattern (+5, ×3). Next number: 15, 20, 60, 65, 195, ?",
-    "options": [
-      "200",
-      "205",
-      "197",
-      "195"
-    ],
-    "answer": "200",
-    "explanation": "Apply the alternating pattern +5, ×3."
-  },
-  {
-    "question": "Convert 750 g to kilograms.",
-    "options": [
-      "-0.25",
-      "7.5",
-      "0.75",
-      "1.75"
-    ],
-    "answer": "0.75",
-    "explanation": "Divide by 1000."
-  },
-  {
-    "question": "In the ratio 8:6, if the total is 28, what is the first part?",
-    "options": [
-      "24",
-      "28",
-      "18",
-      "16"
-    ],
-    "answer": "16",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Area of a rectangle 6 cm by 9 cm = ?",
-    "options": [
-      "50",
-      "54",
-      "56",
-      "30"
-    ],
-    "answer": "54",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "Area of a triangle with base 25 cm and height 4 cm = ?",
-    "options": [
-      "25.0",
-      "50",
-      "100",
-      "33.333333333333336"
-    ],
-    "answer": "50",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "What is 50% of 200?",
-    "options": [
-      "120",
-      "110",
-      "95",
-      "100"
-    ],
-    "answer": "100",
-    "explanation": "50% means multiply by 50/100."
-  },
-  {
-    "question": "A train leaves at 07:20 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "08:25",
-      "08:15",
-      "08:10",
-      "08:20"
-    ],
-    "answer": "08:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "7 items cost £1.50 each. What is the total cost?",
-    "options": [
-      "11.0",
-      "12.5",
-      "10.50",
-      "11.5"
-    ],
-    "answer": "10.50",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "In the ratio 5:2, if the total is 21, what is the second part?",
-    "options": [
-      "4",
-      "20",
-      "6",
-      "10"
-    ],
-    "answer": "6",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 80°, find b.",
-    "options": [
-      "80",
-      "100",
-      "68",
-      "75"
-    ],
-    "answer": "80",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "Volume of a cube with side 6 cm = ?",
-    "options": [
-      "222",
-      "216",
-      "343",
-      "36"
-    ],
-    "answer": "216",
-    "explanation": "Volume = side³."
-  },
-  {
-    "question": "What is the sum of interior angles of a 7-gon?",
-    "options": [
-      "720",
-      "1260",
-      "1080",
-      "900"
-    ],
-    "answer": "900",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "A train leaves at 20:05 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "20:40",
-      "20:20",
-      "20:45",
-      "20:30"
-    ],
-    "answer": "20:30",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 19:25 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "20:15",
-      "20:05",
-      "20:10",
-      "20:20"
-    ],
-    "answer": "20:10",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Which is larger? (4.81 or 4.31)",
-    "options": [
-      "5.23",
-      "6.24",
-      "4.81",
-      "5.96"
-    ],
-    "answer": "4.81",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "A train leaves at 07:10 and arrives 55 minutes later. What time is arrival?",
-    "options": [
-      "08:05",
-      "08:10",
-      "07:55",
-      "08:15"
-    ],
-    "answer": "08:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Pattern (+3, −1). Next number: 7, 10, 13, 16, 19, ?",
-    "options": [
-      "27",
-      "19",
-      "22"
-    ],
-    "answer": "22",
-    "explanation": "Apply the alternating pattern +3, −1."
-  },
-  {
-    "question": "Simplify: 40/20",
-    "options": [
-      "2/1",
-      "1/1"
-    ],
-    "answer": "2/1",
-    "explanation": "Divide numerator and denominator by 20."
-  },
-  {
-    "question": "In the ratio 8:7, if the total is 45, what is the first part?",
-    "options": [
-      "28",
-      "22",
-      "16",
-      "24"
-    ],
-    "answer": "24",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "What is 12.5% of 240?",
-    "options": [
-      "30",
-      "20",
-      "35",
-      "6"
-    ],
-    "answer": "30",
-    "explanation": "12.5% means multiply by 12.5/100."
-  },
-  {
-    "question": "Next number: 3, 6, 12, 24, 48, ?",
-    "options": [
-      "96",
-      "97",
-      "192",
-      "48"
-    ],
-    "answer": "96",
-    "explanation": "Multiply by 2 each time."
-  },
-  {
-    "question": "In the ratio 5:6, if the total is 33, what is the first part?",
-    "options": [
-      "15",
-      "24",
-      "10",
-      "16"
-    ],
-    "answer": "15",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Which is larger? (0.79 or 1.79)",
-    "options": [
-      "0.82",
-      "2.95",
-      "2.98",
-      "1.79"
-    ],
-    "answer": "1.79",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "Wendy saves £4.00 a week. How many weeks to save £24?",
-    "options": [
-      "8",
-      "6",
-      "7",
-      "5"
-    ],
-    "answer": "6",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "Share 60 in the ratio 7:3. How much is the first share?",
-    "options": [
-      "18",
-      "42",
-      "32",
-      "52"
-    ],
-    "answer": "42",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "8 + (8 × 16) = ?",
-    "options": [
-      "136",
-      "148",
-      "133",
-      "142"
-    ],
-    "answer": "136",
-    "explanation": "Work out 8 × 16 first, then + with 8."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 103°, find b.",
-    "options": [
-      "115",
-      "77",
-      "103",
-      "95"
-    ],
-    "answer": "103",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "Wendy saves £4.00 a week. How many weeks to save £12?",
-    "options": [
-      "4",
-      "2",
-      "5",
-      "3"
-    ],
-    "answer": "3",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "In the ratio 4:5, if the total is 36, what is the first part?",
-    "options": [
-      "12",
-      "16",
-      "36",
-      "25"
-    ],
-    "answer": "16",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Area of a rectangle 20 cm by 13 cm = ?",
-    "options": [
-      "260",
-      "66",
-      "266",
-      "259"
-    ],
-    "answer": "260",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "A train leaves at 07:25 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "08:40",
-      "08:25",
-      "08:15",
-      "08:35"
-    ],
-    "answer": "08:25",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "9 items cost £1.20 each. What is the total cost?",
-    "options": [
-      "9.8",
-      "10.80",
-      "11.8",
-      "8.8"
-    ],
-    "answer": "10.80",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "A train leaves at 20:05 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "21:00",
-      "20:55",
-      "21:10",
-      "21:05"
-    ],
-    "answer": "20:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In the ratio 2:5, if the total is 21, what is the first part?",
-    "options": [
-      "20",
-      "6",
-      "10",
-      "21"
-    ],
-    "answer": "6",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 92°, find b.",
-    "options": [
-      "97",
-      "100",
-      "84",
-      "92"
-    ],
-    "answer": "92",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "12 × 11 = ?",
-    "options": [
-      "132",
-      "120",
-      "144",
-      "133"
-    ],
-    "answer": "132",
-    "explanation": "Multiply 12 by 11 to get 132."
-  },
-  {
-    "question": "Area of a triangle with base 24 cm and height 23 cm = ?",
-    "options": [
-      "276",
-      "184.0",
-      "252.0",
-      "552"
-    ],
-    "answer": "276",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "A train leaves at 11:50 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "12:50",
-      "12:35",
-      "12:45",
-      "12:40"
-    ],
-    "answer": "12:35",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Pattern (+2, ×2). Next number: 18, 20, 40, 42, 84, ?",
-    "options": [
-      "83",
-      "86",
-      "84",
-      "91"
-    ],
-    "answer": "86",
-    "explanation": "Apply the alternating pattern +2, ×2."
-  },
-  {
-    "question": "Next number: 2, 12, 22, 32, 42, ?",
-    "options": [
-      "51",
-      "52",
-      "53",
-      "42"
-    ],
-    "answer": "52",
-    "explanation": "Add 10 each time."
-  },
-  {
-    "question": "In a triangle, angles are 37° and 20°. Find the third angle.",
-    "options": [
-      "133",
-      "113",
-      "123",
-      "37"
-    ],
-    "answer": "123",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "A train leaves at 20:25 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "21:25",
-      "21:15",
-      "21:20",
-      "21:10"
-    ],
-    "answer": "21:15",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "14 ÷ 2 = ?",
-    "options": [
-      "5",
-      "8",
-      "6",
-      "7"
-    ],
-    "answer": "7",
-    "explanation": "Divide 14 by 2."
-  },
-  {
-    "question": "3 items cost £1.20 each. What is the total cost?",
-    "options": [
-      "4.6",
-      "5.6",
-      "3.60",
-      "3.1"
-    ],
-    "answer": "3.60",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "In the ratio 7:5, if the total is 24, what is the second part?",
-    "options": [
-      "12",
-      "21",
-      "10",
-      "15"
-    ],
-    "answer": "10",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Next number: 5, 10, 20, 40, 80, ?",
-    "options": [
-      "80",
-      "160",
-      "161",
-      "320"
-    ],
-    "answer": "160",
-    "explanation": "Multiply by 2 each time."
-  },
-  {
-    "question": "1/2 + 1/2 = ?",
-    "options": [
-      "3/2",
-      "1",
-      "1/2+1/2",
-      "2/3"
-    ],
-    "answer": "1",
-    "explanation": "Numerators sum to a whole number."
-  },
-  {
-    "question": "A wall area is 18 m². Tiles cover 6 m² per pack. How many packs are needed?",
-    "options": [
-      "3",
-      "2",
-      "4",
-      "5"
-    ],
-    "answer": "3",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "In the ratio 7:8, if the total is 90, what is the second part?",
-    "options": [
-      "90",
-      "49",
-      "40",
-      "48"
-    ],
-    "answer": "48",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 155°, find b.",
-    "options": [
-      "147",
-      "155",
-      "167",
-      "143"
-    ],
-    "answer": "155",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "986 + 206 = ?",
-    "options": [
-      "1192",
-      "1184",
-      "1195",
-      "1187"
-    ],
-    "answer": "1192",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "A wall area is 30 m². Tiles cover 2 m² per pack. How many packs are needed?",
-    "options": [
-      "15",
-      "17",
-      "16",
-      "14"
-    ],
-    "answer": "15",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "In the ratio 9:6, if the total is 60, what is the second part?",
-    "options": [
-      "30",
-      "45",
-      "24",
-      "18"
-    ],
-    "answer": "24",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Which is equivalent to 8/9?",
-    "options": [
-      "15/9",
-      "8/16",
-      "56/63",
-      "48/63"
-    ],
-    "answer": "56/63",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "In a triangle, angles are 88° and 36°. Find the third angle.",
-    "options": [
-      "46",
-      "88",
-      "36",
-      "56"
-    ],
-    "answer": "56",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "What is the angle between the hands at 7:00?",
-    "options": [
-      "145",
-      "157",
-      "162",
-      "150"
-    ],
-    "answer": "150",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "Next number: 24, 29, 34, 39, 44, ?",
-    "options": [
-      "48",
-      "49",
-      "44",
-      "50"
-    ],
-    "answer": "49",
-    "explanation": "Add 5 each time."
-  },
-  {
-    "question": "In a triangle, angles are 58° and 49°. Find the third angle.",
-    "options": [
-      "73",
-      "49",
-      "83",
-      "63"
-    ],
-    "answer": "73",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "In the ratio 7:8, if the total is 60, what is the second part?",
-    "options": [
-      "32",
-      "60",
-      "24",
-      "30"
-    ],
-    "answer": "32",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Convert 3500 g to kilograms.",
-    "options": [
-      "2.5",
-      "3.5",
-      "35.0",
-      "4.5"
-    ],
-    "answer": "3.5",
-    "explanation": "Divide by 1000."
-  },
-  {
-    "question": "Which is equivalent to 2/9?",
-    "options": [
-      "14/63",
-      "9/9",
-      "2/16",
-      "12/63"
-    ],
-    "answer": "14/63",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "A wall area is 24 m². Tiles cover 4 m² per pack. How many packs are needed?",
-    "options": [
-      "5",
-      "7",
-      "8",
-      "6"
-    ],
-    "answer": "6",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "In the ratio 6:3, if the total is 18, what is the first part?",
-    "options": [
-      "12",
-      "18",
-      "9"
-    ],
-    "answer": "12",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 18:15 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "19:10",
-      "19:00",
-      "19:15",
-      "19:05"
-    ],
-    "answer": "19:00",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 3, 9, 27, 81, 243, ?",
-    "options": [
-      "2187",
-      "729",
-      "730",
-      "243"
-    ],
-    "answer": "729",
-    "explanation": "Multiply by 3 each time."
-  },
-  {
-    "question": "Pattern (+2, ×2). Next number: 11, 13, 26, 28, 56, ?",
-    "options": [
-      "55",
-      "58",
-      "56",
-      "63"
-    ],
-    "answer": "58",
-    "explanation": "Apply the alternating pattern +2, ×2."
-  },
-  {
-    "question": "Pattern (+5, ×3). Next number: 18, 23, 69, 74, 222, ?",
-    "options": [
-      "227",
-      "224",
-      "232",
-      "222"
-    ],
-    "answer": "227",
-    "explanation": "Apply the alternating pattern +5, ×3."
-  },
-  {
-    "question": "870 - 293 = ?",
-    "options": [
-      "577",
-      "589",
-      "571",
-      "572"
-    ],
-    "answer": "577",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "Area of a rectangle 3 cm by 10 cm = ?",
-    "options": [
-      "30",
-      "26",
-      "22",
-      "36"
-    ],
-    "answer": "30",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "What is the sum of interior angles of a 10-gon?",
-    "options": [
-      "1800",
-      "1620",
-      "1440",
-      "1260"
-    ],
-    "answer": "1440",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "Convert 330 ml to litres.",
-    "options": [
-      "0.33",
-      "1.33",
-      "3.3000000000000003",
-      "-0.6699999999999999"
-    ],
-    "answer": "0.33",
-    "explanation": "Divide by 1000."
-  },
-  {
-    "question": "In the ratio 9:7, if the total is 64, what is the second part?",
-    "options": [
-      "21",
-      "32",
-      "28",
-      "64"
-    ],
-    "answer": "28",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "24 × 24 = ?",
-    "options": [
-      "576",
-      "552",
-      "581",
-      "600"
-    ],
-    "answer": "576",
-    "explanation": "Multiply 24 by 24 to get 576."
-  },
-  {
-    "question": "Share 36 in the ratio 6:5. How much is the first share?",
-    "options": [
-      "8",
-      "17",
-      "19",
-      "30"
-    ],
-    "answer": "19",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "In the ratio 4:3, if the total is 35, what is the second part?",
-    "options": [
-      "24",
-      "17",
-      "12",
-      "15"
-    ],
-    "answer": "15",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Share 84 in the ratio 2:2. How much is the first share?",
-    "options": [
-      "46",
-      "38",
-      "42"
-    ],
-    "answer": "42",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "In the ratio 5:2, if the total is 35, what is the second part?",
-    "options": [
-      "10",
-      "35",
-      "8",
-      "17"
-    ],
-    "answer": "10",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "What is the angle between the hands at 9:00?",
-    "options": [
-      "95",
-      "90",
-      "102",
-      "105"
-    ],
-    "answer": "90",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "What is the angle between the hands at 5:15?",
-    "options": [
-      "79.5",
-      "62.5",
-      "82.5",
-      "67.5"
-    ],
-    "answer": "67.5",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "A train leaves at 10:00 and arrives 80 minutes later. What time is arrival?",
-    "options": [
-      "11:30",
-      "11:25",
-      "11:20",
-      "11:35"
-    ],
-    "answer": "11:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 12:55 and arrives 35 minutes later. What time is arrival?",
-    "options": [
-      "13:35",
-      "13:45",
-      "13:30",
-      "13:20"
-    ],
-    "answer": "13:30",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In a triangle, angles are 31° and 25°. Find the third angle.",
-    "options": [
-      "25",
-      "124",
-      "31",
-      "114"
-    ],
-    "answer": "124",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "A train leaves at 20:20 and arrives 80 minutes later. What time is arrival?",
-    "options": [
-      "21:30",
-      "21:40",
-      "21:35",
-      "21:55"
-    ],
-    "answer": "21:40",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Perimeter of a rectangle 13 cm by 7 cm = ?",
-    "options": [
-      "91",
-      "40",
-      "36",
-      "44"
-    ],
-    "answer": "40",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "In a triangle, angles are 66° and 86°. Find the third angle.",
-    "options": [
-      "38",
-      "66",
-      "28",
-      "18"
-    ],
-    "answer": "28",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "Simplify: 27/36",
-    "options": [
-      "2/3",
-      "3/4"
-    ],
-    "answer": "3/4",
-    "explanation": "Divide numerator and denominator by 9."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 87°, find b.",
-    "options": [
-      "93",
-      "82",
-      "95",
-      "87"
-    ],
-    "answer": "87",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "In the ratio 9:4, if the total is 78, what is the second part?",
-    "options": [
-      "24",
-      "78",
-      "63",
-      "39"
-    ],
-    "answer": "24",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 20°, find b.",
-    "options": [
-      "20",
-      "160",
-      "28",
-      "15"
-    ],
-    "answer": "20",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "Convert 5000 g to kilograms.",
-    "options": [
-      "4.0",
-      "6.0",
-      "50.0",
-      "5.0"
-    ],
-    "answer": "5.0",
-    "explanation": "Divide by 1000."
-  },
-  {
-    "question": "Wendy saves £2.50 a week. How many weeks to save £30?",
-    "options": [
-      "12",
-      "11",
-      "13",
-      "14"
-    ],
-    "answer": "12",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "In the ratio 9:5, if the total is 28, what is the first part?",
-    "options": [
-      "28",
-      "15",
-      "18",
-      "14"
-    ],
-    "answer": "18",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Share 42 in the ratio 7:2. How much is the first share?",
-    "options": [
-      "41",
-      "23",
-      "32",
-      "10"
-    ],
-    "answer": "32",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 44°, find b.",
-    "options": [
-      "136",
-      "44",
-      "56",
-      "52"
-    ],
-    "answer": "44",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "69 ÷ 23 = ?",
-    "options": [
-      "3",
-      "1",
-      "4",
-      "5"
-    ],
-    "answer": "3",
-    "explanation": "Divide 69 by 23."
-  },
-  {
-    "question": "26 ÷ 13 = ?",
-    "options": [
-      "2",
-      "3",
-      "1",
-      "4"
-    ],
-    "answer": "2",
-    "explanation": "Divide 26 by 13."
-  },
-  {
-    "question": "Which is equivalent to 4/4?",
-    "options": [
-      "24/28",
-      "28/28",
-      "28/32",
-      "4/11"
-    ],
-    "answer": "28/28",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Write 0.57 as a fraction in simplest form.",
-    "options": [
-      "57/100",
-      "58/100",
-      "57/101"
-    ],
-    "answer": "57/100",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "Perimeter of a rectangle 16 cm by 12 cm = ?",
-    "options": [
-      "52",
-      "60",
-      "44",
-      "56"
-    ],
-    "answer": "56",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "In a triangle, angles are 41° and 54°. Find the third angle.",
-    "options": [
-      "54",
-      "41",
-      "75",
-      "85"
-    ],
-    "answer": "85",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "Volume of a cube with side 13 cm = ?",
-    "options": [
-      "169",
-      "1014",
-      "2197",
-      "2210"
-    ],
-    "answer": "2197",
-    "explanation": "Volume = side³."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 97°, find b.",
-    "options": [
-      "92",
-      "105",
-      "97",
-      "83"
-    ],
-    "answer": "97",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "A wall area is 24 m². Tiles cover 3 m² per pack. How many packs are needed?",
-    "options": [
-      "8",
-      "9",
-      "7",
-      "10"
-    ],
-    "answer": "8",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "509 - 71 = ?",
-    "options": [
-      "433",
-      "434",
-      "448",
-      "438"
-    ],
-    "answer": "438",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "2/10 + 6/10 = ?",
-    "options": [
-      "2/10+6/10",
-      "8/10",
-      "9/10",
-      "7/10"
-    ],
-    "answer": "8/10",
-    "explanation": "Same denominator: add numerators."
-  },
-  {
-    "question": "Pattern (+5, ×3). Next number: 20, 25, 75, 80, 240, ?",
-    "options": [
-      "242",
-      "250",
-      "245",
-      "240"
-    ],
-    "answer": "245",
-    "explanation": "Apply the alternating pattern +5, ×3."
-  },
-  {
-    "question": "A train leaves at 15:35 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "17:20",
-      "17:05",
-      "17:00",
-      "17:10"
-    ],
-    "answer": "17:10",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In the ratio 6:2, if the total is 40, what is the second part?",
-    "options": [
-      "40",
-      "10",
-      "36",
-      "20"
-    ],
-    "answer": "10",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "39 + (5 × 15) = ?",
-    "options": [
-      "114",
-      "109",
-      "106",
-      "116"
-    ],
-    "answer": "114",
-    "explanation": "Work out 5 × 15 first, then + with 39."
-  },
-  {
-    "question": "16 × 15 = ?",
-    "options": [
-      "243",
-      "240",
-      "225",
-      "224"
-    ],
-    "answer": "240",
-    "explanation": "Multiply 16 by 15 to get 240."
-  },
-  {
-    "question": "In the ratio 4:3, if the total is 14, what is the first part?",
-    "options": [
-      "7",
-      "8",
-      "12",
-      "14"
-    ],
-    "answer": "8",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Perimeter of a rectangle 9 cm by 7 cm = ?",
-    "options": [
-      "36",
-      "25",
-      "32",
-      "28"
-    ],
-    "answer": "32",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 121°, find b.",
-    "options": [
-      "129",
-      "59",
-      "109",
-      "121"
-    ],
-    "answer": "121",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "8 items cost £1.20 each. What is the total cost?",
-    "options": [
-      "7.6",
-      "10.1",
-      "8.6",
-      "9.60"
-    ],
-    "answer": "9.60",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "Which is larger? (5.46 or 5.26)",
-    "options": [
-      "5.46",
-      "6.09",
-      "5.87",
-      "6.4"
-    ],
-    "answer": "5.46",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "Write 0.96 as a fraction in simplest form.",
-    "options": [
-      "24/26",
-      "96/100",
-      "24/25"
-    ],
-    "answer": "24/25",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "A train leaves at 16:10 and arrives 55 minutes later. What time is arrival?",
-    "options": [
-      "17:00",
-      "17:15",
-      "17:05",
-      "16:55"
-    ],
-    "answer": "17:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In the ratio 4:8, if the total is 72, what is the first part?",
-    "options": [
-      "36",
-      "56",
-      "20",
-      "24"
-    ],
-    "answer": "24",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 12:55 and arrives 110 minutes later. What time is arrival?",
-    "options": [
-      "14:35",
-      "15:00",
-      "14:50",
-      "14:45"
-    ],
-    "answer": "14:45",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In the ratio 4:6, if the total is 50, what is the second part?",
-    "options": [
-      "24",
-      "25",
-      "30",
-      "50"
-    ],
-    "answer": "30",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 07:15 and arrives 110 minutes later. What time is arrival?",
-    "options": [
-      "09:05",
-      "09:10",
-      "09:20",
-      "08:55"
-    ],
-    "answer": "09:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Pattern (×2, −3). Next number: 14, 28, 56, 112, 224, ?",
-    "options": [
-      "224",
-      "445",
-      "448",
-      "453"
-    ],
-    "answer": "448",
-    "explanation": "Apply the alternating pattern ×2, −3."
-  },
-  {
-    "question": "What is 20% of 120?",
-    "options": [
-      "19",
-      "14",
-      "24",
-      "34"
-    ],
-    "answer": "24",
-    "explanation": "20% means multiply by 20/100."
-  },
-  {
-    "question": "In a triangle, angles are 37° and 30°. Find the third angle.",
-    "options": [
-      "113",
-      "123",
-      "103",
-      "30"
-    ],
-    "answer": "113",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "In a triangle, angles are 65° and 34°. Find the third angle.",
-    "options": [
-      "81",
-      "34",
-      "91",
-      "71"
-    ],
-    "answer": "81",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "A wall area is 48 m². Tiles cover 2 m² per pack. How many packs are needed?",
-    "options": [
-      "25",
-      "26",
-      "23",
-      "24"
-    ],
-    "answer": "24",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "What is the sum of interior angles of a 4-gon?",
-    "options": [
-      "180",
-      "720",
-      "360",
-      "540"
-    ],
-    "answer": "360",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "What is the sum of interior angles of a 5-gon?",
-    "options": [
-      "360",
-      "540",
-      "720",
-      "900"
-    ],
-    "answer": "540",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "In the ratio 3:9, if the total is 60, what is the second part?",
-    "options": [
-      "30",
-      "36",
-      "45",
-      "18"
-    ],
-    "answer": "45",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "What is the angle between the hands at 1:15?",
-    "options": [
-      "52.5",
-      "57.5",
-      "47.5",
-      "67.5"
-    ],
-    "answer": "52.5",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "In the ratio 7:6, if the total is 39, what is the first part?",
-    "options": [
-      "14",
-      "24",
-      "39",
-      "21"
-    ],
-    "answer": "21",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A wall area is 30 m². Tiles cover 3 m² per pack. How many packs are needed?",
-    "options": [
-      "9",
-      "10",
-      "12",
-      "11"
-    ],
-    "answer": "10",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "In the ratio 4:4, if the total is 40, what is the first part?",
-    "options": [
-      "20",
-      "40",
-      "24",
-      "16"
-    ],
-    "answer": "20",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 11:00 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "11:40",
-      "12:00",
-      "11:45",
-      "11:50"
-    ],
-    "answer": "11:45",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 30, 34, 38, 42, 46, ?",
-    "options": [
-      "51",
-      "50",
-      "54",
-      "46"
-    ],
-    "answer": "50",
-    "explanation": "Add 4 each time."
-  },
-  {
-    "question": "What is the angle between the hands at 2:30?",
-    "options": [
-      "112",
-      "120",
-      "105",
-      "90"
-    ],
-    "answer": "105",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "In the ratio 5:5, if the total is 40, what is the first part?",
-    "options": [
-      "15",
-      "25",
-      "40",
-      "20"
-    ],
-    "answer": "20",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "In a triangle, angles are 42° and 57°. Find the third angle.",
-    "options": [
-      "81",
-      "71",
-      "42",
-      "57"
-    ],
-    "answer": "81",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "A train leaves at 10:40 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "11:35",
-      "11:40",
-      "11:15",
-      "11:25"
-    ],
-    "answer": "11:25",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Which is equivalent to 1/4?",
-    "options": [
-      "1/7",
-      "2/12",
-      "4/4",
-      "3/12"
-    ],
-    "answer": "3/12",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "A train leaves at 11:30 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "12:05",
-      "11:55",
-      "12:00",
-      "12:10"
-    ],
-    "answer": "11:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In a triangle, angles are 80° and 81°. Find the third angle.",
-    "options": [
-      "81",
-      "19",
-      "9",
-      "80"
-    ],
-    "answer": "19",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "Simplify: 6/4",
-    "options": [
-      "3/2",
-      "2/1"
-    ],
-    "answer": "3/2",
-    "explanation": "Divide numerator and denominator by 2."
-  },
-  {
-    "question": "A train leaves at 16:00 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "16:55",
-      "16:40",
-      "16:45",
-      "16:50"
-    ],
-    "answer": "16:45",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 13:50 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "14:55",
-      "14:40",
-      "14:45",
-      "14:35"
-    ],
-    "answer": "14:40",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 19, 21, 23, 25, 27, ?",
-    "options": [
-      "29",
-      "28",
-      "31",
-      "27"
-    ],
-    "answer": "29",
-    "explanation": "Add 2 each time."
-  },
-  {
-    "question": "37 + 980 = ?",
-    "options": [
-      "1017",
-      "1007",
-      "1019",
-      "1015"
-    ],
-    "answer": "1017",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 21°, find b.",
-    "options": [
-      "26",
-      "159",
-      "21",
-      "16"
-    ],
-    "answer": "21",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "A wall area is 24 m². Tiles cover 6 m² per pack. How many packs are needed?",
-    "options": [
-      "4",
-      "6",
-      "3",
-      "5"
-    ],
-    "answer": "4",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "In the ratio 7:2, if the total is 27, what is the first part?",
-    "options": [
-      "21",
-      "14",
-      "27",
-      "13"
-    ],
-    "answer": "21",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Two angles on a straight line are 112° and x°. Find x.",
-    "options": [
-      "73",
-      "68",
-      "112",
-      "63"
-    ],
-    "answer": "68",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "13 × 7 = ?",
-    "options": [
-      "84",
-      "98",
-      "101",
-      "91"
-    ],
-    "answer": "91",
-    "explanation": "Multiply 13 by 7 to get 91."
-  },
-  {
-    "question": "Area of a triangle with base 6 cm and height 24 cm = ?",
-    "options": [
-      "48.0",
-      "144",
-      "72",
-      "78.0"
-    ],
-    "answer": "72",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Which is equivalent to 9/9?",
-    "options": [
-      "18/18",
-      "9/11",
-      "11/9",
-      "18/27"
-    ],
-    "answer": "18/18",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Pattern (×2, −3). Next number: 18, 36, 72, 144, 288, ?",
-    "options": [
-      "576",
-      "573",
-      "581",
-      "288"
-    ],
-    "answer": "576",
-    "explanation": "Apply the alternating pattern ×2, −3."
-  },
-  {
-    "question": "Pattern (×2, −3). Next number: 9, 18, 36, 72, 144, ?",
-    "options": [
-      "293",
-      "285",
-      "144",
-      "288"
-    ],
-    "answer": "288",
-    "explanation": "Apply the alternating pattern ×2, −3."
-  },
-  {
-    "question": "A train leaves at 11:40 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "12:45",
-      "12:30",
-      "12:20",
-      "12:25"
-    ],
-    "answer": "12:30",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 19:00 and arrives 110 minutes later. What time is arrival?",
-    "options": [
-      "21:00",
-      "21:05",
-      "20:50",
-      "20:55"
-    ],
-    "answer": "20:50",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 14:10 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "15:15",
-      "15:25",
-      "15:10",
-      "15:00"
-    ],
-    "answer": "15:10",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Area of a triangle with base 32 cm and height 12 cm = ?",
-    "options": [
-      "160.0",
-      "384",
-      "192",
-      "224.0"
-    ],
-    "answer": "192",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "In the ratio 7:7, if the total is 28, what is the second part?",
-    "options": [
-      "28",
-      "14",
-      "21"
-    ],
-    "answer": "14",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Two angles on a straight line are 27° and x°. Find x.",
-    "options": [
-      "158",
-      "27",
-      "148",
-      "153"
-    ],
-    "answer": "153",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "What is the sum of interior angles of a 9-gon?",
-    "options": [
-      "1080",
-      "1440",
-      "1260",
-      "1620"
-    ],
-    "answer": "1260",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "Wendy saves £4.00 a week. How many weeks to save £36?",
-    "options": [
-      "10",
-      "8",
-      "11",
-      "9"
-    ],
-    "answer": "9",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "Next number: 23, 29, 35, 41, 47, ?",
-    "options": [
-      "52",
-      "59",
-      "54",
-      "53"
-    ],
-    "answer": "53",
-    "explanation": "Add 6 each time."
-  },
-  {
-    "question": "10 × 17 = ?",
-    "options": [
-      "164",
-      "153",
-      "170",
-      "180"
-    ],
-    "answer": "170",
-    "explanation": "Multiply 10 by 17 to get 170."
-  },
-  {
-    "question": "Simplify: 54/63",
-    "options": [
-      "6/7",
-      "5/6"
-    ],
-    "answer": "6/7",
-    "explanation": "Divide numerator and denominator by 9."
-  },
-  {
-    "question": "A wall area is 36 m². Tiles cover 3 m² per pack. How many packs are needed?",
-    "options": [
-      "12",
-      "13",
-      "11",
-      "14"
-    ],
-    "answer": "12",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "3 items cost £1.50 each. What is the total cost?",
-    "options": [
-      "5.5",
-      "6.5",
-      "4.0",
-      "4.50"
-    ],
-    "answer": "4.50",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "Pattern (×2, −3). Next number: 6, 12, 24, 48, 96, ?",
-    "options": [
-      "96",
-      "197",
-      "192",
-      "189"
-    ],
-    "answer": "192",
-    "explanation": "Apply the alternating pattern ×2, −3."
-  },
-  {
-    "question": "Convert 250 ml to litres.",
-    "options": [
-      "-0.75",
-      "2.5",
-      "1.25",
-      "0.25"
-    ],
-    "answer": "0.25",
-    "explanation": "Divide by 1000."
-  },
-  {
-    "question": "Pattern (+2, ×2). Next number: 3, 5, 10, 12, 24, ?",
-    "options": [
-      "31",
-      "26",
-      "23",
-      "24"
-    ],
-    "answer": "26",
-    "explanation": "Apply the alternating pattern +2, ×2."
-  },
-  {
-    "question": "895 - 648 = ?",
-    "options": [
-      "241",
-      "246",
-      "247",
-      "235"
-    ],
-    "answer": "247",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "What is 40% of 20?",
-    "options": [
-      "8",
-      "3",
-      "13",
-      "6"
-    ],
-    "answer": "8",
-    "explanation": "40% means multiply by 40/100."
-  },
-  {
-    "question": "In the ratio 5:9, if the total is 70, what is the first part?",
-    "options": [
-      "70",
-      "20",
-      "54",
-      "25"
-    ],
-    "answer": "25",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 07:25 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "09:00",
-      "08:50",
-      "08:55",
-      "09:15"
-    ],
-    "answer": "09:00",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "17 + (3 × 2) = ?",
-    "options": [
-      "27",
-      "21",
-      "23",
-      "19"
-    ],
-    "answer": "23",
-    "explanation": "Work out 3 × 2 first, then + with 17."
-  },
-  {
-    "question": "Area of a rectangle 18 cm by 13 cm = ?",
-    "options": [
-      "62",
-      "238",
-      "234",
-      "228"
-    ],
-    "answer": "234",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "Perimeter of a rectangle 3 cm by 5 cm = ?",
-    "options": [
-      "11",
-      "16",
-      "20",
-      "15"
-    ],
-    "answer": "16",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "36 + (21 × 11) = ?",
-    "options": [
-      "269",
-      "266",
-      "261",
-      "267"
-    ],
-    "answer": "267",
-    "explanation": "Work out 21 × 11 first, then + with 36."
-  },
-  {
-    "question": "Convert 0.5 kg to grams.",
-    "options": [
-      "5000",
-      "501",
-      "499",
-      "500"
-    ],
-    "answer": "500",
-    "explanation": "Multiply by 1000."
-  },
-  {
-    "question": "Area of a rectangle 13 cm by 20 cm = ?",
-    "options": [
-      "252",
-      "266",
-      "260",
-      "255"
-    ],
-    "answer": "260",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "Share 36 in the ratio 6:7. How much is the first share?",
-    "options": [
-      "3",
-      "16",
-      "29",
-      "20"
-    ],
-    "answer": "16",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "Wendy saves £2.50 a week. How many weeks to save £12?",
-    "options": [
-      "7",
-      "4",
-      "6",
-      "5"
-    ],
-    "answer": "5",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "A train leaves at 10:10 and arrives 35 minutes later. What time is arrival?",
-    "options": [
-      "10:45",
-      "10:35",
-      "10:50",
-      "10:40"
-    ],
-    "answer": "10:45",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 37, 41, 45, 49, 53, ?",
-    "options": [
-      "56",
-      "57",
-      "58",
-      "53"
-    ],
-    "answer": "57",
-    "explanation": "Add 4 each time."
-  },
-  {
-    "question": "Convert 500 ml to litres.",
-    "options": [
-      "-0.5",
-      "1.5",
-      "5.0",
-      "0.5"
-    ],
-    "answer": "0.5",
-    "explanation": "Divide by 1000."
-  },
-  {
-    "question": "In the ratio 2:7, if the total is 45, what is the first part?",
-    "options": [
-      "45",
-      "22",
-      "10",
-      "42"
-    ],
-    "answer": "10",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "In a triangle, angles are 71° and 41°. Find the third angle.",
-    "options": [
-      "58",
-      "71",
-      "68",
-      "78"
-    ],
-    "answer": "68",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "Simplify: 24/12",
-    "options": [
-      "2/1",
-      "1/1"
-    ],
-    "answer": "2/1",
-    "explanation": "Divide numerator and denominator by 12."
-  },
-  {
-    "question": "Which is equivalent to 2/3?",
-    "options": [
-      "12/18",
-      "10/18",
-      "8/3",
-      "2/9"
-    ],
-    "answer": "12/18",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Which is larger? (6.44 or 6.24)",
-    "options": [
-      "6.59",
-      "6.44",
-      "6.84",
-      "7.52"
-    ],
-    "answer": "6.44",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "Share 24 in the ratio 3:5. How much is the first share?",
-    "options": [
-      "15",
-      "1",
-      "9",
-      "17"
-    ],
-    "answer": "9",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "A train leaves at 15:55 and arrives 75 minutes later. What time is arrival?",
-    "options": [
-      "17:15",
-      "17:10",
-      "17:05",
-      "17:25"
-    ],
-    "answer": "17:10",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 35, 39, 43, 47, 51, ?",
-    "options": [
-      "54",
-      "56",
-      "55",
-      "51"
-    ],
-    "answer": "55",
-    "explanation": "Add 4 each time."
-  },
-  {
-    "question": "Share 42 in the ratio 3:2. How much is the first share?",
-    "options": [
-      "25",
-      "20",
-      "17",
-      "30"
-    ],
-    "answer": "25",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "144 ÷ 6 = ?",
-    "options": [
-      "23",
-      "22",
-      "24",
-      "25"
-    ],
-    "answer": "24",
-    "explanation": "Divide 144 by 6."
-  },
-  {
-    "question": "Area of a triangle with base 28 cm and height 7 cm = ?",
-    "options": [
-      "65.33333333333333",
-      "126.0",
-      "196",
-      "98"
-    ],
-    "answer": "98",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "What is 20% of 50?",
-    "options": [
-      "10",
-      "5",
-      "15",
-      "20"
-    ],
-    "answer": "10",
-    "explanation": "20% means multiply by 20/100."
-  },
-  {
-    "question": "Which is larger? (2.75 or 3.25)",
-    "options": [
-      "4.59",
-      "3.13",
-      "3.3",
-      "3.25"
-    ],
-    "answer": "3.25",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "Write 0.3 as a fraction in simplest form.",
-    "options": [
-      "3/10",
-      "4/10",
-      "3/11"
-    ],
-    "answer": "3/10",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "Area of a triangle with base 11 cm and height 26 cm = ?",
-    "options": [
-      "132.0",
-      "143",
-      "95.33333333333333",
-      "154.0"
-    ],
-    "answer": "143",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "A train leaves at 20:45 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "21:20",
-      "21:45",
-      "21:30",
-      "21:40"
-    ],
-    "answer": "21:30",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "What is 60% of 80?",
-    "options": [
-      "43",
-      "48",
-      "58",
-      "40"
-    ],
-    "answer": "48",
-    "explanation": "60% means multiply by 60/100."
-  },
-  {
-    "question": "What is the angle between the hands at 6:00?",
-    "options": [
-      "175",
-      "180",
-      "168",
-      "195"
-    ],
-    "answer": "180",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "A train leaves at 10:00 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "10:50",
-      "10:55",
-      "11:00",
-      "10:45"
-    ],
-    "answer": "10:50",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Share 54 in the ratio 7:6. How much is the first share?",
-    "options": [
-      "29",
-      "16",
-      "25",
-      "42"
-    ],
-    "answer": "29",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "Next number: 1, 2, 4, 8, 16, ?",
-    "options": [
-      "16",
-      "64",
-      "32",
-      "33"
-    ],
-    "answer": "32",
-    "explanation": "Multiply by 2 each time."
-  },
-  {
-    "question": "A train leaves at 15:00 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "16:50",
-      "16:35",
-      "16:45",
-      "16:30"
-    ],
-    "answer": "16:35",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 16:30 and arrives 35 minutes later. What time is arrival?",
-    "options": [
-      "17:20",
-      "17:00",
-      "17:10",
-      "17:05"
-    ],
-    "answer": "17:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In the ratio 2:5, if the total is 28, what is the first part?",
-    "options": [
-      "6",
-      "8",
-      "28",
-      "25"
-    ],
-    "answer": "8",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Convert 0.5 l to millilitres.",
-    "options": [
-      "499",
-      "5000",
-      "501",
-      "500"
-    ],
-    "answer": "500",
-    "explanation": "Multiply by 1000."
-  },
-  {
-    "question": "A train leaves at 18:55 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "19:55",
-      "19:45",
-      "20:10",
-      "20:00"
-    ],
-    "answer": "19:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Area of a rectangle 6 cm by 8 cm = ?",
-    "options": [
-      "45",
-      "49",
-      "48",
-      "28"
-    ],
-    "answer": "48",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "Perimeter of a rectangle 14 cm by 19 cm = ?",
-    "options": [
-      "62",
-      "70",
-      "66",
-      "47"
-    ],
-    "answer": "66",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "A train leaves at 07:00 and arrives 80 minutes later. What time is arrival?",
-    "options": [
-      "08:15",
-      "08:10",
-      "08:20",
-      "08:30"
-    ],
-    "answer": "08:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Pattern (+2, ×2). Next number: 9, 11, 22, 24, 48, ?",
-    "options": [
-      "50",
-      "55",
-      "47",
-      "48"
-    ],
-    "answer": "50",
-    "explanation": "Apply the alternating pattern +2, ×2."
-  },
-  {
-    "question": "A train leaves at 14:30 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "15:40",
-      "15:45",
-      "15:35",
-      "15:30"
-    ],
-    "answer": "15:30",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Volume of a cube with side 15 cm = ?",
-    "options": [
-      "4096",
-      "3375",
-      "225",
-      "1350"
-    ],
-    "answer": "3375",
-    "explanation": "Volume = side³."
-  },
-  {
-    "question": "A train leaves at 13:45 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "15:10",
-      "15:25",
-      "15:35",
-      "15:20"
-    ],
-    "answer": "15:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Perimeter of a rectangle 28 cm by 5 cm = ?",
-    "options": [
-      "61",
-      "66",
-      "70",
-      "140"
-    ],
-    "answer": "66",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "In the ratio 3:2, if the total is 25, what is the first part?",
-    "options": [
-      "12",
-      "15",
-      "25"
-    ],
-    "answer": "15",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Area of a rectangle 27 cm by 19 cm = ?",
-    "options": [
-      "513",
-      "504",
-      "508",
-      "520"
-    ],
-    "answer": "513",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "437 - 46 = ?",
-    "options": [
-      "391",
-      "383",
-      "388",
-      "386"
-    ],
-    "answer": "391",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "Next number: 5, 17, 29, 41, 53, ?",
-    "options": [
-      "77",
-      "53",
-      "64",
-      "65"
-    ],
-    "answer": "65",
-    "explanation": "Add 12 each time."
-  },
-  {
-    "question": "Which is larger? (2.09 or 3.09)",
-    "options": [
-      "3.09",
-      "2.39",
-      "2.73",
-      "4.18"
-    ],
-    "answer": "3.09",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "Pattern (+2, ×2). Next number: 8, 10, 20, 22, 44, ?",
-    "options": [
-      "43",
-      "51",
-      "46",
-      "44"
-    ],
-    "answer": "46",
-    "explanation": "Apply the alternating pattern +2, ×2."
-  },
-  {
-    "question": "Share 36 in the ratio 7:7. How much is the first share?",
-    "options": [
-      "4",
-      "18",
-      "32"
-    ],
-    "answer": "18",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "Wendy saves £4.00 a week. How many weeks to save £24?",
-    "options": [
-      "6",
-      "7",
-      "5",
-      "8"
-    ],
-    "answer": "6",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "615 + 671 = ?",
-    "options": [
-      "1286",
-      "1289",
-      "1290",
-      "1276"
-    ],
-    "answer": "1286",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "A wall area is 12 m². Tiles cover 4 m² per pack. How many packs are needed?",
-    "options": [
-      "5",
-      "3",
-      "2",
-      "4"
-    ],
-    "answer": "3",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "Next number: 7, 11, 15, 19, 23, ?",
-    "options": [
-      "31",
-      "23",
-      "27",
-      "28"
-    ],
-    "answer": "27",
-    "explanation": "Add 4 each time."
-  },
-  {
-    "question": "A train leaves at 07:55 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "09:20",
-      "09:30",
-      "09:25",
-      "09:45"
-    ],
-    "answer": "09:30",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 20:40 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "20:55",
-      "21:05",
-      "21:00",
-      "21:20"
-    ],
-    "answer": "21:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 105°, find b.",
-    "options": [
-      "110",
-      "113",
-      "105",
-      "75"
-    ],
-    "answer": "105",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "Area of a rectangle 9 cm by 14 cm = ?",
-    "options": [
-      "126",
-      "128",
-      "130",
-      "120"
-    ],
-    "answer": "126",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "A train leaves at 17:35 and arrives 75 minutes later. What time is arrival?",
-    "options": [
-      "18:40",
-      "18:55",
-      "19:05",
-      "18:50"
-    ],
-    "answer": "18:50",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 6, 14, 22, 30, 38, ?",
-    "options": [
-      "47",
-      "54",
-      "46",
-      "38"
-    ],
-    "answer": "46",
-    "explanation": "Add 8 each time."
-  },
-  {
-    "question": "Perimeter of a rectangle 14 cm by 18 cm = ?",
-    "options": [
-      "68",
-      "252",
-      "46",
-      "64"
-    ],
-    "answer": "64",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "Next number: 20, 29, 38, 47, 56, ?",
-    "options": [
-      "74",
-      "66",
-      "65",
-      "64"
-    ],
-    "answer": "65",
-    "explanation": "Add 9 each time."
-  },
-  {
-    "question": "In the ratio 5:4, if the total is 27, what is the first part?",
-    "options": [
-      "16",
-      "15",
-      "10",
-      "13"
-    ],
-    "answer": "15",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Area of a triangle with base 30 cm and height 11 cm = ?",
-    "options": [
-      "195.0",
-      "165",
-      "135.0",
-      "110.0"
-    ],
-    "answer": "165",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Write 0.53 as a fraction in simplest form.",
-    "options": [
-      "54/100",
-      "53/101",
-      "53/100"
-    ],
-    "answer": "53/100",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "In a triangle, angles are 84° and 79°. Find the third angle.",
-    "options": [
-      "27",
-      "17",
-      "7",
-      "84"
-    ],
-    "answer": "17",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "Pattern (+3, −1). Next number: 7, 10, 13, 16, 19, ?",
-    "options": [
-      "27",
-      "22",
-      "19"
-    ],
-    "answer": "22",
-    "explanation": "Apply the alternating pattern +3, −1."
-  },
-  {
-    "question": "254 + 925 = ?",
-    "options": [
-      "1169",
-      "1189",
-      "1179",
-      "1181"
-    ],
-    "answer": "1179",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "Wendy saves £2.00 a week. How many weeks to save £36?",
-    "options": [
-      "18",
-      "19",
-      "17",
-      "20"
-    ],
-    "answer": "18",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "4/10 + 6/10 = ?",
-    "options": [
-      "4/10+6/10",
-      "9/10",
-      "11/10",
-      "1"
-    ],
-    "answer": "1",
-    "explanation": "Numerators sum to a whole number."
-  },
-  {
-    "question": "Which is larger? (5.22 or 5.02)",
-    "options": [
-      "5.69",
-      "6.4",
-      "5.88",
-      "5.22"
-    ],
-    "answer": "5.22",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 113°, find b.",
-    "options": [
-      "67",
-      "101",
-      "113",
-      "125"
-    ],
-    "answer": "113",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "In the ratio 8:8, if the total is 32, what is the first part?",
-    "options": [
-      "16",
-      "32",
-      "24"
-    ],
-    "answer": "16",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "In the ratio 2:7, if the total is 27, what is the first part?",
-    "options": [
-      "13",
-      "27",
-      "28",
-      "6"
-    ],
-    "answer": "6",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "3 items cost £0.75 each. What is the total cost?",
-    "options": [
-      "1.75",
-      "2.25",
-      "3.25",
-      "4.25"
-    ],
-    "answer": "2.25",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "A train leaves at 10:30 and arrives 75 minutes later. What time is arrival?",
-    "options": [
-      "11:40",
-      "11:45",
-      "11:50",
-      "11:35"
-    ],
-    "answer": "11:45",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Perimeter of a rectangle 27 cm by 14 cm = ?",
-    "options": [
-      "378",
-      "82",
-      "78",
-      "68"
-    ],
-    "answer": "82",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "What is 20% of 40?",
-    "options": [
-      "8",
-      "12",
-      "18",
-      "-2"
-    ],
-    "answer": "8",
-    "explanation": "20% means multiply by 20/100."
-  },
-  {
-    "question": "Volume of a cube with side 11 cm = ?",
-    "options": [
-      "1342",
-      "121",
-      "726",
-      "1331"
-    ],
-    "answer": "1331",
-    "explanation": "Volume = side³."
-  },
-  {
-    "question": "A train leaves at 13:05 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "14:50",
-      "14:45",
-      "14:40",
-      "14:55"
-    ],
-    "answer": "14:40",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 5, 9, 13, 17, 21, ?",
-    "options": [
-      "29",
-      "24",
-      "26",
-      "25"
-    ],
-    "answer": "25",
-    "explanation": "Add 4 each time."
-  },
-  {
-    "question": "Area of a triangle with base 15 cm and height 25 cm = ?",
-    "options": [
-      "187.5",
-      "125.0",
-      "172.5",
-      "202.5"
-    ],
-    "answer": "187.5",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Perimeter of a rectangle 8 cm by 19 cm = ?",
-    "options": [
-      "50",
-      "35",
-      "54",
-      "152"
-    ],
-    "answer": "54",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "A train leaves at 19:25 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "20:20",
-      "20:00",
-      "20:15",
-      "20:10"
-    ],
-    "answer": "20:10",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "39 - (6 × 6) = ?",
-    "options": [
-      "15",
-      "3",
-      "9",
-      "-9"
-    ],
-    "answer": "3",
-    "explanation": "Work out 6 × 6 first, then - with 39."
-  },
-  {
-    "question": "Next number: 26, 32, 38, 44, 50, ?",
-    "options": [
-      "56",
-      "50",
-      "55",
-      "57"
-    ],
-    "answer": "56",
-    "explanation": "Add 6 each time."
-  },
-  {
-    "question": "Which is equivalent to 7/11?",
-    "options": [
-      "21/33",
-      "10/11",
-      "14/33",
-      "21/44"
-    ],
-    "answer": "21/33",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Two angles on a straight line are 32° and x°. Find x.",
-    "options": [
-      "143",
-      "32",
-      "153",
-      "148"
-    ],
-    "answer": "148",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "A train leaves at 20:20 and arrives 35 minutes later. What time is arrival?",
-    "options": [
-      "20:45",
-      "20:55",
-      "20:50",
-      "21:00"
-    ],
-    "answer": "20:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A wall area is 18 m². Tiles cover 2 m² per pack. How many packs are needed?",
-    "options": [
-      "8",
-      "10",
-      "9",
-      "11"
-    ],
-    "answer": "9",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "Next number: 39, 51, 63, 75, 87, ?",
-    "options": [
-      "87",
-      "100",
-      "98",
-      "99"
-    ],
-    "answer": "99",
-    "explanation": "Add 12 each time."
-  },
-  {
-    "question": "A train leaves at 18:40 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "19:30",
-      "19:20",
-      "19:35",
-      "19:45"
-    ],
-    "answer": "19:30",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "9 items cost £1.50 each. What is the total cost?",
-    "options": [
-      "15.5",
-      "13.0",
-      "13.50",
-      "14.0"
-    ],
-    "answer": "13.50",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "7 items cost £1.50 each. What is the total cost?",
-    "options": [
-      "9.5",
-      "10.50",
-      "8.5",
-      "10.0"
-    ],
-    "answer": "10.50",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "A train leaves at 07:25 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "08:15",
-      "08:30",
-      "08:20",
-      "08:10"
-    ],
-    "answer": "08:15",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Pattern (+3, −1). Next number: 14, 17, 20, 23, 26, ?",
-    "options": [
-      "29",
-      "26",
-      "34"
-    ],
-    "answer": "29",
-    "explanation": "Apply the alternating pattern +3, −1."
-  },
-  {
-    "question": "10/11 + 2/11 = ?",
-    "options": [
-      "12/12",
-      "1 1/11",
-      "11/11",
-      "13/11"
-    ],
-    "answer": "1 1/11",
-    "explanation": "Convert improper to mixed number and simplify."
-  },
-  {
-    "question": "A wall area is 30 m². Tiles cover 2 m² per pack. How many packs are needed?",
-    "options": [
-      "15",
-      "17",
-      "14",
-      "16"
-    ],
-    "answer": "15",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "A train leaves at 08:25 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "09:05",
-      "08:55",
-      "08:45",
-      "08:50"
-    ],
-    "answer": "08:50",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Area of a triangle with base 23 cm and height 11 cm = ?",
-    "options": [
-      "253",
-      "149.5",
-      "84.33333333333333",
-      "126.5"
-    ],
-    "answer": "126.5",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Write 0.27 as a fraction in simplest form.",
-    "options": [
-      "27/101",
-      "28/100",
-      "27/100"
-    ],
-    "answer": "27/100",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "Perimeter of a rectangle 27 cm by 8 cm = ?",
-    "options": [
-      "66",
-      "216",
-      "70",
-      "74"
-    ],
-    "answer": "70",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "66 ÷ 6 = ?",
-    "options": [
-      "12",
-      "11",
-      "13",
-      "10"
-    ],
-    "answer": "11",
-    "explanation": "Divide 66 by 6."
-  },
-  {
-    "question": "Write 0.8 as a fraction in simplest form.",
-    "options": [
-      "4/5",
-      "4/6",
-      "8/10"
-    ],
-    "answer": "4/5",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "In the ratio 8:4, if the total is 36, what is the first part?",
-    "options": [
-      "18",
-      "36",
-      "16",
-      "24"
-    ],
-    "answer": "24",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 12:40 and arrives 55 minutes later. What time is arrival?",
-    "options": [
-      "13:35",
-      "13:40",
-      "13:50",
-      "13:25"
-    ],
-    "answer": "13:35",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In a triangle, angles are 81° and 92°. Find the third angle.",
-    "options": [
-      "22",
-      "7",
-      "92",
-      "81"
-    ],
-    "answer": "7",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "What is the sum of interior angles of a 3-gon?",
-    "options": [
-      "270",
-      "180",
-      "540",
-      "360"
-    ],
-    "answer": "180",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "A train leaves at 18:25 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "19:00",
-      "19:05",
-      "18:50",
-      "18:40"
-    ],
-    "answer": "18:50",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A wall area is 12 m². Tiles cover 2 m² per pack. How many packs are needed?",
-    "options": [
-      "5",
-      "6",
-      "7",
-      "8"
-    ],
-    "answer": "6",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "Which is equivalent to 9/6?",
-    "options": [
-      "11/6",
-      "18/18",
-      "27/12",
-      "18/12"
-    ],
-    "answer": "18/12",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Which is larger? (9.17 or 9.37)",
-    "options": [
-      "10.22",
-      "9.37",
-      "9.87",
-      "10.15"
-    ],
-    "answer": "9.37",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "A train leaves at 20:00 and arrives 110 minutes later. What time is arrival?",
-    "options": [
-      "22:00",
-      "21:50",
-      "22:05",
-      "21:45"
-    ],
-    "answer": "21:50",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 16:15 and arrives 110 minutes later. What time is arrival?",
-    "options": [
-      "18:00",
-      "18:05",
-      "18:10",
-      "17:55"
-    ],
-    "answer": "18:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Convert 250 cm to metres.",
-    "options": [
-      "3.5",
-      "25.0",
-      "2.5",
-      "1.5"
-    ],
-    "answer": "2.5",
-    "explanation": "Divide by 100."
-  },
-  {
-    "question": "A train leaves at 17:45 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "18:10",
-      "18:20",
-      "18:05",
-      "18:00"
-    ],
-    "answer": "18:10",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 19:10 and arrives 55 minutes later. What time is arrival?",
-    "options": [
-      "20:10",
-      "20:00",
-      "19:55",
-      "20:05"
-    ],
-    "answer": "20:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Perimeter of a rectangle 5 cm by 5 cm = ?",
-    "options": [
-      "16",
-      "15",
-      "24",
-      "20"
-    ],
-    "answer": "20",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "In the ratio 6:6, if the total is 48, what is the first part?",
-    "options": [
-      "30",
-      "48",
-      "18",
-      "24"
-    ],
-    "answer": "24",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 34°, find b.",
-    "options": [
-      "34",
-      "146",
-      "29",
-      "26"
-    ],
-    "answer": "34",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "Share 60 in the ratio 4:7. How much is the first share?",
-    "options": [
-      "10",
-      "32",
-      "21",
-      "39"
-    ],
-    "answer": "21",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "273 - 91 = ?",
-    "options": [
-      "170",
-      "182",
-      "190",
-      "184"
-    ],
-    "answer": "182",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "Next number: 19, 23, 27, 31, 35, ?",
-    "options": [
-      "38",
-      "43",
-      "39",
-      "40"
-    ],
-    "answer": "39",
-    "explanation": "Add 4 each time."
-  },
-  {
-    "question": "Next number: 3, 9, 27, 81, 243, ?",
-    "options": [
-      "243",
-      "729",
-      "730",
-      "2187"
-    ],
-    "answer": "729",
-    "explanation": "Multiply by 3 each time."
-  },
-  {
-    "question": "513 ÷ 19 = ?",
-    "options": [
-      "29",
-      "26",
-      "27",
-      "28"
-    ],
-    "answer": "27",
-    "explanation": "Divide 513 by 19."
-  },
-  {
-    "question": "449 - 191 = ?",
-    "options": [
-      "264",
-      "258",
-      "262",
-      "261"
-    ],
-    "answer": "258",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "4 items cost £2.40 each. What is the total cost?",
-    "options": [
-      "9.60",
-      "10.1",
-      "10.6",
-      "9.1"
-    ],
-    "answer": "9.60",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "51 - (16 × 19) = ?",
-    "options": [
-      "-253",
-      "-247",
-      "-257",
-      "-255"
-    ],
-    "answer": "-253",
-    "explanation": "Work out 16 × 19 first, then - with 51."
-  },
-  {
-    "question": "In the ratio 5:7, if the total is 60, what is the second part?",
-    "options": [
-      "30",
-      "60",
-      "35",
-      "28"
-    ],
-    "answer": "35",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Share 96 in the ratio 4:7. How much is the first share?",
-    "options": [
-      "45",
-      "62",
-      "34",
-      "23"
-    ],
-    "answer": "34",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "7 items cost £0.75 each. What is the total cost?",
-    "options": [
-      "5.75",
-      "5.25",
-      "7.25",
-      "4.75"
-    ],
-    "answer": "5.25",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "In the ratio 6:3, if the total is 54, what is the second part?",
-    "options": [
-      "54",
-      "18",
-      "15",
-      "27"
-    ],
-    "answer": "18",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "What is the sum of interior angles of a 8-gon?",
-    "options": [
-      "1080",
-      "1260",
-      "900",
-      "1440"
-    ],
-    "answer": "1080",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "Convert 525 cm to metres.",
-    "options": [
-      "4.25",
-      "5.25",
-      "52.5",
-      "6.25"
-    ],
-    "answer": "5.25",
-    "explanation": "Divide by 100."
-  },
-  {
-    "question": "Next number: 5, 15, 45, 135, 405, ?",
-    "options": [
-      "3645",
-      "1216",
-      "405",
-      "1215"
-    ],
-    "answer": "1215",
-    "explanation": "Multiply by 3 each time."
-  },
-  {
-    "question": "A train leaves at 10:30 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "11:05",
-      "10:45",
-      "11:10",
-      "10:55"
-    ],
-    "answer": "10:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Simplify: 64/24",
-    "options": [
-      "9/3",
-      "7/2",
-      "8/3"
-    ],
-    "answer": "8/3",
-    "explanation": "Divide numerator and denominator by 8."
-  },
-  {
-    "question": "32 + (12 × 10) = ?",
-    "options": [
-      "157",
-      "149",
-      "164",
-      "152"
-    ],
-    "answer": "152",
-    "explanation": "Work out 12 × 10 first, then + with 32."
-  },
-  {
-    "question": "In the ratio 3:6, if the total is 54, what is the first part?",
-    "options": [
-      "27",
-      "54",
-      "18",
-      "15"
-    ],
-    "answer": "18",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "In the ratio 2:5, if the total is 21, what is the first part?",
-    "options": [
-      "20",
-      "6",
-      "10",
-      "4"
-    ],
-    "answer": "6",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Wendy saves £2.00 a week. How many weeks to save £30?",
-    "options": [
-      "16",
-      "15",
-      "14",
-      "17"
-    ],
-    "answer": "15",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 43°, find b.",
-    "options": [
-      "137",
-      "43",
-      "38",
-      "35"
-    ],
-    "answer": "43",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "What is 75% of 60?",
-    "options": [
-      "45",
-      "55",
-      "39",
-      "50"
-    ],
-    "answer": "45",
-    "explanation": "75% means multiply by 75/100."
-  },
-  {
-    "question": "What is the angle between the hands at 4:15?",
-    "options": [
-      "42.5",
-      "52.5",
-      "37.5",
-      "30.5"
-    ],
-    "answer": "37.5",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "In the ratio 6:6, if the total is 60, what is the first part?",
-    "options": [
-      "60",
-      "24",
-      "30",
-      "36"
-    ],
-    "answer": "30",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 19:35 and arrives 110 minutes later. What time is arrival?",
-    "options": [
-      "21:40",
-      "21:25",
-      "21:15",
-      "21:35"
-    ],
-    "answer": "21:25",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Simplify: 10/4",
-    "options": [
-      "5/2",
-      "3/1"
-    ],
-    "answer": "5/2",
-    "explanation": "Divide numerator and denominator by 2."
-  },
-  {
-    "question": "What is the angle between the hands at 3:00?",
-    "options": [
-      "102",
-      "85",
-      "90",
-      "95"
-    ],
-    "answer": "90",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "In the ratio 7:6, if the total is 26, what is the first part?",
-    "options": [
-      "14",
-      "13",
-      "18",
-      "21"
-    ],
-    "answer": "14",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Area of a triangle with base 9 cm and height 18 cm = ?",
-    "options": [
-      "81",
-      "72.0",
-      "54.0",
-      "90.0"
-    ],
-    "answer": "81",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Next number: 34, 40, 46, 52, 58, ?",
-    "options": [
-      "64",
-      "65",
-      "63",
-      "70"
-    ],
-    "answer": "64",
-    "explanation": "Add 6 each time."
-  },
-  {
-    "question": "Two angles on a straight line are 39° and x°. Find x.",
-    "options": [
-      "141",
-      "146",
-      "136",
-      "39"
-    ],
-    "answer": "141",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "Pattern (+2, ×2). Next number: 20, 22, 44, 46, 92, ?",
-    "options": [
-      "94",
-      "92",
-      "99",
-      "91"
-    ],
-    "answer": "94",
-    "explanation": "Apply the alternating pattern +2, ×2."
-  },
-  {
-    "question": "2/7 + 5/7 = ?",
-    "options": [
-      "8/7",
-      "2/7+5/7",
-      "1",
-      "7/8"
-    ],
-    "answer": "1",
-    "explanation": "Numerators sum to a whole number."
-  },
-  {
-    "question": "9 items cost £1.20 each. What is the total cost?",
-    "options": [
-      "9.8",
-      "10.80",
-      "8.8",
-      "11.3"
-    ],
-    "answer": "10.80",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "In a triangle, angles are 39° and 20°. Find the third angle.",
-    "options": [
-      "111",
-      "121",
-      "20",
-      "39"
-    ],
-    "answer": "121",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "Perimeter of a rectangle 3 cm by 13 cm = ?",
-    "options": [
-      "32",
-      "19",
-      "36",
-      "28"
-    ],
-    "answer": "32",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "6 + (6 × 13) = ?",
-    "options": [
-      "84",
-      "87",
-      "74",
-      "86"
-    ],
-    "answer": "84",
-    "explanation": "Work out 6 × 13 first, then + with 6."
-  },
-  {
-    "question": "What is the angle between the hands at 5:00?",
-    "options": [
-      "150",
-      "165",
-      "145",
-      "162"
-    ],
-    "answer": "150",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "2/4 + 2/4 = ?",
-    "options": [
-      "4/5",
-      "1",
-      "2/4+2/4",
-      "3/4"
-    ],
-    "answer": "1",
-    "explanation": "Numerators sum to a whole number."
-  },
-  {
-    "question": "Area of a triangle with base 27 cm and height 15 cm = ?",
-    "options": [
-      "135.0",
-      "175.5",
-      "202.5",
-      "229.5"
-    ],
-    "answer": "202.5",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "In the ratio 4:4, if the total is 40, what is the first part?",
-    "options": [
-      "24",
-      "16",
-      "20",
-      "40"
-    ],
-    "answer": "20",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 10:55 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "11:35",
-      "11:10",
-      "11:20",
-      "11:15"
-    ],
-    "answer": "11:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 17:45 and arrives 55 minutes later. What time is arrival?",
-    "options": [
-      "18:35",
-      "18:40",
-      "18:45",
-      "18:55"
-    ],
-    "answer": "18:40",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In the ratio 4:6, if the total is 50, what is the first part?",
-    "options": [
-      "20",
-      "50",
-      "36",
-      "25"
-    ],
-    "answer": "20",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 06:00 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "07:40",
-      "07:35",
-      "07:30",
-      "07:50"
-    ],
-    "answer": "07:35",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 92°, find b.",
-    "options": [
-      "92",
-      "88",
-      "87",
-      "97"
-    ],
-    "answer": "92",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "Next number: 10, 21, 32, 43, 54, ?",
-    "options": [
-      "64",
-      "76",
-      "66",
-      "65"
-    ],
-    "answer": "65",
-    "explanation": "Add 11 each time."
-  },
-  {
-    "question": "34 ÷ 17 = ?",
-    "options": [
-      "3",
-      "2",
-      "1",
-      "4"
-    ],
-    "answer": "2",
-    "explanation": "Divide 34 by 17."
-  },
-  {
-    "question": "18 × 4 = ?",
-    "options": [
-      "61",
-      "54",
-      "72",
-      "90"
-    ],
-    "answer": "72",
-    "explanation": "Multiply 18 by 4 to get 72."
-  },
-  {
-    "question": "A train leaves at 12:00 and arrives 55 minutes later. What time is arrival?",
-    "options": [
-      "12:55",
-      "12:45",
-      "12:50",
-      "13:10"
-    ],
-    "answer": "12:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "936 - 642 = ?",
-    "options": [
-      "297",
-      "304",
-      "294",
-      "302"
-    ],
-    "answer": "294",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "252 ÷ 9 = ?",
-    "options": [
-      "27",
-      "28",
-      "29",
-      "30"
-    ],
-    "answer": "28",
-    "explanation": "Divide 252 by 9."
-  },
-  {
-    "question": "In the ratio 8:5, if the total is 52, what is the second part?",
-    "options": [
-      "15",
-      "26",
-      "20",
-      "40"
-    ],
-    "answer": "20",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 10:15 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "11:05",
-      "11:00",
-      "11:20",
-      "11:10"
-    ],
-    "answer": "11:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "528 + 791 = ?",
-    "options": [
-      "1316",
-      "1319",
-      "1307",
-      "1313"
-    ],
-    "answer": "1319",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "570 + 507 = ?",
-    "options": [
-      "1067",
-      "1077",
-      "1080",
-      "1072"
-    ],
-    "answer": "1077",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "A wall area is 48 m². Tiles cover 6 m² per pack. How many packs are needed?",
-    "options": [
-      "7",
-      "9",
-      "8",
-      "10"
-    ],
-    "answer": "8",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "861 - 412 = ?",
-    "options": [
-      "449",
-      "453",
-      "450",
-      "441"
-    ],
-    "answer": "449",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "469 + 580 = ?",
-    "options": [
-      "1055",
-      "1049",
-      "1052",
-      "1059"
-    ],
-    "answer": "1049",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "Next number: 27, 33, 39, 45, 51, ?",
-    "options": [
-      "58",
-      "57",
-      "56",
-      "51"
-    ],
-    "answer": "57",
-    "explanation": "Add 6 each time."
-  },
-  {
-    "question": "Area of a triangle with base 5 cm and height 26 cm = ?",
-    "options": [
-      "43.333333333333336",
-      "65",
-      "60.0",
-      "70.0"
-    ],
-    "answer": "65",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Next number: 3, 6, 12, 24, 48, ?",
-    "options": [
-      "97",
-      "192",
-      "96",
-      "48"
-    ],
-    "answer": "96",
-    "explanation": "Multiply by 2 each time."
-  },
-  {
-    "question": "Which is equivalent to 1/7?",
-    "options": [
-      "2/21",
-      "2/14",
-      "3/7",
-      "3/14"
-    ],
-    "answer": "2/14",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "What is 40% of 150?",
-    "options": [
-      "60",
-      "45",
-      "65",
-      "50"
-    ],
-    "answer": "60",
-    "explanation": "40% means multiply by 40/100."
-  },
-  {
-    "question": "In the ratio 2:2, if the total is 12, what is the second part?",
-    "options": [
-      "6",
-      "12",
-      "8",
-      "4"
-    ],
-    "answer": "6",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Next number: 11, 16, 21, 26, 31, ?",
-    "options": [
-      "37",
-      "35",
-      "36",
-      "41"
-    ],
-    "answer": "36",
-    "explanation": "Add 5 each time."
-  },
-  {
-    "question": "In the ratio 6:3, if the total is 27, what is the second part?",
-    "options": [
-      "6",
-      "13",
-      "24",
-      "9"
-    ],
-    "answer": "9",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "11 items cost £1.20 each. What is the total cost?",
-    "options": [
-      "12.2",
-      "13.20",
-      "11.2",
-      "13.7"
-    ],
-    "answer": "13.20",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "Write 0.68 as a fraction in simplest form.",
-    "options": [
-      "17/26",
-      "17/25",
-      "68/100"
-    ],
-    "answer": "17/25",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "Next number: 1, 3, 9, 27, 81, ?",
-    "options": [
-      "244",
-      "729",
-      "243",
-      "81"
-    ],
-    "answer": "243",
-    "explanation": "Multiply by 3 each time."
-  },
-  {
-    "question": "11 × 7 = ?",
-    "options": [
-      "87",
-      "79",
-      "77",
-      "84"
-    ],
-    "answer": "77",
-    "explanation": "Multiply 11 by 7 to get 77."
-  },
-  {
-    "question": "Wendy saves £4.00 a week. How many weeks to save £36?",
-    "options": [
-      "10",
-      "11",
-      "9",
-      "8"
-    ],
-    "answer": "9",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "A train leaves at 09:45 and arrives 75 minutes later. What time is arrival?",
-    "options": [
-      "11:15",
-      "11:00",
-      "10:55",
-      "11:05"
-    ],
-    "answer": "11:00",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "677 - 277 = ?",
-    "options": [
-      "394",
-      "396",
-      "400",
-      "397"
-    ],
-    "answer": "400",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "Next number: 29, 34, 39, 44, 49, ?",
-    "options": [
-      "59",
-      "54",
-      "55",
-      "49"
-    ],
-    "answer": "54",
-    "explanation": "Add 5 each time."
-  },
-  {
-    "question": "A wall area is 18 m². Tiles cover 3 m² per pack. How many packs are needed?",
-    "options": [
-      "8",
-      "7",
-      "5",
-      "6"
-    ],
-    "answer": "6",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "9 items cost £0.75 each. What is the total cost?",
-    "options": [
-      "7.75",
-      "5.75",
-      "6.75",
-      "7.25"
-    ],
-    "answer": "6.75",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "45 - (19 × 20) = ?",
-    "options": [
-      "-334",
-      "-329",
-      "-335",
-      "-337"
-    ],
-    "answer": "-335",
-    "explanation": "Work out 19 × 20 first, then - with 45."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 127°, find b.",
-    "options": [
-      "53",
-      "127",
-      "132",
-      "115"
-    ],
-    "answer": "127",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "7 × 16 = ?",
-    "options": [
-      "113",
-      "112",
-      "118",
-      "96"
-    ],
-    "answer": "112",
-    "explanation": "Multiply 7 by 16 to get 112."
-  },
-  {
-    "question": "Wendy saves £2.00 a week. How many weeks to save £24?",
-    "options": [
-      "11",
-      "12",
-      "13",
-      "14"
-    ],
-    "answer": "12",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "A train leaves at 06:25 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "07:30",
-      "07:20",
-      "07:25",
-      "07:40"
-    ],
-    "answer": "07:25",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Which is larger? (4.2 or 3.7)",
-    "options": [
-      "5.61",
-      "4.34",
-      "5.52",
-      "4.2"
-    ],
-    "answer": "4.2",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "11 × 9 = ?",
-    "options": [
-      "108",
-      "99",
-      "98",
-      "110"
-    ],
-    "answer": "99",
-    "explanation": "Multiply 11 by 9 to get 99."
-  },
-  {
-    "question": "Next number: 26, 28, 30, 32, 34, ?",
-    "options": [
-      "38",
-      "34",
-      "36",
-      "35"
-    ],
-    "answer": "36",
-    "explanation": "Add 2 each time."
-  },
-  {
-    "question": "3 items cost £1.20 each. What is the total cost?",
-    "options": [
-      "3.60",
-      "3.1",
-      "4.1",
-      "1.6"
-    ],
-    "answer": "3.60",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 104°, find b.",
-    "options": [
-      "76",
-      "104",
-      "109",
-      "116"
-    ],
-    "answer": "104",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "Perimeter of a rectangle 9 cm by 5 cm = ?",
-    "options": [
-      "28",
-      "32",
-      "23",
-      "24"
-    ],
-    "answer": "28",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "Next number: 5, 10, 20, 40, 80, ?",
-    "options": [
-      "320",
-      "161",
-      "160",
-      "80"
-    ],
-    "answer": "160",
-    "explanation": "Multiply by 2 each time."
-  },
-  {
-    "question": "A train leaves at 07:05 and arrives 80 minutes later. What time is arrival?",
-    "options": [
-      "08:25",
-      "08:30",
-      "08:35",
-      "08:20"
-    ],
-    "answer": "08:25",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "242 ÷ 11 = ?",
-    "options": [
-      "24",
-      "20",
-      "22",
-      "23"
-    ],
-    "answer": "22",
-    "explanation": "Divide 242 by 11."
-  },
-  {
-    "question": "What is the sum of interior angles of a 5-gon?",
-    "options": [
-      "540",
-      "900",
-      "360",
-      "720"
-    ],
-    "answer": "540",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "Next number: 10, 13, 16, 19, 22, ?",
-    "options": [
-      "25",
-      "24",
-      "28",
-      "26"
-    ],
-    "answer": "25",
-    "explanation": "Add 3 each time."
-  },
-  {
-    "question": "Two angles on a straight line are 167° and x°. Find x.",
-    "options": [
-      "18",
-      "13",
-      "8",
-      "167"
-    ],
-    "answer": "13",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "1/3 + 2/3 = ?",
-    "options": [
-      "1/3+2/3",
-      "1",
-      "2/3",
-      "3/4"
-    ],
-    "answer": "1",
-    "explanation": "Numerators sum to a whole number."
-  },
-  {
-    "question": "What is the angle between the hands at 5:45?",
-    "options": [
-      "97.5",
-      "90.5",
-      "104.5",
-      "92.5"
-    ],
-    "answer": "97.5",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "309 - 50 = ?",
-    "options": [
-      "259",
-      "269",
-      "271",
-      "253"
-    ],
-    "answer": "259",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "Pattern (+2, ×2). Next number: 4, 6, 12, 14, 28, ?",
-    "options": [
-      "30",
-      "28",
-      "27",
-      "35"
-    ],
-    "answer": "30",
-    "explanation": "Apply the alternating pattern +2, ×2."
-  },
-  {
-    "question": "Volume of a cube with side 6 cm = ?",
-    "options": [
-      "36",
-      "343",
-      "216",
-      "222"
-    ],
-    "answer": "216",
-    "explanation": "Volume = side³."
-  },
-  {
-    "question": "A train leaves at 08:10 and arrives 55 minutes later. What time is arrival?",
-    "options": [
-      "09:00",
-      "09:15",
-      "09:10",
-      "09:05"
-    ],
-    "answer": "09:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Which is equivalent to 1/10?",
-    "options": [
-      "3/20",
-      "2/20",
-      "1/12",
-      "2/30"
-    ],
-    "answer": "2/20",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Pattern (+5, ×3). Next number: 10, 15, 45, 50, 150, ?",
-    "options": [
-      "160",
-      "155",
-      "152",
-      "150"
-    ],
-    "answer": "155",
-    "explanation": "Apply the alternating pattern +5, ×3."
-  },
-  {
-    "question": "What is the angle between the hands at 10:45?",
-    "options": [
-      "52.5",
-      "64.5",
-      "40.5",
-      "57.5"
-    ],
-    "answer": "52.5",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "Area of a triangle with base 21 cm and height 23 cm = ?",
-    "options": [
-      "262.5",
-      "483",
-      "241.5",
-      "161.0"
-    ],
-    "answer": "241.5",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Area of a rectangle 15 cm by 8 cm = ?",
-    "options": [
-      "112",
-      "119",
-      "120",
-      "46"
-    ],
-    "answer": "120",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "A train leaves at 16:05 and arrives 35 minutes later. What time is arrival?",
-    "options": [
-      "16:40",
-      "16:45",
-      "16:55",
-      "16:50"
-    ],
-    "answer": "16:40",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Write 0.3 as a fraction in simplest form.",
-    "options": [
-      "3/11",
-      "3/10",
-      "4/10"
-    ],
-    "answer": "3/10",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "12 + (30 ÷ 3) = ?",
-    "options": [
-      "22",
-      "32",
-      "20",
-      "19"
-    ],
-    "answer": "22",
-    "explanation": "Work out 30 ÷ 3 first, then + with 12."
-  },
-  {
-    "question": "In the ratio 8:6, if the total is 84, what is the first part?",
-    "options": [
-      "42",
-      "40",
-      "84",
-      "48"
-    ],
-    "answer": "48",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Two angles on a straight line are 45° and x°. Find x.",
-    "options": [
-      "135",
-      "140",
-      "45",
-      "130"
-    ],
-    "answer": "135",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "4 items cost £0.75 each. What is the total cost?",
-    "options": [
-      "5.0",
-      "4.0",
-      "1.0",
-      "3.00"
-    ],
-    "answer": "3.00",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "Two angles on a straight line are 30° and x°. Find x.",
-    "options": [
-      "155",
-      "150",
-      "145",
-      "30"
-    ],
-    "answer": "150",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "58 + (6 × 17) = ?",
-    "options": [
-      "157",
-      "165",
-      "158",
-      "160"
-    ],
-    "answer": "160",
-    "explanation": "Work out 6 × 17 first, then + with 58."
-  },
-  {
-    "question": "58 ÷ 2 = ?",
-    "options": [
-      "30",
-      "29",
-      "27",
-      "31"
-    ],
-    "answer": "29",
-    "explanation": "Divide 58 by 2."
-  },
-  {
-    "question": "Simplify: 30/18",
-    "options": [
-      "5/3",
-      "6/3",
-      "4/2"
-    ],
-    "answer": "5/3",
-    "explanation": "Divide numerator and denominator by 6."
-  },
-  {
-    "question": "A train leaves at 20:35 and arrives 35 minutes later. What time is arrival?",
-    "options": [
-      "21:15",
-      "21:10",
-      "21:05",
-      "21:00"
-    ],
-    "answer": "21:10",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 24, 33, 42, 51, 60, ?",
-    "options": [
-      "78",
-      "68",
-      "69",
-      "70"
-    ],
-    "answer": "69",
-    "explanation": "Add 9 each time."
-  },
-  {
-    "question": "92 + 824 = ?",
-    "options": [
-      "912",
-      "906",
-      "916",
-      "914"
-    ],
-    "answer": "916",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "In the ratio 8:6, if the total is 84, what is the second part?",
-    "options": [
-      "30",
-      "36",
-      "84",
-      "42"
-    ],
-    "answer": "36",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Area of a triangle with base 33 cm and height 8 cm = ?",
-    "options": [
-      "99.0",
-      "264",
-      "132",
-      "88.0"
-    ],
-    "answer": "132",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "A train leaves at 16:45 and arrives 110 minutes later. What time is arrival?",
-    "options": [
-      "18:45",
-      "18:40",
-      "18:30",
-      "18:35"
-    ],
-    "answer": "18:35",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 18:10 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "19:00",
-      "18:55",
-      "19:05",
-      "19:10"
-    ],
-    "answer": "18:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In the ratio 2:8, if the total is 30, what is the first part?",
-    "options": [
-      "15",
-      "4",
-      "6",
-      "30"
-    ],
-    "answer": "6",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Which is larger? (7.45 or 7.65)",
-    "options": [
-      "8.65",
-      "8.28",
-      "7.88",
-      "7.65"
-    ],
-    "answer": "7.65",
-    "explanation": "Compare decimals by place value."
-  },
-  {
-    "question": "Two angles on a straight line are 112° and x°. Find x.",
-    "options": [
-      "63",
-      "68",
-      "112",
-      "73"
-    ],
-    "answer": "68",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 74°, find b.",
-    "options": [
-      "86",
-      "69",
-      "74",
-      "106"
-    ],
-    "answer": "74",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "In the ratio 7:8, if the total is 30, what is the second part?",
-    "options": [
-      "16",
-      "30",
-      "15",
-      "24"
-    ],
-    "answer": "16",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Area of a triangle with base 30 cm and height 17 cm = ?",
-    "options": [
-      "510",
-      "285.0",
-      "225.0",
-      "255"
-    ],
-    "answer": "255",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Wendy saves £2.50 a week. How many weeks to save £36?",
-    "options": [
-      "13",
-      "15",
-      "14",
-      "16"
-    ],
-    "answer": "14",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "Wendy saves £3.00 a week. How many weeks to save £18?",
-    "options": [
-      "6",
-      "8",
-      "7",
-      "5"
-    ],
-    "answer": "6",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "Area of a triangle with base 19 cm and height 14 cm = ?",
-    "options": [
-      "152.0",
-      "88.66666666666667",
-      "133",
-      "266"
-    ],
-    "answer": "133",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "In a triangle, angles are 92° and 69°. Find the third angle.",
-    "options": [
-      "92",
-      "69",
-      "19",
-      "9"
-    ],
-    "answer": "19",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "A train leaves at 06:05 and arrives 35 minutes later. What time is arrival?",
-    "options": [
-      "06:45",
-      "06:40",
-      "06:55",
-      "06:30"
-    ],
-    "answer": "06:40",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A wall area is 36 m². Tiles cover 3 m² per pack. How many packs are needed?",
-    "options": [
-      "13",
-      "11",
-      "14",
-      "12"
-    ],
-    "answer": "12",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 100°, find b.",
-    "options": [
-      "88",
-      "100",
-      "80",
-      "95"
-    ],
-    "answer": "100",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "In the ratio 4:7, if the total is 22, what is the first part?",
-    "options": [
-      "12",
-      "22",
-      "21",
-      "8"
-    ],
-    "answer": "8",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Which is equivalent to 4/3?",
-    "options": [
-      "11/3",
-      "24/21",
-      "4/10",
-      "28/21"
-    ],
-    "answer": "28/21",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Next number: 39, 48, 57, 66, 75, ?",
-    "options": [
-      "93",
-      "75",
-      "84",
-      "85"
-    ],
-    "answer": "84",
-    "explanation": "Add 9 each time."
-  },
-  {
-    "question": "Share 24 in the ratio 7:5. How much is the first share?",
-    "options": [
-      "10",
-      "2",
-      "14",
-      "26"
-    ],
-    "answer": "14",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "4/5 + 4/5 = ?",
-    "options": [
-      "1 3/5",
-      "7/5",
-      "8/6",
-      "4/5+4/5"
-    ],
-    "answer": "1 3/5",
-    "explanation": "Convert improper to mixed number and simplify."
-  },
-  {
-    "question": "In the ratio 3:5, if the total is 24, what is the second part?",
-    "options": [
-      "15",
-      "10",
-      "12",
-      "24"
-    ],
-    "answer": "15",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 98°, find b.",
-    "options": [
-      "110",
-      "98",
-      "90",
-      "82"
-    ],
-    "answer": "98",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "11 items cost £2.40 each. What is the total cost?",
-    "options": [
-      "26.40",
-      "27.4",
-      "24.4",
-      "26.9"
-    ],
-    "answer": "26.40",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "Share 54 in the ratio 6:4. How much is the first share?",
-    "options": [
-      "32",
-      "22",
-      "42"
-    ],
-    "answer": "32",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "A train leaves at 20:15 and arrives 35 minutes later. What time is arrival?",
-    "options": [
-      "21:00",
-      "21:05",
-      "20:50",
-      "20:40"
-    ],
-    "answer": "20:50",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 07:20 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "08:05",
-      "08:10",
-      "07:55",
-      "08:20"
-    ],
-    "answer": "08:05",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 35, 45, 55, 65, 75, ?",
-    "options": [
-      "84",
-      "86",
-      "75",
-      "85"
-    ],
-    "answer": "85",
-    "explanation": "Add 10 each time."
-  },
-  {
-    "question": "Wendy saves £3.00 a week. How many weeks to save £30?",
-    "options": [
-      "11",
-      "9",
-      "12",
-      "10"
-    ],
-    "answer": "10",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "5 - (4 × 15) = ?",
-    "options": [
-      "-45",
-      "-63",
-      "-55",
-      "-60"
-    ],
-    "answer": "-55",
-    "explanation": "Work out 4 × 15 first, then - with 5."
-  },
-  {
-    "question": "Area of a rectangle 15 cm by 11 cm = ?",
-    "options": [
-      "173",
-      "168",
-      "165",
-      "159"
-    ],
-    "answer": "165",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "Share 42 in the ratio 3:4. How much is the first share?",
-    "options": [
-      "25",
-      "18",
-      "11",
-      "24"
-    ],
-    "answer": "18",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "9 × 8 = ?",
-    "options": [
-      "81",
-      "80",
-      "64",
-      "72"
-    ],
-    "answer": "72",
-    "explanation": "Multiply 9 by 8 to get 72."
-  },
-  {
-    "question": "Area of a triangle with base 39 cm and height 16 cm = ?",
-    "options": [
-      "208.0",
-      "351.0",
-      "624",
-      "312"
-    ],
-    "answer": "312",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "In the ratio 7:5, if the total is 72, what is the first part?",
-    "options": [
-      "36",
-      "35",
-      "42",
-      "72"
-    ],
-    "answer": "42",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Wendy saves £2.50 a week. How many weeks to save £12?",
-    "options": [
-      "5",
-      "7",
-      "6",
-      "4"
-    ],
-    "answer": "5",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "A train leaves at 20:55 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "22:35",
-      "22:30",
-      "22:20",
-      "22:25"
-    ],
-    "answer": "22:30",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 08:20 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "08:35",
-      "08:55",
-      "08:45",
-      "08:50"
-    ],
-    "answer": "08:45",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Which is equivalent to 3/12?",
-    "options": [
-      "3/21",
-      "27/108",
-      "12/12",
-      "24/108"
-    ],
-    "answer": "27/108",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "What is the angle between the hands at 8:45?",
-    "options": [
-      "0.5",
-      "-4.5",
-      "7.5",
-      "2.5"
-    ],
-    "answer": "7.5",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "A train leaves at 20:05 and arrives 45 minutes later. What time is arrival?",
-    "options": [
-      "21:00",
-      "20:55",
-      "20:50",
-      "20:40"
-    ],
-    "answer": "20:50",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Which is equivalent to 3/7?",
-    "options": [
-      "12/7",
-      "27/63",
-      "24/63",
-      "27/70"
-    ],
-    "answer": "27/63",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "8 items cost £2.40 each. What is the total cost?",
-    "options": [
-      "19.7",
-      "19.20",
-      "21.2",
-      "17.2"
-    ],
-    "answer": "19.20",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "In the ratio 2:3, if the total is 25, what is the second part?",
-    "options": [
-      "25",
-      "12",
-      "15"
-    ],
-    "answer": "15",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 13:55 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "14:35",
-      "14:15",
-      "14:25",
-      "14:20"
-    ],
-    "answer": "14:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Area of a triangle with base 19 cm and height 21 cm = ?",
-    "options": [
-      "399",
-      "199.5",
-      "218.5",
-      "133.0"
-    ],
-    "answer": "199.5",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "Two angles on a straight line are 118° and x°. Find x.",
-    "options": [
-      "62",
-      "57",
-      "67",
-      "118"
-    ],
-    "answer": "62",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "Two angles on a straight line are 36° and x°. Find x.",
-    "options": [
-      "144",
-      "139",
-      "36",
-      "149"
-    ],
-    "answer": "144",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "Perimeter of a rectangle 7 cm by 9 cm = ?",
-    "options": [
-      "23",
-      "63",
-      "36",
-      "32"
-    ],
-    "answer": "32",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "A train leaves at 10:00 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "11:00",
-      "10:50",
-      "11:05",
-      "11:15"
-    ],
-    "answer": "11:00",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 16:35 and arrives 80 minutes later. What time is arrival?",
-    "options": [
-      "17:55",
-      "17:45",
-      "18:05",
-      "18:00"
-    ],
-    "answer": "17:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 12:00 and arrives 95 minutes later. What time is arrival?",
-    "options": [
-      "13:35",
-      "13:45",
-      "13:25",
-      "13:30"
-    ],
-    "answer": "13:35",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Simplify: 20/45",
-    "options": [
-      "3/7",
-      "4/9",
-      "5/11"
-    ],
-    "answer": "4/9",
-    "explanation": "Divide numerator and denominator by 5."
-  },
-  {
-    "question": "Next number: 15, 18, 21, 24, 27, ?",
-    "options": [
-      "29",
-      "30",
-      "31",
-      "33"
-    ],
-    "answer": "30",
-    "explanation": "Add 3 each time."
-  },
-  {
-    "question": "Pattern (+5, ×3). Next number: 15, 20, 60, 65, 195, ?",
-    "options": [
-      "205",
-      "200",
-      "197",
-      "195"
-    ],
-    "answer": "200",
-    "explanation": "Apply the alternating pattern +5, ×3."
-  },
-  {
-    "question": "429 - 210 = ?",
-    "options": [
-      "216",
-      "209",
-      "220",
-      "219"
-    ],
-    "answer": "219",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "Two angles on a straight line are 151° and x°. Find x.",
-    "options": [
-      "24",
-      "29",
-      "151",
-      "34"
-    ],
-    "answer": "29",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "Wendy saves £2.00 a week. How many weeks to save £18?",
-    "options": [
-      "9",
-      "10",
-      "11",
-      "8"
-    ],
-    "answer": "9",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "886 + 775 = ?",
-    "options": [
-      "1658",
-      "1653",
-      "1665",
-      "1661"
-    ],
-    "answer": "1661",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "436 + 635 = ?",
-    "options": [
-      "1079",
-      "1069",
-      "1071",
-      "1077"
-    ],
-    "answer": "1071",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "A train leaves at 19:00 and arrives 75 minutes later. What time is arrival?",
-    "options": [
-      "20:25",
-      "20:15",
-      "20:20",
-      "20:10"
-    ],
-    "answer": "20:15",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "132 ÷ 12 = ?",
-    "options": [
-      "11",
-      "12",
-      "13",
-      "9"
-    ],
-    "answer": "11",
-    "explanation": "Divide 132 by 12."
-  },
-  {
-    "question": "140 + 945 = ?",
-    "options": [
-      "1085",
-      "1075",
-      "1088",
-      "1082"
-    ],
-    "answer": "1085",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "A train leaves at 13:20 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "14:10",
-      "14:20",
-      "14:15",
-      "14:25"
-    ],
-    "answer": "14:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "2/4 + 3/4 = ?",
-    "options": [
-      "1 1/4",
-      "6/4",
-      "2/4+3/4",
-      "5/5"
-    ],
-    "answer": "1 1/4",
-    "explanation": "Convert improper to mixed number and simplify."
-  },
-  {
-    "question": "Volume of a cube with side 13 cm = ?",
-    "options": [
-      "2210",
-      "169",
-      "1014",
-      "2197"
-    ],
-    "answer": "2197",
-    "explanation": "Volume = side³."
-  },
-  {
-    "question": "In the ratio 9:9, if the total is 72, what is the second part?",
-    "options": [
-      "27",
-      "45",
-      "36",
-      "72"
-    ],
-    "answer": "36",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Next number: 11, 15, 19, 23, 27, ?",
-    "options": [
-      "35",
-      "31",
-      "30",
-      "27"
-    ],
-    "answer": "31",
-    "explanation": "Add 4 each time."
-  },
-  {
-    "question": "Perimeter of a rectangle 9 cm by 3 cm = ?",
-    "options": [
-      "27",
-      "20",
-      "24",
-      "28"
-    ],
-    "answer": "24",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "What is 50% of 300?",
-    "options": [
-      "160",
-      "180",
-      "150",
-      "155"
-    ],
-    "answer": "150",
-    "explanation": "50% means multiply by 50/100."
-  },
-  {
-    "question": "Next number: 2, 4, 8, 16, 32, ?",
-    "options": [
-      "128",
-      "64",
-      "65",
-      "32"
-    ],
-    "answer": "64",
-    "explanation": "Multiply by 2 each time."
-  },
-  {
-    "question": "8 items cost £1.50 each. What is the total cost?",
-    "options": [
-      "13.0",
-      "10.0",
-      "12.00",
-      "12.5"
-    ],
-    "answer": "12.00",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "Simplify: 24/56",
-    "options": [
-      "3/7",
-      "3/8",
-      "2/6"
-    ],
-    "answer": "3/7",
-    "explanation": "Divide numerator and denominator by 8."
-  },
-  {
-    "question": "9 - (18 × 10) = ?",
-    "options": [
-      "-174",
-      "-171",
-      "-183",
-      "-168"
-    ],
-    "answer": "-171",
-    "explanation": "Work out 18 × 10 first, then - with 9."
-  },
-  {
-    "question": "Area of a rectangle 7 cm by 13 cm = ?",
-    "options": [
-      "84",
-      "91",
-      "40",
-      "96"
-    ],
-    "answer": "91",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "In the ratio 4:4, if the total is 24, what is the second part?",
-    "options": [
-      "8",
-      "12",
-      "24",
-      "16"
-    ],
-    "answer": "12",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "15 - (9 × 6) = ?",
-    "options": [
-      "-39",
-      "-43",
-      "-29",
-      "-34"
-    ],
-    "answer": "-39",
-    "explanation": "Work out 9 × 6 first, then - with 15."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 134°, find b.",
-    "options": [
-      "134",
-      "46",
-      "122",
-      "126"
-    ],
-    "answer": "134",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "In the ratio 3:7, if the total is 30, what is the second part?",
-    "options": [
-      "30",
-      "14",
-      "21",
-      "12"
-    ],
-    "answer": "21",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "7/11 + 4/11 = ?",
-    "options": [
-      "1",
-      "7/11+4/11",
-      "12/11",
-      "11/12"
-    ],
-    "answer": "1",
-    "explanation": "Numerators sum to a whole number."
-  },
-  {
-    "question": "Next number: 1, 2, 4, 8, 16, ?",
-    "options": [
-      "32",
-      "33",
-      "64",
-      "16"
-    ],
-    "answer": "32",
-    "explanation": "Multiply by 2 each time."
-  },
-  {
-    "question": "Which is equivalent to 7/5?",
-    "options": [
-      "7/13",
-      "15/5",
-      "56/40",
-      "49/40"
-    ],
-    "answer": "56/40",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Next number: 36, 44, 52, 60, 68, ?",
-    "options": [
-      "84",
-      "68",
-      "76",
-      "75"
-    ],
-    "answer": "76",
-    "explanation": "Add 8 each time."
-  },
-  {
-    "question": "In the ratio 8:5, if the total is 78, what is the first part?",
-    "options": [
-      "40",
-      "35",
-      "48",
-      "78"
-    ],
-    "answer": "48",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Two angles on a straight line are 58° and x°. Find x.",
-    "options": [
-      "127",
-      "122",
-      "58",
-      "117"
-    ],
-    "answer": "122",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "Wendy saves £3.00 a week. How many weeks to save £24?",
-    "options": [
-      "10",
-      "9",
-      "8",
-      "7"
-    ],
-    "answer": "8",
-    "explanation": "Divide total needed by weekly saving."
-  },
-  {
-    "question": "In the ratio 5:5, if the total is 30, what is the second part?",
-    "options": [
-      "30",
-      "10",
-      "20",
-      "15"
-    ],
-    "answer": "15",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "1/2 + 1/2 = ?",
-    "options": [
-      "1",
-      "2/3",
-      "1/2",
-      "3/2"
-    ],
-    "answer": "1",
-    "explanation": "Numerators sum to a whole number."
-  },
-  {
-    "question": "Next number: 23, 28, 33, 38, 43, ?",
-    "options": [
-      "49",
-      "48",
-      "47",
-      "43"
-    ],
-    "answer": "48",
-    "explanation": "Add 5 each time."
-  },
-  {
-    "question": "What is 50% of 40?",
-    "options": [
-      "25",
-      "24",
-      "20",
-      "15"
-    ],
-    "answer": "20",
-    "explanation": "50% means multiply by 50/100."
-  },
-  {
-    "question": "Which is equivalent to 1/8?",
-    "options": [
-      "3/24",
-      "1/11",
-      "3/32",
-      "2/24"
-    ],
-    "answer": "3/24",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "12 × 8 = ?",
-    "options": [
-      "88",
-      "96",
-      "84",
-      "104"
-    ],
-    "answer": "96",
-    "explanation": "Multiply 12 by 8 to get 96."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 111°, find b.",
-    "options": [
-      "111",
-      "119",
-      "69",
-      "116"
-    ],
-    "answer": "111",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "563 - 174 = ?",
-    "options": [
-      "389",
-      "386",
-      "385",
-      "392"
-    ],
-    "answer": "389",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "555 - 376 = ?",
-    "options": [
-      "182",
-      "179",
-      "171",
-      "180"
-    ],
-    "answer": "179",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "Which is equivalent to 8/8?",
-    "options": [
-      "24/24",
-      "24/32",
-      "11/8",
-      "8/11"
-    ],
-    "answer": "24/24",
-    "explanation": "Multiply numerator and denominator by the same number."
-  },
-  {
-    "question": "Next number: 10, 18, 26, 34, 42, ?",
-    "options": [
-      "49",
-      "51",
-      "42",
-      "50"
-    ],
-    "answer": "50",
-    "explanation": "Add 8 each time."
-  },
-  {
-    "question": "11 items cost £1.50 each. What is the total cost?",
-    "options": [
-      "16.50",
-      "14.5",
-      "15.5",
-      "17.5"
-    ],
-    "answer": "16.50",
-    "explanation": "Multiply the price by the quantity."
-  },
-  {
-    "question": "Share 60 in the ratio 7:4. How much is the first share?",
-    "options": [
-      "27",
-      "22",
-      "38",
-      "49"
-    ],
-    "answer": "38",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "Simplify: 9/9",
-    "options": [
-      "1/1"
-    ],
-    "answer": "1/1",
-    "explanation": "Divide numerator and denominator by 9."
-  },
-  {
-    "question": "413 - 44 = ?",
-    "options": [
-      "366",
-      "361",
-      "381",
-      "369"
-    ],
-    "answer": "369",
-    "explanation": "Subtract the smaller number from the larger."
-  },
-  {
-    "question": "A train leaves at 14:30 and arrives 110 minutes later. What time is arrival?",
-    "options": [
-      "16:30",
-      "16:20",
-      "16:15",
-      "16:10"
-    ],
-    "answer": "16:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Next number: 37, 43, 49, 55, 61, ?",
-    "options": [
-      "73",
-      "67",
-      "68",
-      "66"
-    ],
-    "answer": "67",
-    "explanation": "Add 6 each time."
-  },
-  {
-    "question": "Area of a rectangle 26 cm by 4 cm = ?",
-    "options": [
-      "104",
-      "125",
-      "60",
-      "114"
-    ],
-    "answer": "104",
-    "explanation": "Area = width × height."
-  },
-  {
-    "question": "A train leaves at 16:20 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "17:15",
-      "17:35",
-      "17:20",
-      "17:25"
-    ],
-    "answer": "17:20",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Pattern (×2, −3). Next number: 9, 18, 36, 72, 144, ?",
-    "options": [
-      "293",
-      "285",
-      "144",
-      "288"
-    ],
-    "answer": "288",
-    "explanation": "Apply the alternating pattern ×2, −3."
-  },
-  {
-    "question": "4/5 + 1/5 = ?",
-    "options": [
-      "5/6",
-      "6/5",
-      "4/5+1/5",
-      "1"
-    ],
-    "answer": "1",
-    "explanation": "Numerators sum to a whole number."
-  },
-  {
-    "question": "Perimeter of a rectangle 12 cm by 8 cm = ?",
-    "options": [
-      "44",
-      "40",
-      "36",
-      "32"
-    ],
-    "answer": "40",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "Area of a triangle with base 35 cm and height 17 cm = ?",
-    "options": [
-      "595",
-      "297.5",
-      "262.5",
-      "198.33333333333334"
-    ],
-    "answer": "297.5",
-    "explanation": "Area = ½ × base × height."
-  },
-  {
-    "question": "A wall area is 30 m². Tiles cover 6 m² per pack. How many packs are needed?",
-    "options": [
-      "6",
-      "4",
-      "7",
-      "5"
-    ],
-    "answer": "5",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "A train leaves at 08:50 and arrives 25 minutes later. What time is arrival?",
-    "options": [
-      "09:05",
-      "09:15",
-      "09:30",
-      "09:10"
-    ],
-    "answer": "09:15",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 12:15 and arrives 55 minutes later. What time is arrival?",
-    "options": [
-      "13:00",
-      "13:10",
-      "13:25",
-      "13:20"
-    ],
-    "answer": "13:10",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Share 36 in the ratio 3:6. How much is the first share?",
-    "options": [
-      "24",
-      "12",
-      "3",
-      "21"
-    ],
-    "answer": "12",
-    "explanation": "Find one part: total ÷ sum of ratios; then × first ratio."
-  },
-  {
-    "question": "What is the angle between the hands at 11:30?",
-    "options": [
-      "170",
-      "165",
-      "177",
-      "153"
-    ],
-    "answer": "165",
-    "explanation": "Angle = |30h − 5.5m|; take the smaller angle."
-  },
-  {
-    "question": "100 ÷ 20 = ?",
-    "options": [
-      "6",
-      "4",
-      "5",
-      "7"
-    ],
-    "answer": "5",
-    "explanation": "Divide 100 by 20."
-  },
-  {
-    "question": "In the ratio 7:6, if the total is 26, what is the second part?",
-    "options": [
-      "26",
-      "21",
-      "18",
-      "12"
-    ],
-    "answer": "12",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A train leaves at 09:40 and arrives 60 minutes later. What time is arrival?",
-    "options": [
-      "10:30",
-      "10:40",
-      "10:45",
-      "10:35"
-    ],
-    "answer": "10:40",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "In the ratio 8:3, if the total is 44, what is the second part?",
-    "options": [
-      "44",
-      "9",
-      "40",
-      "12"
-    ],
-    "answer": "12",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "In the ratio 5:3, if the total is 40, what is the second part?",
-    "options": [
-      "15",
-      "20",
-      "40",
-      "12"
-    ],
-    "answer": "15",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Angles a and b are vertically opposite. If a = 44°, find b.",
-    "options": [
-      "44",
-      "136",
-      "39",
-      "49"
-    ],
-    "answer": "44",
-    "explanation": "Vertically opposite angles are equal."
-  },
-  {
-    "question": "In a triangle, angles are 46° and 31°. Find the third angle.",
-    "options": [
-      "113",
-      "46",
-      "103",
-      "31"
-    ],
-    "answer": "103",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "Write 0.6 as a fraction in simplest form.",
-    "options": [
-      "3/6",
-      "6/10",
-      "3/5"
-    ],
-    "answer": "3/5",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "In the ratio 7:8, if the total is 60, what is the first part?",
-    "options": [
-      "60",
-      "30",
-      "28",
-      "21"
-    ],
-    "answer": "28",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Next number: 33, 37, 41, 45, 49, ?",
-    "options": [
-      "57",
-      "52",
-      "53",
-      "49"
-    ],
-    "answer": "53",
-    "explanation": "Add 4 each time."
-  },
-  {
-    "question": "What is the sum of interior angles of a 10-gon?",
-    "options": [
-      "1800",
-      "1620",
-      "1260",
-      "1440"
-    ],
-    "answer": "1440",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "What is the sum of interior angles of a 4-gon?",
-    "options": [
-      "180",
-      "720",
-      "540",
-      "360"
-    ],
-    "answer": "360",
-    "explanation": "Use (n−2)×180°."
-  },
-  {
-    "question": "Perimeter of a rectangle 15 cm by 9 cm = ?",
-    "options": [
-      "48",
-      "44",
-      "135",
-      "39"
-    ],
-    "answer": "48",
-    "explanation": "Perimeter = 2×(w + h)."
-  },
-  {
-    "question": "Write 0.28 as a fraction in simplest form.",
-    "options": [
-      "28/100",
-      "7/25",
-      "7/26"
-    ],
-    "answer": "7/25",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "313 + 148 = ?",
-    "options": [
-      "465",
-      "473",
-      "455",
-      "461"
-    ],
-    "answer": "461",
-    "explanation": "Add hundreds, tens and ones to find the sum."
-  },
-  {
-    "question": "Write 0.37 as a fraction in simplest form.",
-    "options": [
-      "37/101",
-      "37/100",
-      "38/100"
-    ],
-    "answer": "37/100",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "Next number: 29, 38, 47, 56, 65, ?",
-    "options": [
-      "83",
-      "65",
-      "74",
-      "73"
-    ],
-    "answer": "74",
-    "explanation": "Add 9 each time."
-  },
-  {
-    "question": "Simplify: 16/20",
-    "options": [
-      "4/5",
-      "3/4",
-      "5/6"
-    ],
-    "answer": "4/5",
-    "explanation": "Divide numerator and denominator by 4."
-  },
-  {
-    "question": "In the ratio 8:2, if the total is 60, what is the first part?",
-    "options": [
-      "60",
-      "40",
-      "48",
-      "30"
-    ],
-    "answer": "48",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "A wall area is 30 m². Tiles cover 3 m² per pack. How many packs are needed?",
-    "options": [
-      "12",
-      "10",
-      "11",
-      "9"
-    ],
-    "answer": "10",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "A train leaves at 12:20 and arrives 80 minutes later. What time is arrival?",
-    "options": [
-      "13:45",
-      "13:40",
-      "13:55",
-      "13:30"
-    ],
-    "answer": "13:40",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "A train leaves at 09:05 and arrives 50 minutes later. What time is arrival?",
-    "options": [
-      "09:55",
-      "09:50",
-      "10:10",
-      "10:05"
-    ],
-    "answer": "09:55",
-    "explanation": "Add the duration to the start time, converting minutes to hours as needed."
-  },
-  {
-    "question": "Write 0.61 as a fraction in simplest form.",
-    "options": [
-      "61/101",
-      "61/100",
-      "62/100"
-    ],
-    "answer": "61/100",
-    "explanation": "Place value: digits over 10 or 100, then simplify."
-  },
-  {
-    "question": "A wall area is 30 m². Tiles cover 4 m² per pack. How many packs are needed?",
-    "options": [
-      "10",
-      "9",
-      "8",
-      "7"
-    ],
-    "answer": "8",
-    "explanation": "Use ceiling division: round up after dividing area by coverage per pack."
-  },
-  {
-    "question": "Two angles on a straight line are 56° and x°. Find x.",
-    "options": [
-      "129",
-      "119",
-      "56",
-      "124"
-    ],
-    "answer": "124",
-    "explanation": "Angles on a straight line sum to 180°."
-  },
-  {
-    "question": "In the ratio 6:8, if the total is 28, what is the first part?",
-    "options": [
-      "28",
-      "12",
-      "24",
-      "14"
-    ],
-    "answer": "12",
-    "explanation": "Find the unit by dividing total by sum of ratio parts, then multiply."
-  },
-  {
-    "question": "Next number: 17, 27, 37, 47, 57, ?",
-    "options": [
-      "57",
-      "77",
-      "68",
-      "67"
-    ],
-    "answer": "67",
-    "explanation": "Add 10 each time."
-  },
-  {
-    "question": "Pattern (×2, −3). Next number: 12, 24, 48, 96, 192, ?",
-    "options": [
-      "384",
-      "389",
-      "381",
-      "192"
-    ],
-    "answer": "384",
-    "explanation": "Apply the alternating pattern ×2, −3."
-  },
-  {
-    "question": "Next number: 5, 15, 45, 135, 405, ?",
-    "options": [
-      "1215",
-      "1216",
-      "405",
-      "3645"
-    ],
-    "answer": "1215",
-    "explanation": "Multiply by 3 each time."
-  },
-  {
-    "question": "In a triangle, angles are 71° and 46°. Find the third angle.",
-    "options": [
-      "63",
-      "73",
-      "53",
-      "71"
-    ],
-    "answer": "63",
-    "explanation": "Angles in a triangle sum to 180°."
-  },
-  {
-    "question": "What is 12.5% of 500?",
-    "options": [
-      "12.5",
-      "62.5",
-      "72.5",
-      "67.5"
-    ],
-    "answer": "62.5",
-    "explanation": "12.5% means multiply by 12.5/100."
-  },
-  {
-    "question": "12 items cost £1.20 each. What is the total cost?",
-    "options": [
-      "12.4",
-      "14.40",
-      "16.4",
-      "14.9"
-    ],
-    "answer": "14.40",
-    "explanation": "Multiply the price by the quantity."
-  }
-]
+  
