@@ -258,7 +258,7 @@ main.page-shell {
   border: 1px solid transparent;
   cursor: pointer;
   overflow: hidden;
-  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition), filter var(--transition);
   backdrop-filter: blur(18px);
 }
 
@@ -285,6 +285,7 @@ main.page-shell {
 .btn-primary:focus-visible {
   transform: translateY(-2px) scale(1.01);
   box-shadow: 0 20px 44px rgba(124, 58, 237, 0.26);
+  filter: brightness(1.03);
 }
 
 .btn-primary:hover::before,
@@ -318,7 +319,12 @@ main.page-shell {
 .btn-outline:focus-visible {
   color: var(--primary);
   border-color: rgba(37, 99, 235, 0.45);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  animation: btnMicroBounce 0.35s ease;
 }
 
 .btn-outline:hover::before,
@@ -444,7 +450,7 @@ main.page-shell {
   background: var(--surface);
   border-radius: 20px;
   padding: 1.6rem;
-  box-shadow: var(--shadow-xs);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08), 0 20px 44px rgba(37, 99, 235, 0.08);
   border: 1px solid rgba(15, 23, 42, 0.06);
   display: grid;
   gap: 0.8rem;
@@ -453,8 +459,8 @@ main.page-shell {
 .feature-card:hover,
 .category-card:hover,
 .info-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-m);
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.12), 0 30px 55px rgba(124, 58, 237, 0.16);
 }
 
 .seo-section {
@@ -751,7 +757,12 @@ main.page-shell {
   background: linear-gradient(90deg, #2563eb, #7c3aed, #f97316);
   background-size: 200% 100%;
   animation: flow 8s linear infinite;
-  transition: width 0.3s ease;
+  transition: width 0.75s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.progress-bar__fill.is-updating {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.32);
+  filter: saturate(1.15);
 }
 
 @keyframes flow {
@@ -927,6 +938,53 @@ main.page-shell {
   100% {
     transform: scale(1);
   }
+}
+
+@keyframes btnMicroBounce {
+  0% { transform: translateY(0) scale(1); }
+  55% { transform: translateY(-2px) scale(1.03); }
+  100% { transform: translateY(0) scale(1.01); }
+}
+
+body.completion-glow::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.2), transparent 62%);
+  animation: completionGlow 0.9s ease forwards;
+}
+
+.celebration-confetti {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.celebration-confetti span {
+  position: absolute;
+  top: -12vh;
+  width: 8px;
+  height: 16px;
+  border-radius: 4px;
+  opacity: 0.9;
+  animation: confettiFall 1.35s ease-out forwards;
+}
+
+@keyframes confettiFall {
+  to {
+    transform: translate3d(var(--x-drift), 115vh, 0) rotate(660deg);
+    opacity: 0;
+  }
+}
+
+@keyframes completionGlow {
+  0% { opacity: 0; }
+  30% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 /* Mock page */
