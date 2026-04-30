@@ -181,6 +181,73 @@
       </div>
     </section>
 
+
+
+    <section class="section section--quest" id="daily-quest" aria-labelledby="daily-quest-title">
+      <div class="section-header">
+        <span class="badge badge-soft">DailyQuest</span>
+        <h2 class="section-title" id="daily-quest-title">Today’s 15-Minute Quest</h2>
+        <p class="section-subtitle">A bite-size mission with maths, words, puzzles, and a typing sprint. Big progress in just 15 minutes.</p>
+      </div>
+      <div class="quest-layout">
+        <article class="quest-map card" aria-live="polite">
+          <h3>Quest map checkpoints</h3>
+          <ol class="checkpoint-list" data-quest-checkpoints></ol>
+          <div class="quest-progress-shell" role="img" aria-label="Daily quest progress ring">
+            <svg viewBox="0 0 120 120" class="quest-ring" aria-hidden="true">
+              <circle cx="60" cy="60" r="50" class="quest-ring__track"></circle>
+              <circle cx="60" cy="60" r="50" class="quest-ring__progress" data-quest-ring></circle>
+            </svg>
+            <strong data-quest-progress-label>0%</strong>
+          </div>
+          <button type="button" class="btn btn-primary" data-quest-next>Start today’s quest</button>
+          <p class="quest-status" data-quest-status>Let’s begin with maths warm-up!</p>
+        </article>
+        <article class="card reward-preview" data-quest-reward>
+          <h3>Today’s reward</h3>
+          <p>Earn <strong>+45 XP</strong>, a <strong>Focus Fox sticker</strong>, and a <strong>treasure key</strong> for your weekly chest.</p>
+          <div class="reward-chips"><span>XP</span><span>Streak +1</span><span>Badge Progress</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--missions" id="missions" aria-labelledby="missions-title">
+      <div class="section-header">
+        <h2 class="section-title" id="missions-title">Choose today’s mission</h2>
+        <p class="section-subtitle">Pick one adventure now, or complete all five to unlock a mega celebration.</p>
+      </div>
+      <div class="mission-grid">
+        <article class="mission-card"><div class="mission-icon" aria-hidden="true">🧮</div><h3>Maths Mission</h3><p>12 min • ★★★</p><p>Reward: Fraction Finder badge</p><a class="btn btn-primary" href="maths.html">Continue learning</a></article>
+        <article class="mission-card"><div class="mission-icon" aria-hidden="true">📚</div><h3>Vocab Quest</h3><p>10 min • ★★</p><p>Reward: Word Wizard cape</p><a class="btn btn-primary" href="flashcards.html">Start today’s quest</a></article>
+        <article class="mission-card"><div class="mission-icon" aria-hidden="true">🏟️</div><h3>Mock Exam Arena</h3><p>25 min • ★★★★</p><p>Reward: Exam Hero certificate</p><a class="btn btn-primary" href="mock.html">Try a free mock test</a></article>
+        <article class="mission-card"><div class="mission-icon" aria-hidden="true">🧩</div><h3>Shape Puzzle Lab</h3><p>9 min • ★★★</p><p>Reward: Nebula puzzle pin</p><a class="btn btn-primary" href="non-verbal.html">Continue learning</a></article>
+        <article class="mission-card"><div class="mission-icon" aria-hidden="true">⌨️</div><h3>Typing Sprint</h3><p>6 min • ★★</p><p>Reward: Lightning keyboard charm</p><a class="btn btn-primary" href="typing.html">Start today’s quest</a></article>
+      </div>
+    </section>
+
+    <section class="section section--mascot" aria-label="Mascot guide">
+      <article class="mascot-guide card" data-mascot-guide>
+        <div class="mascot-guide__avatar" aria-hidden="true">🦊</div>
+        <div>
+          <h3>Milo the Mission Guide</h3>
+          <p data-mascot-message>Great try! Let’s spot the trick together.</p>
+          <button class="btn btn-outline" type="button" data-mascot-next>Need another hint</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="section section--galaxy" aria-labelledby="galaxy-title">
+      <div class="section-header"><h2 class="section-title" id="galaxy-title">Learning Galaxy</h2><p class="section-subtitle">Track every topic as a planet with clear next steps for learners and parents.</p></div>
+      <div class="galaxy-grid">
+        <article class="planet-card state-improving"><h3>Fractions Planet</h3><p>68% • improving</p><small>Next: 5 mixed denominator questions</small></article>
+        <article class="planet-card state-started"><h3>Vocabulary Moon</h3><p>34% • started</p><small>Next: Prefix and suffix quest</small></article>
+        <article class="planet-card state-glowing"><h3>Angles Asteroid Belt</h3><p>82% • glowing</p><small>Next: Timed angle hunt</small></article>
+        <article class="planet-card state-locked"><h3>NVR Nebula</h3><p>0% • locked</p><small>Next: Complete Shape Puzzle Lab level 1</small></article>
+        <article class="planet-card state-mastered"><h3>Reading Comprehension Comet</h3><p>95% • mastered</p><small>Next: Weekly maintenance mission</small></article>
+        <article class="planet-card state-improving"><h3>Typing Star</h3><p>71% • improving</p><small>Next: 60-second sprint with tricky spellings</small></article>
+      </div>
+    </section>
+
     <div class="quote-strip" data-quote-strip>
       <div class="container quote-strip__inner">
         <span class="quote-label">Today’s boost</span>
@@ -355,6 +422,36 @@
           </div>
         </article>
       </div>
+    </section>
+
+
+
+    <section class="section section--arena" id="exam-arena">
+      <div class="section-header"><h2 class="section-title">ExamArena mode</h2><p class="section-subtitle">Calm breathing, realistic timer, question flags, and child-friendly score reports.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><h3>1) Breathe &amp; begin</h3><p>30-second breathing animation before the timer starts.</p></article>
+        <article class="feature-card"><h3>2) Smart navigation grid</h3><p>Jump between questions, flag tricky ones, and see answered/unanswered status.</p></article>
+        <article class="feature-card"><h3>3) Results that teach</h3><p>Topic strengths, growth areas, printable certificate, and parent summary included.</p></article>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="parent-next-steps">
+      <div class="section-header"><h2 class="section-title">Parent Next Steps dashboard</h2><p class="section-subtitle">One glance clarity on progress, readiness, wellbeing, and what to do next.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><h3>Exam readiness score</h3><p>74 / 100 with a balanced 7-day study plan recommendation.</p></article>
+        <article class="feature-card"><h3>Strengths and weak spots</h3><p>Strongest: comprehension, angles. Focus next: vocab precision and NVR rotation.</p></article>
+        <article class="feature-card"><h3>Burnout risk indicator</h3><p>Low risk — keep sessions short, playful, and consistent.</p></article>
+      </div>
+      <div class="section-actions"><a class="btn btn-primary" href="#learning-hub">See my child’s plan</a></div>
+    </section>
+
+    <section class="section" id="target-school-profile">
+      <div class="section-header"><h2 class="section-title">Target School Profile</h2><p class="section-subtitle">Choose your exam style to personalise missions and mock priorities.</p></div>
+      <form class="profile-selector card" aria-label="Target school profile">
+        <label for="examStyle" class="form-label">Exam style</label>
+        <select id="examStyle" class="input"><option>GL-style</option><option>CEM/FSCE-style</option><option>Maths-heavy</option><option>Vocabulary-heavy</option><option>Reasoning-heavy</option><option>Mixed preparation</option></select>
+        <p>Recommended path: 3 maths missions, 2 vocab quests, 2 reasoning labs, and 1 mock arena this week.</p>
+      </form>
     </section>
 
     <section class="section section--dashboard" id="learning-hub">

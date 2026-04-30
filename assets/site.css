@@ -2499,3 +2499,26 @@ details.faq-item[open] summary::after {
   .share-sheet { border-radius: 20px 20px 0 0; width: 100%; max-width: 100%; padding-bottom: calc(1.25rem + env(safe-area-inset-bottom)); }
   .share-grid { grid-template-columns: 1fr; }
 }
+
+/* Kid-first upgrade modules */
+.section--quest,.section--missions,.section--mascot,.section--galaxy{position:relative}
+.quest-layout{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+.card{background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:24px;padding:1rem 1.1rem;box-shadow:var(--shadow-xs)}
+.checkpoint-list{display:grid;gap:.5rem;padding-left:1.1rem}
+.checkpoint-list li{padding:.45rem .7rem;border-radius:12px;background:#eef4ff}
+.checkpoint-list li.done{background:#dcfce7}
+.quest-progress-shell{display:flex;align-items:center;gap:.9rem;margin:1rem 0}
+.quest-ring{width:72px}.quest-ring__track{fill:none;stroke:#e2e8f0;stroke-width:10}.quest-ring__progress{fill:none;stroke:#2563eb;stroke-width:10;stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;stroke-dasharray:314;stroke-dashoffset:314;transition:stroke-dashoffset .3s ease}
+.reward-chips{display:flex;gap:.4rem;flex-wrap:wrap}.reward-chips span{background:#ede9fe;padding:.35rem .6rem;border-radius:999px;font-size:.8rem}
+.mission-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:.9rem}
+.mission-card{background:linear-gradient(160deg,#ffffff,#eef5ff);border-radius:24px;padding:1rem;border:1px solid var(--border);box-shadow:var(--shadow-xs);transition:transform .2s ease,box-shadow .2s ease}
+.mission-card:hover,.mission-card:focus-within{transform:translateY(-4px) scale(1.01);box-shadow:var(--shadow-m)}
+.mission-icon{font-size:1.8rem}
+.mascot-guide{display:flex;gap:1rem;align-items:center;background:linear-gradient(130deg,#e0f2fe,#ede9fe)}
+.mascot-guide__avatar{font-size:2.2rem;background:#fff;border-radius:16px;padding:.5rem}
+.galaxy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
+.planet-card{border-radius:20px;padding:1rem;color:#fff;background:#64748b}
+.state-locked{background:#94a3b8}.state-started{background:#6366f1}.state-improving{background:#0ea5e9}.state-glowing{background:#a855f7}.state-mastered{background:#16a34a}
+.profile-selector .input{width:100%;margin:.5rem 0 1rem;padding:.7rem;border-radius:12px;border:1px solid var(--border)}
+@media (max-width:780px){.quest-layout{grid-template-columns:1fr}}
+@media (prefers-reduced-motion: reduce){.mission-card,.quest-ring__progress{transition:none!important}}
