@@ -154,6 +154,48 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     syncWidgetVisibility();
   };
 
+
+
+  const initKidFirstModules = () => {
+    const checkpoints = doc.querySelector('[data-quest-checkpoints]');
+    const nextBtn = doc.querySelector('[data-quest-next]');
+    const status = doc.querySelector('[data-quest-status]');
+    const ring = doc.querySelector('[data-quest-ring]');
+    const label = doc.querySelector('[data-quest-progress-label]');
+    const tasks = ['5 maths questions', '5 vocabulary flashcards', '3 non-verbal puzzles', '1 typing sprint'];
+    if (checkpoints && nextBtn && status && ring && label) {
+      checkpoints.innerHTML = tasks.map((t) => `<li>${t}</li>`).join('');
+      let completed = 0;
+      const radius = 50;
+      const circumference = 2 * Math.PI * radius;
+      const update = () => {
+        const pct = Math.round((completed / tasks.length) * 100);
+        ring.style.strokeDashoffset = String(circumference - (pct / 100) * circumference);
+        label.textContent = `${pct}%`;
+        [...checkpoints.children].forEach((li, i) => li.classList.toggle('done', i < completed));
+      };
+      update();
+      nextBtn.addEventListener('click', () => {
+        if (completed < tasks.length) {
+          completed += 1;
+          status.textContent = completed === tasks.length ? 'Amazing focus! Quest complete — chest unlocked!' : `Checkpoint ${completed} complete. Keep going!`;
+          update();
+        }
+      });
+    }
+
+    const mascotLines = ['Great try! Let’s spot the trick together.', 'You’re close — check the pattern again.', 'Amazing focus! Ready for the next mission?'];
+    const mascotMessage = doc.querySelector('[data-mascot-message]');
+    const mascotNext = doc.querySelector('[data-mascot-next]');
+    if (mascotMessage && mascotNext) {
+      let idx = 0;
+      mascotNext.addEventListener('click', () => {
+        idx = (idx + 1) % mascotLines.length;
+        mascotMessage.textContent = mascotLines[idx];
+      });
+    }
+  };
+
   const initTracking = () => {
     trackPageView(window.location.pathname);
     trackEvent('route_changes', { route: window.location.pathname });
@@ -208,5 +250,6 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     initTracking();
     initShareButton();
     initDailyBoost();
+    initKidFirstModules();
   });
 })();
