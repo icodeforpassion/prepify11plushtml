@@ -318,6 +318,29 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     } catch (_) {}
   };
 
+  const initConsentBanner = () => {
+    const banner = doc.querySelector('[data-consent-banner]');
+    if (!banner) return;
+    const acceptBtn = banner.querySelector('[data-consent-accept]');
+    const declineBtn = banner.querySelector('[data-consent-decline]');
+    const key = 'prepify_analytics_consent_v1';
+    const saved = localStorage.getItem(key);
+
+    if (saved === 'accepted' || saved === 'declined') {
+      banner.hidden = true;
+      return;
+    }
+
+    const close = (choice) => {
+      localStorage.setItem(key, choice);
+      banner.hidden = true;
+      trackEvent('analytics_consent_choice', { choice });
+    };
+
+    acceptBtn?.addEventListener('click', () => close('accepted'));
+    declineBtn?.addEventListener('click', () => close('declined'));
+  };
+
   doc.addEventListener('DOMContentLoaded', () => {
     setCurrentYear();
     initNavigation();
@@ -325,6 +348,7 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     initTracking();
     initShareButton();
     initDailyBoost();
+    initConsentBanner();
     initKidFirstModules();
     initVisualDepthFx();
   });
