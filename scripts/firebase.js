@@ -60,7 +60,7 @@ function resolveFirebaseConfig() {
   if (missing.length) {
     if (!window.__prepifyFirebaseConfigWarned) {
       window.__prepifyFirebaseConfigWarned = true;
-      console.warn(`[Prepify11Plus] Firebase config missing: ${missing.join(", ")}. Add scripts/firebase-config.js or env-injected NEXT_PUBLIC_FIREBASE_* values.`);
+      console.info("[Prepify11Plus] Firebase features disabled: no public Firebase config was provided.");
     }
     return null;
   }

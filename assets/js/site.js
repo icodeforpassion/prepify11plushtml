@@ -15,6 +15,23 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
     const toggle = doc.querySelector('[data-nav-toggle]');
     const menu = doc.querySelector('[data-nav-menu]');
     if (!toggle || !menu) return;
+
+    const navItems = [
+      { href: 'index.html', label: 'Home' },
+      { href: 'maths.html', label: 'Maths Practice' },
+      { href: 'mock.html', label: 'Mock Tests' },
+      { href: 'flashcards.html', label: 'Flashcards' },
+      { href: 'typing.html', label: 'Typing' },
+      { href: 'non-verbal.html', label: 'Non-Verbal' },
+      { href: 'schedule-builder.html', label: 'Schedule' },
+      { href: 'pricing.html', label: 'Pricing' },
+      { href: 'blog.html', label: 'Blog' },
+      { href: 'faq.html', label: 'FAQ' },
+      { href: 'about.html', label: 'About' }
+    ];
+    const current = window.location.pathname.split('/').pop() || 'index.html';
+    const navHtml = navItems.map((item) => `<a href="${item.href}" ${item.href === current ? 'aria-current="page"' : ''}>${item.label}</a>`).join('');
+    menu.innerHTML = `${navHtml}<a class="btn btn-primary nav-cta" href="mock.html">Start practising</a><div class="auth-nav" data-auth-nav aria-live="polite"></div>`;
     const closeMenu = () => { menu.setAttribute('data-open', 'false'); toggle.setAttribute('aria-expanded', 'false'); };
     toggle.addEventListener('click', () => {
       const isOpen = menu.getAttribute('data-open') === 'true';
@@ -210,20 +227,6 @@ import { trackEvent, trackPageView } from '../../scripts/analytics.js';
       mascotNext.addEventListener('click', () => {
         idx = (idx + 1) % mascotLines.length;
         mascotMessage.textContent = mascotLines[idx];
-      });
-    }
-
-    const profileForm = doc.querySelector('[data-target-profile]');
-    const saveProfile = doc.querySelector('[data-target-profile-save]');
-    const profileMessage = doc.querySelector('[data-target-profile-message]');
-    const styleSelect = doc.getElementById('examStyle');
-    const profileKey = 'prepify_exam_style_v1';
-    if (profileForm && saveProfile && profileMessage && styleSelect) {
-      const existing = localStorage.getItem(profileKey);
-      if (existing) styleSelect.value = existing;
-      saveProfile.addEventListener('click', () => {
-        localStorage.setItem(profileKey, styleSelect.value);
-        profileMessage.textContent = 'Your child’s practice path has been adjusted for this exam style.';
       });
     }
   };
